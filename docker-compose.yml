@@ -14,23 +14,22 @@ services:
     networks:
       - "webapp"
 
-  # webapp:
-  #   links:
-  #     - "pgsql"
-
   httpd:
     build:
       context: docker/httpd
       dockerfile: Dockerfile
     volumes:
       - "fetusjp_logs:/log"
+      - "./webapp:/app"
     environment:
       TZ: "Asia/Tokyo"
     networks:
       - "webapp"
       - "exports"
-  #  links:
-  #    - "webapp"
+    links:
+      - "pgsql"
+    ports:
+      - "8080:80/tcp"
 
 volumes:
   fetusjp_pgsql:
