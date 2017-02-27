@@ -1,0 +1,42 @@
+version: "3"
+services:
+  pgsql:
+    image: "postgres:9.6-alpine"
+    volumes:
+      - "fetusjp_pgsql:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_PASSWORD: "fetusjp"
+      POSTGRES_USER: "fetusjp"
+      PGDATA: "/var/lib/postgresql/data"
+      POSTGRES_DB: "fetusjp"
+      POSTGRES_INITDB_ARGS: "--data-checksums --encoding=Unicode --locale=en_US.UTF8"
+      TZ: "Asia/Tokyo"
+    networks:
+      - "webapp"
+
+  # webapp:
+  #   links:
+  #     - "pgsql"
+
+  httpd:
+    build:
+      context: docker/httpd
+      dockerfile: Dockerfile
+    volumes:
+      - "fetusjp_logs:/log"
+    environment:
+      TZ: "Asia/Tokyo"
+    networks:
+      - "webapp"
+      - "exports"
+  #  links:
+  #    - "webapp"
+
+volumes:
+  fetusjp_pgsql:
+  fetusjp_logs:
+
+networks:
+  webapp:
+  exports:
+    external: true
