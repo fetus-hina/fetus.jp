@@ -1,7 +1,11 @@
 html,
 body {
     height: 100%;
-    font-family: 'Mplus 1p';
+    font-family: 'Mplus 1p', sans-serif;
+}
+
+code, pre, .monospace {
+    font-family: 'Ubuntu Mono', 'Mplus 1p', monospace;
 }
 
 .wrap {

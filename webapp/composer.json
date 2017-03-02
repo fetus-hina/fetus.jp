@@ -7,7 +7,9 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "jp3cki/yii2-mplus1p": "@stable",
+        "jp3cki/yii2-mplus1p": "^1.0.0",
+        "jp3cki/yii2-ubuntu-font": "^1.0.0",
+        "rmrevin/yii2-fontawesome": "~2.17",
         "yiisoft/yii2": "~2.0.5",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-smarty": "~2.0.0"

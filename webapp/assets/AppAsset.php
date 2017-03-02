@@ -26,5 +26,7 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'jp3cki\yii2\mplus1p\MPlus1pFontAsset',
+        'jp3cki\yii2\ubuntu\UbuntuMonoFontAsset',
+        'rmrevin\yii\fontawesome\AssetBundle',
     ];
 }
