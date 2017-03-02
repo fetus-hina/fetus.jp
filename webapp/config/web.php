@@ -2,6 +2,9 @@
 $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'fetusjp',
+    'name' => 'fetus.jp',
+    'language' => 'ja-JP',
+    'timeZone' => 'Asia/Tokyo',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
@@ -33,6 +36,18 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+            ],
+        ],
+        'view' => [
+            'renderers' => [
+                'tpl' => [
+                    'class' => 'yii\smarty\ViewRenderer',
+                    'options' => [
+                        'left_delimiter' => '{{',
+                        'right_delimiter' => '}}',
+                        'force_compile' => !!YII_ENV_DEV,
+                    ],
+                ],
             ],
         ],
     ],

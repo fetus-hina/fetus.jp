@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5092b277c1c44dca758b5175fef9619",
+    "content-hash": "6f32c8ae14df1d352ddbcdefd9c9e5ac",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -304,6 +304,42 @@
                 "html"
             ],
             "time": "2016-07-16T12:58:58+00:00"
+        },
+        {
+            "name": "jp3cki/yii2-mplus1p",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fetus-hina/yii2-mplus1p.git",
+                "reference": "c9de738598cec4dacb523ebaa9997c62fa285220"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fetus-hina/yii2-mplus1p/zipball/c9de738598cec4dacb523ebaa9997c62fa285220",
+                "reference": "c9de738598cec4dacb523ebaa9997c62fa285220",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "2.0.*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "jp3cki\\yii2\\mplus1p\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "NYSL-0.9982"
+            ],
+            "authors": [
+                {
+                    "name": "AIZAWA Hina",
+                    "email": "hina@bouhime.com"
+                }
+            ],
+            "description": "M+ 1p webfont asset for Yii Framework 2 (uses Google Fonts)",
+            "time": "2017-03-02T13:55:43+00:00"
         },
         {
             "name": "smarty/smarty",
@@ -779,7 +815,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "jp3cki/yii2-mplus1p": 0
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
