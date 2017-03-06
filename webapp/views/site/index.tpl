@@ -9,18 +9,6 @@
   <div class="row">
     {{$_cls = 'col-xs-12 col-md-6 col-lg-4'}}
     <div class="{{$_cls|escape}}">
-      <h2>About</h2>
-      <p>
-        自己紹介的なもの、スキル一覧、PGPキー
-      </p>
-      <p>
-        <a href="{{url route="/about/index"}}" class="btn btn-default">
-          About me &raquo;
-        </a>
-      </p>
-    </div>
-
-    <div class="{{$_cls|escape}}">
       <h2>
         Services
       </h2>
@@ -44,6 +32,18 @@
       <p>
         <a href="{{url route="/sense-log/index"}}" class="btn btn-default">
           Sense Log &raquo;
+        </a>
+      </p>
+    </div>
+
+    <div class="{{$_cls|escape}}">
+      <h2>About</h2>
+      <p>
+        自己紹介的なもの、スキル一覧、PGPキー
+      </p>
+      <p>
+        <a href="{{url route="/about/index"}}" class="btn btn-default">
+          About me &raquo;
         </a>
       </p>
     </div>
