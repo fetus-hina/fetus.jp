@@ -1,0 +1,30 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Mplus 1p', sans-serif;
+}
+
+code, pre, .monospace {
+    font-family: 'Ubuntu Mono', 'Mplus 1p', monospace;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+
+    & > .container {
+        padding: 70px 15px 20px;
+    }
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
