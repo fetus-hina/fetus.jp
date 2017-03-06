@@ -36,6 +36,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '<_c:[a-z0-9]+>' => '/<_c>/index',
+                '' => '/site/index',
             ],
         ],
         'view' => [
