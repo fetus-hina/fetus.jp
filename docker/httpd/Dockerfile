@@ -6,6 +6,7 @@ RUN apk --no-cache add \
         h2o \
         php7 \
         php7-cgi \
+        php7-ctype \
         php7-curl \
         php7-intl \
         php7-json \
