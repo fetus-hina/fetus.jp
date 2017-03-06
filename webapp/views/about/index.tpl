@@ -43,8 +43,9 @@
         <span class="fa fa-thumbs-up"></span> SNS
       </h3>
       <p>
-        <span class="fa fa-twitter"></span> <a href="https://twitter.com/fetus_hina">@fetus_hina</a><br>
-        <span class="fa fa-github"></span> <a href="https://github.com/fetus-hina">@fetus-hina</a><br>
+        <span class="fa fa-twitter fa-fw"></span><a href="https://twitter.com/fetus_hina">@fetus_hina</a><br>
+        <span class="fa fa-github fa-fw"></span><a href="https://github.com/fetus-hina">@fetus-hina</a><br>
+        <span class="fa fa-wordpress fa-fw"></span><a href="https://blog.fetus.jp/">Blog</a><br>
       </p>
     </div>
     <div class="{{$_cls|escape}}">
@@ -101,34 +102,4 @@
       </p>
     </div>
   </div>
-
-  <h2>Services</h2>
-  <ul>
-    <li>
-      Splatoon-related services:
-      <ul>
-        <li>
-          <a href="https://stat.ink/">stat.ink</a> (<a href="https://github.com/fetus-hina/stat.ink">Open Source</a>: MIT)
-        </li>
-        <li>
-          <a href="https://fest.ink/">イカフェスレート</a> (<a href="https://github.com/fetus-hina/fest.ink">Open Source</a>: MIT)
-        </li>
-        <li>
-          <a href="https://splapi.fetus.jp/">Splapi</a> (Closed Source)
-        </li>
-      </ul>
-    </li>
-    <li>
-      <a href="https://ipv4.fetus.jp/">ipv4.fetus.jp</a> (Closed Source, as of now)
-    </li>
-    <li>
-      <a href="https://wandbox.fetus.jp/">Wandbox for PHP/Hack</a> (<a href="https://github.com/fetus-hina/wandbox/tree/for-php">Open Source</a>, PHP-specialized version of <a href="http://melpon.org/wandbox/">Wandbox</a>)
-    </li>
-    <li>
-      <a href="https://rpm.fetus.jp/">rpm.fetus.jp</a> (My package collection for RHEL/CentOS)
-    </li>
-    <li>
-      and more
-    </li>
-  </ul>
 {{/strip}}
