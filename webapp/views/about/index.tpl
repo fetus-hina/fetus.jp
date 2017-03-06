@@ -64,4 +64,71 @@
       </p>
     </div>
   </div>
+
+  <h2>Skills</h2>
+  <div class="row">
+    <div class="{{$_cls|escape}}">
+      <h3>
+        Programming
+      </h3>
+      <p>
+        PHP, JavaScript (EcmaScript), C, C++, Java
+      </p>
+    </div>
+    <div class="{{$_cls|escape}}">
+      <h3>
+        Markup
+      </h3>
+      <p>
+        <span class="fa fa-html5"></span> HTML,&#32;
+        <span class="fa fa-css3"></span> CSS (Sass, LESS)
+      </p>
+    </div>
+    <div class="{{$_cls|escape}}">
+      <h3>
+        Server Management
+      </h3>
+      <p>
+        Linux (RHEL/CentOS, Debian/Ubuntu)
+      </p>
+    </div>
+    <div class="{{$_cls|escape}}">
+      <h3>
+        Middlewares
+      </h3>
+      <p>
+        Apache, Nginx, H2O, Varnish, MySQL/MariaDB, PostgreSQL, BIND 9, Docker, KVM
+      </p>
+    </div>
+  </div>
+
+  <h2>Services</h2>
+  <ul>
+    <li>
+      Splatoon-related services:
+      <ul>
+        <li>
+          <a href="https://stat.ink/">stat.ink</a> (<a href="https://github.com/fetus-hina/stat.ink">Open Source</a>: MIT)
+        </li>
+        <li>
+          <a href="https://fest.ink/">イカフェスレート</a> (<a href="https://github.com/fetus-hina/fest.ink">Open Source</a>: MIT)
+        </li>
+        <li>
+          <a href="https://splapi.fetus.jp/">Splapi</a> (Closed Source)
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://ipv4.fetus.jp/">ipv4.fetus.jp</a> (Closed Source, as of now)
+    </li>
+    <li>
+      <a href="https://wandbox.fetus.jp/">Wandbox for PHP/Hack</a> (<a href="https://github.com/fetus-hina/wandbox/tree/for-php">Open Source</a>, PHP-specialized version of <a href="http://melpon.org/wandbox/">Wandbox</a>)
+    </li>
+    <li>
+      <a href="https://rpm.fetus.jp/">rpm.fetus.jp</a> (My package collection for RHEL/CentOS)
+    </li>
+    <li>
+      and more
+    </li>
+  </ul>
 {{/strip}}
