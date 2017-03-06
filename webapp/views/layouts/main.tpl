@@ -27,6 +27,8 @@
         'options' => ['class' => 'navbar-nav'],
         'items' => [
           ['label' => '<span class="fa fa-home fa-fw"></span>Home', 'url' => ['/site/index'], 'encode' => false],
+          ['label' => '<span class="fa fa-gear fa-fw"></span>Services', 'url' => ['/service/index'], 'encode' => false],
+          ['label' => '<span class="fa fa-thermometer-half fa-fw"></span>Sense Log', 'url' => ['/sense-log/index'], 'encode' => false],
           ['label' => '<span class="fa fa-user fa-fw"></span>About', 'url' => ['/about/index'], 'encode' => false, 'items' => [
             ['label' => '<span class="fa fa-user fa-fw"></span>About', 'url' => ['/about/index'], 'encode' => false],
             ['label' => '<span class="fa fa-key fa-fw"></span>PGP Keys', 'url' => ['/about/pgp'], 'encode' => false]
