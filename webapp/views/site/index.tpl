@@ -59,5 +59,11 @@
   </h2>
   <div id="blog">
   </div>
+
+  <hr>
+  <p>
+    Copyright &copy; AIZAWA Hina. All rights reserved.<br>
+    Powered by PHP {{phpversion()|escape}}, Yii Framework 2, Docker, H2O webserver and Alpine Linux.
+  </p>
 </div>
 {{/strip}}
