@@ -102,7 +102,7 @@
       </p>
       <p>
         <a href="https://ipv4.fetus.jp/" class="btn btn-default">
-          ipv4.fetus.jp
+          ipv4.fetus.jp &raquo;
         </a>
       </p>
     </div>
