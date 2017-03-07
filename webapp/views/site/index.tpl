@@ -1,6 +1,10 @@
 {{strip}}
 <div class="container">
-  <h1>
+  <h1 id="logo">
+    {{$this->registerCssFile('https://fonts.googleapis.com/css?family=Martel')|@void}}
+    {{registerCss}}
+      #logo{font-family:'Martel',serif;font-weight:600;letter-spacing:-1px;line-height:1;margin-bottom:5px}
+    {{/registerCss}}
     fetus.jp
   </h1>
   <p>
