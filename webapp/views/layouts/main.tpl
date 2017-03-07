@@ -40,16 +40,6 @@
         {{$content}}
       </div>
     </div>
-    <footer class="footer">
-      <div class="container">
-        <p class="pull-left">
-          &copy; AIZAWA Hina
-        </p>
-        <p class="pull-right">
-          {{\Yii::powered()}}
-        </p>
-      </div>
-    </footer>
     {{$this->endBody()|@void}}
   </body>
 </html>
