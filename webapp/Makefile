@@ -1,6 +1,8 @@
 RESOURCES := \
+	web/css/blog-feed.min.css.gz \
 	web/css/site.min.css.gz \
-	web/js/about-panel.min.js.gz
+	web/js/about-panel.min.js.gz \
+	web/js/blog-feed.min.js.gz
 
 all: vendor node_modules resources
 

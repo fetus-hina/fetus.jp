@@ -52,5 +52,12 @@
       </p>
     </div>
   </div>
+
+  {{\app\assets\BlogFeedAsset::register($this)|@void}}
+  <h2>
+    <a href="https://blog.fetus.jp/">Blog</a>
+  </h2>
+  <div id="blog">
+  </div>
 </div>
 {{/strip}}
