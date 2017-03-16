@@ -5,8 +5,7 @@ use yii\web\AssetBundle;
 
 class BlogFeedAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    public $sourcePath = '@app/resource';
     public $css = [
         'css/blog-feed.min.css',
     ];

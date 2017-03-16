@@ -10,7 +10,11 @@
   <h2>About</h2>
   <div class="row">
     {{$_cls = 'col-xs-12 col-sm-6 col-lg-4 about-panels'}}
-    {{$this->registerJsFile('@web/js/about-panel.min.js', ['depends' => 'yii\web\JqueryAsset'])|@void}}
+    {{$_asset = \app\assets\AppAsset::register($this)}}
+    {{$this->registerJsFile(
+      \Yii::$app->getAssetManager()->getAssetUrl($_asset, 'js/about-panel.min.js'),
+      ['depends' => 'app\assets\AppAsset']
+    )|@void}}
     <div class="{{$_cls|escape}}">
       <h3>
         <span class="fa fa-user"></span> Handle
