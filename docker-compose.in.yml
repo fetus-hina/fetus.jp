@@ -3,7 +3,7 @@ services:
   pgsql:
     image: "postgres:9.6-alpine"
     volumes:
-      - "fetusjp_pgsql:/var/lib/postgresql/data"
+      - "pgsql:/var/lib/postgresql/data"
     environment:
       POSTGRES_PASSWORD: "fetusjp"
       POSTGRES_USER: "fetusjp"
@@ -14,13 +14,27 @@ services:
     networks:
       - "webapp"
 
+  webapp:
+    build:
+      context: "./webapp"
+      dockerfile: "Dockerfile"
+      args:
+        GITHUB_TOKEN: "%GITHUB_TOKEN%"
+    volumes:
+      - "app_assets:/var/www/site/web/assets"
+      - "app_logs:/var/www/site/runtime/logs"
+    links:
+      - "pgsql"
+    networks:
+      - "default"
+
   httpd:
     build:
-      context: "docker/httpd"
+      context: "./docker/httpd"
       dockerfile: "Dockerfile"
     volumes:
-      - "fetusjp_logs:/log"
-      - "./webapp:/app"
+      - "httpd_logs:/var/log/nginx/"
+      - "app_assets:/var/www/site/web/assets:ro"
     environment:
       TZ: "Asia/Tokyo"
     networks:
@@ -28,12 +42,12 @@ services:
       - "exports"
     links:
       - "pgsql"
-    ports:
-      - "8080:80/tcp"
 
 volumes:
-  fetusjp_pgsql:
-  fetusjp_logs:
+  pgsql:
+  app_assets:
+  app_logs:
+  httpd_logs:
 
 networks:
   webapp:

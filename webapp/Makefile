@@ -1,8 +1,10 @@
-RESOURCES := \
+GZ_RESOURCES := \
 	web/css/blog-feed.min.css.gz \
 	web/css/site.min.css.gz \
 	web/js/about-panel.min.js.gz \
 	web/js/blog-feed.min.js.gz
+BR_RESOURCES := $(GZ_RESOURCES:.gz=.br)
+RESOURCES := $(GZ_RESOURCES) $(BR_RESOURCES)
 
 all: vendor node_modules resources
 
@@ -10,6 +12,7 @@ resources: $(RESOURCES)
 
 composer.phar:
 	curl -SL 'https://getcomposer.org/installer' | php -- --filename=$@ --stable
+	touch --date '2000-01-01T00:00:00Z' $@
 
 composer.lock: composer.json composer.phar
 	./composer.phar update -vvv
@@ -26,6 +29,10 @@ node_modules: package.json
 %.gz: % node_modules
 	rm -f $@ || true
 	./node_modules/.bin/zopfli --gzip -i 10 $<
+
+%.br: %
+	rm -f $@ || true
+	bro --quality 11 --input $< --output $@
 
 %.min.js: %.js node_modules
 	./node_modules/.bin/uglifyjs -m -c < $< > $@

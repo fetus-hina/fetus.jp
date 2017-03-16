@@ -3,12 +3,15 @@
 .idea
 .project
 .settings
+/config/cookie-secret.php
 /node_modules
 /phpunit.xml
 /vendor
+/web/css/*.br
 /web/css/*.css
 /web/css/*.gz
 /web/js/*.gz
+/web/js/*.br
 /web/js/*.js
 Thumbs.db
 composer.phar
