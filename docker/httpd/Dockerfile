@@ -1,27 +1,11 @@
-FROM alpine:latest
-
-ADD entrypoint.sh /
-
-RUN apk --no-cache add \
-        h2o \
-        php7 \
-        php7-cgi \
-        php7-ctype \
-        php7-curl \
-        php7-intl \
-        php7-json \
-        php7-mbstring \
-        php7-opcache \
-        php7-openssl \
-        php7-pdo \
-        php7-pdo_pgsql \
-        php7-session \
-      && \
-    chmod +x /entrypoint.sh
-
-CMD ["/entrypoint.sh"]
-
+FROM centos:7
+RUN yum update -y && \
+    curl -o '/etc/yum.repos.d/jp3cki.repo' 'https://rpm.fetus.jp/jp3cki.repo' && \
+    yum-config-manager --enable jp3cki-h2o-mainline && \
+    yum install -y h2o && \
+    rm /etc/yum.repos.d/jp3cki.repo && \
+    yum clean all
+ADD h2o.conf /etc/h2o/h2o.conf
+ADD web/ /var/www/site/web/
+CMD ["/usr/bin/h2o", "-m", "master", "-c", "/etc/h2o/h2o.conf"]
 EXPOSE 80
-
-ADD conf/ /etc/h2o/
-

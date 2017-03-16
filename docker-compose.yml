@@ -16,8 +16,8 @@ services:
 
   httpd:
     build:
-      context: docker/httpd
-      dockerfile: Dockerfile
+      context: "docker/httpd"
+      dockerfile: "Dockerfile"
     volumes:
       - "fetusjp_logs:/log"
       - "./webapp:/app"
