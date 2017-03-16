@@ -38,6 +38,7 @@ RUN yum update -y && \
     scl enable php71 "./composer.phar global require 'fxp/composer-asset-plugin:^1.2.0'" && \
     touch composer.lock && \
     scl enable php71 "make" && \
+    rm -rf node_modules && \
     useradd  -d /var/www/site -M webapp && \
     chown -R webapp:webapp /var/www/site && \
     yum remove -y \
