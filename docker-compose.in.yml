@@ -12,7 +12,7 @@ services:
       POSTGRES_INITDB_ARGS: "--data-checksums --encoding=Unicode --locale=en_US.UTF8"
       TZ: "Asia/Tokyo"
     networks:
-      - "webapp"
+      - "default"
 
   webapp:
     build:
@@ -33,15 +33,15 @@ services:
       context: "./docker/httpd"
       dockerfile: "Dockerfile"
     volumes:
-      - "httpd_logs:/var/log/nginx/"
+      - "httpd_logs:/var/log/h2o/"
       - "app_assets:/var/www/site/web/assets:ro"
     environment:
       TZ: "Asia/Tokyo"
-    networks:
-      - "webapp"
-      - "exports"
     links:
-      - "pgsql"
+      - "webapp"
+    networks:
+      - "default"
+      - "exports"
 
 volumes:
   pgsql:
@@ -50,6 +50,6 @@ volumes:
   httpd_logs:
 
 networks:
-  webapp:
+  default:
   exports:
     external: true
