@@ -1,8 +1,8 @@
 GZ_RESOURCES := \
-	web/css/blog-feed.min.css.gz \
-	web/css/site.min.css.gz \
-	web/js/about-panel.min.js.gz \
-	web/js/blog-feed.min.js.gz
+	resource/css/blog-feed.min.css.gz \
+	resource/css/site.min.css.gz \
+	resource/js/about-panel.min.js.gz \
+	resource/js/blog-feed.min.js.gz
 BR_RESOURCES := $(GZ_RESOURCES:.gz=.br)
 RESOURCES := $(GZ_RESOURCES) $(BR_RESOURCES)
 

@@ -6,13 +6,11 @@
 /config/cookie-secret.php
 /node_modules
 /phpunit.xml
+/resource/**/*.br
+/resource/**/*.css
+/resource/**/*.gz
+/resource/**/*.js
 /vendor
-/web/css/*.br
-/web/css/*.css
-/web/css/*.gz
-/web/js/*.gz
-/web/js/*.br
-/web/js/*.js
 Thumbs.db
 composer.phar
 nbproject
