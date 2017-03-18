@@ -63,7 +63,7 @@
   <hr>
   <p>
     Copyright &copy; AIZAWA Hina. All rights reserved.<br>
-    Powered by PHP {{phpversion()|escape}}, Yii Framework 2, Docker, H2O webserver and Alpine Linux.
+    Powered by PHP {{phpversion()|escape}}, Yii Framework 2, Docker and H2O webserver.
   </p>
 </div>
 {{/strip}}
