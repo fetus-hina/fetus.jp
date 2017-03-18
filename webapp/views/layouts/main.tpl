@@ -8,7 +8,7 @@
     <meta charset="{{$app->charset|escape}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{Html::csrfMetaTags()}}
-    <title>{{$this->title|escape}}</title>
+    <title>{{$this->title|default:$app->name|escape}}</title>
     {{$this->head()}}
   </head>
   <body>
