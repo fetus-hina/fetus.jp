@@ -1,8 +1,11 @@
 <?php
-
 namespace app\models;
 
 use Yii;
+use app\behaviors\TimestampBehavior;
+use jp3cki\uuid\Uuid;
+use yii\behaviors\AttributeBehavior;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "sensor".
@@ -16,8 +19,26 @@ use Yii;
  *
  * @property SenseLog[] $senseLogs
  */
-class Sensor extends \yii\db\ActiveRecord
+class Sensor extends ActiveRecord
 {
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TimestampBehavior::class,
+            ],
+            [
+                'class' => AttributeBehavior::class,
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => 'auth_key',
+                ],
+                'value' => function ($event) {
+                    return Uuid::v4()->__toString();
+                },
+            ],
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -32,12 +53,11 @@ class Sensor extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['auth_key', 'name', 'created_at', 'updated_at'], 'required'],
+            [['name'], 'required'],
             [['auth_key'], 'string'],
             [['enabled'], 'boolean'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 64],
-            [['auth_key'], 'unique'],
         ];
     }
 

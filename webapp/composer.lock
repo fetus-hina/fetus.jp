@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cdac048be446ded20ef8bbaba61fb8f",
+    "content-hash": "f6df48647a718faa1fc30a8dd14f0673",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -355,6 +355,51 @@
                 "icon"
             ],
             "time": "2016-10-24T15:52:54+00:00"
+        },
+        {
+            "name": "jp3cki/uuid",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fetus-hina/uuid.git",
+                "reference": "58364ab6d340c6200007f25b411a56ed08d90a64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fetus-hina/uuid/zipball/58364ab6d340c6200007f25b411a56ed08d90a64",
+                "reference": "58364ab6d340c6200007f25b411a56ed08d90a64",
+                "shasum": ""
+            },
+            "require": {
+                "ext-hash": "*",
+                "ext-pcre": "*",
+                "php": ">= 5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*|5.*",
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "suggest": {
+                "paragonie/random_compat": "random_bytes() polyfill library for PHP 5.6 or earlier."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "jp3cki\\uuid\\": "src",
+                    "jp3cki\\uuid\\test\\": "test"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "AIZAWA Hina",
+                    "email": "hina@bouhime.com"
+                }
+            ],
+            "time": "2016-08-30T08:48:40+00:00"
         },
         {
             "name": "jp3cki/yii2-mplus1p",
@@ -958,7 +1003,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=7.1.0"
     },
     "platform-dev": []
 }
