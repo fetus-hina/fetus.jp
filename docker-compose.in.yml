@@ -41,7 +41,7 @@ services:
       - "webapp"
     networks:
       - "default"
-      - "exports"
+      - "expose"
 
 volumes:
   pgsql:
@@ -51,5 +51,5 @@ volumes:
 
 networks:
   default:
-  exports:
+  expose:
     external: true
