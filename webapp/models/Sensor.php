@@ -12,6 +12,7 @@ use yii\db\ActiveRecord;
  *
  * @property integer $id
  * @property string $auth_key
+ * @property string $auth_secret
  * @property string $name
  * @property boolean $enabled
  * @property string $created_at
@@ -36,6 +37,17 @@ class Sensor extends ActiveRecord
                     return Uuid::v4()->__toString();
                 },
             ],
+            [
+                'class' => AttributeBehavior::class,
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => 'auth_secret',
+                ],
+                'value' => function ($event) {
+                    return \base64_encode(
+                        \random_bytes(512 / 8)
+                    );
+                },
+            ],
         ];
     }
 
@@ -54,7 +66,7 @@ class Sensor extends ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['auth_key'], 'string'],
+            [['auth_key', 'auth_secret'], 'string'],
             [['enabled'], 'boolean'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 64],
@@ -69,6 +81,7 @@ class Sensor extends ActiveRecord
         return [
             'id' => 'ID',
             'auth_key' => 'Auth Key',
+            'auth_secret' => 'Auth Secret'
             'name' => 'Name',
             'enabled' => 'Enabled',
             'created_at' => 'Created At',

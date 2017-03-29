@@ -9,12 +9,13 @@ use Yii;
  *
  * @property integer $id
  * @property integer $sensor_id
+ * @property string $remote_addr
  * @property string $at
  * @property string $created_at
  * @property string $updated_at
  *
- * @property Barometer[] $barometers
- * @property Hygrothermograph[] $hygrothermographs
+ * @property Barometer $barometer
+ * @property Hygrothermograph $hygrothermograph
  * @property Sensor $sensor
  */
 class SenseLog extends \yii\db\ActiveRecord
@@ -33,10 +34,14 @@ class SenseLog extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sensor_id', 'at', 'created_at', 'updated_at'], 'required'],
+            [['sensor_id', 'remote_addr', 'at', 'created_at', 'updated_at'], 'required'],
             [['sensor_id'], 'integer'],
+            [['remote_addr'], 'string'],
             [['at', 'created_at', 'updated_at'], 'safe'],
-            [['sensor_id'], 'exist', 'skipOnError' => true, 'targetClass' => Sensor::className(), 'targetAttribute' => ['sensor_id' => 'id']],
+            [['sensor_id'], 'exist', 'skipOnError' => true,
+                'targetClass' => Sensor::className(),
+                'targetAttribute' => ['sensor_id' => 'id'],
+            ],
         ];
     }
 
@@ -48,6 +53,7 @@ class SenseLog extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'sensor_id' => 'Sensor ID',
+            'remote_addr' => 'Remote Addr',
             'at' => 'At',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
@@ -57,17 +63,17 @@ class SenseLog extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getBarometers()
+    public function getBarometer()
     {
-        return $this->hasMany(Barometer::className(), ['log_id' => 'id']);
+        return $this->hasOne(Barometer::className(), ['log_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getHygrothermographs()
+    public function getHygrothermograph()
     {
-        return $this->hasMany(Hygrothermograph::className(), ['log_id' => 'id']);
+        return $this->hasOne(Hygrothermograph::className(), ['log_id' => 'id']);
     }
 
     /**
