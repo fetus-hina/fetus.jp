@@ -780,21 +780,21 @@
         },
         {
             "name": "yiisoft/yii2-smarty",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-smarty.git",
-                "reference": "450572fb9904a0c4b9ce6b10de0f7b691060d32e"
+                "reference": "3ab392a1d179e9b18137bcc0f0fc9fbbc7f8f5ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-smarty/zipball/450572fb9904a0c4b9ce6b10de0f7b691060d32e",
-                "reference": "450572fb9904a0c4b9ce6b10de0f7b691060d32e",
+                "url": "https://api.github.com/repos/yiisoft/yii2-smarty/zipball/3ab392a1d179e9b18137bcc0f0fc9fbbc7f8f5ff",
+                "reference": "3ab392a1d179e9b18137bcc0f0fc9fbbc7f8f5ff",
                 "shasum": ""
             },
             "require": {
-                "smarty/smarty": "*",
-                "yiisoft/yii2": "*"
+                "smarty/smarty": "~3.1.0",
+                "yiisoft/yii2": "~2.0.0"
             },
             "type": "yii2-extension",
             "extra": {
@@ -827,7 +827,7 @@
                 "smarty",
                 "yii2"
             ],
-            "time": "2016-03-17T04:00:36+00:00"
+            "time": "2017-03-18T15:49:29+00:00"
         }
     ],
     "packages-dev": [
