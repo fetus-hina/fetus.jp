@@ -33,6 +33,7 @@ class SensorController extends Controller
         }
         $this->stdout("Registered new sensor.\n", Console::FG_GREEN);
         $this->stdout("Auth key is: {$model->auth_key}\n", Console::FG_GREEN);
+        $this->stdout("Auth secret is: {$model->auth_secret}\n", Console::FG_GREEN);
         return 0;
     }
 }

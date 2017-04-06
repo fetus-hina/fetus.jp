@@ -81,7 +81,7 @@ class Sensor extends ActiveRecord
         return [
             'id' => 'ID',
             'auth_key' => 'Auth Key',
-            'auth_secret' => 'Auth Secret'
+            'auth_secret' => 'Auth Secret',
             'name' => 'Name',
             'enabled' => 'Enabled',
             'created_at' => 'Created At',
