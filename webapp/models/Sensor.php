@@ -6,6 +6,7 @@ use app\behaviors\TimestampBehavior;
 use jp3cki\uuid\Uuid;
 use yii\behaviors\AttributeBehavior;
 use yii\db\ActiveRecord;
+use yii\web\IdentityInterface;
 
 /**
  * This is the model class for table "sensor".
@@ -20,7 +21,7 @@ use yii\db\ActiveRecord;
  *
  * @property SenseLog[] $senseLogs
  */
-class Sensor extends ActiveRecord
+class Sensor extends ActiveRecord implements IdentityInterface
 {
     public function behaviors()
     {
@@ -95,5 +96,43 @@ class Sensor extends ActiveRecord
     public function getSenseLogs()
     {
         return $this->hasMany(SenseLog::className(), ['sensor_id' => 'id']);
+    }
+
+    // IdentityInterface
+    public static function findIdentity($id)
+    {
+        return static::findOne($id);
+    }
+
+    // IdentityInterface
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        return static::findOne(['auth_key' => $token]);
+    }
+
+    // IdentityInterface
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    // IdentityInterface
+    public function getAuthKey()
+    {
+        return $this->auth_key;
+    }
+
+    // IdentityInterface
+    public function validateAuthKey($authKey)
+    {
+        return $this->authKey === $authKey;
+    }
+
+    public function toApiResponse() : array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+        ];
     }
 }
