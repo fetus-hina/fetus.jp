@@ -37,6 +37,12 @@ $config = [
             'rules' => [
                 '' => '/site/index',
                 '<_c:[a-z0-9-]+>' => '/<_c>/index',
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'prefix' => 'api',
+                    'controller' => [ 'sense-log' ],
+                    'except' => [ 'delete' ],
+                ],
             ],
         ],
         'view' => [

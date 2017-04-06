@@ -96,4 +96,12 @@ class Sensor extends ActiveRecord
     {
         return $this->hasMany(SenseLog::className(), ['sensor_id' => 'id']);
     }
+
+    public function toApiResponse() : array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+        ];
+    }
 }

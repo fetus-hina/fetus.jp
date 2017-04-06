@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use DateTimeImmutable;
+use DateTimeZone;
 use Yii;
 
 /**
@@ -82,5 +84,25 @@ class SenseLog extends \yii\db\ActiveRecord
     public function getSensor()
     {
         return $this->hasOne(Sensor::className(), ['id' => 'sensor_id']);
+    }
+
+    public function toApiResponse() : array
+    {
+        return [
+            'id' => $this->id,
+            'sensor' => $this->sensor->toApiResponse(),
+            'pressure' => $this->barometer
+                ? (float)$this->barometer->pressure
+                : null,
+            'temperature' => $this->hygrothermograph
+                ? (float)$this->hygrothermograph->temperature
+                : null,
+            'humidity' => $this->hygrothermograph
+                ? (float)$this->hygrothermograph->humidity
+                : null,
+            'at' => (new DateTimeImmutable($this->at))
+                ->setTimezone(new DateTimeZone('Etc/UTC'))
+                ->format('c'),
+        ];
     }
 }
