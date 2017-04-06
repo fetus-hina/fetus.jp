@@ -6,12 +6,17 @@ body {
     font-family: 'Mplus 1p', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Martel', serif;
+    font-weight: bold;
+}
+
 code, pre, .monospace {
     font-family: 'Ubuntu Mono', 'Mplus 1p', monospace;
 }
 
 .navbar-brand {
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .wrap {

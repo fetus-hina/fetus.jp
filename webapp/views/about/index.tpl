@@ -62,7 +62,7 @@
     </div>
     <div class="{{$_cls|escape}}">
       <h3>
-        <span class="fa fa-language"><span> Language
+        <span class="fa fa-language"></span> Language
       </h3>
       <p>
         日本語 / Japanese
