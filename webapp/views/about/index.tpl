@@ -49,6 +49,7 @@
       <p>
         <span class="fa fa-twitter fa-fw"></span><a href="https://twitter.com/fetus_hina">@fetus_hina</a><br>
         <span class="fa fa-github fa-fw"></span><a href="https://github.com/fetus-hina">@fetus-hina</a><br>
+        <span class="fa fa-fw"><img src="/images/ostatus.png" style="height:1em"></span><a href="https://sc.fetus.jp/hina">@hina@sc.fetus.jp</a><br>
         <span class="fa fa-wordpress fa-fw"></span><a href="https://blog.fetus.jp/">Blog</a><br>
       </p>
     </div>
