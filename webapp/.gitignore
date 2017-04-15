@@ -3,6 +3,7 @@
 .idea
 .project
 .settings
+/.production
 /config/cookie-secret.php
 /models/Migration.php
 /node_modules
