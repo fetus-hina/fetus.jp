@@ -13,6 +13,10 @@
 /resource/**/*.gz
 /resource/**/*.js
 /vendor
+/web/images/**/*.br
+/web/images/**/*.gz
+/web/images/**/*.min.*
+/web/images/ostatus.svg
 Thumbs.db
 composer.phar
 nbproject

@@ -2,7 +2,8 @@ GZ_RESOURCES := \
 	resource/css/blog-feed.min.css.gz \
 	resource/css/site.min.css.gz \
 	resource/js/about-panel.min.js.gz \
-	resource/js/blog-feed.min.js.gz
+	resource/js/blog-feed.min.js.gz \
+	web/images/ostatus.min.svg.gz
 BR_RESOURCES := $(GZ_RESOURCES:.gz=.br)
 RESOURCES := $(GZ_RESOURCES) $(BR_RESOURCES)
 
@@ -46,5 +47,11 @@ node_modules: package.json
 %.css: %.scss node_modules
 	./node_modules/.bin/node-sass $< | ./node_modules/.bin/postcss --use autoprefixer > $@
 
+%.min.svg: %.svg node_modules
+	./node_modules/.bin/svgo -q --multipass -i $< -o $@
+
+web/images/ostatus.svg:
+	curl -sSL -o $@ 'https://github.com/OStatus/assets/raw/master/ostatus.svg'
+
 .PHONY: all resources
-.PRECIOUS: %.css %.min.css %.js %.min.js
+.PRECIOUS: %.css %.min.css %.js %.min.js %.svg %.min.svg
