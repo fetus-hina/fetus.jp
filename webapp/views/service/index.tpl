@@ -73,11 +73,18 @@
       <p>
         元々は別の方が作成されたAPIの諸事情による廃止に伴い、API互換性を持った形でフルスクラッチで作成したものです。
       </p>
-      <p>
+      <div>
         <a href="https://splapi.fetus.jp/" class="btn btn-default">
           Splapi &raquo;
-        </a>
-      </p>
+        </a> <div class="btn-group" role="group">
+          <a href="https://splapi2.stat.ink/" class="btn btn-default">
+            SPLAPI 2 &raquo;
+          </a>
+          <a href="https://github.com/fetus-hina/splapi2.stat.ink" class="btn btn-default">
+            <span class="fa fa-github"></span> &raquo;
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
