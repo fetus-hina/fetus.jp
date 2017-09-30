@@ -155,6 +155,44 @@
         </a>
       </p>
     </div>
+
+    <div class="{{$_cls|escape}}">
+      <h4>
+        onestop.fetus.jp
+      </h4>
+      <p>
+        ふるさと納税のワンストップ特例申請書に必要項目をそれなりに埋めたPDFを作成するウェブサイトです。
+      </p>
+      <p>
+        ソフトウェアのソースはMIT Licenseで公開しています。
+      </p>
+      <p>
+        <a href="https://onestop.fetus.jp/" class="btn btn-default">
+          onestop.fetus.jp &raquo;
+        </a> <a href="https://github.com/fetus-hina/onestop.fetus.jp/" class="btn btn-default">
+          <span class="fa fa-github"></span> ソース &raquo;
+        </a>
+      </p>
+    </div>
+
+    <div class="{{$_cls|escape}}">
+      <h4>
+        haraikomi.fetus.jp
+      </h4>
+      <p>
+        ゆうちょ銀行の払込取扱票を印刷するためのウェブサイトです。
+      </p>
+      <p>
+        ソフトウェアのソースはMIT Licenseで公開しています。
+      </p>
+      <p>
+        <a href="https://haraikomi.fetus.jp/" class="btn btn-default">
+          haraikomi.fetus.jp &raquo;
+        </a> <a href="https://github.com/fetus-hina/haraikomi" class="btn btn-default">
+          <span class="fa fa-github"></span> ソース &raquo;
+        </a>
+      </p>
+    </div>
   </div>
 
   <h3>
