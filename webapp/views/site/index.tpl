@@ -61,8 +61,7 @@
 
   <hr>
   <p>
-    Copyright &copy; AIZAWA Hina. All rights reserved.<br>
-    Powered by PHP {{phpversion()|escape}}, Yii Framework 2, Docker and H2O webserver.
+    Copyright &copy; AIZAWA Hina. All rights reserved.
   </p>
 </div>
 {{/strip}}

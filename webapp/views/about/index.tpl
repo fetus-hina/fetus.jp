@@ -38,7 +38,7 @@
         <span class="fa fa-envelope"></span> Email
       </h3>
       <p>
-        <span class="monospace">&lt;hina@bouhime.com&gt;</span><br>
+        <span class="monospace">&lt;hina@fetus.jp&gt;</span><br>
         You can use encrypted email with my PGP Key.
       </p>
     </div>

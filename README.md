@@ -6,20 +6,13 @@ https://fetus.jp/
 Requirements
 ------------
 
-- Docker
-  - Docker engine
-  - Docker-compose
-
-- ~~Linux Kernel ≧ 3.17~~
-  - ~~Warning: This system does not work on RHEL/CentOS 7. Because its kernel version is 3.10.~~
-  - ~~Note: [Alpine Linux's PHP requires `getrandom` syscall](http://qiita.com/hironori/items/7bd1cc7b8bf72aa4b3c6).~~
-  - [This issue has been fixed in PHP 7.1.3](https://bugs.php.net/bug.php?id=74105) and now we use CentOS 7 based app container.
+- PHP ≧ 7.1
 
 
 License
 -------
 
-Copyright (C) 2017 AIZAWA Hina (hina@bouhime.com)
+Copyright (C) 2017-2020 AIZAWA Hina (hina@fetus.jp)
 
 [MIT License](./LICENSE)
 
