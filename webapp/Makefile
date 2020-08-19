@@ -10,7 +10,7 @@ RESOURCES := \
 	web/images/ostatus.min.svg
 
 .PHONY: all
-all: vendor node_modules resources
+all: config/cookie-secret.php vendor node_modules resources
 
 .PHONY: clean
 clean:
@@ -18,6 +18,13 @@ clean:
 
 .PHONY: resources
 resources: $(RESOURCES)
+
+config/cookie-secret.php:
+	@echo '<?php' > $@
+	@echo '' >> $@
+	@echo 'declare(strict_types=1);' >> $@
+	@echo '' >> $@
+	@echo "return '"$(shell head -c 32 /dev/urandom | base64 | tr '+/=' '-_.')"';" >> $@
 
 composer.phar:
 	curl -SL 'https://getcomposer.org/installer' | php -- --filename=$@ --stable
