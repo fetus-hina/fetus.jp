@@ -1,14 +1,22 @@
-GZ_RESOURCES := \
-	resource/css/blog-feed.min.css.gz \
-	resource/css/site.min.css.gz \
-	resource/js/about-panel.min.js.gz \
-	resource/js/blog-feed.min.js.gz \
-	web/images/ostatus.min.svg.gz
-BR_RESOURCES := $(GZ_RESOURCES:.gz=.br)
-RESOURCES := $(GZ_RESOURCES) $(BR_RESOURCES)
+RESOURCES := \
+	resource/css/blog-feed.css \
+	resource/css/blog-feed.min.css \
+	resource/css/site.css \
+	resource/css/site.min.css \
+	resource/js/about-panel.js \
+	resource/js/about-panel.min.js \
+	resource/js/blog-feed.js \
+	resource/js/blog-feed.min.js \
+	web/images/ostatus.min.svg
 
+.PHONY: all
 all: vendor node_modules resources
 
+.PHONY: clean
+clean:
+	rm -rf $(RESOURCES)
+
+.PHONY: resources
 resources: $(RESOURCES)
 
 composer.phar:
@@ -27,31 +35,20 @@ node_modules: package.json
 	npm install
 	touch $@
 
-%.gz: % node_modules
-	rm -f $@ || true
-	./node_modules/.bin/zopfli --gzip -i 10 $<
-
-%.br: %
-	rm -f $@ || true
-	bro --quality 11 --input $< --output $@
-
 %.min.js: %.js node_modules
-	./node_modules/.bin/uglifyjs -m -c < $< > $@
+	npx uglifyjs -m -c < $< > $@
 
 %.js: %.es node_modules
-	./node_modules/.bin/babel --presets latest $< > $@
+	npx babel $< > $@
 
 %.min.css: %.css node_modules
-	./node_modules/.bin/cleancss -O 2 --skip-rebase --format 'breaks:afterRuleEnds=on' $< > $@
+	npx cleancss -O 2 --skip-rebase --format 'breaks:afterRuleEnds=on' $< > $@
 
 %.css: %.scss node_modules
-	./node_modules/.bin/node-sass $< | ./node_modules/.bin/postcss --use autoprefixer > $@
+	npx node-sass --output-style expanded $< | npx postcss --use autoprefixer > $@
 
 %.min.svg: %.svg node_modules
-	./node_modules/.bin/svgo -q --multipass -i $< -o $@
+	npx svgo -q --multipass -i $< -o $@
 
 web/images/ostatus.svg:
 	curl -sSL -o $@ 'https://github.com/OStatus/assets/raw/master/ostatus.svg'
-
-.PHONY: all resources
-.PRECIOUS: %.css %.min.css %.js %.min.js %.svg %.min.svg
