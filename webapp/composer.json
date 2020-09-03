@@ -6,7 +6,7 @@
     "license": "MIT",
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.1.0",
+        "php": ">=7.4.0",
         "jp3cki/uuid": "^0.1.1",
         "jp3cki/yii2-mplus1p": "^1.0.0",
         "jp3cki/yii2-ubuntu-font": "^1.0.0",
@@ -20,7 +20,10 @@
         "yiisoft/yii2-gii": "*"
     },
     "config": {
-        "process-timeout": 1800
+        "process-timeout": 1800,
+        "platform": {
+            "php": "7.4.10"
+        }
     },
     "extra": {
         "asset-installer-paths": {
