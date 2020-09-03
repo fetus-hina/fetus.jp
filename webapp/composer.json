@@ -19,6 +19,13 @@
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*"
     },
+    "replace": {
+        "bower-asset/bootstrap": "*",
+        "bower-asset/inputmask": "*",
+        "bower-asset/jquery": "*",
+        "bower-asset/punycode": "*",
+        "bower-asset/yii2-pjax": "*"
+    },
     "config": {
         "process-timeout": 1800,
         "platform": {

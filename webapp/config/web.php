@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'fetusjp',
@@ -6,6 +9,10 @@ $config = [
     'language' => 'ja-JP',
     'timeZone' => 'Asia/Tokyo',
     'basePath' => dirname(__DIR__),
+    'aliases' => [
+        '@bower' => '@app/node_modules',
+        '@npm' => '@app/node_modules',
+    ],
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
