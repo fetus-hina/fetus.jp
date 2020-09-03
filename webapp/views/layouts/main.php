@@ -1,29 +1,35 @@
-{{strip}}
-{{use class="yii\helpers\Html"}}
-{{\app\assets\AppAsset::register($this)|@void}}
-{{$this->beginPage()|@void}}
+<?php
+
+declare(strict_types=1);
+
+use app\assets\AppAsset;
+use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
+use yii\helpers\Html;
+
+AppAsset::register($this);
+?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="{{$app->language|escape}}">
+<?= Html::beginTag('html', ['lang' => Yii::$app->language]) . "\n" ?>
   <head>
-    <meta charset="{{$app->charset|escape}}">
+    <?= Html::tag('meta', ['charset' => Yii::$app->charset]) . "\n" ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{Html::csrfMetaTags()}}
-    <title>{{$this->title|default:$app->name|escape}}</title>
-    {{$this->head()}}
+    <?= Html::csrfMetaTags() . "\n" ?>
+    <title><?= Html::encode($this->title ?: Yii::$app->name) ?></title>
+    <?= $this->head() . "\n" ?>
   </head>
   <body>
-    {{$this->beginBody()|@void}}
+    <?php $this->beginBody(); echo "\n" ?>
     <div class="wrap">
-      {{use class="yii\bootstrap\Nav"}}
-      {{use class="yii\bootstrap\NavBar"}}
-      {{NavBar::begin([
-        'brandLabel' => $app->name,
+      <?php NavBar::begin([
+        'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
           'class' => 'navbar-inverse navbar-fixed-top'
         ]
-      ])|@void}}
-      {{Nav::widget([
+      ]); echo "\n" ?>
+      <?= Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
           ['label' => '<span class="fa fa-home fa-fw"></span>Home', 'url' => ['/site/index'], 'encode' => false],
@@ -34,14 +40,13 @@
             ['label' => '<span class="fa fa-key fa-fw"></span>PGP Keys', 'url' => ['/about/pgp'], 'encode' => false]
           ]]
         ]
-      ])}}
-      {{NavBar::end()|@void}}
+      ]) . "\n" ?>
+      <?php NavBar::end(); echo "\n" ?>
       <div class="container">
-        {{$content}}
+        <?= $content ?><?= "\n" ?>
       </div>
     </div>
-    {{$this->endBody()|@void}}
+    <?php $this->endBody(); echo "\n" ?>
   </body>
 </html>
-{{$this->endPage()|@void}}
-{{/strip}}
+<?php $this->endPage(); echo "\n" ?>

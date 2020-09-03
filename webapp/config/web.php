@@ -52,18 +52,6 @@ $config = [
                 '<_c:[a-z0-9-]+>' => '/<_c>/index',
             ],
         ],
-        'view' => [
-            'renderers' => [
-                'tpl' => [
-                    'class' => 'yii\smarty\ViewRenderer',
-                    'options' => [
-                        'left_delimiter' => '{{',
-                        'right_delimiter' => '}}',
-                        'force_compile' => !!YII_ENV_DEV,
-                    ],
-                ],
-            ],
-        ],
     ],
     'params' => $params,
 ];

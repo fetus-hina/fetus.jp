@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace app\controllers;
 
 use Yii;
@@ -7,8 +10,6 @@ use yii\web\ErrorAction;
 
 class SiteController extends Controller
 {
-    public $layout = 'main.tpl';
-
     public function actions()
     {
         return [
@@ -20,6 +21,6 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index.tpl');
+        return $this->render('index');
     }
 }

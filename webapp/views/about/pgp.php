@@ -1,14 +1,22 @@
-{{strip}}
+<?php
+
+declare(strict_types=1);
+
+use yii\helpers\Html;
+
+?>
 <div class="container">
   <p>
-    <a href="{{url route="/"}}" class="btn btn-default">
-      <span class="fa fa-angle-double-left"></span>&#32;
-      Home
-    </a>&#32;
-    <a href="{{url route="/about"}}" class="btn btn-default">
-      <span class="fa fa-angle-double-left"></span>&#32;
-      About
-    </a>
+    <?= Html::a(
+      '<span class="fa fa-angle-double-left"></span> ' . Html::encode('Home'),
+      ['site/index'],
+      ['class' => 'btn btn-default']
+    ) . "\n" ?>
+    <?= Html::a(
+      '<span class="fa fa-angle-double-left"></span> ' . Html::encode('About'),
+      ['about/index'],
+      ['class' => 'btn btn-default']
+    ) . "\n" ?>
   </p>
 
   <h2>PGP Keys</h2>
@@ -240,4 +248,4 @@
   =98NF
   -----END PGP PUBLIC KEY BLOCK-----
   </pre>
-{{/strip}}
+</div>
