@@ -10,6 +10,7 @@
     "@babel/cli": "^7.11.5",
     "@babel/core": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
+    "@fetus-hina/fetus.css": "git+https://github.com/fetus-hina/fetus.css.git#semver:^4.5.0",
     "autoprefixer": "^9.8.6",
     "bootstrap": "^4.5.2",
     "clean-css-cli": "^4.0.8",

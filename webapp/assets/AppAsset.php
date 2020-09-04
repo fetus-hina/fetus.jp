@@ -22,7 +22,6 @@ class AppAsset extends AssetBundle
     public $depends = [
         BootstrapAsset::class,
         FontAwesomeAsset::class,
-        HeadingFontAsset::class,
         MPlus1pFontAsset::class,
         UbuntuMonoFontAsset::class,
         YiiAsset::class,

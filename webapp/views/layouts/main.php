@@ -3,8 +3,6 @@
 declare(strict_types=1);
 
 use app\assets\AppAsset;
-use yii\bootstrap4\Nav;
-use yii\bootstrap4\NavBar;
 use yii\helpers\Html;
 
 AppAsset::register($this);
@@ -22,29 +20,25 @@ AppAsset::register($this);
   <body>
     <?php $this->beginBody(); echo "\n" ?>
     <div class="wrap">
-      <?php NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-          'class' => 'navbar navbar-expand-md navbar-dark bg-dark'
-        ]
-      ]); echo "\n" ?>
-      <?= Nav::widget([
-        'options' => ['class' => 'navbar-nav'],
-        'items' => [
-          ['label' => '<span class="fa fa-home fa-fw"></span>Home', 'url' => ['/site/index'], 'encode' => false],
-          ['label' => '<span class="fa fa-gear fa-fw"></span>Services', 'url' => ['/service/index'], 'encode' => false],
-          ['label' => '<span class="fa fa-thermometer-half fa-fw"></span>Sense Log', 'url' => ['/sense-log/index'], 'encode' => false],
-          ['label' => '<span class="fa fa-user fa-fw"></span>About', 'url' => ['/about/index'], 'encode' => false, 'items' => [
-            ['label' => '<span class="fa fa-user fa-fw"></span>About', 'url' => ['/about/index'], 'encode' => false],
-            ['label' => '<span class="fa fa-key fa-fw"></span>PGP Keys', 'url' => ['/about/pgp'], 'encode' => false]
-          ]]
-        ]
-      ]) . "\n" ?>
-      <?php NavBar::end(); echo "\n" ?>
+      <header class="mb-3">
+        <div class="container">
+          <h1><?= Html::a(
+            Html::encode('fetus'),
+            ['site/index']
+          ) ?></h1>
+        </div>
+      </header>
       <div class="container">
         <?= $content ?><?= "\n" ?>
       </div>
+      <footer>
+        <hr>
+        <div class="container text-right pb-3">
+          Copyright &copy; <?= Html::a(Html::encode('AIZAWA Hina'), ['site/index']) . "\n" ?>
+          <a href="https://twitter.com/fetus_hina"><span class="fa fa-twitter"></span></a>
+          <a href="https://github.com/fetus-hina"><span class="fa fa-github"></span></a>
+        </div>
+      </footer>
     </div>
     <?php $this->endBody(); echo "\n" ?>
   </body>

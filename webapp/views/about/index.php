@@ -19,7 +19,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
     <?= Html::a(
       '<span class="fa fa-angle-double-left"></span> ' . Html::encode('Home'),
       ['site/index'],
-      ['class' => 'btn btn-outline-secondary']
+      ['class' => 'btn btn-outline-primary']
     ) . "\n" ?>
   </p>
 

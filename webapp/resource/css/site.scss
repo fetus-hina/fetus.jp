@@ -3,20 +3,7 @@ html, body {
 }
 
 body {
-    font-family: 'Mplus 1p', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6, .navbar-brand {
-    font-family: 'Martel', serif;
-    font-weight: bold;
-}
-
-code, pre, .monospace {
-    font-family: 'Ubuntu Mono', 'Mplus 1p', monospace;
-}
-
-.navbar-brand {
-    font-weight: bold;
+    font-family: -apple-system, Roboto, 'M PLUS 1p', 'Noto Sans JP', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 .wrap {
@@ -24,8 +11,4 @@ code, pre, .monospace {
     height: auto;
     margin: 0 auto -60px;
     padding: 0;
-
-    & > .container {
-        padding: 70px 15px 20px;
-    }
 }

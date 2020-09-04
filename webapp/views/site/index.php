@@ -24,7 +24,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
         <?= Html::a(
           Html::encode('Services') . ' &raquo;',
           ['service/index'],
-          ['class' => 'btn btn-outline-secondary']
+          ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
       </p>
     </div>
@@ -40,7 +40,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
         <?= Html::a(
           Html::encode('Sense Log') . ' &raquo;',
           ['sense-log/index'],
-          ['class' => 'btn btn-outline-secondary']
+          ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
       </p>
     </div>
@@ -54,7 +54,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
         <?= Html::a(
           Html::encode('About me') . ' &raquo;',
           ['about/index'],
-          ['class' => 'btn btn-outline-secondary']
+          ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
       </p>
     </div>
@@ -66,9 +66,4 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
   </h2>
   <div id="blog">
   </div>
-
-  <hr>
-  <p>
-    Copyright &copy; AIZAWA Hina. All rights reserved.
-  </p>
 </div>
