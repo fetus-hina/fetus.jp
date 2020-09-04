@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use rmrevin\yii\fontawesome\FAB;
+use rmrevin\yii\fontawesome\FAS;
 use yii\helpers\Html;
 
 $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
@@ -10,7 +12,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
 <div class="container">
   <p>
     <?= Html::a(
-      '<span class="fa fa-angle-double-left"></span> ' . Html::encode('Home'),
+      (string)FAS::icon('angle-double-left') . ' ' . Html::encode('Home'),
       ['site/index'],
       ['class' => 'btn btn-outline-primary']
     ) . "\n" ?>
@@ -49,7 +51,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          '<span class="fa fa-github"></span> ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
           'https://github.com/fetus-hina/stat.ink',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -73,7 +75,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          '<span class="fa fa-github"></span> ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
           'https://github.com/fetus-hina/fest.ink',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -103,7 +105,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
             ['class' => 'btn btn-outline-primary']
           ) . "\n" ?>
           <?= Html::a(
-            '<span class="fa fa-github"></span> &raquo;',
+            (string)FAB::icon('github') . ' &raquo;',
             'https://github.com/fetus-hina/splapi2.stat.ink',
             ['class' => 'btn btn-outline-primary']
           ) . "\n" ?>
@@ -159,7 +161,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          '<span class="fa fa-github"></span> ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
           'https://github.com/fetus-hina/wandbox/tree/for-php',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -206,7 +208,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          '<span class="fa fa-github"></span> ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
           'https://github.com/fetus-hina/onestop.fetus.jp/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -230,7 +232,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          '<span class="fa fa-github"></span> ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
           'https://github.com/fetus-hina/haraikomi',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>

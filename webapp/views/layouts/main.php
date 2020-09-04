@@ -3,9 +3,11 @@
 declare(strict_types=1);
 
 use app\assets\AppAsset;
+use rmrevin\yii\fontawesome\FAB;
 use yii\helpers\Html;
 
 AppAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -35,8 +37,14 @@ AppAsset::register($this);
         <hr>
         <div class="container text-right pb-3">
           Copyright &copy; <?= Html::a(Html::encode('AIZAWA Hina'), ['site/index']) . "\n" ?>
-          <a href="https://twitter.com/fetus_hina"><span class="fa fa-twitter"></span></a>
-          <a href="https://github.com/fetus-hina"><span class="fa fa-github"></span></a>
+          <?= Html::a(
+            (string)FAB::icon('twitter'),
+            'https://twitter.com/fetus_hina'
+          ) . "\n" ?>
+          <?= Html::a(
+            (string)FAB::icon('github'),
+            'https://github.com/fetus-hina'
+          ) . "\n" ?>
         </div>
       </footer>
     </div>

@@ -2,18 +2,19 @@
 
 declare(strict_types=1);
 
+use rmrevin\yii\fontawesome\FAS;
 use yii\helpers\Html;
 
 ?>
 <div class="container">
   <p>
     <?= Html::a(
-      '<span class="fa fa-angle-double-left"></span> ' . Html::encode('Home'),
+      (string)FAS::icon('angle-double-left') . ' ' . Html::encode('Home'),
       ['site/index'],
       ['class' => 'btn btn-outline-primary']
     ) . "\n" ?>
     <?= Html::a(
-      '<span class="fa fa-angle-double-left"></span> ' . Html::encode('About'),
+      (string)FAS::icon('angle-double-left') . ' ' . Html::encode('About'),
       ['about/index'],
       ['class' => 'btn btn-outline-primary']
     ) . "\n" ?>

@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 use app\assets\AppAsset;
+use rmrevin\yii\fontawesome\FAB;
+use rmrevin\yii\fontawesome\FAS;
 use yii\helpers\Html;
 
 $asset = AppAsset::register($this);
@@ -17,7 +19,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
 <div class="container">
   <p>
     <?= Html::a(
-      '<span class="fa fa-angle-double-left"></span> ' . Html::encode('Home'),
+      (string)FAS::icon('angle-double-left') . ' ' . Html::encode('Home'),
       ['site/index'],
       ['class' => 'btn btn-outline-primary']
     ) . "\n" ?>
@@ -27,7 +29,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
   <div class="row">
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <span class="fa fa-user"></span> Handle
+        <?= (string)FAS::icon('user')->fixedWidth() ?>Handle
       </h3>
       <p>
         相沢 陽菜（あいざわ・ひな）<br>
@@ -36,7 +38,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <span class="fa fa-home"></span> Address
+        <?= (string)FAS::icon('home')->fixedWidth() ?>Address
       </h3>
       <p>
         <a href="https://ja.wikipedia.org/wiki/%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82">大阪府寝屋川市</a><br>
@@ -45,7 +47,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <span class="fa fa-envelope"></span> Email
+        <?= (string)FAS::icon('envelope')->fixedWidth() ?>Email
       </h3>
       <p>
         <span class="monospace">&lt;hina@fetus.jp&gt;</span><br>
@@ -54,18 +56,30 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <span class="fa fa-thumbs-up"></span> SNS
+        <?= (string)FAS::icon('thumbs-up')->fixedWidth() ?>SNS
       </h3>
-      <p>
-        <span class="fa fa-twitter fa-fw"></span><a href="https://twitter.com/fetus_hina">@fetus_hina</a><br>
-        <span class="fa fa-github fa-fw"></span><a href="https://github.com/fetus-hina">@fetus-hina</a><br>
-        <span class="fa fa-fw"><img src="/images/ostatus.min.svg" style="height:1em"></span><a href="https://don.fetus.jp/@fetus_hina">@fetus_hina@don.fetus.jp</a><br>
-        <span class="fa fa-wordpress fa-fw"></span><a href="https://blog.fetus.jp/">Blog</a><br>
-      </p>
+      <p><?= implode(Html::tag('br'), [
+        (string)FAB::icon('twitter')->fixedWidth() . Html::a(
+          Html::encode('@fetus_hina'),
+          'https://twitter.com/fetus_hina'
+        ),
+        (string)FAB::icon('github')->fixedWidth() . Html::a(
+          Html::encode('@fetus-hina'),
+          'https://github.com/fetus-hina'
+        ),
+        (string)FAB::icon('mastodon')->fixedWidth() . Html::a(
+          Html::encode('@fetus_hina@don.fetus.jp'),
+          'https://don.fetus.jp/@fetus_hina'
+        ),
+        (string)FAB::icon('wordpress')->fixedWidth() . Html::a(
+          Html::encode('Blog'),
+          'https://blog.fetus.jp/'
+        ),
+      ]) ?></p>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <span class="fa fa-key"></span> Public Keys
+        <?= (string)FAS::icon('key')->fixedWidth() ?>Public Keys
       </h3>
       <p>
         <?= Html::a(
@@ -76,7 +90,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <span class="fa fa-language"></span> Language
+        <?= (string)FAS::icon('language')->fixedWidth() ?>Language
       </h3>
       <p>
         日本語 / Japanese
@@ -90,25 +104,35 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
       <h3>
         Programming
       </h3>
-      <p>
-        PHP, JavaScript (EcmaScript), C, C++, Java
-      </p>
+      <p><?= implode(', ', [
+        (string)FAB::icon('php')->fixedWidth() . 'PHP',
+        (string)FAB::icon('js')->fixedWidth() . 'JavaScript (EcmaScript)',
+        'C',
+        'C++',
+        'Go',
+        (string)FAB::icon('java')->fixedWidth() . 'Java',
+      ]) ?></p>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
         Markup
       </h3>
-      <p>
-        <span class="fa fa-html5"></span> HTML,&#32;
-        <span class="fa fa-css3"></span> CSS (Sass, LESS)
-      </p>
+      <p><?= implode(', ', [
+        (string)FAB::icon('html5')->fixedWidth() . 'HTML',
+        (string)FAB::icon('css3')->fixedWidth() . 'CSS (Sass, LESS)',
+      ]) ?></p>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
         Server Management
       </h3>
       <p>
-        Linux (RHEL/CentOS, Debian/Ubuntu)
+        <?= FAB::icon('linux')->fixedWidth() ?>Linux (<?= implode(', ', [
+          (string)FAB::icon('redhat')->fixedWidth() . 'RHEL',
+          (string)FAB::icon('centos')->fixedWidth() . 'CentOS',
+          'Debian',
+          (string)FAB::icon('ubuntu')->fixedWidth() . 'Ubuntu',
+        ]) ?>)
       </p>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
