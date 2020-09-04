@@ -8,10 +8,10 @@ use yii\helpers\Html;
 $asset = AppAsset::register($this);
 $this->registerJsFile(
   Yii::$app->assetManager->getAssetUrl($asset, 'js/about-panel.min.js'),
-  ['depends' => 'app\assets\AppAsset']
+  ['depends' => AppAsset::class]
 );
 
-$divClass = ['col-xs-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
+$divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
 
 ?>
 <div class="container">
@@ -19,7 +19,7 @@ $divClass = ['col-xs-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
     <?= Html::a(
       '<span class="fa fa-angle-double-left"></span> ' . Html::encode('Home'),
       ['site/index'],
-      ['class' => 'btn btn-default']
+      ['class' => 'btn btn-outline-secondary']
     ) . "\n" ?>
   </p>
 

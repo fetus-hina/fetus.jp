@@ -10,12 +10,12 @@ use yii\helpers\Html;
     <?= Html::a(
       '<span class="fa fa-angle-double-left"></span> ' . Html::encode('Home'),
       ['site/index'],
-      ['class' => 'btn btn-default']
+      ['class' => 'btn btn-outline-secondary']
     ) . "\n" ?>
     <?= Html::a(
       '<span class="fa fa-angle-double-left"></span> ' . Html::encode('About'),
       ['about/index'],
-      ['class' => 'btn btn-default']
+      ['class' => 'btn btn-outline-secondary']
     ) . "\n" ?>
   </p>
 

@@ -1,18 +1,16 @@
 <?php
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
+
+declare(strict_types=1);
 
 namespace app\assets;
 
+use jp3cki\yii2\mplus1p\MPlus1pFontAsset;
+use jp3cki\yii2\ubuntu\UbuntuMonoFontAsset;
+use rmrevin\yii\fontawesome\AssetBundle as FontAwesomeAsset;
+use yii\bootstrap4\BootstrapAsset;
 use yii\web\AssetBundle;
+use yii\web\YiiAsset;
 
-/**
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
- */
 class AppAsset extends AssetBundle
 {
     public $sourcePath = '@app/resource';
@@ -22,11 +20,11 @@ class AppAsset extends AssetBundle
     public $js = [
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
-        'jp3cki\yii2\mplus1p\MPlus1pFontAsset',
-        'jp3cki\yii2\ubuntu\UbuntuMonoFontAsset',
-        'rmrevin\yii\fontawesome\AssetBundle',
+        BootstrapAsset::class,
+        FontAwesomeAsset::class,
         HeadingFontAsset::class,
+        MPlus1pFontAsset::class,
+        UbuntuMonoFontAsset::class,
+        YiiAsset::class,
     ];
 }

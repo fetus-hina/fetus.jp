@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 $this->registerCss('#logo{line-height:1;margin-bottom:5px}');
 
-$divClass = ['col-xs-12', 'col-md-6', 'col-lg-4'];
+$divClass = ['col-12', 'col-md-6', 'col-lg-4'];
 ?>
 <div class="container">
   <h1 id="logo">fetus.jp</h1>
@@ -24,7 +24,7 @@ $divClass = ['col-xs-12', 'col-md-6', 'col-lg-4'];
         <?= Html::a(
           Html::encode('Services') . ' &raquo;',
           ['service/index'],
-          ['class' => 'btn btn-default']
+          ['class' => 'btn btn-outline-secondary']
         ) . "\n" ?>
       </p>
     </div>
@@ -40,7 +40,7 @@ $divClass = ['col-xs-12', 'col-md-6', 'col-lg-4'];
         <?= Html::a(
           Html::encode('Sense Log') . ' &raquo;',
           ['sense-log/index'],
-          ['class' => 'btn btn-default']
+          ['class' => 'btn btn-outline-secondary']
         ) . "\n" ?>
       </p>
     </div>
@@ -54,7 +54,7 @@ $divClass = ['col-xs-12', 'col-md-6', 'col-lg-4'];
         <?= Html::a(
           Html::encode('About me') . ' &raquo;',
           ['about/index'],
-          ['class' => 'btn btn-default']
+          ['class' => 'btn btn-outline-secondary']
         ) . "\n" ?>
       </p>
     </div>
