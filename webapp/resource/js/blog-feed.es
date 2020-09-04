@@ -5,7 +5,7 @@
     $container
       .empty()
       .append(
-        $('<span class="fa fa-cog fa-spin fa-3x fa-fw"></span>')
+        $('<span class="fas fa-cog fa-spin fa-3x fa-fw"></span>')
       );
 
     $.get('https://blog.fetus.jp/feed')
