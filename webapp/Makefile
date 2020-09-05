@@ -6,8 +6,7 @@ RESOURCES := \
 	resource/js/about-panel.js \
 	resource/js/about-panel.min.js \
 	resource/js/blog-feed.js \
-	resource/js/blog-feed.min.js \
-	web/images/ostatus.min.svg
+	resource/js/blog-feed.min.js
 
 .PHONY: all
 all: config/cookie-secret.php vendor node_modules resources
@@ -56,6 +55,3 @@ node_modules: package.json
 
 %.min.svg: %.svg node_modules
 	npx svgo -q --multipass -i $< -o $@
-
-web/images/ostatus.svg:
-	curl -sSL -o $@ 'https://github.com/OStatus/assets/raw/master/ostatus.svg'
