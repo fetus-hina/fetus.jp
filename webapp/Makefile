@@ -48,10 +48,10 @@ node_modules: package.json
 	npx babel $< > $@
 
 %.min.css: %.css node_modules
-	npx cleancss -O 2 --skip-rebase --format 'breaks:afterRuleEnds=on' $< > $@
+	npx cleancss --format 'breaks:afterRuleEnds=on' $< > $@
 
 %.css: %.scss node_modules
-	npx node-sass --output-style expanded $< | npx postcss --no-map --use autoprefixer > $@
+	npx sass --charset --no-source-map $< | npx postcss --no-map --use autoprefixer > $@
 
 %.min.svg: %.svg node_modules
 	npx svgo -q --multipass -i $< -o $@

@@ -7,7 +7,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.4.0",
-        "jp3cki/uuid": "^0.1.1",
+        "jp3cki/uuid": "^2.0.0",
         "jp3cki/yii2-mplus1p": "^1.0.0",
         "jp3cki/yii2-ubuntu-font": "^1.0.0",
         "rmrevin/yii2-fontawesome": "^3.6.0",
