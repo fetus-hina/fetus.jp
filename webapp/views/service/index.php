@@ -131,12 +131,14 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
         （cron によると思われる取得も多々あり、また、そのような利用も歓迎する方針で開発しています。
       </p>
       <p>
-        将来的にはオープンソースにする予定もありますが、現時点ではクローズドソースです。
-      </p>
-      <p>
         <?= Html::a(
           Html::encode('ipv4.fetus.jp') . ' &raquo;',
           'https://ipv4.fetus.jp/',
+          ['class' => 'btn btn-outline-primary']
+        ) . "\n" ?>
+        <?= Html::a(
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
+          'https://github.com/fetus-hina/ipv4.fetus.jp/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
       </p>
