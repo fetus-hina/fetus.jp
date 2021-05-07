@@ -13,7 +13,7 @@ all: config/cookie-secret.php vendor node_modules resources
 
 .PHONY: clean
 clean:
-	rm -rf $(RESOURCES)
+	rm -rf $(RESOURCES) web/assets/*
 
 .PHONY: resources
 resources: $(RESOURCES)

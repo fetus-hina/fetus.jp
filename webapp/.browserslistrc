@@ -1,0 +1,20 @@
+cover 90%
+cover 97.5% in JP
+
+last 4 chrome versions
+last 4 edge versions
+last 4 firefox versions
+
+firefox esr
+
+# bootstrap 5 requirements
+not android < 6
+not chrome < 60
+not edge < 79
+not firefox < 60
+not ie <= 11
+not ios_saf < 10
+not safari < 10
+
+# ねんのため
+not dead

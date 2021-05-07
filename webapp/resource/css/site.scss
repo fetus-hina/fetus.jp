@@ -1,14 +1,24 @@
-html, body {
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Montserrat:wght@500&display=swap');
+
+:root {
+  --bs-font-sans-serif: -apple-system,
+    Montserrat,
+    'Kosugi Maru',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
 }
 
-body {
-    font-family: -apple-system, Roboto, 'M PLUS 1p', 'Noto Sans JP', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+body,
+.btn {
+  font-weight: 500;
 }
 
 .wrap {
-    min-height: 100%;
-    height: auto;
-    margin: 0 auto -60px;
-    padding: 0;
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0;
 }
