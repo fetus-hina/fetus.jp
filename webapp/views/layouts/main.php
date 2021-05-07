@@ -35,7 +35,7 @@ AppAsset::register($this);
       </div>
       <footer>
         <hr>
-        <div class="container text-right pb-3">
+        <div class="container text-end pb-3">
           Copyright &copy; <?= Html::a(Html::encode('AIZAWA Hina'), ['site/index']) . "\n" ?>
           <?= Html::a(
             (string)FAB::icon('twitter'),
