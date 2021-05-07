@@ -3,14 +3,13 @@
 declare(strict_types=1);
 
 use app\assets\BlogFeedAsset;
+use rmrevin\yii\fontawesome\FAS;
 use yii\helpers\Html;
-
-$this->registerCss('#logo{line-height:1;margin-bottom:5px}');
 
 $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
 ?>
 <div class="container">
-  <h1 id="logo">fetus.jp</h1>
+  <h1 id="logo" class="lh-1 mb-2">fetus.jp</h1>
   <p>このサイトに特に内容はありません。</p>
   <div class="row">
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
@@ -22,7 +21,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('Services') . ' &raquo;',
+          Html::encode('Services') . ' ' . (string)FAS::icon('angle-double-right'),
           ['service/index'],
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -36,7 +35,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('About me') . ' &raquo;',
+          Html::encode('About me') . ' ' . (string)FAS::icon('angle-double-right'),
           ['about/index'],
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>

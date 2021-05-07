@@ -46,12 +46,12 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('stat.ink') . ' &raquo;',
+          Html::encode('stat.ink') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://stat.ink/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://github.com/fetus-hina/stat.ink',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -70,12 +70,12 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('イカフェスレート') . ' &raquo;',
+          Html::encode('イカフェスレート') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://fest.ink/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://github.com/fetus-hina/fest.ink',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -94,18 +94,18 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
       </p>
       <div>
         <?= Html::a(
-          Html::encode('Splapi') . ' &raquo;',
+          Html::encode('Splapi') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://splapi.fetus.jp/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <div class="btn-group" role="group">
           <?= Html::a(
-            Html::encode('SPLAPI 2') . ' &raquo;',
+            Html::encode('SPLAPI 2') . ' ' . (string)FAS::icon('angle-double-right'),
             'https://splapi2.stat.ink/',
             ['class' => 'btn btn-outline-primary']
           ) . "\n" ?>
           <?= Html::a(
-            (string)FAB::icon('github') . ' &raquo;',
+            (string)FAB::icon('github') . ' ' . (string)FAS::icon('angle-double-right'),
             'https://github.com/fetus-hina/splapi2.stat.ink',
             ['class' => 'btn btn-outline-primary']
           ) . "\n" ?>
@@ -132,12 +132,12 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('ipv4.fetus.jp') . ' &raquo;',
+          Html::encode('ipv4.fetus.jp') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://ipv4.fetus.jp/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://github.com/fetus-hina/ipv4.fetus.jp/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -158,12 +158,12 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('Wandbox for PHP/Hack') . ' &raquo;',
+          Html::encode('Wandbox for PHP/Hack') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://wandbox.fetus.jp/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://github.com/fetus-hina/wandbox/tree/for-php',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -186,7 +186,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('rpm.fetus.jp') . ' &raquo;',
+          Html::encode('rpm.fetus.jp') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://rpm.fetus.jp/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -205,12 +205,12 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('onestop.fetus.jp') . ' &raquo;',
+          Html::encode('onestop.fetus.jp') . (string)FAS::icon('angle-double-right'),
           'https://onestop.fetus.jp/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://github.com/fetus-hina/onestop.fetus.jp/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -229,12 +229,12 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('haraikomi.fetus.jp') . ' &raquo;',
+          Html::encode('haraikomi.fetus.jp') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://haraikomi.fetus.jp/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
         <?= Html::a(
-          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' &raquo;',
+          (string)FAB::icon('github') . ' ' . Html::encode('ソース') . ' ' . (string)FAS::icon('angle-double-right'),
           'https://github.com/fetus-hina/haraikomi',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
