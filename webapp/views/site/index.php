@@ -30,22 +30,6 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
     </div>
 
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
-      <h2>
-        Sense Log
-      </h2>
-      <p>
-        観測したデータの保存場所
-      </p>
-      <p>
-        <?= Html::a(
-          Html::encode('Sense Log') . ' &raquo;',
-          ['sense-log/index'],
-          ['class' => 'btn btn-outline-primary']
-        ) . "\n" ?>
-      </p>
-    </div>
-
-    <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h2>About</h2>
       <p>
         自己紹介的なもの、スキル一覧、PGPキー
