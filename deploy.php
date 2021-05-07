@@ -127,7 +127,7 @@ task('deploy:build', function () {
 });
 
 task('deploy:clear_opcache', function () {
-    // run('curl -f --insecure --resolve fetus.jp:443:127.0.0.1 https://fetus.jp/site/clear-opcache');
+    run('curl -f --insecure --resolve fetus.jp:443:127.0.0.1 https://fetus.jp/site/clear-opcache');
 });
 
 task('deploy:clear_proxy', function () {
