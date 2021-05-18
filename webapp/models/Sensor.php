@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace app\models;
 
 use Yii;
@@ -128,7 +131,7 @@ class Sensor extends ActiveRecord implements IdentityInterface
         return $this->authKey === $authKey;
     }
 
-    public function toApiResponse() : array
+    public function toApiResponse(): array
     {
         return [
             'id' => $this->id,

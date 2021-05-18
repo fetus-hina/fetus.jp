@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace app\behaviors;
 
 class TimestampBehavior extends \yii\behaviors\TimestampBehavior

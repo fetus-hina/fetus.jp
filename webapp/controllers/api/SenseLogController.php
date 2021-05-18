@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace app\controllers\api;
 
 use Yii;
@@ -55,7 +58,7 @@ class SenseLogController extends Controller
             ->orderBy(['{{sense_log}}.[[id]]' => SORT_DESC])
             ->limit(100);
         return array_map(
-            function (SenseLog $log) : array {
+            function (SenseLog $log): array {
                 return $log->toApiResponse();
             },
             $query->all()

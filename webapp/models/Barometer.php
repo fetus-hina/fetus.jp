@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace app\models;
 
 use Yii;
@@ -31,7 +33,11 @@ class Barometer extends \yii\db\ActiveRecord
             [['log_id', 'pressure'], 'required'],
             [['log_id'], 'integer'],
             [['pressure'], 'number'],
-            [['log_id'], 'exist', 'skipOnError' => true, 'targetClass' => SenseLog::className(), 'targetAttribute' => ['log_id' => 'id']],
+            [['log_id'], 'exist',
+                'skipOnError' => true,
+                'targetClass' => SenseLog::class,
+                'targetAttribute' => ['log_id' => 'id'],
+            ],
         ];
     }
 

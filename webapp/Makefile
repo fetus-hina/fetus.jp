@@ -58,3 +58,10 @@ node_modules: package.json
 
 .browserslistrc:
 	curl -fsSL -o $@ 'https://raw.githubusercontent.com/twbs/bootstrap/main/.browserslistrc'
+
+.PHONY: check-style
+check-style: check-style-php
+
+.PHONY: check-style-php
+check-style-php: vendor
+	vendor/bin/phpcs

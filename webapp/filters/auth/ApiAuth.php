@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace app\filters\auth;
 
 use app\models\Sensor;
@@ -62,7 +65,7 @@ class ApiAuth extends AuthMethod
         $response->getHeaders()->set('WWW-Authenticate', "Sensor realm=\"{$this->realm}\"");
     }
 
-    protected function isValidAlgo(string $algo) : bool
+    protected function isValidAlgo(string $algo): bool
     {
         $ret = true;
         $ret &= \in_array($algo, \hash_algos(), true);
@@ -70,7 +73,7 @@ class ApiAuth extends AuthMethod
         return $ret;
     }
 
-    protected function calcHash(string $algo, Sensor $sensor, string $time, string $nonce) : string
+    protected function calcHash(string $algo, Sensor $sensor, string $time, string $nonce): string
     {
         return \base64_encode(
             \hash_hmac(

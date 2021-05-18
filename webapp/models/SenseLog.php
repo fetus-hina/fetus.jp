@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace app\models;
 
 use DateTimeImmutable;
@@ -94,7 +97,7 @@ class SenseLog extends \yii\db\ActiveRecord
         return $this->hasOne(Sensor::className(), ['id' => 'sensor_id']);
     }
 
-    public function toApiResponse() : array
+    public function toApiResponse(): array
     {
         return [
             'id' => $this->id,
