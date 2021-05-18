@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use jp3cki\yii2\mplus1p\MPlus1pFontAsset;
 use yii\bootstrap4\BootstrapAsset;
 
 $params = require(__DIR__ . '/params.php');
@@ -61,11 +60,6 @@ $config = [
                     'sourcePath' => '@npm/@fetus-hina/fetus.css/dist',
                     'css' => [
                         'bootstrap.min.css',
-                    ],
-                ],
-                MPlus1pFontAsset::class => [
-                    'css' => [
-                        'https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap',
                     ],
                 ],
             ],

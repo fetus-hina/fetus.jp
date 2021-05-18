@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d180d90b73364e1b08b61e784361ff0",
+    "content-hash": "dded3de9a9f2bf276d8fb385e3b841eb",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -240,46 +240,6 @@
                 "source": "https://github.com/fetus-hina/uuid/tree/v2.0.0"
             },
             "time": "2021-04-15T07:23:04+00:00"
-        },
-        {
-            "name": "jp3cki/yii2-mplus1p",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fetus-hina/yii2-mplus1p.git",
-                "reference": "c9de738598cec4dacb523ebaa9997c62fa285220"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fetus-hina/yii2-mplus1p/zipball/c9de738598cec4dacb523ebaa9997c62fa285220",
-                "reference": "c9de738598cec4dacb523ebaa9997c62fa285220",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "2.0.*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "jp3cki\\yii2\\mplus1p\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "NYSL-0.9982"
-            ],
-            "authors": [
-                {
-                    "name": "AIZAWA Hina",
-                    "email": "hina@bouhime.com"
-                }
-            ],
-            "description": "M+ 1p webfont asset for Yii Framework 2 (uses Google Fonts)",
-            "support": {
-                "issues": "https://github.com/fetus-hina/yii2-mplus1p/issues",
-                "source": "https://github.com/fetus-hina/yii2-mplus1p/tree/master"
-            },
-            "time": "2017-03-02T13:55:43+00:00"
         },
         {
             "name": "jp3cki/yii2-ubuntu-font",
