@@ -3,8 +3,6 @@ RESOURCES := \
 	resource/css/blog-feed.min.css \
 	resource/css/site.css \
 	resource/css/site.min.css \
-	resource/js/about-panel.js \
-	resource/js/about-panel.min.js \
 	resource/js/blog-feed.js \
 	resource/js/blog-feed.min.js
 

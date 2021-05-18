@@ -8,12 +8,8 @@ use rmrevin\yii\fontawesome\FAS;
 use yii\helpers\Html;
 
 $asset = AppAsset::register($this);
-$this->registerJsFile(
-  Yii::$app->assetManager->getAssetUrl($asset, 'js/about-panel.min.js'),
-  ['depends' => AppAsset::class]
-);
 
-$divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
+$divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
 
 ?>
 <div class="container">
@@ -104,44 +100,76 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'about-panels'];
       <h3>
         Programming
       </h3>
-      <p><?= implode(', ', [
-        (string)FAB::icon('php')->fixedWidth() . 'PHP',
-        (string)FAB::icon('js')->fixedWidth() . 'JavaScript (EcmaScript)',
-        'C',
-        'C++',
-        'Go',
-        (string)FAB::icon('java')->fixedWidth() . 'Java',
-      ]) ?></p>
+      <ul class="inline-list">
+        <li><?= (string)FAB::icon('php')->fixedWidth() ?>PHP</li>
+        <li><?= (string)FAB::icon('js')->fixedWidth() ?>JavaScript (EcmaScript)</li>
+        <li>C</li>
+        <li>C++</li>
+        <li>Go</li>
+        <li><?= (string)FAB::icon('java')->fixedWidth() ?>Java</li>
+      </ul>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
         Markup
       </h3>
-      <p><?= implode(', ', [
-        (string)FAB::icon('html5')->fixedWidth() . 'HTML',
-        (string)FAB::icon('css3')->fixedWidth() . 'CSS (Sass, LESS)',
-      ]) ?></p>
+      <ul class="inline-list mb-0">
+        <li><?= (string)FAB::icon('html5')->fixedWidth() ?>HTML</li>
+        <li>
+          <?= (string)FAB::icon('css3')->fixedWidth() ?>CSS
+          <?= vsprintf('(%s)', [
+            Html::tag(
+              'ul',
+              implode('', [
+                Html::tag('li', Html::encode('Sass')),
+                Html::tag('li', Html::encode('LESS')),
+              ]),
+              ['class' => 'inline-list']
+            ),
+          ]) . "\n" ?>
+        </li>
+      </ul>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
         Server Management
       </h3>
-      <p>
-        <?= FAB::icon('linux')->fixedWidth() ?>Linux (<?= implode(', ', [
-          (string)FAB::icon('redhat')->fixedWidth() . 'RHEL',
-          (string)FAB::icon('centos')->fixedWidth() . 'CentOS',
-          'Debian',
-          (string)FAB::icon('ubuntu')->fixedWidth() . 'Ubuntu',
-        ]) ?>)
-      </p>
+      <ul class="inline-list">
+        <li>
+          <?= (string)FAB::icon('linux')->fixedWidth() ?>Linux
+          <?= vsprintf('(%s)', [
+            Html::tag(
+              'ul',
+              implode('', array_map(
+                fn($t) => Html::tag('li', $t),
+                [
+                  (string)FAB::icon('redhat')->fixedWidth() . 'RHEL',
+                  (string)FAB::icon('centos')->fixedWidth() . 'CentOS',
+                  'Debian',
+                  (string)FAB::icon('ubuntu')->fixedWidth() . 'Ubuntu',
+                ]
+              )),
+              ['class' => 'inline-list']
+            ),
+          ]) . "\n" ?>
+        </li>
+      </ul>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
         Middlewares
       </h3>
-      <p>
-        Apache, Nginx, H2O, Varnish, MySQL/MariaDB, PostgreSQL, BIND 9, Docker, KVM
-      </p>
+      <ul class="inline-list">
+        <li>Apache</li>
+        <li>Nginx</li>
+        <li>H2O</li>
+        <li>Varnish</li>
+        <li>MySQL/MariaDB</li>
+        <li>PostgreSQL</li>
+        <li>BIND 9</li>
+        <li>Docker</li>
+        <li>KVM</li>
+      </ul>
     </div>
   </div>
 </div>
