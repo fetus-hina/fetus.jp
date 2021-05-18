@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 ?>
 <div class="container">
-  <p>
+  <div class="btn-group mb-3" role="group">
     <?= Html::a(
       (string)FAS::icon('angle-double-left') . ' ' . Html::encode('Home'),
       ['site/index'],
@@ -18,7 +18,7 @@ use yii\helpers\Html;
       ['about/index'],
       ['class' => 'btn btn-outline-primary']
     ) . "\n" ?>
-  </p>
+  </div>
 
   <h2>PGP Keys</h2>
   <ul>
