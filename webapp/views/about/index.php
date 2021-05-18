@@ -31,6 +31,9 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
         相沢 陽菜（あいざわ・ひな）<br>
         AIZAWA Hina
       </p>
+      <p>
+        <?= Html::a('アバターについて', ['about/avatar']) . "\n" ?>
+      </p>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
