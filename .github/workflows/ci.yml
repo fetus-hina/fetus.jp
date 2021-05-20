@@ -121,3 +121,25 @@ jobs:
         run: |
           npx semistandard --global='jQuery' 'resource/**/*.es'
         working-directory: 'webapp'
+
+  cssStyleCheck:
+    name: 'CSS Coding Style'
+
+    runs-on: 'ubuntu-20.04'
+
+    needs: 'makeNpmCache'
+
+    steps:
+      - uses: 'actions/checkout@v2'
+
+      - uses: 'actions/cache@v2'
+        with:
+          path: |
+            webapp/node_modules
+            ~/.npm
+          key: npm-${{ hashFiles('webapp/package-lock.json') }}
+
+      - name: 'Run stylelint'
+        run: |
+          npx stylelint 'resource/**/*.scss'
+        working-directory: 'webapp'

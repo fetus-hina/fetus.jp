@@ -58,7 +58,7 @@ node_modules: package-lock.json
 	curl -fsSL -o $@ 'https://raw.githubusercontent.com/twbs/bootstrap/main/.browserslistrc'
 
 .PHONY: check-style
-check-style: check-style-php check-style-js
+check-style: check-style-php check-style-js check-style-css
 
 .PHONY: check-style-php
 check-style-php: vendor
@@ -67,3 +67,7 @@ check-style-php: vendor
 .PHONY: check-style-js
 check-style-js: node_modules
 	npx semistandard --global='jQuery' 'resource/**/*.es'
+
+.PHONY: check-style-css
+check-style-css: node_modules
+	npx stylelint 'resource/**/*.scss'
