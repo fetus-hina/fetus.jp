@@ -52,6 +52,26 @@ jobs:
         run: 'composer install --prefer-dist'
         working-directory: 'webapp'
 
+  makeNpmCache:
+    name: 'Make NPM cache'
+
+    runs-on: 'ubuntu-20.04'
+
+    steps:
+      - uses: 'actions/checkout@v2'
+
+      - uses: 'actions/cache@v2'
+        with:
+          path: |
+            webapp/node_modules
+            ~/.npm
+          key: npm-${{ hashFiles('webapp/package-lock.json') }}
+          restore-keys: npm-
+
+      - name: 'Install NPM packages'
+        run: 'npm clean-install'
+        working-directory: 'webapp'
+
   phpStyleCheck:
     name: 'PHP Coding Style'
 
@@ -78,4 +98,26 @@ jobs:
 
       - name: 'Run PHPCS'
         run: 'vendor/bin/phpcs'
+        working-directory: 'webapp'
+
+  jsStyleCheck:
+    name: 'JavaScript Coding Style'
+
+    runs-on: 'ubuntu-20.04'
+
+    needs: 'makeNpmCache'
+
+    steps:
+      - uses: 'actions/checkout@v2'
+
+      - uses: 'actions/cache@v2'
+        with:
+          path: |
+            webapp/node_modules
+            ~/.npm
+          key: npm-${{ hashFiles('webapp/package-lock.json') }}
+
+      - name: 'Run semistandard'
+        run: |
+          npx semistandard --global='jQuery' 'resource/**/*.es'
         working-directory: 'webapp'

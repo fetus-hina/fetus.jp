@@ -25,7 +25,7 @@ config/cookie-secret.php:
 
 composer.phar:
 	curl -SL 'https://getcomposer.org/installer' | php -- --filename=$@ --stable
-	touch --date '2000-01-01T00:00:00Z' $@
+	@touch --date '2000-01-01T00:00:00Z' $@
 
 composer.lock: composer.json composer.phar
 	./composer.phar update -vvv
@@ -35,9 +35,9 @@ vendor: composer.lock
 	./composer.phar install --prefer-dist -vvv
 	touch $@
 
-node_modules: package.json
-	npm install
-	touch $@
+node_modules: package-lock.json
+	npm clean-install
+	@touch $@
 
 %.min.js: %.js node_modules
 	npx uglifyjs -m -c < $< > $@
@@ -58,8 +58,12 @@ node_modules: package.json
 	curl -fsSL -o $@ 'https://raw.githubusercontent.com/twbs/bootstrap/main/.browserslistrc'
 
 .PHONY: check-style
-check-style: check-style-php
+check-style: check-style-php check-style-js
 
 .PHONY: check-style-php
 check-style-php: vendor
 	vendor/bin/phpcs
+
+.PHONY: check-style-js
+check-style-js: node_modules
+	npx semistandard --global='jQuery' 'resource/**/*.es'
