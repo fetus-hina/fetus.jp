@@ -51,7 +51,7 @@ use yii\helpers\Html;
     </tr>
     <tr>
       <th>色</th>
-      <td>プリセット一番上</td>
+      <td>プリセット2番目</td>
     </tr>
     <tr>
       <th>チークの強さ</th>
