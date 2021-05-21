@@ -97,3 +97,7 @@ use yii\helpers\Html;
 <div class="mb-5">
   <?= $this->render('//about/avatar/cres') ?><?= "\n" ?>
 </div>
+<hr>
+<div class="mb-5">
+  <?= $this->render('//about/avatar/cm3d2') ?><?= "\n" ?>
+</div>
