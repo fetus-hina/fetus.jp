@@ -144,6 +144,36 @@ jobs:
           npx stylelint 'resource/**/*.scss'
         working-directory: 'webapp'
 
+  composerLicenseCheck:
+    name: 'Check license of composer packages'
+
+    runs-on: 'ubuntu-20.04'
+
+    needs: 'makeComposerCache'
+
+    steps:
+      - uses: 'actions/checkout@v2'
+
+      - name: 'Set up PHP version 8.0'
+        run: sudo update-alternatives --set php /usr/bin/php8.0
+
+      - uses: 'actions/cache@v2'
+        with:
+          path: |
+            ~/.cache/composer/files
+            webapp/vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('webapp/composer.lock') }}
+
+      - name: 'Run license checker'
+        working-directory: 'webapp'
+        run: |
+          vendor/bin/composer-license-checker check \
+            -a BSD-3-Clause \
+            -a LGPL-2.1-or-later \
+            -a LGPL-3.0-or-later \
+            -a MIT \
+            -a NYSL-0.9982
+
   npmLicenseCheck:
     name: 'Check license of npm packages'
 
