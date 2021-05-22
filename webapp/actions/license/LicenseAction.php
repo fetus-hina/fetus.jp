@@ -97,7 +97,7 @@ class LicenseAction extends Action
     {
         $text = $this->loadFile($path, $checker);
         return ($text !== null)
-            ? Html::tag('pre', Html::encode($text), ['class' => 'm-0'])
+            ? Html::tag('pre', Html::encode($text), ['class' => 'm-0 fs-6 lh-sm'])
             : null;
     }
 
