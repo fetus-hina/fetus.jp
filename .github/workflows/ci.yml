@@ -48,9 +48,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
+      - name: 'Set up PHP version 8.0'
+        run: sudo update-alternatives --set php /usr/bin/php8.0
+
       - name: 'Install Composer dependencies'
-        run: 'composer install --prefer-dist'
         working-directory: 'webapp'
+        run: |
+          ln -s `which composer` composer.phar
+          ./composer.phar install --prefer-dist
 
   makeNpmCache:
     name: 'Make NPM cache'
@@ -91,10 +96,6 @@ jobs:
 
       - name: 'Set up PHP version 8.0'
         run: sudo update-alternatives --set php /usr/bin/php8.0
-
-      - name: 'Install PHP dependencies'
-        run: 'composer install --prefer-dist'
-        working-directory: 'webapp'
 
       - name: 'Run PHPCS'
         run: 'vendor/bin/phpcs'
