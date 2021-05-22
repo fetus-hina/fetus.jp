@@ -51,9 +51,6 @@ node_modules: package-lock.json
 %.css: %.scss node_modules .browserslistrc
 	npx sass --charset --no-source-map $< | npx postcss --no-map --use autoprefixer > $@
 
-%.min.svg: %.svg node_modules
-	npx svgo -q --multipass -i $< -o $@
-
 .browserslistrc:
 	curl -fsSL -o $@ 'https://raw.githubusercontent.com/twbs/bootstrap/main/.browserslistrc'
 
