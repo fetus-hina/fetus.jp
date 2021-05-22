@@ -143,3 +143,41 @@ jobs:
         run: |
           npx stylelint 'resource/**/*.scss'
         working-directory: 'webapp'
+
+  runMake:
+    name: 'Test `make`'
+
+    runs-on: 'ubuntu-20.04'
+
+    needs:
+      - 'makeComposerCache'
+      - 'makeNpmCache'
+
+    steps:
+      - uses: 'actions/checkout@v2'
+
+      - uses: 'actions/cache@v2'
+        with:
+          path: |
+            ~/.cache/composer/files
+            webapp/vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('webapp/composer.lock') }}
+
+      - uses: 'actions/cache@v2'
+        with:
+          path: |
+            webapp/node_modules
+            ~/.npm
+          key: npm-${{ hashFiles('webapp/package-lock.json') }}
+
+      - name: 'Adjust environment'
+        working-directory: 'webapp'
+        run: |
+          ln -s `which composer` composer.phar
+          make .browserslistrc config/cookie-secret.php
+          touch composer.lock package-lock.json node_modules vendor
+
+      - name: 'Run `make`'
+        working-directory: 'webapp'
+        run: |
+          make
