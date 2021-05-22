@@ -36,15 +36,20 @@ AppAsset::register($this);
       <footer>
         <hr>
         <div class="container text-end pb-3">
-          Copyright &copy; <?= Html::a(Html::encode('AIZAWA Hina'), ['site/index']) . "\n" ?>
-          <?= Html::a(
-            (string)FAB::icon('twitter'),
-            'https://twitter.com/fetus_hina'
-          ) . "\n" ?>
-          <?= Html::a(
-            (string)FAB::icon('github'),
-            'https://github.com/fetus-hina'
-          ) . "\n" ?>
+          <p class="m-0">
+            Copyright &copy; <?= Html::a(Html::encode('AIZAWA Hina'), ['site/index']) . "\n" ?>
+            <?= Html::a(
+              (string)FAB::icon('twitter'),
+              'https://twitter.com/fetus_hina'
+            ) . "\n" ?>
+            <?= Html::a(
+              (string)FAB::icon('github'),
+              'https://github.com/fetus-hina'
+            ) . "\n" ?>
+          </p>
+          <p class="small m-0">
+            <?= Html::a(Html::encode('Licenses'), ['license/index']) . "\n" ?>
+          </p>
         </div>
       </footer>
     </div>

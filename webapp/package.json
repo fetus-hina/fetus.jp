@@ -32,5 +32,8 @@
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.19.0",
     "updates": "^12.1.0"
+  },
+   "scripts": {
+    "postinstall": "bin/npm-postinstall.sh"
   }
 }

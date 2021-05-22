@@ -33,5 +33,15 @@
         "platform": {
             "php": "7.4.10"
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "./yii license/clean-extracted",
+            "./yii license/extract"
+        ],
+        "post-update-cmd": [
+            "./yii license/clean-extracted",
+            "./yii license/extract"
+        ]
     }
 }
