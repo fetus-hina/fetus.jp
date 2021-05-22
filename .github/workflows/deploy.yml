@@ -45,4 +45,4 @@ jobs:
 
       - name: 'Deploy'
         run: |
-          bin/dep deploy production
+          bin/dep deploy -o git_tty=false -- production
