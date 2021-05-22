@@ -100,8 +100,8 @@ task('deploy:production', function () {
 
 task('deploy:vendors', function () {
     within('{{release_path}}/webapp', function () {
-        run('{{bin/composer}} {{composer_options}}');
-        run('{{bin/npm}} clean-install');
+        run('{{bin/composer}} {{composer_options}} --no-dev');
+        run('{{bin/npm}} clean-install --only=prod');
     });
 });
 
