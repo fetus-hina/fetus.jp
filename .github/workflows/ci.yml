@@ -144,6 +144,28 @@ jobs:
           npx stylelint 'resource/**/*.scss'
         working-directory: 'webapp'
 
+  npmLicenseCheck:
+    name: 'Check license of npm packages'
+
+    runs-on: 'ubuntu-20.04'
+
+    needs: 'makeNpmCache'
+
+    steps:
+      - uses: 'actions/checkout@v2'
+
+      - uses: 'actions/cache@v2'
+        with:
+          path: |
+            webapp/node_modules
+            ~/.npm
+          key: npm-${{ hashFiles('webapp/package-lock.json') }}
+
+      - name: 'Run license checker'
+        working-directory: 'webapp'
+        run: |
+          npx license-checker-rseidelsohn --production --onlyAllow="Apache-2.0;BSD-2-Clause;BSD-3-Clause;CC-BY-3.0;CC-BY-4.0;CC0-1.0;ISC;MIT"
+
   runMake:
     name: 'Test `make`'
 
