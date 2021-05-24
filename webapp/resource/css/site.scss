@@ -36,8 +36,9 @@ body,
     white-space: nowrap;
 
     &::after {
-      display: inline;
       content: ', ';
+      display: inline;
+      white-space: normal;
     }
 
     &:last-child::after {
