@@ -2,7 +2,15 @@
 
 declare(strict_types=1);
 
+use app\assets\RgbAsset;
 use yii\helpers\Html;
+use yii\web\View;
+
+/**
+ * @var View $this
+ */
+
+RgbAsset::register($this);
 
 ?>
 <h3 id="cres">COM3D2+CRES（新ボディ: Ver3.0）</h3>

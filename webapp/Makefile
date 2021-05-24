@@ -4,7 +4,9 @@ RESOURCES := \
 	resource/css/site.css \
 	resource/css/site.min.css \
 	resource/js/blog-feed.js \
-	resource/js/blog-feed.min.js
+	resource/js/blog-feed.min.js \
+	resource/js/rgb.js \
+	resource/js/rgb.min.js
 
 .PHONY: all
 all: .browserslistrc config/cookie-secret.php vendor node_modules resources
