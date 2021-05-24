@@ -3,10 +3,12 @@
 declare(strict_types=1);
 
 use app\assets\AppAsset;
+use app\assets\BackToTopAsset;
 use rmrevin\yii\fontawesome\FAB;
 use yii\helpers\Html;
 
 AppAsset::register($this);
+BackToTopAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
@@ -35,7 +37,7 @@ AppAsset::register($this);
       </div>
       <footer>
         <hr>
-        <div class="container text-end pb-3">
+        <div class="container text-end pb-1">
           <p class="m-0">
             Copyright &copy; <?= Html::a(Html::encode('AIZAWA Hina'), ['site/index']) . "\n" ?>
             <?= Html::a(

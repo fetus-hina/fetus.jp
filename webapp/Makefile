@@ -1,8 +1,12 @@
 RESOURCES := \
 	resource/css/blog-feed.css \
 	resource/css/blog-feed.min.css \
+	resource/css/floating-action-button.css \
+	resource/css/floating-action-button.min.css \
 	resource/css/site.css \
 	resource/css/site.min.css \
+	resource/js/back-to-top.js \
+	resource/js/back-to-top.min.js \
 	resource/js/blog-feed.js \
 	resource/js/blog-feed.min.js \
 	resource/js/rgb.js \

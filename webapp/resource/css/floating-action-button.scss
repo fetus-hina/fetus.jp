@@ -1,0 +1,34 @@
+@use 'sass:math';
+
+$buttonSize: 56px;
+$fontSize: 24px;
+$margin: 10px;
+
+.floating-action-button {
+  border-radius: 50%;
+  bottom: $margin;
+  box-shadow:
+    0 3px 5px -1px rgba(0, 0, 0, 20%),
+    0 6px 10 0 rgba(0, 0, 0, 14%),
+    0 1px 18px 0 rgba(0, 0, 0, 12%);
+  display: block;
+  font-size: $fontSize;
+  height: $buttonSize;
+  opacity: 50%;
+  position: fixed;
+  right: $margin;
+  width: $buttonSize;
+
+  i {
+    display: inline-block;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: (math.div($buttonSize, 2) - math.div($fontSize, 2));
+    width: 100%;
+  }
+}
+
+footer {
+  padding-bottom: ($buttonSize + $margin * 1.5);
+}
