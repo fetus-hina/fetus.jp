@@ -13,10 +13,11 @@ all: .browserslistrc config/cookie-secret.php vendor node_modules resources
 
 .PHONY: clean
 clean:
-	rm -rf $(RESOURCES) web/assets/*
+	rm -rf $(RESOURCES) config/deploy-id.php web/assets/*
 
 .PHONY: resources
 resources: $(RESOURCES)
+	$(MAKE) config/deploy-id.php
 
 config/cookie-secret.php:
 	@echo '<?php' > $@
@@ -24,6 +25,10 @@ config/cookie-secret.php:
 	@echo 'declare(strict_types=1);' >> $@
 	@echo '' >> $@
 	@echo "return '"$(shell head -c 32 /dev/urandom | base64 | tr '+/=' '-_.')"';" >> $@
+
+.PHONY: config/deploy-id.php
+config/deploy-id.php:
+	./yii config/generate-deploy-id
 
 composer.phar:
 	curl -SL 'https://getcomposer.org/installer' | php -- --filename=$@ --stable

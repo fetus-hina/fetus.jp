@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+$optional = fn($path, $default = null) => @(file_exists($path) && is_readable($path))
+    ? require($path)
+    : $default;
+
 return [
-    'adminEmail' => 'admin@example.com',
+    'deployId' => $optional(__DIR__ . '/deploy-id.php'),
 ];

@@ -6,6 +6,7 @@
 /.browserslistrc
 /.production
 /config/cookie-secret.php
+/config/deploy-id.php
 /data/licenses
 /models/Migration.php
 /node_modules
