@@ -64,7 +64,7 @@ host('ayanami.single-quote.com')
     ->roles('app')
     ->set('deploy_path', '~/app')
     ->set('softwarecollections', [
-        'php74',
+        'php80',
         'rh-nodejs14',
     ]);
 
