@@ -719,16 +719,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.0.14",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "92b2ccbef65292ba9f2004271ef47c7231e2eed5"
+                "reference": "e338749d4e6cc97e1136c210ce0212d4a59e3a58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/92b2ccbef65292ba9f2004271ef47c7231e2eed5",
-                "reference": "92b2ccbef65292ba9f2004271ef47c7231e2eed5",
+                "url": "https://api.github.com/repos/composer/composer/zipball/e338749d4e6cc97e1136c210ce0212d4a59e3a58",
+                "reference": "e338749d4e6cc97e1136c210ce0212d4a59e3a58",
                 "shasum": ""
             },
             "require": {
@@ -763,7 +763,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -797,7 +797,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.0.14"
+                "source": "https://github.com/composer/composer/tree/2.1.1"
             },
             "funding": [
                 {
@@ -813,7 +813,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-21T15:03:37+00:00"
+            "time": "2021-06-04T06:46:46+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -1110,20 +1110,20 @@
         },
         {
             "name": "dominikb/composer-license-checker",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dominikb/composer-license-checker.git",
-                "reference": "d8dbec5afc958c22011de72426d8f2b4e6e8265c"
+                "reference": "ed6753c80e43f7612eccb61c95b9d73231af2d3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dominikb/composer-license-checker/zipball/d8dbec5afc958c22011de72426d8f2b4e6e8265c",
-                "reference": "d8dbec5afc958c22011de72426d8f2b4e6e8265c",
+                "url": "https://api.github.com/repos/dominikb/composer-license-checker/zipball/ed6753c80e43f7612eccb61c95b9d73231af2d3e",
+                "reference": "ed6753c80e43f7612eccb61c95b9d73231af2d3e",
                 "shasum": ""
             },
             "require": {
-                "composer/composer": "^1.8|^2.0",
+                "composer/composer": ">=1.10.22|>=2.0.13",
                 "guzzlehttp/guzzle": "^6.3|^7.2",
                 "php": "^7.3|^8.0",
                 "psr/simple-cache": "^1.0",
@@ -1167,9 +1167,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dominikb/composer-license-checker/issues",
-                "source": "https://github.com/dominikb/composer-license-checker/tree/2.1.0"
+                "source": "https://github.com/dominikb/composer-license-checker/tree/2.2.0"
             },
-            "time": "2021-01-01T09:55:56+00:00"
+            "time": "2021-06-02T14:56:31+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
