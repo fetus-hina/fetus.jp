@@ -39,10 +39,13 @@ jobs:
         run: |
           sudo update-alternatives --set php /usr/bin/php8.0
 
-      - name: 'Install deployer'
+      - name: 'Check version tag'
+        id: version_check
         run: |
-          make bin/dep
+          echo "::set-output name=REVISION::`bin/get-version`"
 
       - name: 'Deploy'
+        if: ${{ steps.version_check.outputs.REVISION != '' }}
         run: |
-          bin/dep deploy -o git_tty=false -- production
+          make bin/dep
+          bin/dep deploy -o git_tty=false --tag=${{ steps.version_check.outputs.REVISION }} -- production
