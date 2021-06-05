@@ -9,6 +9,7 @@ use yii\helpers\Html;
 
 $asset = AppAsset::register($this);
 
+$wbr = html_entity_decode('&#x200b;', ENT_QUOTES | ENT_HTML5, 'UTF-8'); // Zero Width Space
 $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
 
 ?>
@@ -25,7 +26,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
   <div class="row">
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <?= (string)FAS::icon('user')->fixedWidth() ?>Handle
+        <?= (string)FAS::icon('user') ?> Handle
       </h3>
       <p>
         相沢 陽菜（あいざわ・ひな）<br>
@@ -37,7 +38,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <?= (string)FAS::icon('home')->fixedWidth() ?>Address
+        <?= (string)FAS::icon('home') ?> Address
       </h3>
       <p>
         <a href="https://ja.wikipedia.org/wiki/%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82">大阪府寝屋川市</a><br>
@@ -46,7 +47,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <?= (string)FAS::icon('envelope')->fixedWidth() ?>Email
+        <?= (string)FAS::icon('envelope') ?> Email
       </h3>
       <p>
         <span class="monospace">&lt;hina@fetus.jp&gt;</span><br>
@@ -55,22 +56,22 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <?= (string)FAS::icon('thumbs-up')->fixedWidth() ?>SNS
+        <?= (string)FAS::icon('thumbs-up') ?> SNS
       </h3>
       <p><?= implode(Html::tag('br'), [
-        (string)FAB::icon('twitter')->fixedWidth() . Html::a(
+        (string)FAB::icon('twitter') . ' ' . Html::a(
           Html::encode('@fetus_hina'),
           'https://twitter.com/fetus_hina'
         ),
-        (string)FAB::icon('github')->fixedWidth() . Html::a(
+        (string)FAB::icon('github') . ' ' . Html::a(
           Html::encode('@fetus-hina'),
           'https://github.com/fetus-hina'
         ),
-        (string)FAB::icon('mastodon')->fixedWidth() . Html::a(
+        (string)FAB::icon('mastodon') . ' ' . Html::a(
           Html::encode('@fetus_hina@don.fetus.jp'),
           'https://don.fetus.jp/@fetus_hina'
         ),
-        (string)FAB::icon('wordpress')->fixedWidth() . Html::a(
+        (string)FAB::icon('wordpress') . ' ' .Html::a(
           Html::encode('Blog'),
           'https://blog.fetus.jp/'
         ),
@@ -78,7 +79,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <?= (string)FAS::icon('key')->fixedWidth() ?>Public Keys
+        <?= (string)FAS::icon('key') ?> Public Keys
       </h3>
       <p>
         <?= Html::a(
@@ -89,10 +90,19 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <?= (string)FAS::icon('language')->fixedWidth() ?>Language
+        <?= (string)FAS::icon('language') ?> Language
       </h3>
       <p>
         日本語 / Japanese
+      </p>
+    </div>
+    <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
+      <h3>
+        <?= (string)FAS::icon('broadcast-tower') ?> Amateur Radio
+      </h3>
+      <p>
+        JP3CKI<br>
+        JN4QYA
       </p>
     </div>
   </div>
@@ -104,12 +114,12 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
         Programming
       </h3>
       <ul class="inline-list">
-        <li><?= (string)FAB::icon('php')->fixedWidth() ?>PHP</li>
-        <li><?= (string)FAB::icon('js')->fixedWidth() ?>JavaScript (EcmaScript)</li>
+        <li><?= (string)FAB::icon('php') ?> PHP</li>
+        <li><?= (string)FAB::icon('js') ?> JavaScript (EcmaScript)</li>
         <li>C</li>
         <li>C++</li>
         <li>Go</li>
-        <li><?= (string)FAB::icon('java')->fixedWidth() ?>Java</li>
+        <li><?= (string)FAB::icon('java') ?> Java</li>
       </ul>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
@@ -117,9 +127,9 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
         Markup
       </h3>
       <ul class="inline-list mb-0">
-        <li><?= (string)FAB::icon('html5')->fixedWidth() ?>HTML</li>
+        <li><?= (string)FAB::icon('html5') ?> HTML</li>
         <li>
-          <?= (string)FAB::icon('css3')->fixedWidth() ?>CSS
+          <?= (string)FAB::icon('css3') ?>CSS
           <?= vsprintf('(%s)', [
             Html::tag(
               'ul',
@@ -139,17 +149,17 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
       </h3>
       <ul class="inline-list">
         <li>
-          <?= (string)FAB::icon('linux')->fixedWidth() ?>Linux
+          <?= (string)FAB::icon('linux') ?> Linux
           <?= vsprintf('(%s)', [
             Html::tag(
               'ul',
               implode('', array_map(
                 fn($t) => Html::tag('li', $t),
                 [
-                  (string)FAB::icon('redhat')->fixedWidth() . 'RHEL',
-                  (string)FAB::icon('centos')->fixedWidth() . 'CentOS',
+                  (string)FAB::icon('redhat') . ' RHEL',
+                  (string)FAB::icon('centos') . ' CentOS',
                   'Debian',
-                  (string)FAB::icon('ubuntu')->fixedWidth() . 'Ubuntu',
+                  (string)FAB::icon('ubuntu') . ' Ubuntu',
                 ]
               )),
               ['class' => 'inline-list']
@@ -162,17 +172,33 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
       <h3>
         Middlewares
       </h3>
-      <ul class="inline-list">
-        <li>Apache</li>
-        <li>Nginx</li>
-        <li>H2O</li>
-        <li>Varnish</li>
-        <li>MySQL/MariaDB</li>
-        <li>PostgreSQL</li>
-        <li>BIND 9</li>
-        <li>Docker</li>
-        <li>KVM</li>
-      </ul>
+      <ul class="inline-list"><?= implode('', array_map(
+        fn($t) => Html::tag('li', Html::encode($t)),
+        [
+          'Apache',
+          'Nginx',
+          'H2O',
+          'Varnish',
+          "MySQL/{$wbr}MariaDB",
+          'PostgreSQL',
+          'BIND 9',
+          'Docker',
+          'KVM',
+        ]
+      )) ?></ul>
+    </div>
+    <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
+      <h3>
+        National Licenses
+      </h3>
+      <ul class="inline-list"><?= implode('', array_map(
+        fn($t) => Html::tag('li', Html::encode($t)),
+        [
+          '第二種電気工事士',
+          '届出電気通信事業者',
+          '第4級アマチュア無線技士',
+        ]
+      )) ?></ul>
     </div>
   </div>
 </div>
