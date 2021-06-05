@@ -17,8 +17,13 @@ jobs:
 
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
+    env:
+      LANG: 'C'
+
     steps:
       - uses: 'actions/checkout@v2'
+        with:
+          fetch-depth: 0
 
       - name: 'Set up SSH key'
         env:
@@ -40,12 +45,27 @@ jobs:
           sudo update-alternatives --set php /usr/bin/php8.0
 
       - name: 'Check version tag'
-        id: version_check
         run: |
-          echo "::set-output name=REVISION::`bin/get-version`"
+          COMMIT_REVISION=$(git log -n 1 --pretty='format:%H')
+          echo "Current Revision: $COMMIT_REVISION"
+
+          if ! [[ $COMMIT_REVISION =~ ^[0-9a-f]+$ ]]; then
+            echo "Failed to get commit revision"
+            exit 1
+          fi
+
+          CURRENT_VERSION=$(git tag --points-at=$COMMIT_REVISION | grep '^v[0-9]' | sort -r --version-sort | head -n 1)
+          echo "Current Version: $CURRENT_VERSION"
+
+          if [ -z "$CURRENT_VERSION" ]; then
+            echo "This is not a release commit. exit."
+            exit 0
+          fi
+
+          echo "RELEASE_TAG=$CURRENT_VERSION" >> $GITHUB_ENV
 
       - name: 'Deploy'
-        if: ${{ steps.version_check.outputs.REVISION != '' }}
+        if: ${{ env.RELEASE_TAG != '' }}
         run: |
           make bin/dep
-          bin/dep deploy -o git_tty=false --tag=${{ steps.version_check.outputs.REVISION }} -- production
+          bin/dep deploy -o git_tty=false --tag=${{ env.RELEASE_TAG }} -- production
