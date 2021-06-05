@@ -9,6 +9,18 @@ use yii\helpers\Html;
 <p>
   <img src="/images/avatar-com3d2.jpg" class="img-fluid rounded shadow-sm">
 </p>
+<p><?= Html::a(
+  implode(' ', [
+    '<span class="fas fa-download"></span>',
+    Html::encode('Download COM3D2 Preset'),
+  ]),
+  ['about/download-avatar-preset',
+    'category' => 'com3d2',
+    'file' => 'pre_hina_com3d2.preset',
+  ],
+  ['class' => 'btn btn-outline-primary']
+) ?></p>
+</p>
 <table class="table table-bordered w-auto">
   <tbody>
     <tr>

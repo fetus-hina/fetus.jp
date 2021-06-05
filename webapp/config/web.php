@@ -45,11 +45,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '' => '/site/index',
-
-                // api
-                'GET,HEAD api/<_c:[a-z0-9-]+>' => '/api/<_c>/index',
-                'POST api/<_c:[a-z0-9-]+>' => '/api/<_c>/create',
-                'GET,HEAD api/<_c:[a-z0-9-]+>/<id:[0-9]+>' => '/api/<_c>/view',
+                'about/avatar/preset' => '/about/download-avatar-preset',
 
                 '<_c:[a-z0-9-]+>' => '/<_c>/index',
             ],

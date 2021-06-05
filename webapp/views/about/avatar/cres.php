@@ -20,6 +20,18 @@ RgbAsset::register($this);
 <p>
   ※調整中のため、数字は大幅に変わる可能性があります。
 </p>
+<p><?= Html::a(
+  implode(' ', [
+    '<span class="fas fa-download"></span>',
+    Html::encode('Download CRES Preset'),
+  ]),
+  ['about/download-avatar-preset',
+    'category' => 'cres',
+    'file' => '001-hina.perset',
+  ],
+  ['class' => 'btn btn-outline-primary']
+) ?></p>
+</p>
 <table class="table table-bordered w-auto">
   <tbody>
     <tr>
