@@ -26,7 +26,7 @@
     "yii2-pjax": "^2.0.7"
   },
   "devDependencies": {
-    "license-checker-rseidelsohn": "^1.2.2",
+    "license-checker-rseidelsohn": "^2.1.1",
     "semistandard": "^16.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.2.0",
