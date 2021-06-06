@@ -32,7 +32,7 @@ jQuery($ => {
         $container
           .empty()
           .append(
-            $('<span class="fa fa-frown-o fa-3x fa-fw">')
+            $('<span class="far fa-frown fa-3x fa-fw">')
           ).append(
             ' Error'
           );
