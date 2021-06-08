@@ -106,8 +106,8 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
         <?= (string)FAS::icon('broadcast-tower') ?> Amateur Radio
       </h3>
       <p>
-        JP3CKI<br>
-        JN4QYA
+        JP3CKI (GL:PM74, JCC#2517)<br>
+        JN4QYA (GL:PM64, JCC#350105)
       </p>
     </div>
   </div>
