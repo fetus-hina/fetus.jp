@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use app\models\User as UserIdentity;
 use yii\bootstrap4\BootstrapAsset;
 
 $params = require(__DIR__ . '/params.php');
@@ -24,7 +25,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => UserIdentity::class,
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [

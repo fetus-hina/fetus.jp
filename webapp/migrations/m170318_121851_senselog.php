@@ -1,7 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 use app\db\Migration;
 
-class m170318_121851_senselog extends Migration
+final class m170318_121851_senselog extends Migration
 {
     public function up()
     {
