@@ -63,7 +63,7 @@ use yii\web\View;
       ),
     ]),
     Html::a(
-      Html::encode('kiss の規約'),
+      Html::encode('kissの規約'),
       'http://www.kisskiss.tv/kiss/support.html#kiyaku',
       [
         'rel' => 'noopener noreferrer',
@@ -73,7 +73,7 @@ use yii\web\View;
   ]) . "\n" ?>
 </p>
 <p>
-  <?= vsprintf('%s を利用する場合、%sが同時に適用されます。', [
+  <?= vsprintf('%sを利用する場合、%sが同時に適用されます。', [
     Html::a(
       Html::encode('カスタムキャスト'),
       'https://customcast.jp/',
