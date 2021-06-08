@@ -100,6 +100,11 @@ jobs:
         run: 'vendor/bin/phpcs'
         working-directory: 'webapp'
 
+      - name: 'Run PHPStan'
+        run: 'vendor/bin/phpstan analyze --memory-limit=1G'
+        working-directory: 'webapp'
+        continue-on-error: true
+
   jsStyleCheck:
     name: 'JavaScript Coding Style'
 

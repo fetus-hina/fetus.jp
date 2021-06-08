@@ -6,6 +6,12 @@ use app\assets\AppAsset;
 use app\assets\BackToTopAsset;
 use rmrevin\yii\fontawesome\FAB;
 use yii\helpers\Html;
+use yii\web\View;
+
+/**
+ * @var View $this
+ * @var string $content
+ */
 
 AppAsset::register($this);
 BackToTopAsset::register($this);
@@ -15,7 +21,7 @@ BackToTopAsset::register($this);
 <!DOCTYPE html>
 <?= Html::beginTag('html', ['lang' => Yii::$app->language]) . "\n" ?>
   <head>
-    <?= Html::tag('meta', ['charset' => Yii::$app->charset]) . "\n" ?>
+    <?= Html::tag('meta', '', ['charset' => Yii::$app->charset]) . "\n" ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() . "\n" ?>
     <title><?= Html::encode($this->title ?: Yii::$app->name) ?></title>

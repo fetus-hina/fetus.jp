@@ -38,6 +38,8 @@ final class m170318_121851_senselog extends Migration
             'pressure'      => $this->decimal(6, 2)->notNull(),
             'PRIMARY KEY([[log_id]])',
         ]);
+
+        return true;
     }
 
     public function down()
@@ -51,5 +53,7 @@ final class m170318_121851_senselog extends Migration
         foreach ($tables as $table) {
             $this->dropTable($table);
         }
+
+        return true;
     }
 }

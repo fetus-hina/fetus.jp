@@ -30,6 +30,9 @@ class LicenseAction extends Action
     public string $title = 'Licenses';
     public string $directory;
 
+    /**
+     * @return string
+     */
     public function run()
     {
         return $this->controller->render($this->view, [

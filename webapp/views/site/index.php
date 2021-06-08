@@ -5,8 +5,14 @@ declare(strict_types=1);
 use app\assets\BlogFeedAsset;
 use rmrevin\yii\fontawesome\FAS;
 use yii\helpers\Html;
+use yii\web\View;
+
+/**
+ * @var View $this
+ */
 
 $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
+
 ?>
 <div class="container">
   <h1 id="logo" class="lh-1 mb-2">fetus.jp</h1>

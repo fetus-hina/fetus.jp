@@ -6,6 +6,11 @@ use app\assets\AppAsset;
 use rmrevin\yii\fontawesome\FAB;
 use rmrevin\yii\fontawesome\FAS;
 use yii\helpers\Html;
+use yii\web\View;
+
+/**
+ * @var View $this
+ */
 
 $asset = AppAsset::register($this);
 

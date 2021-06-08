@@ -42,9 +42,4 @@ final class User extends BaseObject implements IdentityInterface
     {
         return false;
     }
-
-    public function validatePassword($password)
-    {
-        return false;
-    }
 }

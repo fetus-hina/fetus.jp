@@ -12,6 +12,9 @@ use yii\web\Response;
 
 class SiteController extends Controller
 {
+    /**
+     * @return array<string, array>
+     */
     public function behaviors()
     {
         return [
@@ -33,6 +36,9 @@ class SiteController extends Controller
         ];
     }
 
+    /**
+     * @return array<string, string|array>
+     */
     public function actions()
     {
         return [
@@ -42,7 +48,7 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionIndex()
+    public function actionIndex(): string
     {
         return $this->render('index');
     }

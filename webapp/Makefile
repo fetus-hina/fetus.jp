@@ -38,12 +38,8 @@ composer.phar:
 	curl -SL 'https://getcomposer.org/installer' | php -- --filename=$@ --stable
 	@touch --date '2000-01-01T00:00:00Z' $@
 
-composer.lock: composer.json composer.phar
-	./composer.phar update -vvv
-	touch $@
-
-vendor: composer.lock
-	./composer.phar install --prefer-dist -vvv
+vendor: composer.lock composer.phar
+	./composer.phar install --prefer-dist
 	touch $@
 
 node_modules: package-lock.json
@@ -69,8 +65,15 @@ node_modules: package-lock.json
 check-style: check-style-php check-style-js check-style-css
 
 .PHONY: check-style-php
-check-style-php: vendor
+check-style-php: check-style-phpcs check-style-phpstan
+
+.PHONY: check-style-phpcs
+check-style-phpcs: vendor
 	vendor/bin/phpcs
+
+.PHONY: check-style-phpstan
+check-style-phpstan: vendor
+	./vendor/bin/phpstan analyze --memory-limit=1G
 
 .PHONY: check-style-js
 check-style-js: node_modules
