@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+use Codeception\Actor;
+use _generated\UnitTesterActions;
 
 /**
  * Inherited Methods
@@ -15,12 +19,32 @@
  * @method \Codeception\Lib\Friend haveFriend($name, $actorClass = NULL)
  *
  * @SuppressWarnings(PHPMD)
-*/
-class UnitTester extends \Codeception\Actor
+ * phpcs:disable PSR1.Classes.ClassDeclaration.MissingNamespace
+ */
+class UnitTester extends Actor
 {
-    use _generated\UnitTesterActions;
+    use UnitTesterActions;
 
-   /**
-    * Define custom actions here
-    */
+    public function english(): object
+    {
+        return $this->language('en-US');
+    }
+
+    public function language(string $languageCode): object
+    {
+        $backup = new class (Yii::$app->language) {
+            public function __construct(private $oldValue)
+            {
+            }
+
+            public function __destruct()
+            {
+                Yii::$app->language = $this->oldValue;
+            }
+        };
+
+        Yii::$app->language = $languageCode;
+
+        return $backup;
+    }
 }

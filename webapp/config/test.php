@@ -2,18 +2,13 @@
 
 declare(strict_types=1);
 
-$params = require(__DIR__ . '/params.php');
-$dbParams = require(__DIR__ . '/test_db.php');
+use yii\helpers\ArrayHelper;
 
-/**
- * Application configuration shared by all test types
- */
-return [
-    'id' => 'basic-tests',
-    'basePath' => dirname(__DIR__),
-    'language' => 'en-US',
-    'components' => [
-        'db' => $dbParams,
+return (function (): array {
+    $config = require(__DIR__ . '/web.php');
+    $config['id'] .= '-tests';
+    $config['components'] = ArrayHelper::merge($config['components'], [
+        'db' => require(__DIR__ . '/test_db.php'),
         'mailer' => [
             'useFileTransport' => true,
         ],
@@ -23,19 +18,16 @@ return [
         'urlManager' => [
             'showScriptName' => true,
         ],
-        'user' => [
-            'identityClass' => 'app\models\User',
-        ],
         'request' => [
             'cookieValidationKey' => 'test',
             'enableCsrfValidation' => false,
-            // but if you absolutely need it set cookie domain to localhost
-            /*
-            'csrfCookie' => [
-                'domain' => 'localhost',
-            ],
-            */
         ],
-    ],
-    'params' => $params,
-];
+    ]);
+
+    foreach (['debug', 'gii'] as $module) {
+        ArrayHelper::removeValue($config['bootstrap'], $module);
+        unset($config['modules'][$module]);
+    }
+
+    return $config;
+})();

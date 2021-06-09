@@ -15,7 +15,10 @@
 /resource/**/*.css
 /resource/**/*.gz
 /resource/**/*.js
+/tests/_output/*
+/tests/_support/_generated
 /vendor
+/web/coverage
 /web/images/**/*.br
 /web/images/**/*.gz
 /web/images/**/*.min.*
@@ -24,5 +27,3 @@ Thumbs.db
 composer.phar
 nbproject
 phpunit.phar
-tests/_output/*
-tests/_support/_generated

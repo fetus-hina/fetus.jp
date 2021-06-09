@@ -11,8 +11,8 @@ use yii\web\Response;
 
 final class AvatarDownloadForm extends Model
 {
-    public ?string $category;
-    public ?string $file;
+    public ?string $category = null;
+    public ?string $file = null;
 
     public function rules()
     {
@@ -55,7 +55,7 @@ final class AvatarDownloadForm extends Model
         mixed $current,
     ): void {
         if ($this->hasErrors()) {
-            return;
+            return; // @codeCoverageIgnore
         }
 
         $path = $this->getRealPath();
