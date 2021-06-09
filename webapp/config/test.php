@@ -16,6 +16,7 @@ return (function (): array {
             'basePath' => __DIR__ . '/../web/assets',
         ],
         'urlManager' => [
+            'enablePrettyUrl' => false,
             'showScriptName' => true,
         ],
         'request' => [

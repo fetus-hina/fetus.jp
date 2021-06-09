@@ -1,0 +1,12 @@
+actor: WebTester
+modules:
+  enabled:
+    - Asserts
+    - Yii2:
+        entryScript: '/index.test.php'
+        cleanup: true
+        configFile: 'config/test.php'
+    - REST:
+        url: http://localhost:58420/index.test.php
+        depends: Yii2
+    - \Helper\Web

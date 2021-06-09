@@ -84,10 +84,17 @@ check-style-css: node_modules
 	npx stylelint 'resource/**/*.scss'
 
 .PHONY: test
-test: vendor
+test: test-unit test-web
+
+.PHONY: test-unit
+test-unit: vendor
 	/usr/bin/env XDEBUG_MODE=coverage \
 		./vendor/bin/codecept run unit \
 			--coverage \
 			--coverage-html=./web/coverage/ \
 			--coverage-text=./runtime/coverage/coverage.txt \
 			--coverage-xml=./runtime/coverage/coverage.xml
+
+.PHONY: test-web
+test-web: vendor
+	./tests/bin/yii test/web
