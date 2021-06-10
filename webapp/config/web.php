@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use app\models\User as UserIdentity;
 use yii\bootstrap4\BootstrapAsset;
+use yii\caching\FileCache;
+use yii\log\FileTarget as LogFileTarget;
 
 $params = require(__DIR__ . '/params.php');
 $config = [
@@ -22,7 +24,7 @@ $config = [
             'cookieValidationKey' => include(__DIR__ . '/cookie-secret.php'),
         ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => FileCache::class,
         ],
         'user' => [
             'identityClass' => UserIdentity::class,
@@ -35,7 +37,7 @@ $config = [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class' => LogFileTarget::class,
                     'levels' => ['error', 'warning'],
                 ],
             ],

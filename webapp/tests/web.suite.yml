@@ -1,12 +1,17 @@
 actor: WebTester
 modules:
   enabled:
+    - \Helper\Web
     - Asserts
     - Yii2:
         entryScript: '/index.test.php'
         cleanup: true
         configFile: 'config/test.php'
+    - PhpBrowser:
+        url: http://127.0.0.1:58420/
+        headers:
+          'X-Test-Env': '1'
+        curl:
+          CURLOPT_VERBOSE: false
     - REST:
-        url: http://localhost:58420/index.test.php
-        depends: Yii2
-    - \Helper\Web
+        depends: PhpBrowser

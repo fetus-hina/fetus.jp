@@ -47,7 +47,6 @@ class WebAction extends Action
             escapeshellarg('127.0.0.1:58420'),
             escapeshellarg('@app/web'),
         ]);
-        fwrite(STDERR, "$cmdline\n\n");
 
         $descSpec = [
             ['pipe', 'r'],
@@ -57,11 +56,11 @@ class WebAction extends Action
         if (!$handle = @proc_open($cmdline, $descSpec, $pipes)) {
             return false;
         }
-        $status = @proc_get_status($handle);
+        $status = proc_get_status($handle);
         $this->serverProcess = [
             'handle' => $handle,
-            'pipes' => $pipes,
             'pid' => (int)$status['pid'],
+            'pipes' => $pipes,
         ];
 
         return true;
@@ -92,17 +91,7 @@ class WebAction extends Action
     {
         foreach ($this->getChildren($parentPID) as $pid) {
             $this->killDescendants($pid, $signal);
-            if (function_exists('posix_kill')) {
-                // fwrite(STDERR, "  Killing {$pid} (posix)\n");
-                @posix_kill($pid, $signal);
-            } else {
-                // fwrite(STDERR, "  Killing {$pid} (command)\n");
-                exec(vsprintf('/usr/bin/env %s -s %d %d', [
-                    escapeshellarg('kill'),
-                    $signal,
-                    $pid,
-                ]));
-            }
+            @posix_kill($pid, $signal);
         }
     }
 

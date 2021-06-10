@@ -247,6 +247,13 @@ jobs:
         run: |
           make
 
+      - name: 'Extract license files'
+        working-directory: 'webapp'
+        run: |
+          ./yii license/clean-extracted
+          ./yii license/extract
+          bin/npm-postinstall.sh
+
       - name: 'Run tests'
         working-directory: 'webapp'
         run: |
