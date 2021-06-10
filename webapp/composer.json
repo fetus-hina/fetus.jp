@@ -49,12 +49,12 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "test -e ./vendor/bin/codecept && ./vendor/bin/codecept build",
+            "test -e ./vendor/bin/codecept && ./vendor/bin/codecept build || true",
             "./yii license/clean-extracted",
             "./yii license/extract"
         ],
         "post-update-cmd": [
-            "test -e ./vendor/bin/codecept && ./vendor/bin/codecept build",
+            "test -e ./vendor/bin/codecept && ./vendor/bin/codecept build || true",
             "./yii license/clean-extracted",
             "./yii license/extract"
         ]
