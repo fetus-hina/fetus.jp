@@ -13,7 +13,9 @@ use yii\web\View;
 RgbAsset::register($this);
 
 ?>
-<h3 id="cres">COM3D2+CRES（新ボディ: Ver3.0）</h3>
+<h3 id="cres">
+  COM3D2.5 (CR EditSystem)
+</h3>
 <p>
   <img src="/images/avatar-cres.jpg" class="img-fluid rounded shadow-sm">
 </p>

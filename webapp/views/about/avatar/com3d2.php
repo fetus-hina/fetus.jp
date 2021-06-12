@@ -5,7 +5,9 @@ declare(strict_types=1);
 use yii\helpers\Html;
 
 ?>
-<h3 id="com3d2">COM3D2（既存ボディ: Ver2.0）</h3>
+<h3 id="com3d2">
+  COM3D2（既存ボディ）
+</h3>
 <p>
   <img src="/images/avatar-com3d2.jpg" class="img-fluid rounded shadow-sm">
 </p>
@@ -20,6 +22,8 @@ use yii\helpers\Html;
   ],
   ['class' => 'btn btn-outline-primary']
 ) ?></p>
+<p class="text-muted small">
+  現在提供しているのはCRES導入環境で作成したプリセットのため、純粋なCOM3D2環境では読めないかもしれません。
 </p>
 <table class="table table-bordered w-auto">
   <tbody>
