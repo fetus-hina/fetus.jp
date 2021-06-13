@@ -15,11 +15,7 @@ use yii\web\View;
   Html::a(
     Html::encode('メイド体操第一'),
     'https://com3d2-shop.s-court.me/item.php?iid=1268',
-    [
-      'class' => 'text-muted',
-      'rel' => 'noopener noreferrer',
-      'target' => '_blank',
-    ]
+    ['class' => 'text-muted']
   ),
   Html::encode('みんなでメイド体操第一 ver.御苑生メイ'),
   Html::encode('© KISS'),

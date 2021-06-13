@@ -39,36 +39,20 @@ use yii\web\View;
     implode(', ', [
       Html::a(
         Html::encode('カスタムメイド 3D2 (CM3D2)'),
-        'http://www.kisskiss.tv/cm3d2/',
-        [
-          'rel' => 'noopener noreferrer',
-          'target' => '_blank',
-        ]
+        'http://www.kisskiss.tv/cm3d2/'
       ),
       Html::a(
         Html::encode('カスタムオーダーメイド 3D2 (COM3D2)'),
-        'https://com3d2.jp/',
-        [
-          'rel' => 'noopener noreferrer',
-          'target' => '_blank',
-        ]
+        'https://com3d2.jp/'
       ),
       Html::a(
         Html::encode('CR EditSystem (CRES)'),
-        'http://cr-edit.jp/',
-        [
-          'rel' => 'noopener noreferrer',
-          'target' => '_blank',
-        ]
+        'http://cr-edit.jp/'
       ),
     ]),
     Html::a(
       Html::encode('kissの規約'),
-      'http://www.kisskiss.tv/kiss/support.html#kiyaku',
-      [
-        'rel' => 'noopener noreferrer',
-        'target' => '_blank',
-      ]
+      'http://www.kisskiss.tv/kiss/support.html#kiyaku'
     ),
   ]) . "\n" ?>
 </p>
@@ -76,19 +60,11 @@ use yii\web\View;
   <?= vsprintf('%sを利用する場合、%sが同時に適用されます。', [
     Html::a(
       Html::encode('カスタムキャスト'),
-      'https://customcast.jp/',
-      [
-        'rel' => 'noopener noreferrer',
-        'target' => '_blank',
-      ]
+      'https://customcast.jp/'
     ),
     Html::a(
       Html::encode('カスタムキャストのガイドライン'),
-      'https://customcast.jp/guidelines/',
-      [
-        'rel' => 'noopener noreferrer',
-        'target' => '_blank',
-      ]
+      'https://customcast.jp/guidelines/'
     ),
   ]) . "\n" ?>
 </p>

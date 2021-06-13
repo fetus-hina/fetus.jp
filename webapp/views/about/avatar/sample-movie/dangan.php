@@ -16,11 +16,7 @@ use yii\web\View;
   Html::a(
     Html::encode('DAN! GAN! パーティ!!'),
     'http://com3d2.jp/gp02/#update03',
-    [
-      'class' => 'text-muted',
-      'rel' => 'noopener noreferrer',
-      'target' => '_blank',
-    ]
+    ['class' => 'text-muted']
   ),
   Html::encode('© KISS'),
 ]) ?></p>

@@ -1,5 +1,6 @@
 #!/usr/bin/env php
 <?php
+
 /**
  * Yii console bootstrap file.
  *
@@ -7,6 +8,8 @@
  * @copyright Copyright (c) 2008 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
+
+declare(strict_types=1);
 
 if (file_exists(__DIR__ . '/.production')) {
     defined('YII_DEBUG') or define('YII_DEBUG', false);
@@ -18,6 +21,7 @@ if (file_exists(__DIR__ . '/.production')) {
 
 require(__DIR__ . '/vendor/autoload.php');
 require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
+require(__DIR__ . '/config/di.php');
 
 $config = require(__DIR__ . '/config/console.php');
 

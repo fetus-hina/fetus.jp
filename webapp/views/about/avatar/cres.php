@@ -451,11 +451,7 @@ RgbAsset::register($this);
       <th>後髪の種類</th>
       <td><?= Html::a(
         Html::encode('アイキス・純子バック'),
-        'https://com3d2-shop.s-court.me/item.php?iid=725',
-        [
-          'rel' => 'noopener noreferrer',
-          'target' => '_blank',
-        ]
+        'https://com3d2-shop.s-court.me/item.php?iid=725'
       ) ?></td>
     </tr>
     <tr>

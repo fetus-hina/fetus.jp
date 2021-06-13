@@ -8,6 +8,7 @@ coverage:
   whitelist:
     include:
       - models/*
+      - overwrite/yii2/helpers/Html.php
 
 paths:
   data: tests/_data
