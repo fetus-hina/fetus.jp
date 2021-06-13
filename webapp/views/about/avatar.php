@@ -96,7 +96,7 @@ use yii\web\View;
   その他のツールを使用する場合はそれぞれのツールの規約やガイドラインが同時に適用されます。
 </p>
 <hr>
-<div class="mb-5">
+<div class="mb-4">
   <?= $this->render('//about/avatar/sample-movie') ?><?= "\n" ?>
 </div>
 <hr>

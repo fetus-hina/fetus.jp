@@ -10,6 +10,7 @@
         "jp3cki/uuid": "^2.0.0",
         "jp3cki/yii2-ubuntu-font": "^1.0.0",
         "rmrevin/yii2-fontawesome": "^3.6.0",
+        "scssphp/scssphp": "^1.5",
         "yiisoft/yii2": "2.0.*",
         "yiisoft/yii2-bootstrap4": "*"
     },

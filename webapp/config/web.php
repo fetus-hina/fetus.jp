@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use app\models\User as UserIdentity;
 use yii\bootstrap4\BootstrapAsset;
+use yii\bootstrap4\BootstrapPluginAsset;
 use yii\caching\FileCache;
 use yii\log\FileTarget as LogFileTarget;
 
@@ -59,6 +60,15 @@ $config = [
                     'sourcePath' => '@npm/@fetus-hina/fetus.css/dist',
                     'css' => [
                         'bootstrap.min.css',
+                    ],
+                ],
+                BootstrapPluginAsset::class => [
+                    'sourcePath' => '@npm/bootstrap/dist/js',
+                    'js' => [
+                        'bootstrap.bundle.min.js',
+                    ],
+                    'depends' => [
+                        BootstrapAsset::class,
                     ],
                 ],
             ],
