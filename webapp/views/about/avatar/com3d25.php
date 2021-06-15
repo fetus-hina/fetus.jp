@@ -32,7 +32,7 @@ RgbAsset::register($this);
     'category' => 'com3d25',
     'file' => '001-hina.perset',
   ],
-  ['class' => 'btn btn-outline-primary']
+  ['class' => 'btn btn-outline-primary shadow-sm']
 ) ?></p>
 </p>
 <table class="table table-bordered w-auto">

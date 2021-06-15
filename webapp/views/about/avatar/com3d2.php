@@ -21,7 +21,7 @@ use yii\helpers\Html;
       'category' => 'com3d2',
       'file' => 'pre_hina_com3d2.preset',
     ],
-    ['class' => 'btn btn-outline-primary']
+    ['class' => 'btn btn-outline-primary shadow-sm']
   ),
   Html::tag(
     'div',
@@ -29,7 +29,7 @@ use yii\helpers\Html;
       Html::button('', [
         'id' => 'download-com3d2-dropdown',
         'type' => 'button',
-        'class' => 'btn btn-outline-primary dropdown-toggle',
+        'class' => 'btn btn-outline-primary shadow-sm dropdown-toggle',
         'data' => [
           'bs-toggle' => 'dropdown',
         ],
@@ -56,9 +56,13 @@ use yii\helpers\Html;
           ]
         )),
         [
-          'class' => 'dropdown-menu',
           'aria' => [
             'labelledby' => 'download-com3d2-dropdown',
+          ],
+          'class' => [
+            'bg-body',
+            'dropdown-menu',
+            'shadow',
           ],
         ],
       ),

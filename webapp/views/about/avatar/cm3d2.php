@@ -18,7 +18,7 @@ use yii\helpers\Html;
     'category' => 'cm3d2',
     'file' => 'pre_hina_cm3d2.preset',
   ],
-  ['class' => 'btn btn-outline-primary']
+  ['class' => 'btn btn-outline-primary shadow-sm']
 ) ?></p>
 </p>
 <table class="table table-bordered w-auto">
