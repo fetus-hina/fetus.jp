@@ -102,6 +102,10 @@ class AccessCest
             ],
             '/about/avatar/preset?category=com3d2&file=pre_hina_com3d2.preset' => [
                 'application/octet-stream',
+                '544c7631fa0f3f94ccb66bea5d567733a624f2b2e4e73ebfb4c929de99223175',
+            ],
+            '/about/avatar/preset?category=com3d2&file=pre_hina_com3d25.preset' => [
+                'application/octet-stream',
                 '1301cc9feeb4c5546eb83eba3a16bf5411642326fd4a43b159ccbfc935e4e4d8',
             ],
             '/about/avatar/preset?category=com3d25&file=001-hina.perset' => [

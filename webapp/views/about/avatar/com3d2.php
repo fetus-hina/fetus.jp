@@ -11,20 +11,64 @@ use yii\helpers\Html;
 <p>
   <img src="/images/avatar-com3d2.jpg" class="img-fluid rounded shadow-sm">
 </p>
-<p><?= Html::a(
-  implode(' ', [
-    '<span class="fas fa-download"></span>',
-    Html::encode('Download COM3D2 Preset'),
-  ]),
-  ['about/download-avatar-preset',
-    'category' => 'com3d2',
-    'file' => 'pre_hina_com3d2.preset',
-  ],
-  ['class' => 'btn btn-outline-primary']
-) ?></p>
-<p class="text-muted small">
-  現在提供しているのはCRES導入環境で作成したプリセットのため、純粋なCOM3D2環境では読めないかもしれません。
-</p>
+<div class="btn-group mb-3" role="group"><?= implode('', [
+  Html::a(
+    implode(' ', [
+      '<span class="fas fa-download"></span>',
+      Html::encode('Download COM3D2 Preset'),
+    ]),
+    ['about/download-avatar-preset',
+      'category' => 'com3d2',
+      'file' => 'pre_hina_com3d2.preset',
+    ],
+    ['class' => 'btn btn-outline-primary']
+  ),
+  Html::tag(
+    'div',
+    implode('', [
+      Html::button('', [
+        'id' => 'download-com3d2-dropdown',
+        'type' => 'button',
+        'class' => 'btn btn-outline-primary dropdown-toggle',
+        'data' => [
+          'bs-toggle' => 'dropdown',
+        ],
+        'aria' => [
+          'expanded' => 'false',
+        ],
+      ]),
+      Html::tag(
+        'ul',
+        implode('', array_map(
+          fn($data) => Html::tag('li', Html::a(
+            $data['label'],
+            $data['link'],
+            ['class' => 'dropdown-item']
+          )),
+          [
+            [
+              'link' => ['about/download-avatar-preset', 'category' => 'com3d2', 'file' => 'pre_hina_com3d25.preset'],
+              'label' => vsprintf('%s %s', [
+                Html::tag('span', '', ['class' => 'fas fa-download']),
+                Html::encode('COM3D2.5 Preset'),
+              ]),
+            ],
+          ]
+        )),
+        [
+          'class' => 'dropdown-menu',
+          'aria' => [
+            'labelledby' => 'download-com3d2-dropdown',
+          ],
+        ],
+      ),
+    ]),
+    [
+      'class' => 'btn-group',
+      'role' => 'group',
+    ]
+  ),
+]) ?></div>
 <table class="table table-bordered w-auto">
   <tbody>
     <tr>

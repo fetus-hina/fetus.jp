@@ -147,7 +147,8 @@ final class AvatarDownloadFormTest extends Unit
     {
         return [
             ['cm3d2', 'pre_hina_cm3d2.preset', '562b88af3c34c922a7e2fb8eeb686434644434f6d7ef53a1d3f2f698505811c6'],
-            ['com3d2', 'pre_hina_com3d2.preset', '1301cc9feeb4c5546eb83eba3a16bf5411642326fd4a43b159ccbfc935e4e4d8'],
+            ['com3d2', 'pre_hina_com3d2.preset', '544c7631fa0f3f94ccb66bea5d567733a624f2b2e4e73ebfb4c929de99223175'],
+            ['com3d2', 'pre_hina_com3d25.preset', '1301cc9feeb4c5546eb83eba3a16bf5411642326fd4a43b159ccbfc935e4e4d8'],
             ['com3d25', '001-hina.perset', '3ac3b73d86fa98740f9937e3736088f9586797ad772bbe655de94ba786cef4ec'],
         ];
     }
