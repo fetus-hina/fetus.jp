@@ -13,11 +13,12 @@ use yii\web\View;
 RgbAsset::register($this);
 
 ?>
-<h3 id="cres">
+<h3 id="com3d25">
+  <span id="cres"></span><?php /* for compatibility */ ?>
   COM3D2.5 (CR EditSystem)
 </h3>
 <p>
-  <img src="/images/avatar-cres.jpg" class="img-fluid rounded shadow-sm">
+  <img src="/images/avatar-com3d25.jpg" class="img-fluid rounded shadow-sm">
 </p>
 <p>
   ※調整中のため、数字は大幅に変わる可能性があります。
@@ -28,7 +29,7 @@ RgbAsset::register($this);
     Html::encode('Download CRES Preset'),
   ]),
   ['about/download-avatar-preset',
-    'category' => 'cres',
+    'category' => 'com3d25',
     'file' => '001-hina.perset',
   ],
   ['class' => 'btn btn-outline-primary']

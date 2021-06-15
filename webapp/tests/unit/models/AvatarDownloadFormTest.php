@@ -30,7 +30,8 @@ final class AvatarDownloadFormTest extends Unit
     /**
      * @testWith    ["cm3d2", true]
      *              ["com3d2", true]
-     *              ["cres", true]
+     *              ["com3d25", true]
+     *              ["cres", false]
      *              ["cm3d", false]
      *              ["../avatar/com3d2", false]
      */
@@ -147,7 +148,7 @@ final class AvatarDownloadFormTest extends Unit
         return [
             ['cm3d2', 'pre_hina_cm3d2.preset', '562b88af3c34c922a7e2fb8eeb686434644434f6d7ef53a1d3f2f698505811c6'],
             ['com3d2', 'pre_hina_com3d2.preset', '1301cc9feeb4c5546eb83eba3a16bf5411642326fd4a43b159ccbfc935e4e4d8'],
-            ['cres', '001-hina.perset', '3ac3b73d86fa98740f9937e3736088f9586797ad772bbe655de94ba786cef4ec'],
+            ['com3d25', '001-hina.perset', '3ac3b73d86fa98740f9937e3736088f9586797ad772bbe655de94ba786cef4ec'],
         ];
     }
 }

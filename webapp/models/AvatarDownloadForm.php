@@ -24,7 +24,7 @@ final class AvatarDownloadForm extends Model
                 'range' => [
                     'cm3d2',
                     'com3d2',
-                    'cres',
+                    'com3d25',
                 ],
             ],
             [['file'], 'match',

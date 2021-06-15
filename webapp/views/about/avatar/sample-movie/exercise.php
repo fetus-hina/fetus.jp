@@ -21,7 +21,7 @@ use yii\web\View;
   Html::encode('© KISS'),
 ]) ?></p>
 <p class="mb-0">
-  中央: <a href="#cres">COM3D2.5 (CRES) モデル</a><br>
+  中央: <a href="#com3d25">COM3D2.5 (CRES) モデル</a><br>
   左: <a href="#com3d2">COM3D2モデル</a><br>
   右: <a href="#cm3d2">CM3D2モデル</a>
 </p>

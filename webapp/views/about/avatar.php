@@ -77,7 +77,7 @@ use yii\web\View;
 </div>
 <hr>
 <div class="mb-5">
-  <?= $this->render('//about/avatar/cres') ?><?= "\n" ?>
+  <?= $this->render('//about/avatar/com3d25') ?><?= "\n" ?>
 </div>
 <hr>
 <div class="mb-5">

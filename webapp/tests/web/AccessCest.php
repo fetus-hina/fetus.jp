@@ -38,7 +38,7 @@ class AccessCest
             '/ads.txt' => HttpCode::OK,
             '/images/avatar-cm3d2.jpg' => HttpCode::OK,
             '/images/avatar-com3d2.jpg' => HttpCode::OK,
-            '/images/avatar-cres.jpg' => HttpCode::OK,
+            '/images/avatar-com3d25.jpg' => HttpCode::OK,
             '/robots.txt' => HttpCode::OK,
         ];
 
@@ -92,7 +92,7 @@ class AccessCest
                 'image/jpeg',
                 '2d27d399bbd0274df72d1986350eb80d790d0b9ca3aeb55a591ecd9e14e7c689',
             ],
-            '/images/avatar-cres.jpg' => [
+            '/images/avatar-com3d25.jpg' => [
                 'image/jpeg',
                 '4c1f234437327a9b3570acea8bfffa9a135bea12b418aab4102c632eb220d498',
             ],
@@ -104,7 +104,7 @@ class AccessCest
                 'application/octet-stream',
                 '1301cc9feeb4c5546eb83eba3a16bf5411642326fd4a43b159ccbfc935e4e4d8',
             ],
-            '/about/avatar/preset?category=cres&file=001-hina.perset' => [
+            '/about/avatar/preset?category=com3d25&file=001-hina.perset' => [
                 'application/octet-stream',
                 '3ac3b73d86fa98740f9937e3736088f9586797ad772bbe655de94ba786cef4ec',
             ],
