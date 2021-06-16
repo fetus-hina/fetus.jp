@@ -1,3 +1,7 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+
+@use 'sass:math';
+
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Montserrat:wght@500&display=swap');
 
 :root {
@@ -48,5 +52,30 @@ body,
 
   .inline-list {
     display: inline;
+  }
+}
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: math.div($spacer, 4),
+  2: math.div($spacer, 2),
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+@each $loc in ["first", "last"] {
+  @each $spKey, $spVal in $spacers {
+    .mt-#{$spKey}-#{$loc} {
+      > :#{$loc}-child {
+        margin-top: $spVal;
+      }
+    }
+    .mb-#{$spKey}-#{$loc} {
+      > :#{$loc}-child {
+        margin-bottom: $spVal;
+      }
+    }
   }
 }
