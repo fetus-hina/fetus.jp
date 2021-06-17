@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use app\widgets\PresetDownloadButton;
 use yii\helpers\Html;
 
 ?>
@@ -11,68 +12,23 @@ use yii\helpers\Html;
 <p>
   <img src="/images/avatar-com3d2.jpg" class="img-fluid rounded shadow-sm">
 </p>
-<div class="btn-group mb-3" role="group"><?= implode('', [
-  Html::a(
-    implode(' ', [
-      '<span class="fas fa-download"></span>',
-      Html::encode('Download COM3D2 Preset'),
-    ]),
-    ['about/download-avatar-preset',
+<?= PresetDownloadButton::widget([
+  'options' => [
+    'tag' => 'div',
+    'class' => 'mb-3',
+  ],
+  'buttonFace' => 'DL Preset (COM3D2)',
+  'buttonLink' => ['about/download-avatar-preset',
+    'category' => 'com3d2',
+    'file' => 'pre_hina_com3d2.preset',
+  ],
+  'dropDownItems' => [
+    'DL Preset (COM3D2.5)' => ['about/download-avatar-preset',
       'category' => 'com3d2',
-      'file' => 'pre_hina_com3d2.preset',
+      'file' => 'pre_hina_com3d25.preset',
     ],
-    ['class' => 'btn btn-outline-primary shadow-sm']
-  ),
-  Html::tag(
-    'div',
-    implode('', [
-      Html::button('', [
-        'id' => 'download-com3d2-dropdown',
-        'type' => 'button',
-        'class' => 'btn btn-outline-primary shadow-sm dropdown-toggle',
-        'data' => [
-          'bs-toggle' => 'dropdown',
-        ],
-        'aria' => [
-          'expanded' => 'false',
-        ],
-      ]),
-      Html::tag(
-        'ul',
-        implode('', array_map(
-          fn($data) => Html::tag('li', Html::a(
-            $data['label'],
-            $data['link'],
-            ['class' => 'dropdown-item']
-          )),
-          [
-            [
-              'link' => ['about/download-avatar-preset', 'category' => 'com3d2', 'file' => 'pre_hina_com3d25.preset'],
-              'label' => vsprintf('%s %s', [
-                Html::tag('span', '', ['class' => 'fas fa-download']),
-                Html::encode('COM3D2.5 Preset'),
-              ]),
-            ],
-          ]
-        )),
-        [
-          'aria' => [
-            'labelledby' => 'download-com3d2-dropdown',
-          ],
-          'class' => [
-            'bg-body',
-            'dropdown-menu',
-            'shadow',
-          ],
-        ],
-      ),
-    ]),
-    [
-      'class' => 'btn-group',
-      'role' => 'group',
-    ]
-  ),
-]) ?></div>
+  ],
+]) . "\n" ?>
 <table class="table table-bordered w-auto">
   <tbody>
     <tr>

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use app\assets\RgbAsset;
+use app\widgets\PresetDownloadButton;
 use yii\helpers\Html;
 use yii\web\View;
 
@@ -23,18 +24,14 @@ RgbAsset::register($this);
 <p>
   ※調整中のため、数字は大幅に変わる可能性があります。
 </p>
-<p><?= Html::a(
-  implode(' ', [
-    '<span class="fas fa-download"></span>',
-    Html::encode('Download CRES Preset'),
-  ]),
-  ['about/download-avatar-preset',
+<?= PresetDownloadButton::widget([
+  'options' => ['tag' => 'p'],
+  'buttonFace' => 'DL Preset (CRES)',
+  'buttonLink' => ['about/download-avatar-preset',
     'category' => 'com3d25',
     'file' => '001-hina.perset',
   ],
-  ['class' => 'btn btn-outline-primary shadow-sm']
-) ?></p>
-</p>
+]) . "\n" ?>
 <table class="table table-bordered w-auto">
   <tbody>
     <tr>
