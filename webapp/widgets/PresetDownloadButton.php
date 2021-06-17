@@ -20,7 +20,7 @@ final class PresetDownloadButton extends Widget
     public mixed $buttonLink = '';
     public array $buttonOptions = [
         'class' => 'btn btn-outline-primary shadow-sm',
-        'download' => null,
+        'download' => true,
         'rel' => 'nofollow',
         'type' => 'application/octet-stream',
         'aria' => [
@@ -34,7 +34,7 @@ final class PresetDownloadButton extends Widget
     public array $dropDownItems = []; // "text" => url
 
     public array $dropDownItemOptions = [
-        'download' => null,
+        'download' => true,
         'rel' => 'nofollow',
         'type' => 'application/octet-stream',
     ];
