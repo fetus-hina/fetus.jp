@@ -22,7 +22,9 @@ $config = [
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
-            'cookieValidationKey' => include(__DIR__ . '/cookie-secret.php'),
+            'cookieValidationKey' => file_exists(__DIR__ . '/cookie-secret.php')
+                ? include(__DIR__ . '/cookie-secret.php')
+                : str_repeat('A', 44),
         ],
         'cache' => [
             'class' => FileCache::class,
