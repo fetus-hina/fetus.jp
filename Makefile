@@ -15,5 +15,5 @@ $(SUBDIRS):
 	make -C $@ $(MAKECMDGOALS)
 
 bin/dep:
-	curl -fsSL -o $@ 'https://deployer.org/deployer.phar'
+	curl -fsSL -o $@ 'https://deployer.org/releases/v6.8.0/deployer.phar'
 	chmod +x $@
