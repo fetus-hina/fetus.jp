@@ -21,7 +21,7 @@
     "postcss": "^8.3.5",
     "postcss-cli": "^8.3.1",
     "punycode": "^2.1.1",
-    "sass": "^1.35.1",
+    "sass": "^1.35.2",
     "uglify-js": "^3.13.10",
     "yii2-pjax": "^2.0.7"
   },
@@ -29,7 +29,7 @@
     "license-checker-rseidelsohn": "^2.1.1",
     "semistandard": "^16.0.1",
     "stylelint": "^13.13.1",
-    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-recommended-scss": "^4.3.0",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.19.0",
     "updates": "^12.1.0"
