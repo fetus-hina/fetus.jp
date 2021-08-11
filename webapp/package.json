@@ -9,29 +9,29 @@
   "author": "AIZAWA Hina",
   "license": "MIT",
   "dependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
     "@fetus-hina/fetus.css": "git+https://github.com/fetus-hina/fetus.css.git#semver:^5.1.0",
-    "autoprefixer": "^10.3.1",
     "bootstrap": "^5.1.0",
-    "clean-css-cli": "^5.3.3",
     "inputmask": "^5.0.6",
     "jquery": "^3.6.0",
-    "postcss": "^8.3.6",
-    "postcss-cli": "^8.3.1",
     "punycode": "^2.1.1",
-    "sass": "^1.37.5",
-    "uglify-js": "^3.14.1",
     "yii2-pjax": "^2.0.7"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "autoprefixer": "^10.3.1",
+    "clean-css-cli": "^5.3.3",
     "license-checker-rseidelsohn": "^2.1.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.37.5",
     "semistandard": "^16.0.1",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.3.0",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.20.1",
+    "uglify-js": "^3.14.1",
     "updates": "^12.1.0"
   }
 }

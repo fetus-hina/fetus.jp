@@ -81,6 +81,7 @@ task('deploy', [
     'deploy:writable',
     'deploy:run_migrations',
     'deploy:build',
+    'deploy:vendors_production',
     'deploy:symlink',
     'deploy:clear_opcache',
     'deploy:clear_proxy',
@@ -101,8 +102,15 @@ task('deploy:production', function () {
 task('deploy:vendors', function () {
     within('{{release_path}}/webapp', function () {
         run('ln -s {{release_path}}/composer.phar composer.phar');
-        run('{{bin/composer}} {{composer_options}} --no-dev');
-        run('{{bin/npm}} clean-install --only=prod');
+        run('{{bin/composer}} {{composer_options}}');
+        run('{{bin/npm}} clean-install');
+    });
+});
+
+task('deploy:vendors_production', function () {
+    within('{{release_path}}/webapp', function () {
+        run('{{bin/composer}} --no-dev {{composer_options}}');
+        run('{{bin/npm}} prune --production');
     });
 });
 
