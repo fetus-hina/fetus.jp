@@ -53,7 +53,7 @@ node_modules: package-lock.json
 	npx babel $< > $@
 
 %.min.css: %.css node_modules
-	npx cleancss --format 'breaks:afterRuleEnds=on' $< > $@
+	npx postcss $< --no-map --use cssnano > $@
 
 %.css: %.scss node_modules .browserslistrc
 	npx sass --charset --no-source-map $< | npx postcss --no-map --use autoprefixer > $@
