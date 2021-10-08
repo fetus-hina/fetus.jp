@@ -33,6 +33,7 @@ class UnitTester extends Actor
     public function language(string $languageCode): object
     {
         $backup = new class (Yii::$app->language) {
+            // phpcs:disable VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
             public function __construct(private $oldValue)
             {
             }

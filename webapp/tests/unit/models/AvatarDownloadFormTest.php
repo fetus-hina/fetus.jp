@@ -25,6 +25,8 @@ final class AvatarDownloadFormTest extends Unit
             $this->assertTrue($model->hasErrors($attr));
             $this->assertStringContainsString(' cannot be blank.', $model->getFirstError($attr));
         }
+
+        unset($oldEnv);
     }
 
     /**
@@ -51,6 +53,8 @@ final class AvatarDownloadFormTest extends Unit
             $this->assertTrue($model->hasErrors('category'));
             $this->assertStringContainsString(' is invalid.', $model->getFirstError('category'));
         }
+
+        unset($oldEnv);
     }
 
     /**
@@ -79,6 +83,8 @@ final class AvatarDownloadFormTest extends Unit
         } else {
             $this->assertStringContainsString(' is invalid.', $model->getFirstError('file'));
         }
+
+        unset($oldEnv);
     }
 
     /**
