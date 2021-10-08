@@ -12,26 +12,9 @@ namespace app\commands\license;
 use DirectoryIterator;
 use Yii;
 use stdClass;
-use yii\console\Controller;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
 use yii\helpers\Json;
-
-use function array_shift;
-use function copy;
-use function escapeshellarg;
-use function file_exists;
-use function file_get_contents;
-use function fwrite;
-use function pathinfo;
-use function preg_match;
-use function preg_replace;
-use function strcasecmp;
-use function strcmp;
-use function strnatcasecmp;
-use function trim;
-use function usort;
-use function vsprintf;
 
 trait LicenseExtractTrait
 {

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Codeception\Example;
 use Codeception\Util\HttpCode;
-use yii\helpers\Url;
 
 class AccessCest
 {

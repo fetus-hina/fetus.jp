@@ -7,7 +7,6 @@
   <arg value="p" />
   <arg value="s" />
 
-  <config name="installed_paths" value="vendor/phpcompatibility/php-compatibility" />
   <runtime-set name="testVersion" value="8.0" />
 
   <rule ref="PSR12" />
@@ -19,6 +18,8 @@
   <rule ref="Generic.PHP.BacktickOperator" />
   <rule ref="Generic.PHP.RequireStrictTypes" />
   <rule ref="Generic.PHP.Syntax" />
+  <rule ref="ImportDetection" />
+  <rule ref="ImportDetection.Imports.RequireImports.Symbol"><severity>0</severity></rule>
   <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
 
   <file>.</file>

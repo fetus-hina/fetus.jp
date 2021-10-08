@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace app\commands;
 
-use Yii;
 use app\commands\license\LicenseExtractTrait;
 use yii\console\Controller;
 

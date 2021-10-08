@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace app\controllers;
 
-use Yii;
 use app\actions\license\LicenseAction;
 use yii\web\Controller;
-use yii\web\Response;
 
 class LicenseController extends Controller
 {
@@ -15,8 +13,8 @@ class LicenseController extends Controller
     {
         $license = fn($title, $dir) => [
             'class' => LicenseAction::class,
-            'title' => $title,
             'directory' => $dir,
+            'title' => $title,
         ];
 
         return [
