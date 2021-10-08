@@ -10,7 +10,6 @@ use DOMElement;
 use DOMXPath;
 use Exception;
 use UnitTester;
-use Yii;
 use yii\helpers\Html;
 
 final class HtmlTest extends Unit
@@ -72,7 +71,7 @@ EOF;
             throw new Exception('Failed to load HTML fragment');
         }
 
-        $xpath = new DOMXpath($doc);
+        $xpath = new DOMXPath($doc);
         $list = $xpath->query('//body');
         if (count($list) > 0) {
             return $list->item(0)->firstChild;

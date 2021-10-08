@@ -4,25 +4,12 @@ declare(strict_types=1);
 
 namespace app\actions\license;
 
-use DirectoryIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Yii;
 use stdClass;
 use yii\base\Action;
 use yii\helpers\Html;
-
-use function array_merge;
-use function call_user_func;
-use function file_get_contents;
-use function ltrim;
-use function strcmp;
-use function strlen;
-use function strnatcasecmp;
-use function strtolower;
-use function substr;
-use function trim;
-use function usort;
 
 class LicenseAction extends Action
 {

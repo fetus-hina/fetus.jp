@@ -11,12 +11,6 @@ namespace app\commands\license;
 
 use Yii;
 
-use function chdir;
-use function exec;
-use function fwrite;
-use function getcwd;
-use function implode;
-
 trait Helper
 {
     protected function execCommand(string $cmdline): ?string

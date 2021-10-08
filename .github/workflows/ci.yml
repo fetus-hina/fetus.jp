@@ -186,6 +186,7 @@ jobs:
         working-directory: 'webapp'
         run: |
           vendor/bin/composer-license-checker check \
+            -a BSD-2-Clause \
             -a BSD-3-Clause \
             -a LGPL-2.1-or-later \
             -a LGPL-3.0-or-later \
