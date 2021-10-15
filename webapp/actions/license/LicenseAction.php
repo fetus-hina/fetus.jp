@@ -70,7 +70,7 @@ class LicenseAction extends Action
             $basename = substr($pathname, strlen($basedir));
             $html = $this->loadPlain(
                 $entry->getPathname(),
-                fn($t) => (bool)preg_match('/copyright|licen[cs]e/i', $t),
+                fn ($t) => (bool)preg_match('/copyright|licen[cs]e/i', $t),
             );
             if ($html) {
                 $ret[] = (object)[
@@ -86,7 +86,7 @@ class LicenseAction extends Action
     private function loadPlain(string $path, ?callable $checker = null): ?string
     {
         $text = $this->loadFile($path, $checker);
-        return ($text !== null)
+        return $text !== null
             ? Html::tag('pre', Html::encode($text), ['class' => 'm-0 fs-6 lh-sm'])
             : null;
     }

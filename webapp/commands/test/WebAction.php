@@ -112,10 +112,10 @@ class WebAction extends Action
         return array_values(
             array_filter(
                 array_map(
-                    fn($v) => is_numeric($v) ? (int)$v : null,
+                    fn ($v) => is_numeric($v) ? (int)$v : null,
                     $lines
                 ),
-                fn($v) => is_int($v) && $v > 0,
+                fn ($v) => is_int($v) && $v > 0,
             )
         );
     }

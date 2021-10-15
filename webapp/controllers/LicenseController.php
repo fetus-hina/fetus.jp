@@ -11,7 +11,7 @@ class LicenseController extends Controller
 {
     public function actions()
     {
-        $license = fn($title, $dir) => [
+        $license = fn ($title, $dir) => [
             'class' => LicenseAction::class,
             'directory' => $dir,
             'title' => $title,

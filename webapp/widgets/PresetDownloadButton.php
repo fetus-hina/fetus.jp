@@ -67,7 +67,7 @@ final class PresetDownloadButton extends Widget
 
         return Html::tag(
             $tag,
-            ($this->dropDownItems)
+            $this->dropDownItems
                 ? $this->renderBtnGroupMain()
                 : $this->renderBtnMain(),
             $options,
@@ -165,7 +165,7 @@ final class PresetDownloadButton extends Widget
         return Html::tag(
             'ul',
             implode('', array_map(
-                fn($text, $url) => Html::tag(
+                fn ($text, $url) => Html::tag(
                     'li',
                     Html::a(
                         trim(implode(' ', [

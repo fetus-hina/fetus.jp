@@ -53,7 +53,7 @@ trait LicenseExtractTrait
     {
         foreach ($packages as $name => $info) {
             $this->extractPackage(
-                (isset($info['version']) && trim((string)$info['version']) !== '')
+                isset($info['version']) && trim((string)$info['version']) !== ''
                     ? "{$name}@{$info['version']}"
                     : $name,
                 Yii::getAlias('@app/vendor') . '/' . $name
@@ -80,7 +80,7 @@ trait LicenseExtractTrait
         if (!FileHelper::createDirectory(dirname($distPath))) {
             fwrite(
                 STDERR,
-                "license/extract: could not create directory: " . dirname($distPath) . "\n"
+                'license/extract: could not create directory: ' . dirname($distPath) . "\n"
             );
             return false;
         }
@@ -126,7 +126,7 @@ trait LicenseExtractTrait
         }
 
         usort($files, function (stdClass $a, stdClass $b): int {
-            return ($a->precedence <=> $b->precedence)
+            return $a->precedence <=> $b->precedence
                 ?: strnatcasecmp($a->basename, $b->basename)
                 ?: strcasecmp($a->basename, $b->basename)
                 ?: strcmp($a->basename, $b->basename);

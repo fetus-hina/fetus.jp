@@ -8,7 +8,7 @@ use yii\bootstrap4\BootstrapPluginAsset;
 use yii\caching\FileCache;
 use yii\log\FileTarget as LogFileTarget;
 
-$params = require(__DIR__ . '/params.php');
+$params = require __DIR__ . '/params.php';
 $config = [
     'id' => 'fetusjp',
     'name' => 'fetus.jp',

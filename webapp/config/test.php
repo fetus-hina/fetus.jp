@@ -5,10 +5,10 @@ declare(strict_types=1);
 use yii\helpers\ArrayHelper;
 
 return (function (): array {
-    $config = require(__DIR__ . '/web.php');
+    $config = require __DIR__ . '/web.php';
     $config['id'] .= '-tests';
     $config['components'] = ArrayHelper::merge($config['components'], [
-        'db' => require(__DIR__ . '/test_db.php'),
+        'db' => require __DIR__ . '/test_db.php',
         'mailer' => [
             'useFileTransport' => true,
         ],

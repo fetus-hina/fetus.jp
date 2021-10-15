@@ -136,7 +136,7 @@ final class AvatarDownloadFormTest extends Unit
         $this->assertGreaterThan(1024, $headers->get('Content-Length'));
 
         if (is_array($resp->stream)) {
-            list($handle) = $resp->stream;
+            [$handle] = $resp->stream;
             fseek($handle, 0, SEEK_SET);
             $content = stream_get_contents($handle);
             fclose($handle);

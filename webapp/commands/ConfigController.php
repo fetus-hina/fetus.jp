@@ -34,7 +34,7 @@ final class ConfigController extends Controller
             ]) . "\n"
         );
 
-        return (is_int($status) && $status > 0)
+        return is_int($status) && $status > 0
             ? ExitCode::OK
             : ExitCode::UNSPECIFIED_ERROR;
     }

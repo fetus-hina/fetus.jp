@@ -10,14 +10,14 @@ class AccessCest
     /**
      * @dataProvider getSimpleAccessTestData
      */
-    public function simpleAccessTest(WebTester $I, Example $data): void
+    public function simpleAccessTest(WebTester $i, Example $data): void
     {
-        $I->wantTo(vsprintf('単純ステータスチェック %s => %d', [
+        $i->wantTo(vsprintf('単純ステータスチェック %s => %d', [
             $data['path'],
             $data['status'],
         ]));
-        $I->amOnPage($data['path']);
-        $I->seeResponseCodeIs($data['status']);
+        $i->amOnPage($data['path']);
+        $i->seeResponseCodeIs($data['status']);
     }
 
     protected function getSimpleAccessTestData(): array
@@ -42,7 +42,7 @@ class AccessCest
         ];
 
         return array_map(
-            fn($path, $status) => [
+            fn ($path, $status) => [
                 'path' => $path,
                 'status' => $status,
             ],
@@ -54,27 +54,27 @@ class AccessCest
     /**
      * @dataProvider getSHA256TestData
      */
-    public function sha256Test(WebTester $I, Example $data): void
+    public function sha256Test(WebTester $i, Example $data): void
     {
-        $I->wantTo(vsprintf('ハッシュ値チェック %s', [
+        $i->wantTo(vsprintf('ハッシュ値チェック %s', [
             $data['path'],
         ]));
-        $I->amOnPage($data['path']);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $i->amOnPage($data['path']);
+        $i->seeResponseCodeIs(HttpCode::OK);
         if ($data['contentType']) {
-            $actual = (string)$I->grabHttpHeader('Content-Type');
+            $actual = (string)$i->grabHttpHeader('Content-Type');
             $pos = strpos($actual, ';');
             if ($pos !== false) {
                 $actual = substr($actual, 0, $pos);
             }
-            $I->assertEquals(
+            $i->assertEquals(
                 strtolower($data['contentType']),
                 strtolower($actual),
             );
         }
 
-        $content = $I->grabResponse();
-        $I->assertEquals(
+        $content = $i->grabResponse();
+        $i->assertEquals(
             strtolower($data['hash']),
             strtolower(hash('sha256', $content)),
         );
@@ -114,7 +114,7 @@ class AccessCest
         ];
 
         return array_map(
-            fn($path, $data) => [
+            fn ($path, $data) => [
                 'path' => $path,
                 'contentType' => $data[0],
                 'hash' => $data[1],
@@ -124,14 +124,14 @@ class AccessCest
         );
     }
 
-    public function indexTest(WebTester $I): void
+    public function indexTest(WebTester $i): void
     {
-        $I->wantTo('トップページテスト');
-        $I->amOnPage('/');
-        $I->seeResponseCodeIs(HttpCode::OK);
-        $I->seeElement('html', ['lang' => 'ja-JP']);
-        $I->seeElement('.btn', ['href' => '/service']);
-        $I->seeElement('.btn', ['href' => '/about']);
-        $I->see('Copyright © AIZAWA Hina');
+        $i->wantTo('トップページテスト');
+        $i->amOnPage('/');
+        $i->seeResponseCodeIs(HttpCode::OK);
+        $i->seeElement('html', ['lang' => 'ja-JP']);
+        $i->seeElement('.btn', ['href' => '/service']);
+        $i->seeElement('.btn', ['href' => '/about']);
+        $i->see('Copyright © AIZAWA Hina');
     }
 }
