@@ -47,7 +47,7 @@ node_modules: package-lock.json
 	@touch $@
 
 %.min.js: %.js node_modules
-	npx uglifyjs -m -c < $< > $@
+	npx terser -m -c -f ascii_only=true -o $@ $<
 
 %.js: %.es node_modules .browserslistrc
 	npx babel $< > $@
