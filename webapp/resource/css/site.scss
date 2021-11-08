@@ -22,9 +22,9 @@ body,
 }
 
 .wrap {
-  min-height: 100%;
   height: auto;
   margin: 0 auto -60px;
+  min-height: 100%;
   padding: 0;
 }
 
@@ -65,7 +65,7 @@ $spacers: (
   5: $spacer * 3,
 );
 
-@each $loc in ["first", "last"] {
+@each $loc in ['first', 'last'] {
   @each $spKey, $spVal in $spacers {
     .mt-#{$spKey}-#{$loc} {
       > :#{$loc}-child {

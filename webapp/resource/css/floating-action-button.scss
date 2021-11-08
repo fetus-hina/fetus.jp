@@ -1,7 +1,5 @@
-@use 'sass:math';
-
-$buttonSize: 56px;
-$fontSize: 24px;
+$button-size: 56px;
+$font-size: 24px;
 $margin: 10px;
 
 .floating-action-button {
@@ -12,23 +10,23 @@ $margin: 10px;
     0 6px 10px 0 rgba(0, 0, 0, 14%),
     0 1px 18px 0 rgba(0, 0, 0, 12%);
   display: block;
-  font-size: $fontSize;
-  height: $buttonSize;
+  font-size: $font-size;
+  height: $button-size;
   opacity: 50%;
   position: fixed;
   right: $margin;
-  width: $buttonSize;
+  width: $button-size;
 
   i {
     display: inline-block;
     left: 0;
     position: absolute;
     text-align: center;
-    top: (math.div($buttonSize, 2) - math.div($fontSize, 2));
+    top: ($button-size * 0.5 - $font-size * 0.5);
     width: 100%;
   }
 }
 
 footer {
-  padding-bottom: ($buttonSize + $margin * 1.5);
+  padding-bottom: ($button-size + $margin * 1.5);
 }
