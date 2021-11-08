@@ -6,7 +6,7 @@ namespace app\assets;
 
 use jp3cki\yii2\ubuntu\UbuntuMonoFontAsset;
 use rmrevin\yii\fontawesome\NpmFreeAssetBundle as FontAwesomeAsset;
-use yii\bootstrap4\BootstrapAsset;
+use yii\bootstrap5\BootstrapAsset;
 use yii\web\AssetBundle;
 use yii\web\YiiAsset;
 

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use ScssPhp\ScssPhp\Compiler as ScssCompiler;
-use yii\bootstrap4\BootstrapPluginAsset;
+use yii\bootstrap5\BootstrapPluginAsset;
 use yii\helpers\Html;
 use yii\web\View;
 
