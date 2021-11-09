@@ -16,6 +16,19 @@ use yii\web\View;
 AppAsset::register($this);
 BackToTopAsset::register($this);
 
+$faviconSizes = [
+    57,
+    60,
+    72,
+    76,
+    114,
+    120,
+    144,
+    152,
+    180,
+];
+sort($faviconSizes);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -31,6 +44,14 @@ BackToTopAsset::register($this);
       'sizes' => 'any',
       'type' => 'image/svg+xml',
     ]) . "\n" ?>
+<?php foreach ($faviconSizes as $faviconSize) { ?>
+    <?= Html::tag('link', '', [
+      'href' => Yii::getAlias('@web/images') . "/apple-touch-icon-{$faviconSize}.png",
+      'rel' => 'apple-touch-icon',
+      'sizes' => "{$faviconSize}x{$faviconSize}",
+      'type' => 'image/png',
+    ]) . "\n" ?>
+<?php } ?>
     <?= $this->head() . "\n" ?>
   </head>
   <body>

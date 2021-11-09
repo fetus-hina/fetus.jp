@@ -11,6 +11,16 @@ RESOURCES := \
 	resource/js/blog-feed.min.js \
 	resource/js/rgb.js \
 	resource/js/rgb.min.js \
+	web/favicon.ico \
+	web/images/apple-touch-icon-114.png \
+	web/images/apple-touch-icon-120.png \
+	web/images/apple-touch-icon-144.png \
+	web/images/apple-touch-icon-152.png \
+	web/images/apple-touch-icon-180.png \
+	web/images/apple-touch-icon-57.png \
+	web/images/apple-touch-icon-60.png \
+	web/images/apple-touch-icon-72.png \
+	web/images/apple-touch-icon-76.png \
 	web/images/favicon.svg
 
 .PHONY: all
@@ -62,6 +72,42 @@ node_modules: package-lock.json
 web/images/%.svg: resource/images/%.svg node_modules
 	@mkdir -p web/image
 	npx svgo -o $@ --config .svgo.config.js --eol lf --final-newline -p 3 -q $<
+
+define apple-touch-icon
+    @mkdir -p $(dir $(1))
+	convert -background none $(2) -resize $(3)x$(3) $(1)
+	npx pngcrush -ow -new -rem allb -brute -q $(1) || true
+endef
+
+web/images/apple-touch-icon-57.png: web/images/favicon.svg node_modules
+	$(call apple-touch-icon,$@,$<,57)
+
+web/images/apple-touch-icon-60.png: web/images/favicon.svg node_modules
+	$(call apple-touch-icon,$@,$<,60)
+
+web/images/apple-touch-icon-72.png: web/images/favicon.svg node_modules
+	$(call apple-touch-icon,$@,$<,72)
+
+web/images/apple-touch-icon-76.png: web/images/favicon.svg node_modules
+	$(call apple-touch-icon,$@,$<,76)
+
+web/images/apple-touch-icon-114.png: web/images/favicon.svg node_modules
+	$(call apple-touch-icon,$@,$<,114)
+
+web/images/apple-touch-icon-120.png: web/images/favicon.svg node_modules
+	$(call apple-touch-icon,$@,$<,120)
+
+web/images/apple-touch-icon-144.png: web/images/favicon.svg node_modules
+	$(call apple-touch-icon,$@,$<,144)
+
+web/images/apple-touch-icon-152.png: web/images/favicon.svg node_modules
+	$(call apple-touch-icon,$@,$<,152)
+
+web/images/apple-touch-icon-180.png: web/images/favicon.svg node_modules
+	$(call apple-touch-icon,$@,$<,180)
+
+web/favicon.ico: web/images/favicon.svg
+	convert -background none $< -define icon:auto-resize=16,32,48,64 $@
 
 .browserslistrc:
 	curl -fsSL -o $@ 'https://raw.githubusercontent.com/twbs/bootstrap/main/.browserslistrc'

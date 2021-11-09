@@ -23,6 +23,7 @@
     "autoprefixer": "^10.4.0",
     "cssnano": "^5.0.10",
     "license-checker-rseidelsohn": "^2.2.0",
+    "pngcrush-bin": "^6.0.0",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.2",
     "sass": "^1.43.4",

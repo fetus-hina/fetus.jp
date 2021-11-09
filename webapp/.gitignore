@@ -19,10 +19,13 @@
 /tests/_support/_generated
 /vendor
 /web/coverage
+/web/favicon.ico
 /web/images/**/*.br
 /web/images/**/*.gz
+/web/images/**/*.ico
 /web/images/**/*.min.*
 /web/images/**/*.svg
+/web/images/apple-touch-icon-*.png
 Thumbs.db
 composer.phar
 nbproject
