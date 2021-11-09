@@ -29,6 +29,7 @@
     "semistandard": "^16.0.1",
     "stylelint": "^14.0.1",
     "stylelint-config-sass-guidelines": "^9.0.1",
+    "svgo": "^2.8.0",
     "terser": "^5.9.0",
     "updates": "^12.2.2"
   }

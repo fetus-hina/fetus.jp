@@ -25,6 +25,12 @@ BackToTopAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() . "\n" ?>
     <title><?= Html::encode($this->title ?: Yii::$app->name) ?></title>
+    <?= Html::tag('link', '', [
+      'href' => Yii::getAlias('@web/images/favicon.svg'),
+      'rel' => 'icon',
+      'sizes' => 'any',
+      'type' => 'image/svg+xml',
+    ]) . "\n" ?>
     <?= $this->head() . "\n" ?>
   </head>
   <body>

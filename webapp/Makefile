@@ -10,7 +10,8 @@ RESOURCES := \
 	resource/js/blog-feed.js \
 	resource/js/blog-feed.min.js \
 	resource/js/rgb.js \
-	resource/js/rgb.min.js
+	resource/js/rgb.min.js \
+	web/images/favicon.svg
 
 .PHONY: all
 all: .browserslistrc config/cookie-secret.php vendor node_modules resources
@@ -57,6 +58,10 @@ node_modules: package-lock.json
 
 %.css: %.scss node_modules .browserslistrc
 	npx sass --charset --no-source-map $< | npx postcss --no-map --use autoprefixer > $@
+
+web/images/%.svg: resource/images/%.svg node_modules
+	@mkdir -p web/image
+	npx svgo -o $@ --config .svgo.config.js --eol lf --final-newline -p 3 -q $<
 
 .browserslistrc:
 	curl -fsSL -o $@ 'https://raw.githubusercontent.com/twbs/bootstrap/main/.browserslistrc'

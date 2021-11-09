@@ -22,7 +22,7 @@
 /web/images/**/*.br
 /web/images/**/*.gz
 /web/images/**/*.min.*
-/web/images/ostatus.svg
+/web/images/**/*.svg
 Thumbs.db
 composer.phar
 nbproject
