@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-use rmrevin\yii\fontawesome\FAS;
+use app\helpers\Icon;
 use yii\helpers\Html;
 
 ?>
 <div class="container">
   <div class="btn-group mb-3" role="group">
     <?= Html::a(
-      (string)FAS::icon('angle-double-left') . ' ' . Html::encode('Home'),
+      Icon::previous() . ' ' . Html::encode('Home'),
       ['site/index'],
       ['class' => 'btn btn-outline-primary']
     ) . "\n" ?>
     <?= Html::a(
-      (string)FAS::icon('angle-double-left') . ' ' . Html::encode('About'),
+      Icon::previous() . ' ' . Html::encode('About'),
       ['about/index'],
       ['class' => 'btn btn-outline-primary']
     ) . "\n" ?>
   </div>
 
-  <h2>PGP Keys</h2>
+  <h2><?= Icon::key() ?> PGP Keys</h2>
   <ul>
     <li>
       <a href="#key">

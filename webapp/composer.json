@@ -9,8 +9,9 @@
         "php": ">= 8.0",
         "jp3cki/uuid": "^2.0.0",
         "jp3cki/yii2-ubuntu-font": "^1.0.0",
-        "rmrevin/yii2-fontawesome": "^3.7.0",
+        "myclabs/php-enum": "^1.8",
         "scssphp/scssphp": "^1.7.0",
+        "twbs/bootstrap-icons": "^1.7",
         "yiisoft/yii2": "~2.0.43",
         "yiisoft/yii2-bootstrap5": "~2.0.2"
     },

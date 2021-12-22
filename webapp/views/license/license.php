@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use rmrevin\yii\fontawesome\FAS;
+use app\helpers\Icon;
 use yii\helpers\Html;
 use yii\web\View;
 
@@ -12,7 +12,7 @@ use yii\web\View;
  * @var View $this
  */
 
-$id = fn($name) => vsprintf('pkg-%s-%s', [
+$id = fn ($name) => vsprintf('pkg-%s-%s', [
   trim(preg_replace('/[^0-9a-zA-Z]+/', '_', $name), '_'),
   hash('crc32b', $name),
 ]);
@@ -20,7 +20,7 @@ $id = fn($name) => vsprintf('pkg-%s-%s', [
 // Zero Width Space
 $wbr = html_entity_decode('&#x200b;', ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
-$breakable = fn($text) => preg_replace_callback(
+$breakable = fn ($text) => preg_replace_callback(
   '/[@\/]/',
   fn($match) => match($match[0]) {
     '@' => "{$wbr}{$match[0]}",
@@ -33,12 +33,12 @@ $breakable = fn($text) => preg_replace_callback(
 ?>
 <p class="btn-group">
   <?= Html::a(
-    (string)FAS::icon('angle-double-left') . ' ' . Html::encode('Home'),
+    Icon::previous() . ' ' . Html::encode('Home'),
     ['site/index'],
     ['class' => 'btn btn-outline-primary']
   ) . "\n" ?>
   <?= Html::a(
-    (string)FAS::icon('angle-double-left') . ' ' . Html::encode('Licenses'),
+    Icon::previous() . ' ' . Html::encode('Licenses'),
     ['license/index'],
     ['class' => 'btn btn-outline-primary']
   ) . "\n" ?>

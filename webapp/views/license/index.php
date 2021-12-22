@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use rmrevin\yii\fontawesome\FAS;
+use app\helpers\Icon;
 use yii\helpers\Html;
 
 ?>
 <p>
   <?= Html::a(
-    (string)FAS::icon('angle-double-left') . ' ' . Html::encode('Home'),
+    Icon::previous() . ' ' . Html::encode('Home'),
     ['site/index'],
     ['class' => 'btn btn-outline-primary']
   ) . "\n" ?>

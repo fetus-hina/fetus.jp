@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use app\assets\AppAsset;
 use app\assets\BackToTopAsset;
-use rmrevin\yii\fontawesome\FAB;
+use app\helpers\Icon;
 use yii\helpers\Html;
 use yii\web\View;
 
@@ -74,11 +74,11 @@ sort($faviconSizes);
           <p class="m-0">
             Copyright &copy; <?= Html::a(Html::encode('AIZAWA Hina'), ['site/index']) . "\n" ?>
             <?= Html::a(
-              (string)FAB::icon('twitter'),
+              Icon::twitter(),
               'https://twitter.com/fetus_hina'
             ) . "\n" ?>
             <?= Html::a(
-              (string)FAB::icon('github'),
+              Icon::github(),
               'https://github.com/fetus-hina'
             ) . "\n" ?>
           </p>

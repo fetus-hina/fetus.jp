@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use app\assets\BlogFeedAsset;
-use rmrevin\yii\fontawesome\FAS;
+use app\helpers\Icon;
 use yii\helpers\Html;
 use yii\web\View;
 
@@ -27,7 +27,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('Services') . ' ' . (string)FAS::icon('angle-double-right'),
+          Html::encode('Services') . ' ' . Icon::next(),
           ['service/index'],
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
@@ -41,7 +41,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
       </p>
       <p>
         <?= Html::a(
-          Html::encode('About me') . ' ' . (string)FAS::icon('angle-double-right'),
+          Html::encode('About me') . ' ' . Icon::next(),
           ['about/index'],
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
