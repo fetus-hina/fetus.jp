@@ -5,7 +5,7 @@ declare(strict_types=1);
 use app\helpers\Icon;
 use yii\helpers\Html;
 
-$divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
+$divClass = ['col-12', 'col-md-6', 'col-lg-4', 'mb-4', 'adj-height'];
 
 ?>
 <div class="container">
@@ -79,37 +79,6 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
       </p>
-    </div>
-
-    <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
-      <h4>
-        Splapi
-      </h4>
-      <p>
-        Splatoon内のステージ・ルールの日程について取得することができるAPIを提供するウェブサービスです。
-      </p>
-      <p>
-        元々は別の方が作成されたAPIの諸事情による廃止に伴い、API互換性を持った形でフルスクラッチで作成したものです。
-      </p>
-      <div>
-        <?= Html::a(
-          Html::encode('Splapi') . ' ' . Icon::next(),
-          'https://splapi.fetus.jp/',
-          ['class' => 'btn btn-outline-primary']
-        ) . "\n" ?>
-        <div class="btn-group" role="group">
-          <?= Html::a(
-            Html::encode('SPLAPI 2') . ' ' . Icon::next(),
-            'https://splapi2.stat.ink/',
-            ['class' => 'btn btn-outline-primary']
-          ) . "\n" ?>
-          <?= Html::a(
-            Icon::github() . ' ' . Icon::next(),
-            'https://github.com/fetus-hina/splapi2.stat.ink',
-            ['class' => 'btn btn-outline-primary']
-          ) . "\n" ?>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -235,6 +204,66 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'adj-height'];
         <?= Html::a(
           Icon::github() . ' ' . Html::encode('ソース') . ' ' . Icon::next(),
           'https://github.com/fetus-hina/haraikomi',
+          ['class' => 'btn btn-outline-primary']
+        ) . "\n" ?>
+      </p>
+    </div>
+  </div>
+
+  <h3>
+    閉鎖済みサービス
+  </h3>
+  <div class="row">
+    <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
+      <h4>
+        Splapi
+      </h4>
+      <p>
+        Splatoon内のステージ・ルールの日程について取得することができるAPIを提供するウェブサービスです。
+      </p>
+      <p>
+        元々は別の方が作成されたAPIの諸事情による廃止に伴い、API互換性を持った形でフルスクラッチで作成したものです。
+      </p>
+      <div>
+        <?= Html::a(
+          Html::encode('Splapi') . ' ' . Icon::next(),
+          'https://splapi.fetus.jp/',
+          ['class' => 'btn btn-outline-primary']
+        ) . "\n" ?>
+        <div class="btn-group" role="group">
+          <?= Html::a(
+            Html::encode('SPLAPI 2') . ' ' . Icon::next(),
+            'https://splapi2.stat.ink/',
+            ['class' => 'btn btn-outline-primary']
+          ) . "\n" ?>
+          <?= Html::a(
+            Icon::github() . ' ' . Icon::next(),
+            'https://github.com/fetus-hina/splapi2.stat.ink',
+            ['class' => 'btn btn-outline-primary']
+          ) . "\n" ?>
+        </div>
+      </div>
+    </div>
+    <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
+      <h4>
+        ICOMU-M@STER
+      </h4>
+      <p>
+        アーケード版・Xbox 360版・Nintendo DS版の THE IDOLM@STER コミュニケーション攻略サイトです。
+        別の方（故人）からデータを引き継いで運営していました。
+      </p>
+      <p>
+        「1育成1万円」という大変難しいゲームで多くの方からご利用いただいていました。
+        （印刷物のゲームセンターへの設置も多くありました）
+      </p>
+      <p>
+        システムが古くメンテナンスできないこと、アーケード版のオンラインサービスが終了し、既にほとんど筐体が残っていないこと、
+        Xbox 360版、DS版もほぼアクセスがなかったことから、既に役割は終えたものとしてサービスは終了しています。
+      </p>
+      <p>
+        <?= Html::a(
+          Html::encode('Wayback Machine') . ' ' . Icon::next(),
+          'https://web.archive.org/web/20140110165622/http://icomu-master.info/',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
       </p>
