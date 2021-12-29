@@ -9,4 +9,5 @@ use MyCLabs\Enum\Enum;
 final class IconSource extends Enum
 {
     public const BOOTSTRAP_ICONS = 'bootstrap-icons';
+    public const TWEMOJI = 'twemoji';
 }

@@ -7,6 +7,7 @@ namespace app\helpers;
 use LogicException;
 use Yii;
 use app\assets\BootstrapIconsAsset;
+use app\widgets\Twemoji;
 use yii\helpers\Html;
 use yii\web\AssetBundle;
 use yii\web\View;
@@ -30,6 +31,7 @@ final class Icon
     // next
     // previous
     // programming
+    // r18
     // radio
     // server
     // skill
@@ -123,6 +125,11 @@ final class Icon
         return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-pc-display-horizontal');
     }
 
+    public static function r18(): string
+    {
+        return self::renderIcon(IconSource::TWEMOJI, self::codepoint(0x1F51E));
+    }
+
     public static function radio(): string
     {
         return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-broadcast-pin');
@@ -164,7 +171,7 @@ final class Icon
         return self::renderIconImpl($source, $data);
     }
 
-    private static function registerAsset(string $source): AssetBundle
+    private static function registerAsset(string $source): ?AssetBundle
     {
         $view = Yii::$app->view;
         if (!$view instanceof View) {
@@ -173,6 +180,7 @@ final class Icon
 
         return match ($source) {
             IconSource::BOOTSTRAP_ICONS => BootstrapIconsAsset::register($view),
+            IconSource::TWEMOJI => null,
             default => throw new LogicException(),
         };
     }
@@ -181,6 +189,7 @@ final class Icon
     {
         return match ($source) {
             IconSource::BOOTSTRAP_ICONS => self::renderBootstrapIcon($data),
+            IconSource::TWEMOJI => self::renderTwemoji($data),
             default => throw new LogicException(),
         };
     }
@@ -190,5 +199,21 @@ final class Icon
         return Html::tag('span', '', [
             'class' => ['bi', $class],
         ]);
+    }
+
+    private static function renderTwemoji(string $emojiText): string
+    {
+        return Twemoji::widget([
+            'text' => $emojiText,
+        ]);
+    }
+
+    private static function codepoint(int $codePoint): string
+    {
+        if ($c = mb_chr($codePoint, 'UTF-8')) {
+            return $c;
+        }
+
+        throw new LogicException(sprintf('Unsupported codepoint U+%x', $codePoint));
     }
 }

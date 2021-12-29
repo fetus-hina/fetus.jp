@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace yii\helpers;
 
-final class Html extends BaseHtml
+class Html extends BaseHtml
 {
     public static function a($text, $url = null, $options = [])
     {

@@ -5,12 +5,16 @@ RESOURCES := \
 	resource/css/floating-action-button.min.css \
 	resource/css/site.css \
 	resource/css/site.min.css \
+	resource/css/twemoji.css \
+	resource/css/twemoji.min.css \
 	resource/js/back-to-top.js \
 	resource/js/back-to-top.min.js \
 	resource/js/blog-feed.js \
 	resource/js/blog-feed.min.js \
 	resource/js/rgb.js \
 	resource/js/rgb.min.js \
+	resource/js/twemoji.js \
+	resource/js/twemoji.min.js \
 	web/favicon.ico \
 	web/images/apple-touch-icon-114.png \
 	web/images/apple-touch-icon-120.png \
