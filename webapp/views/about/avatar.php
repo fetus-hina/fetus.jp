@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use app\assets\AppAsset;
 use app\helpers\Icon;
+use app\helpers\Unicode;
+use app\widgets\Twemoji;
 use yii\helpers\Html;
 use yii\web\View;
 
@@ -32,7 +34,11 @@ use yii\web\View;
 <p>
   その際は、私の発言ととらえられないようにしてください（例えばご自分のアバターとしての利用は不可）。<br>
   また、営利目的での利用はできません。<br>
-  アダルト方面の制限はありません :)
+  アダルト方面の制限はありません<?= Twemoji::widget([
+    'text' => Unicode::fromCodepoint([
+      0x1F60A,
+    ]),
+  ]) . "\n" ?>
 </p>
 <p>
   <?= vsprintf('%s を利用する場合、%sが同時に適用されます。', [

@@ -210,10 +210,6 @@ final class Icon
 
     private static function codepoint(int $codePoint): string
     {
-        if ($c = mb_chr($codePoint, 'UTF-8')) {
-            return $c;
-        }
-
-        throw new LogicException(sprintf('Unsupported codepoint U+%x', $codePoint));
+        return Unicode::fromCodepoint($codePoint);
     }
 }

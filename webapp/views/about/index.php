@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use app\assets\AppAsset;
 use app\helpers\Icon;
+use app\helpers\Unicode;
+use app\widgets\Twemoji;
 use yii\helpers\Html;
 use yii\web\View;
 
@@ -49,8 +51,20 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
         <?= Icon::house() ?> Address
       </h3>
       <p>
-        <a href="https://ja.wikipedia.org/wiki/%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82">大阪府寝屋川市</a><br>
-        <a href="https://en.wikipedia.org/wiki/Neyagawa,_Osaka">Neyagawa, Osaka</a>, Japan
+        <?= vsprintf('%s %s', [
+          Twemoji::widget([
+            'text' => Unicode::countryFlag('JP'),
+          ]),
+          Html::a('大阪府寝屋川市', 'https://ja.wikipedia.org/wiki/%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82'),
+        ]) ?><br>
+        <?= vsprintf('%s %s', [
+          Twemoji::widget([
+            'text' => Unicode::countryFlag('JP'),
+          ]),
+          vsprintf('%s, Japan', [
+            Html::a('Neyagawa, Osaka', 'https://en.wikipedia.org/wiki/Neyagawa,_Osaka'),
+          ]),
+        ]) . "\n" ?>
       </p>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
