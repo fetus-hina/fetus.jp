@@ -17,7 +17,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'mb-4', 'adj-height'];
     ) . "\n" ?>
   </p>
 
-  <h2>Services</h2>
+  <h2><?= Icon::webService() ?> Services</h2>
   <p>
     個人的に作ったウェブサービスなど
   </p>

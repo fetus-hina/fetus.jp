@@ -20,7 +20,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
   <div class="row">
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h2>
-        Services
+        <?= Icon::webService() ?> Services
       </h2>
       <p>
         作ったウェブサービス
@@ -35,7 +35,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
     </div>
 
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
-      <h2>About</h2>
+      <h2><?= Icon::aboutMe() ?> About</h2>
       <p>
         自己紹介的なもの、スキル一覧、PGPキー
       </p>
@@ -51,7 +51,7 @@ $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
 
 <?php BlogFeedAsset::register($this) ?>
   <h2>
-    <a href="https://blog.fetus.jp/">Blog</a>
+    <?= Icon::wordpress() ?> <a href="https://blog.fetus.jp/">Blog</a>
   </h2>
   <div id="blog">
   </div>

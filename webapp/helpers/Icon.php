@@ -13,6 +13,7 @@ use yii\web\View;
 
 final class Icon
 {
+    // aboutMe
     // angleDoubleLeft
     // angleDoubleRight
     // avatar
@@ -21,14 +22,26 @@ final class Icon
     // house
     // key
     // language
+    // license
     // like
+    // markup
     // mastodon
+    // middleware
     // next
     // previous
+    // programming
     // radio
+    // server
+    // skill
     // twitter
     // user
+    // webService
     // wordpress
+
+    public static function aboutMe(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-person-bounding-box');
+    }
 
     public static function angleDoubleLeft(): string
     {
@@ -70,14 +83,29 @@ final class Icon
         return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-translate');
     }
 
+    public static function license(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-person-check-fill');
+    }
+
     public static function like(): string
     {
         return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-hand-thumbs-up');
     }
 
+    public static function markup(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-code');
+    }
+
     public static function mastodon(): string
     {
         return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-mastodon');
+    }
+
+    public static function middleware(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-gear');
     }
 
     public static function next(): string
@@ -90,9 +118,24 @@ final class Icon
         return self::angleDoubleLeft();
     }
 
+    public static function programming(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-pc-display-horizontal');
+    }
+
     public static function radio(): string
     {
         return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-broadcast-pin');
+    }
+
+    public static function server(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-server');
+    }
+
+    public static function skill(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-wrench');
     }
 
     public static function twitter(): string
@@ -103,6 +146,11 @@ final class Icon
     public static function user(): string
     {
         return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-person-fill');
+    }
+
+    public static function webService(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-globe');
     }
 
     public static function wordpress(): string

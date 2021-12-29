@@ -26,7 +26,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     ) . "\n" ?>
   </p>
 
-  <h2>About</h2>
+  <h2><?= Icon::aboutMe() ?> About</h2>
   <div class="row">
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
@@ -58,8 +58,8 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
         <?= Icon::envelope() ?> Email
       </h3>
       <p>
-        <span class="monospace">&lt;hina@fetus.jp&gt;</span><br>
-        You can use encrypted email with my PGP Key.
+        <span class="font-monospace">&lt;hina@fetus.jp&gt;</span><br>
+        You can use encrypted email with <?= Html::a('my PGP Key', ['about/pgp']) ?>.
       </p>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
@@ -115,11 +115,11 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     </div>
   </div>
 
-  <h2>Skills</h2>
+  <h2><?= Icon::skill() ?> Skills</h2>
   <div class="row">
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        Programming
+        <?= Icon::programming() ?> Programming
       </h3>
       <ul class="inline-list">
         <li>PHP</li>
@@ -132,7 +132,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        Markup
+        <?= Icon::markup() ?> Markup
       </h3>
       <ul class="inline-list mb-0">
         <li>HTML</li>
@@ -153,7 +153,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        Server Management
+        <?= Icon::server() ?> Server Management
       </h3>
       <ul class="inline-list">
         <li>
@@ -178,7 +178,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        Middlewares
+        <?= Icon::middleware() ?> Middlewares
       </h3>
       <ul class="inline-list"><?= implode('', array_map(
         fn($t) => Html::tag('li', Html::encode($t)),
@@ -198,7 +198,7 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        National Licenses
+        <?= Icon::license() ?> National Licenses
       </h3>
       <ul class="inline-list"><?= implode('', array_map(
         fn($t) => Html::tag('li', Html::encode($t)),
