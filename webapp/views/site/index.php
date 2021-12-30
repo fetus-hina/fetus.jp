@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use app\assets\BlogFeedAsset;
 use app\helpers\Icon;
-use yii\helpers\Html;
+use app\helpers\Html;
 use yii\web\View;
 
 /**

@@ -5,7 +5,7 @@ declare(strict_types=1);
 use app\assets\AppAsset;
 use app\assets\BackToTopAsset;
 use app\helpers\Icon;
-use yii\helpers\Html;
+use app\helpers\Html;
 use yii\web\View;
 
 /**
@@ -88,6 +88,7 @@ sort($faviconSizes);
         </div>
       </footer>
     </div>
+    <?= \kartik\dialog\Dialog::widget(['overrideYiiConfirm' => true]) . "\n" ?>
     <?php $this->endBody(); echo "\n" ?>
   </body>
 </html>

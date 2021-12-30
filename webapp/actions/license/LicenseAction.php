@@ -7,9 +7,9 @@ namespace app\actions\license;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Yii;
+use app\helpers\Html;
 use stdClass;
 use yii\base\Action;
-use yii\helpers\Html;
 
 class LicenseAction extends Action
 {

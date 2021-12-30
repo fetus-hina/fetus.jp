@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
+use kartik\dialog\Dialog;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 use yii\web\AssetManager;
 
-Yii::$classMap[Html::class] = __DIR__ . '/../overwrite/yii2/helpers/Html.php';
+Yii::$container->set(Dialog::class, [
+    'bsVersion' => '5',
+]);
 
 Yii::$container->set(AssetManager::class, [
     'hashCallback' => function (string $path): string {

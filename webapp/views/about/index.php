@@ -6,7 +6,7 @@ use app\assets\AppAsset;
 use app\helpers\Icon;
 use app\helpers\Unicode;
 use app\widgets\Twemoji;
-use yii\helpers\Html;
+use app\helpers\Html;
 use yii\web\View;
 
 /**

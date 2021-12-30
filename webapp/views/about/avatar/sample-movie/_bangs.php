@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use yii\helpers\Html;
+use app\helpers\Html;
 use yii\web\View;
 
 /**

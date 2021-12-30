@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace app\widgets;
 
 use Yii;
+use app\helpers\Html;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 use yii\i18n\Formatter;
 
 final class PresetDownloadButton extends Widget

@@ -6,7 +6,7 @@ use app\assets\AppAsset;
 use app\helpers\Icon;
 use app\helpers\Unicode;
 use app\widgets\Twemoji;
-use yii\helpers\Html;
+use app\helpers\Html;
 use yii\web\View;
 
 /**
@@ -43,15 +43,15 @@ use yii\web\View;
 <p>
   <?= vsprintf('%s を利用する場合、%sが同時に適用されます。', [
     implode(', ', [
-      Html::a(
+      Html::aR18(
         Html::encode('カスタムメイド 3D2 (CM3D2)'),
         'http://www.kisskiss.tv/cm3d2/'
       ),
-      Html::a(
+      Html::aR18(
         Html::encode('カスタムオーダーメイド 3D2 (COM3D2)'),
         'https://com3d2.jp/'
       ),
-      Html::a(
+      Html::aR18(
         Html::encode('CR EditSystem (CRES)'),
         'http://cr-edit.jp/'
       ),

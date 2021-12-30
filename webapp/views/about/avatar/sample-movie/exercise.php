@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use yii\helpers\Html;
+use app\helpers\Html;
 use yii\web\View;
 
 /**
@@ -13,7 +13,7 @@ use yii\web\View;
 <div class="mb-0-last">
   <?= $this->render('//about/avatar/sample-movie/_youtube', ['video' => '2TwJ7OmE5Bk']) . "\n" ?>
   <p class="text-muted"><?= vsprintf('%s（%s）%s', [
-    Html::a(
+    Html::aR18(
       Html::encode('メイド体操第一'),
       'https://com3d2-shop.s-court.me/item.php?iid=1268',
       ['class' => 'text-muted']

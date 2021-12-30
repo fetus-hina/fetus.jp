@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace tests\models;
+namespace tests\helpers;
 
 use Codeception\Test\Unit;
 use DOMDocument;
@@ -10,7 +10,7 @@ use DOMElement;
 use DOMXPath;
 use Exception;
 use UnitTester;
-use yii\helpers\Html;
+use app\helpers\Html;
 
 final class HtmlTest extends Unit
 {

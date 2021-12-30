@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use app\helpers\Icon;
-use yii\helpers\Html;
+use app\helpers\Html;
 
 ?>
 <div class="container">

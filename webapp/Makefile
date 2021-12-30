@@ -3,6 +3,8 @@ RESOURCES := \
 	resource/css/blog-feed.min.css \
 	resource/css/floating-action-button.css \
 	resource/css/floating-action-button.min.css \
+	resource/css/kartikv-dialog.css \
+	resource/css/kartikv-dialog.min.css \
 	resource/css/site.css \
 	resource/css/site.min.css \
 	resource/css/twemoji.css \

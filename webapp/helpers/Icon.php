@@ -8,7 +8,6 @@ use LogicException;
 use Yii;
 use app\assets\BootstrapIconsAsset;
 use app\widgets\Twemoji;
-use yii\helpers\Html;
 use yii\web\AssetBundle;
 use yii\web\View;
 
