@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace app\helpers;
 
-use InvalidArgumentException ;
+use InvalidArgumentException;
 use RangeException;
 use TypeError;
 use Yii;
@@ -34,7 +34,7 @@ final class Unicode
 
             return $c;
         }
-        
+
         if (is_array($codepoint) && ArrayHelper::isIndexed($codepoint, true)) {
             return implode('', array_map(
                 fn (int $c): string => self::fromCodepoint($c, $charset),
@@ -53,8 +53,8 @@ final class Unicode
         }
 
         return self::fromCodepoint([
-            self::REGIONAL_INDICATOR_BASE + (ord(substr($cc, 0, 1)) - ord('A')),
-            self::REGIONAL_INDICATOR_BASE + (ord(substr($cc, 1, 1)) - ord('A')),
+            self::REGIONAL_INDICATOR_BASE + ord(substr($cc, 0, 1)) - ord('A'),
+            self::REGIONAL_INDICATOR_BASE + ord(substr($cc, 1, 1)) - ord('A'),
         ]);
     }
 }
