@@ -83,7 +83,9 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
       <p><?= implode(Html::tag('br'), [
         Icon::twitter() . ' ' . Html::a(
           Html::encode('@fetus_hina'),
-          'https://twitter.com/fetus_hina'
+          vsprintf('https://twitter.com/intent/user?%s', [
+            http_build_query(['user_id' => '66695324']),
+          ]),
         ),
         Icon::github() . ' ' . Html::a(
           Html::encode('@fetus-hina'),

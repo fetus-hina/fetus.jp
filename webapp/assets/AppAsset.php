@@ -17,6 +17,7 @@ class AppAsset extends AssetBundle
         'css/site.min.css',
     ];
     public $js = [
+        'js/twitter-web-intents.min.js',
     ];
     public $depends = [
         BootstrapAsset::class,

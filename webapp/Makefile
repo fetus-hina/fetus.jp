@@ -17,6 +17,8 @@ RESOURCES := \
 	resource/js/rgb.min.js \
 	resource/js/twemoji.js \
 	resource/js/twemoji.min.js \
+	resource/js/twitter-web-intents.js \
+	resource/js/twitter-web-intents.min.js \
 	web/favicon.ico \
 	web/images/apple-touch-icon-114.png \
 	web/images/apple-touch-icon-120.png \

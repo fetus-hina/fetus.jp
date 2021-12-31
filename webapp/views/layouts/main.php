@@ -76,7 +76,11 @@ sort($faviconSizes);
             Copyright &copy; <?= Html::a(Html::encode('AIZAWA Hina'), ['site/index']) . "\n" ?>
             <?= Html::a(
               Icon::twitter(),
-              'https://twitter.com/fetus_hina'
+              vsprintf('https://twitter.com/intent/user?%s', [
+                http_build_query(
+                  ['user_id' => '66695324'],
+                ),
+              ]),
             ) . "\n" ?>
             <?= Html::a(
               Icon::github(),
