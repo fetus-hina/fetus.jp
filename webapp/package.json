@@ -34,5 +34,14 @@
     "svgo": "^2.8.0",
     "terser": "^5.10.0",
     "updates": "^12.2.3"
+  },
+  "semistandard": {
+    "envs": {
+      "browser": true,
+      "jquery": true
+    },
+    "globals": [
+      "bootstrap"
+    ]
   }
 }

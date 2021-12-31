@@ -17,6 +17,7 @@ final class Icon
     // angleDoubleLeft
     // angleDoubleRight
     // avatar
+    // dismiss
     // envelope
     // github
     // house
@@ -28,10 +29,12 @@ final class Icon
     // mastodon
     // middleware
     // next
+    // ok
     // previous
     // programming
     // r18
     // radio
+    // secure
     // server
     // skill
     // twitter
@@ -57,6 +60,11 @@ final class Icon
     public static function avatar(): string
     {
         return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-person-badge-fill');
+    }
+
+    public static function dismiss(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-x-lg');
     }
 
     public static function envelope(): string
@@ -114,6 +122,11 @@ final class Icon
         return self::angleDoubleRight();
     }
 
+    public static function ok(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-check2');
+    }
+
     public static function previous(): string
     {
         return self::angleDoubleLeft();
@@ -132,6 +145,11 @@ final class Icon
     public static function radio(): string
     {
         return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-broadcast-pin');
+    }
+
+    public static function secure(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-file-lock2');
     }
 
     public static function server(): string

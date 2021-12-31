@@ -4,10 +4,16 @@ declare(strict_types=1);
 
 namespace app\helpers;
 
+use Yii;
+use app\assets\R18DialogAsset;
+use yii\helpers\Json;
 use yii\helpers\Url;
+use yii\web\View;
 
 class Html extends \yii\bootstrap5\Html
 {
+    private const CLASS_R18_LINK = 'r18-link';
+
     /** @inheritdoc */
     public static function a($text, $url = null, $options = [])
     {
@@ -37,16 +43,18 @@ class Html extends \yii\bootstrap5\Html
      */
     public static function aR18($text, $url = null, $options = []): string
     {
-        if (!isset($options['data'])) {
-            $options['data'] = [];
+        if (($v = Yii::$app->view) instanceof View) {
+            R18DialogAsset::register($v);
+            $v->registerJs(
+                vsprintf('$(%s).r18dialog();', [
+                    Json::encode(sprintf('.%s', self::CLASS_R18_LINK)),
+                ]),
+                View::POS_READY,
+                __METHOD__, // scriptlet-id
+            );
         }
 
-        if (!isset($options['data']['confirm'])) {
-            $options['data']['confirm'] = implode("\n", [
-                Icon::r18() . self::encode('リンク先はアダルトコンテンツを含むページです。'),
-                self::encode('本当に移動しますか？'),
-            ]);
-        }
+        self::addCssClass($options, self::CLASS_R18_LINK);
 
         return self::a(
             Icon::r18() . $text,

@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 use app\assets\AppAsset;
 use app\assets\BackToTopAsset;
-use app\helpers\Icon;
 use app\helpers\Html;
+use app\helpers\Icon;
+use app\widgets\R18Dialog;
 use yii\web\View;
 
 /**
@@ -88,7 +89,7 @@ sort($faviconSizes);
         </div>
       </footer>
     </div>
-    <?= \kartik\dialog\Dialog::widget(['overrideYiiConfirm' => true]) . "\n" ?>
+    <?= R18Dialog::widget() . "\n" ?>
     <?php $this->endBody(); echo "\n" ?>
   </body>
 </html>

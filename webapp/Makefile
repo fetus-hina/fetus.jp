@@ -3,8 +3,6 @@ RESOURCES := \
 	resource/css/blog-feed.min.css \
 	resource/css/floating-action-button.css \
 	resource/css/floating-action-button.min.css \
-	resource/css/kartikv-dialog.css \
-	resource/css/kartikv-dialog.min.css \
 	resource/css/site.css \
 	resource/css/site.min.css \
 	resource/css/twemoji.css \
@@ -13,6 +11,8 @@ RESOURCES := \
 	resource/js/back-to-top.min.js \
 	resource/js/blog-feed.js \
 	resource/js/blog-feed.min.js \
+	resource/js/r18-dialog.js \
+	resource/js/r18-dialog.min.js \
 	resource/js/rgb.js \
 	resource/js/rgb.min.js \
 	resource/js/twemoji.js \
@@ -103,7 +103,7 @@ check-style-phpstan: vendor
 
 .PHONY: check-style-js
 check-style-js: node_modules
-	npx semistandard --global='jQuery' 'resource/**/*.es'
+	npx semistandard 'resource/**/*.es'
 
 .PHONY: check-style-css
 check-style-css: node_modules

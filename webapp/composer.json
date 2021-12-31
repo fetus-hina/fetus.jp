@@ -7,10 +7,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">= 8.0",
-        "cweagans/composer-patches": "^1.7",
         "jp3cki/uuid": "^2.0.0",
         "jp3cki/yii2-ubuntu-font": "^1.0.0",
-        "kartik-v/yii2-dialog": "^1.0",
         "myclabs/php-enum": "^1.8",
         "scssphp/scssphp": "^1.7.0",
         "twbs/bootstrap-icons": "^1.7",
@@ -54,13 +52,6 @@
             "php": "8.0.14"
         },
         "sort-packages": true
-    },
-    "extra": {
-      "patches": {
-        "kartik-v/yii2-dialog": {
-          "Add Japanese translations": "https://github.com/kartik-v/yii2-dialog/pull/48.patch"
-        }
-      }
     },
     "scripts": {
         "post-install-cmd": [
