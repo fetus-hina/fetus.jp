@@ -7,10 +7,8 @@ namespace app\commands\test;
 use Yii;
 use yii\base\Action;
 
-class WebAction extends Action
+final class WebAction extends Action
 {
-    private const SIGINT = 2;
-    private const SIGKILL = 9;
     private const SIGTERM = 15;
 
     private ?array $serverProcess = null;
