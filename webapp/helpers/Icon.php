@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace app\helpers;
 
 use LogicException;
+use TypeError;
 use Yii;
 use app\assets\BootstrapIconsAsset;
 use app\widgets\Twemoji;
@@ -211,15 +212,23 @@ final class Icon
         };
     }
 
-    private static function renderBootstrapIcon(string $class): string
+    private static function renderBootstrapIcon(mixed $class): string
     {
+        if (!is_string($class)) {
+            throw new TypeError();
+        }
+
         return Html::tag('span', '', [
             'class' => ['bi', $class],
         ]);
     }
 
-    private static function renderTwemoji(string $emojiText): string
+    private static function renderTwemoji(mixed $emojiText): string
     {
+        if (!is_string($emojiText)) {
+            throw new TypeError();
+        }
+
         return Twemoji::widget([
             'text' => $emojiText,
         ]);

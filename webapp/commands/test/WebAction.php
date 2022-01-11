@@ -26,7 +26,7 @@ final class WebAction extends Action
         }
 
         $cmdline = vsprintf('/usr/bin/env %s run web', [
-            escapeshellarg(Yii::getAlias('@app/vendor/bin/codecept')),
+            escapeshellarg((string)Yii::getAlias('@app/vendor/bin/codecept')),
         ]);
         $status = null;
         passthru($cmdline, $status);
@@ -40,7 +40,7 @@ final class WebAction extends Action
         fwrite(STDERR, "\nStarting test server on 127.0.0.1:58420\n\n");
 
         $cmdline = vsprintf('/usr/bin/env %s serve %s --interactive=0 --docroot=%s 2>&1', [
-            escapeshellarg(Yii::getAlias('@app/tests/bin/yii')),
+            escapeshellarg((string)Yii::getAlias('@app/tests/bin/yii')),
             escapeshellarg('127.0.0.1:58420'),
             escapeshellarg('@app/web'),
         ]);
@@ -77,6 +77,8 @@ final class WebAction extends Action
         if ($this->serverProcess['pid']) {
             $this->killDescendants((int)$this->serverProcess['pid'], static::SIGTERM);
         }
+
+        assert(is_array($this->serverProcess));
 
         proc_terminate($this->serverProcess['handle'], static::SIGTERM);
         proc_close($this->serverProcess['handle']);

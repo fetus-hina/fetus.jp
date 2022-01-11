@@ -26,7 +26,7 @@ use app\helpers\Html;
   <div class="card-body">
     <?= Html::tag(
       'pre',
-      Html::encode((string)@file_get_contents(Yii::getAlias('@app/LICENSE'))),
+      Html::encode((string)@file_get_contents((string)Yii::getAlias('@app/LICENSE'))),
       ['class' => 'm-0 fs-6 lh-sm']
     ) . "\n" ?>
   </div>
@@ -38,7 +38,7 @@ use app\helpers\Html;
   <div class="card-body">
     <?= Html::tag(
       'pre',
-      Html::encode((string)@file_get_contents(Yii::getAlias('@app/yii-LICENSE.md'))),
+      Html::encode((string)@file_get_contents((string)Yii::getAlias('@app/yii-LICENSE.md'))),
       ['class' => 'm-0 fs-6 lh-sm']
     ) . "\n" ?>
   </div>

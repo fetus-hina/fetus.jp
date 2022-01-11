@@ -11,11 +11,13 @@ Yii::$container->set(AssetManager::class, [
             ? dirname($path)
             : $path;
 
+        $deployId = ArrayHelper::getValue((array)Yii::$app->params, 'deployId', '');
+
         return vsprintf('%s/%s', [
             substr(
                 hash_hmac(
                     'sha256',
-                    (string)ArrayHelper::getValue(Yii::$app->params, 'deployId', ''),
+                    is_string($deployId) ? $deployId : '',
                     Yii::getVersion(),
                     false
                 ),

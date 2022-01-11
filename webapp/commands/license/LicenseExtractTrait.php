@@ -10,6 +10,8 @@ declare(strict_types=1);
 namespace app\commands\license;
 
 use DirectoryIterator;
+use Exception;
+use TypeError;
 use Yii;
 use stdClass;
 use yii\helpers\ArrayHelper;
@@ -29,7 +31,7 @@ trait LicenseExtractTrait
 
     public function actionCleanExtracted(): int
     {
-        $baseDir = Yii::getAlias('@app/data/licenses/composer');
+        $baseDir = (string)Yii::getAlias('@app/data/licenses/composer');
         if (file_exists($baseDir)) {
             FileHelper::removeDirectory($baseDir);
         }
@@ -40,13 +42,16 @@ trait LicenseExtractTrait
     private function getPackages(): array
     {
         $cmdline = vsprintf('/usr/bin/env %s --no-interaction --no-plugins license --format=%s', [
-            escapeshellarg(Yii::getAlias('@app/composer.phar')),
+            escapeshellarg((string)Yii::getAlias('@app/composer.phar')),
             escapeshellarg('json'),
         ]);
-        return ArrayHelper::getValue(
-            Json::decode($this->execCommand($cmdline)),
+        $value = ArrayHelper::getValue(
+            $this->shouldBeArray(Json::decode((string)$this->execCommand($cmdline))),
             'dependencies'
         );
+        return is_array($value)
+            ? $value
+            : throw new Exception();
     }
 
     private function extractPackages(array $packages): void
@@ -143,13 +148,13 @@ trait LicenseExtractTrait
 
     private function hasLicense(string $path): bool
     {
-        $text = file_get_contents($path, false);
+        $text = (string)file_get_contents($path, false);
         return (bool)preg_match('/license|copyright/i', $text);
     }
 
     private function sanitize(string $packageName): string
     {
-        $packageName = preg_replace(
+        $packageName = (string)preg_replace(
             '/[^!#$%()+,.\/-9@-Z_a-z]+/',
             '-',
             $packageName
@@ -157,5 +162,12 @@ trait LicenseExtractTrait
         $packageName = str_replace('/../', '/', $packageName);
         $packageName = str_replace('/./', '/', $packageName);
         return $packageName;
+    }
+
+    private function shouldBeArray(mixed $value): array
+    {
+        return is_array($value)
+            ? $value
+            : throw new TypeError();
     }
 }

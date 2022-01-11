@@ -20,7 +20,7 @@ final class ConfigController extends Controller
         assert(0 < $length && $length <= 64);
 
         $status = file_put_contents(
-            Yii::getAlias($path),
+            (string)Yii::getAlias($path),
             implode("\n", [
                 '<?php',
                 '',

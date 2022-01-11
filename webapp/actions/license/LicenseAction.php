@@ -48,7 +48,7 @@ class LicenseAction extends Action
 
     private function loadFiles(string $directory): array
     {
-        $basedir = Yii::getAlias($directory);
+        $basedir = (string)Yii::getAlias($directory);
         $ret = [];
         $it = new RecursiveIteratorIterator(
             new RecursiveDirectoryIterator($basedir)
@@ -94,9 +94,14 @@ class LicenseAction extends Action
     private function loadFile(string $path, ?callable $checker): ?string
     {
         $text = file_get_contents($path, false);
+        if (!is_string($text)) {
+            return null;
+        }
+
         if ($checker && !call_user_func($checker, $text)) {
             return null;
         }
+
         return $text;
     }
 }

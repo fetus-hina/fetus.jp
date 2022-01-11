@@ -29,7 +29,7 @@ class AboutController extends Controller
     public function actionDownloadAvatarPreset(): void
     {
         $form = Yii::createObject(AvatarDownloadForm::class);
-        $form->attributes = Yii::$app->request->get();
+        $form->attributes = (array)Yii::$app->request->get();
         if (!$form->download(Yii::$app->response)) {
             throw new NotFoundHttpException(Yii::t('yii', 'Page not found.'));
         }

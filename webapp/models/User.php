@@ -35,7 +35,7 @@ final class User extends BaseObject implements IdentityInterface
 
     public function getId()
     {
-        return $this->id;
+        return (string)$this->id;
     }
 
     public function validateAuthKey($authKey)

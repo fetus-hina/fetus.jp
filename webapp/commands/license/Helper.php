@@ -21,7 +21,7 @@ trait Helper
         }
 
         try {
-            chdir(Yii::getAlias('@app'));
+            chdir((string)Yii::getAlias('@app'));
             return $this->execCommandImpl($cmdline);
         } finally {
             @chdir($cwd); // restore

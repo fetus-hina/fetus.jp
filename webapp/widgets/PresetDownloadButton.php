@@ -16,8 +16,8 @@ final class PresetDownloadButton extends Widget
 
     public string $buttonIcon = '{fa fas fa-download}';
     public string $buttonFace = 'Download Preset';
-    public mixed $buttonFormat = 'text';
-    public mixed $buttonLink = '';
+    public string|array $buttonFormat = 'text';
+    public string|array $buttonLink = '';
     public array $buttonOptions = [
         'class' => 'btn btn-outline-primary shadow-sm',
         'download' => true,
@@ -29,7 +29,7 @@ final class PresetDownloadButton extends Widget
     ];
 
     /**
-     * @var array<string, mixed>
+     * @var array<string, string|array>
      */
     public array $dropDownItems = []; // "text" => url
 
@@ -64,6 +64,9 @@ final class PresetDownloadButton extends Widget
         }
 
         $tag = ArrayHelper::remove($options, 'tag', 'div');
+        if (!is_string($tag) || trim($tag) === '') {
+            $tag = 'div';
+        }
 
         return Html::tag(
             $tag,
@@ -103,7 +106,7 @@ final class PresetDownloadButton extends Widget
 
     private function renderButtonIcon(): string
     {
-        return preg_replace_callback(
+        return (string)preg_replace_callback(
             '/\{fa (.+?)}/',
             function (array $match): string {
                 return Html::tag('span', '', [
@@ -116,6 +119,7 @@ final class PresetDownloadButton extends Widget
 
     private function renderButtonFace(): string
     {
+        assert($this->formatter !== null);
         return $this->formatter->format($this->buttonFace, $this->buttonFormat);
     }
 
@@ -162,6 +166,7 @@ final class PresetDownloadButton extends Widget
 
     private function renderDropDownChildren(): string
     {
+        assert($this->formatter !== null);
         return Html::tag(
             'ul',
             implode('', array_map(
