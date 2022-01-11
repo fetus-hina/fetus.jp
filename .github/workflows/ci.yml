@@ -135,7 +135,7 @@ jobs:
 
       - name: 'Run semistandard'
         run: |
-          npx semistandard --global='jQuery' 'resource/**/*.es'
+          npx semistandard 'resource/**/*.es'
         working-directory: 'webapp'
 
   cssStyleCheck:
