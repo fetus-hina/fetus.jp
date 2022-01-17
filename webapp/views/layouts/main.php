@@ -33,7 +33,10 @@ sort($faviconSizes);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<?= Html::beginTag('html', ['lang' => Yii::$app->language]) . "\n" ?>
+<?= Html::beginTag('html', [
+  'class' => 'h-100',
+  'lang' => Yii::$app->language,
+]) . "\n" ?>
   <head>
     <?= Html::tag('meta', '', ['charset' => Yii::$app->charset]) . "\n" ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,9 +58,16 @@ sort($faviconSizes);
 <?php } ?>
     <?= $this->head() . "\n" ?>
   </head>
-  <body>
+  <body class="h-100">
     <?php $this->beginBody(); echo "\n" ?>
-    <div class="wrap">
+    <?= Html::beginTag('div', [
+      'class' => [
+        'd-flex',
+        'flex-column',
+        'h-100',
+        'wrap',
+      ],
+    ]) . "\n" ?>
       <header class="mb-3">
         <div class="container">
           <h1><?= Html::a(
@@ -66,11 +76,20 @@ sort($faviconSizes);
           ) ?></h1>
         </div>
       </header>
-      <div class="container">
-        <?= $content ?><?= "\n" ?>
-      </div>
-      <footer>
-        <hr>
+      <?= Html::tag('main', $content, [
+        'class' => [
+          'container',
+          'flex-grow-1',
+        ],
+      ]) . "\n" ?>
+      <?= Html::beginTag('footer', [
+        'class' => [
+          'bg-light',
+          'border-secondary',
+          'border-top',
+          'pt-3',
+        ],
+      ]) . "\n" ?>
         <div class="container text-end pb-1">
           <p class="m-0">
             Copyright &copy; <?= Html::a(Html::encode('AIZAWA Hina'), ['site/index']) . "\n" ?>
