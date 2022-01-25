@@ -15,6 +15,7 @@
 /resource/**/*.css
 /resource/**/*.gz
 /resource/**/*.js
+/resource/images/*.min.svg
 /tests/_output/*
 /tests/_support/_generated
 /vendor

@@ -7,6 +7,7 @@ RESOURCES := \
 	resource/css/site.min.css \
 	resource/css/twemoji.css \
 	resource/css/twemoji.min.css \
+	resource/images/japanese-flag.min.svg \
 	resource/js/back-to-top.js \
 	resource/js/back-to-top.min.js \
 	resource/js/blog-feed.js \
@@ -76,6 +77,9 @@ node_modules: package-lock.json
 
 %.css: %.scss node_modules .browserslistrc
 	npx sass --charset --no-source-map $< | npx postcss --no-map --use autoprefixer > $@
+
+resource/images/%.min.svg: resource/images/%.svg node_modules
+	npx svgo -i $< -p 3 --multipass --final-newline -q -o $@
 
 web/favicon.ico: web/images/favicon.ico
 	ln -fs images/favicon.ico $@

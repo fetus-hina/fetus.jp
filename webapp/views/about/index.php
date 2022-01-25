@@ -3,10 +3,11 @@
 declare(strict_types=1);
 
 use app\assets\AppAsset;
+use app\helpers\Html;
 use app\helpers\Icon;
 use app\helpers\Unicode;
+use app\widgets\JapaneseFlag;
 use app\widgets\Twemoji;
-use app\helpers\Html;
 use yii\web\View;
 
 /**
@@ -52,15 +53,11 @@ $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
       </h3>
       <p>
         <?= vsprintf('%s %s', [
-          Twemoji::widget([
-            'text' => Unicode::countryFlag('JP'),
-          ]),
+          JapaneseFlag::widget(),
           Html::a('大阪府寝屋川市', 'https://ja.wikipedia.org/wiki/%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82'),
         ]) ?><br>
         <?= vsprintf('%s %s', [
-          Twemoji::widget([
-            'text' => Unicode::countryFlag('JP'),
-          ]),
+          JapaneseFlag::widget(),
           vsprintf('%s, Japan', [
             Html::a('Neyagawa, Osaka', 'https://en.wikipedia.org/wiki/Neyagawa,_Osaka'),
           ]),
