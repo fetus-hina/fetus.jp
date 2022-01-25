@@ -33,7 +33,7 @@
     "stylelint-config-sass-guidelines": "^9.0.1",
     "svgo": "^2.8.0",
     "terser": "^5.10.0",
-    "updates": "^12.2.3"
+    "updates": "^13.0.0"
   },
   "semistandard": {
     "envs": {
