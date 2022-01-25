@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace app\helpers;
 
-use MyCLabs\Enum\Enum;
-
-final class IconSource extends Enum
+final class IconSource
 {
     public const BOOTSTRAP_ICONS = 'bootstrap-icons';
     public const TWEMOJI = 'twemoji';
