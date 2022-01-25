@@ -6,15 +6,18 @@ namespace app\widgets;
 
 use Yii;
 use app\helpers\Html;
+use app\helpers\Icon;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\i18n\Formatter;
 
 final class PresetDownloadButton extends Widget
 {
+    public const BUTTON_ICON_DEFAULT = 'DEFAULT';
+
     public array $options = [];
 
-    public string $buttonIcon = '{fa fas fa-download}';
+    public string $buttonIcon = self::BUTTON_ICON_DEFAULT;
     public string $buttonFace = 'Download Preset';
     public string|array $buttonFormat = 'text';
     public string|array $buttonLink = '';
@@ -50,6 +53,10 @@ final class PresetDownloadButton extends Widget
 
         if (!$this->formatter) {
             $this->formatter = Yii::$app->formatter;
+        }
+
+        if ($this->buttonIcon === self::BUTTON_ICON_DEFAULT) {
+            $this->buttonIcon = Icon::download();
         }
     }
 
@@ -106,15 +113,7 @@ final class PresetDownloadButton extends Widget
 
     private function renderButtonIcon(): string
     {
-        return (string)preg_replace_callback(
-            '/\{fa (.+?)}/',
-            function (array $match): string {
-                return Html::tag('span', '', [
-                    'class' => trim($match[1]),
-                ]);
-            },
-            $this->buttonIcon,
-        );
+        return $this->buttonIcon;
     }
 
     private function renderButtonFace(): string

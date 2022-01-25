@@ -19,6 +19,7 @@ final class Icon
     // angleDoubleRight
     // avatar
     // dismiss
+    // download
     // envelope
     // github
     // house
@@ -66,6 +67,11 @@ final class Icon
     public static function dismiss(): string
     {
         return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-x-lg');
+    }
+
+    public static function download(): string
+    {
+        return self::renderIcon(IconSource::BOOTSTRAP_ICONS, 'bi-download');
     }
 
     public static function envelope(): string
