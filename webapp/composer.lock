@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0fd234cab67a7729e7a49b22230471d",
+    "content-hash": "658054f359f0ce2142e7ad349de44fef",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -120,54 +120,6 @@
                 "source": "https://github.com/ezyang/htmlpurifier/tree/v4.14.0"
             },
             "time": "2021-12-25T01:21:49+00:00"
-        },
-        {
-            "name": "jp3cki/uuid",
-            "version": "v2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fetus-hina/uuid.git",
-                "reference": "b8939c39c8d9afb03c9b87c2c16b7e72001774c0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fetus-hina/uuid/zipball/b8939c39c8d9afb03c9b87c2c16b7e72001774c0",
-                "reference": "b8939c39c8d9afb03c9b87c2c16b7e72001774c0",
-                "shasum": ""
-            },
-            "require": {
-                "ext-hash": "*",
-                "ext-pcre": "*",
-                "php": ">= 7.0",
-                "php-64bit": ">= 7.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "*",
-                "phpunit/phpunit": "*",
-                "squizlabs/php_codesniffer": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "jp3cki\\uuid\\": "src",
-                    "jp3cki\\uuid\\test\\": "test"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "AIZAWA Hina",
-                    "email": "hina@fetus.jp"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/fetus-hina/uuid/issues",
-                "source": "https://github.com/fetus-hina/uuid/tree/v2.0.0"
-            },
-            "time": "2021-04-15T07:23:04+00:00"
         },
         {
             "name": "jp3cki/yii2-ubuntu-font",

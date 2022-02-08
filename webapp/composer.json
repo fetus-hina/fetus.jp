@@ -7,7 +7,6 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">= 8.0",
-        "jp3cki/uuid": "^2.0.0",
         "jp3cki/yii2-ubuntu-font": "^1.0.0",
         "scssphp/scssphp": "^1.7.0",
         "twbs/bootstrap-icons": "^1.7",
