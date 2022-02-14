@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "658054f359f0ce2142e7ad349de44fef",
+    "content-hash": "f79377d3b3cd534e19b77efbcf82afb4",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -120,46 +120,6 @@
                 "source": "https://github.com/ezyang/htmlpurifier/tree/v4.14.0"
             },
             "time": "2021-12-25T01:21:49+00:00"
-        },
-        {
-            "name": "jp3cki/yii2-ubuntu-font",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fetus-hina/yii2-ubuntu-font.git",
-                "reference": "46a7e07f58c5b9e40694a5ec44151bfb9f584bf0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fetus-hina/yii2-ubuntu-font/zipball/46a7e07f58c5b9e40694a5ec44151bfb9f584bf0",
-                "reference": "46a7e07f58c5b9e40694a5ec44151bfb9f584bf0",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "2.0.*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "jp3cki\\yii2\\ubuntu\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "NYSL-0.9982"
-            ],
-            "authors": [
-                {
-                    "name": "AIZAWA Hina",
-                    "email": "hina@bouhime.com"
-                }
-            ],
-            "description": "Ubuntu webfont asset for Yii Framework 2 (uses Google Fonts)",
-            "support": {
-                "issues": "https://github.com/fetus-hina/yii2-ubuntu-font/issues",
-                "source": "https://github.com/fetus-hina/yii2-ubuntu-font/tree/master"
-            },
-            "time": "2017-03-02T17:02:28+00:00"
         },
         {
             "name": "paragonie/random_compat",

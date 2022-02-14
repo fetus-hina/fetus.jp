@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace app\assets;
 
-use jp3cki\yii2\ubuntu\UbuntuMonoFontAsset;
 use yii\bootstrap5\BootstrapAsset;
 use yii\web\AssetBundle;
 use yii\web\YiiAsset;
 
-class AppAsset extends AssetBundle
+final class AppAsset extends AssetBundle
 {
     public $sourcePath = '@app/resource';
     public $css = [
@@ -21,7 +20,8 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         BootstrapAsset::class,
-        UbuntuMonoFontAsset::class,
+        KosugiMaruAsset::class,
+        MontserratAsset::class,
         YiiAsset::class,
     ];
 }
