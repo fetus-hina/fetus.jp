@@ -17,19 +17,27 @@ use yii\web\View;
 AppAsset::register($this);
 BackToTopAsset::register($this);
 
-$faviconSizes = [
-    57,
-    60,
-    72,
-    76,
-    114,
-    120,
-    144,
-    152,
-    180,
-];
-sort($faviconSizes);
+$faviconSizes = [57, 60, 72, 76, 114, 120, 144, 152, 180];
+sort($faviconSizes, SORT_NUMERIC);
 
+$this->registerCsrfMetaTags();
+$this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width,initial-scale=1']);
+$this->registerMetaTag(['name' => 'robots', 'content' => 'index,follow']);
+$this->registerMetaTag(['name' => 'description', 'content' => 'fetus.jpは相沢陽菜の個人サイトです。']);
+$this->registerLinkTag([
+    'href' => Yii::getAlias('@web/images/favicon.svg'),
+    'rel' => 'icon',
+    'sizes' => 'any',
+    'type' => 'image/svg+xml',
+]);
+foreach ($faviconSizes as $faviconSize) {
+    $this->registerLinkTag([
+        'href' => Yii::getAlias('@web/images') . "/apple-touch-icon-{$faviconSize}.png",
+        'rel' => 'apple-touch-icon',
+        'sizes' => "{$faviconSize}x{$faviconSize}",
+        'type' => 'image/png',
+    ]);
+}
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -39,23 +47,7 @@ sort($faviconSizes);
 ]) . "\n" ?>
   <head>
     <?= Html::tag('meta', '', ['charset' => Yii::$app->charset]) . "\n" ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() . "\n" ?>
     <title><?= Html::encode($this->title ?: Yii::$app->name) ?></title>
-    <?= Html::tag('link', '', [
-      'href' => Yii::getAlias('@web/images/favicon.svg'),
-      'rel' => 'icon',
-      'sizes' => 'any',
-      'type' => 'image/svg+xml',
-    ]) . "\n" ?>
-<?php foreach ($faviconSizes as $faviconSize) { ?>
-    <?= Html::tag('link', '', [
-      'href' => Yii::getAlias('@web/images') . "/apple-touch-icon-{$faviconSize}.png",
-      'rel' => 'apple-touch-icon',
-      'sizes' => "{$faviconSize}x{$faviconSize}",
-      'type' => 'image/png',
-    ]) . "\n" ?>
-<?php } ?>
     <?= $this->head() . "\n" ?>
   </head>
   <body class="h-100">
