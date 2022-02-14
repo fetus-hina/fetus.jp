@@ -2,8 +2,15 @@
 
 declare(strict_types=1);
 
-use app\helpers\Icon;
 use app\helpers\Html;
+use app\helpers\Icon;
+use yii\web\View;
+
+/**
+ * @var View $this
+ */
+
+$this->registerMetaTag(['name' => 'description', 'content' => 'このサイトと、利用しているオープンソースプロジェクトのライセンス表示です。']);
 
 ?>
 <p>

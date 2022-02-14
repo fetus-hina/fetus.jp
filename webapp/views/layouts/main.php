@@ -23,7 +23,6 @@ sort($faviconSizes, SORT_NUMERIC);
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width,initial-scale=1']);
 $this->registerMetaTag(['name' => 'robots', 'content' => 'index,follow']);
-$this->registerMetaTag(['name' => 'description', 'content' => 'fetus.jpは相沢陽菜の個人サイトです。']);
 $this->registerLinkTag([
     'href' => Yii::getAlias('@web/images/favicon.svg'),
     'rel' => 'icon',

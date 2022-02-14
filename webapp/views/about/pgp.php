@@ -4,6 +4,13 @@ declare(strict_types=1);
 
 use app\helpers\Icon;
 use app\helpers\Html;
+use yii\web\View;
+
+/**
+ * @var View $this
+ */
+
+$this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜へ連絡する際のPGPキーを取得できます。']);
 
 ?>
 <div class="container">

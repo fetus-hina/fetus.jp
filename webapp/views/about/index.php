@@ -16,8 +16,10 @@ use yii\web\View;
 
 $asset = AppAsset::register($this);
 
-$wbr = html_entity_decode('&#x200b;', ENT_QUOTES | ENT_HTML5, 'UTF-8'); // Zero Width Space
+$wbr = mb_chr(0x200b, 'UTF-8'); // U+200B, Zero Width Space
 $divClass = ['col-12', 'col-sm-6', 'col-lg-4', 'mb-5'];
+
+$this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜のプロフィールページです。']);
 
 ?>
 <div class="container">

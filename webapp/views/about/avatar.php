@@ -13,6 +13,11 @@ use yii\web\View;
  * @var View $this
  */
 
+$this->registerMetaTag([
+  'name' => 'description',
+  'content' => '相沢陽菜のアバター情報です。この設定を基に自由に再現して利用できます。カスタムメイド3D2シリーズのプリセットのダウンロードも可能です。',
+]);
+
 ?>
 <div class="btn-group mb-3" role="group">
   <?= Html::a(

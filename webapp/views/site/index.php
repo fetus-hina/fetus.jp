@@ -13,6 +13,8 @@ use yii\web\View;
 
 $divClass = ['col-12', 'col-md-6', 'col-lg-4'];
 
+$this->registerMetaTag(['name' => 'description', 'content' => 'fetus.jpは相沢陽菜の個人サイトです。各種連絡先、スキル、PGPキーなど。']);
+
 ?>
 <div class="container">
   <h1 id="logo" class="lh-1 mb-2">fetus.jp</h1>

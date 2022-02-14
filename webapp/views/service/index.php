@@ -2,10 +2,17 @@
 
 declare(strict_types=1);
 
-use app\helpers\Icon;
 use app\helpers\Html;
+use app\helpers\Icon;
+use yii\web\View;
+
+/**
+ * @var View $this
+ */
 
 $divClass = ['col-12', 'col-md-6', 'col-lg-4', 'mb-4', 'adj-height'];
+
+$this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の作成・運営したサービス等の一覧ページです。']);
 
 ?>
 <div class="container">

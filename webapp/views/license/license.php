@@ -18,7 +18,7 @@ $id = fn ($name) => vsprintf('pkg-%s-%s', [
 ]);
 
 // Zero Width Space
-$wbr = html_entity_decode('&#x200b;', ENT_QUOTES | ENT_HTML5, 'UTF-8');
+$wbr = mb_chr(0x200b, 'UTF-8');
 
 $breakable = fn ($text) => preg_replace_callback(
   '/[@\/]/',
@@ -29,6 +29,8 @@ $breakable = fn ($text) => preg_replace_callback(
   },
   $text
 );
+
+$this->registerMetaTag(['name' => 'description', 'content' => '利用しているオープンソースプロジェクトのライセンス表示です。']);
 
 ?>
 <p class="btn-group">
