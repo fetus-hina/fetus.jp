@@ -12,7 +12,6 @@ final class AppAsset extends AssetBundle
 {
     public $sourcePath = '@app/resource';
     public $css = [
-        'css/floating-action-button.min.css',
         'css/site.min.css',
     ];
     public $js = [

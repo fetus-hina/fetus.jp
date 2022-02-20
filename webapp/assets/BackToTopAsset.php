@@ -4,17 +4,18 @@ declare(strict_types=1);
 
 namespace app\assets;
 
+use yii\bootstrap5\BootstrapAsset;
+use yii\bootstrap5\BootstrapPluginAsset;
 use yii\web\AssetBundle;
-use yii\web\JqueryAsset;
 
 final class BackToTopAsset extends AssetBundle
 {
-    public $sourcePath = '@app/resource';
+    public $sourcePath = '@npm/@fetus-hina/fetus.css/dist';
     public $js = [
-        'js/back-to-top.min.js',
+        'fetus-css.min.js',
     ];
     public $depends = [
-        FloatingActionButtonAsset::class,
-        JqueryAsset::class,
+        BootstrapAsset::class,
+        BootstrapPluginAsset::class,
     ];
 }

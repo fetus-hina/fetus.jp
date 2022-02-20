@@ -49,7 +49,7 @@ foreach ($faviconSizes as $faviconSize) {
     <title><?= Html::encode($this->title ?: Yii::$app->name) ?></title>
     <?= $this->head() . "\n" ?>
   </head>
-  <body class="h-100">
+  <body class="h-100 back-to-top-auto">
     <?php $this->beginBody(); echo "\n" ?>
     <?= Html::beginTag('div', [
       'class' => [
