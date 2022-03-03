@@ -26,8 +26,6 @@
   <rule ref="Generic.PHP.SAPIUsage" />
   <rule ref="Generic.PHP.Syntax" />
   <rule ref="Generic.VersionControl.GitMergeConflict" />
-  <rule ref="ImportDetection" />
-  <rule ref="ImportDetection.Imports.RequireImports.Symbol"><severity>0</severity></rule>
   <rule ref="PEAR.Commenting.InlineComment" />
   <rule ref="PHPCompatibility" />
   <rule ref="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
@@ -120,6 +118,12 @@
     <properties>
       <property name="psr12Compatible" value="true" />
       <property name="caseSensitive" value="true" />
+    </properties>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+    <properties>
+      <property name="searchAnnotations" value="true" />
     </properties>
   </rule>
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\actions\license;
 
+use FilesystemIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Yii;
@@ -50,6 +51,7 @@ class LicenseAction extends Action
     {
         $basedir = (string)Yii::getAlias($directory);
         $ret = [];
+        /** @var iterable<FilesystemIterator> */
         $it = new RecursiveIteratorIterator(
             new RecursiveDirectoryIterator($basedir)
         );
