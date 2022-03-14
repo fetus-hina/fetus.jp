@@ -14,15 +14,15 @@
     "inputmask": "^5.0.7",
     "jquery": "^3.6.0",
     "punycode": "^2.1.1",
-    "twemoji": "^13.1.0",
+    "twemoji": "^13.1.1",
     "yii2-pjax": "^2.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.5",
+    "@babel/core": "^7.17.7",
     "@babel/preset-env": "^7.16.11",
     "autoprefixer": "^10.4.2",
-    "cssnano": "^5.1.2",
+    "cssnano": "^5.1.4",
     "license-checker-rseidelsohn": "^2.4.8",
     "pngcrush-bin": "^6.0.1",
     "postcss": "^8.4.8",
@@ -32,8 +32,8 @@
     "stylelint": "^14.5.3",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "svgo": "^2.8.0",
-    "terser": "^5.12.0",
-    "updates": "^13.0.3"
+    "terser": "^5.12.1",
+    "updates": "^13.0.4"
   },
   "semistandard": {
     "envs": {
