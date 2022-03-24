@@ -102,10 +102,16 @@ final class R18Dialog extends Widget
     private function renderBodyContent(): string
     {
         return implode('', [
-            Html::tag('p', implode('<br>', [
-                Html::encode('リンク先はアダルトコンテンツを含むページです。'),
-                Html::encode('本当に移動しますか？'),
-            ])),
+            Html::tag(
+                'p',
+                implode('<br>', [
+                    Html::encode('リンク先はアダルトコンテンツを含むページです。'),
+                    Html::encode('本当に移動しますか？'),
+                ]),
+                [
+                    'class' => 'smoothing',
+                ],
+            ),
             Html::tag(
                 'p',
                 implode(' ', [
@@ -114,7 +120,10 @@ final class R18Dialog extends Widget
                     Html::tag('span', 'example.com', ['id' => 'r18-dialog-link-origin']),
                 ]),
                 [
-                    'class' => 'mb-0',
+                    'class' => [
+                        'mb-0',
+                        'smoothing',
+                    ],
                 ],
             ),
         ]);
@@ -139,7 +148,16 @@ final class R18Dialog extends Widget
         return Html::button(
             vsprintf('%s %s', [
                 Icon::dismiss(),
-                Html::encode('キャンセル'),
+                Html::tag(
+                    'span',
+                    Html::encode('キャンセル'),
+                    [
+                        'class' => [
+                            'd-inline-block',
+                            'smoothing',
+                        ],
+                    ],
+                ),
             ]),
             [
                 'class' => 'btn btn-outline-primary',
@@ -155,7 +173,16 @@ final class R18Dialog extends Widget
         return Html::button(
             vsprintf('%s %s', [
                 Icon::ok(),
-                Html::encode('OK'),
+                Html::tag(
+                    'span',
+                    Html::encode('OK'),
+                    [
+                        'class' => [
+                            'd-inline-block',
+                            'smoothing',
+                        ],
+                    ],
+                ),
             ]),
             [
                 'class' => 'btn btn-primary',
