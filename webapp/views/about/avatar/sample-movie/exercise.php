@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use app\helpers\Html;
+use app\widgets\Youtube;
 use yii\web\View;
 
 /**
@@ -11,7 +12,7 @@ use yii\web\View;
 
 ?>
 <div class="mb-0-last">
-  <?= $this->render('//about/avatar/sample-movie/_youtube', ['video' => '2TwJ7OmE5Bk']) . "\n" ?>
+  <?= Youtube::widget(['video' => '2TwJ7OmE5Bk']) . "\n" ?>
   <p class="text-muted smoothing"><?= vsprintf('%s（%s）%s', [
     Html::aR18(
       Html::encode('メイド体操第一'),
