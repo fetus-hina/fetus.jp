@@ -33,10 +33,10 @@ $this->registerMetaTag([
 </div>
 
 <h2><?= Icon::avatar() ?> Avatar</h2>
-<p>
+<p class="smoothing">
   需要はないと思いますが、私が使用しているアバターを再現して利用することができます。
 </p>
-<p>
+<p class="smoothing">
   その際は、私の発言ととらえられないようにしてください（例えばご自分のアバターとしての利用は不可）。<br>
   また、営利目的での利用はできません。<br>
   アダルト方面の制限はありません<?= Twemoji::widget([
@@ -45,7 +45,7 @@ $this->registerMetaTag([
     ]),
   ]) . "\n" ?>
 </p>
-<p>
+<p class="smoothing">
   <?= vsprintf('%s を利用する場合、%sが同時に適用されます。', [
     implode(', ', [
       Html::aR18(
@@ -67,7 +67,7 @@ $this->registerMetaTag([
     ),
   ]) . "\n" ?>
 </p>
-<p>
+<p class="smoothing">
   <?= vsprintf('%sを利用する場合、%sが同時に適用されます。', [
     Html::a(
       Html::encode('カスタムキャスト'),
@@ -79,7 +79,7 @@ $this->registerMetaTag([
     ),
   ]) . "\n" ?>
 </p>
-<p>
+<p class="smoothing">
   その他のツールを使用する場合はそれぞれのツールの規約やガイドラインが同時に適用されます。
 </p>
 <hr>

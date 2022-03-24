@@ -47,7 +47,14 @@ $this->registerMetaTag(['name' => 'description', 'content' => '利用してい�
 </p>
 <h2><?= Html::encode($title) ?></h2>
 <ul><?= implode('', array_map(
-  fn($item) => Html::tag('li', Html::a($breakable(Html::encode($item->name)), '#' . $id($item->name))),
+  fn($item) => Html::tag(
+    'li',
+    Html::a(
+      $breakable(Html::encode($item->name)),
+      '#' . $id($item->name),
+    ),
+    ['class' => 'smoothing'],
+  ),
   $depends
 )) ?></ul>
 

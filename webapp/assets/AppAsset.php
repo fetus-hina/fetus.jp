@@ -19,8 +19,6 @@ final class AppAsset extends AssetBundle
     ];
     public $depends = [
         BootstrapAsset::class,
-        KosugiMaruAsset::class,
-        MontserratAsset::class,
         YiiAsset::class,
     ];
 }

@@ -146,7 +146,7 @@ final class Icon
 
     public static function r18(): string
     {
-        return self::renderIcon(IconSource::TWEMOJI, self::codepoint(0x1F51E));
+        return self::renderIcon(IconSource::TWEMOJI, Unicode::fromCodepoint(Unicode::CODEPOINT_R18));
     }
 
     public static function radio(): string
@@ -238,10 +238,5 @@ final class Icon
         return Twemoji::widget([
             'text' => $emojiText,
         ]);
-    }
-
-    private static function codepoint(int $codePoint): string
-    {
-        return Unicode::fromCodepoint($codePoint);
     }
 }

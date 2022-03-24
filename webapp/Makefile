@@ -5,10 +5,6 @@ RESOURCES := \
 	resource/css/site.min.css \
 	resource/css/twemoji.css \
 	resource/css/twemoji.min.css \
-	resource/fonts/kosugi-maru/kosugi-maru.css \
-	resource/fonts/kosugi-maru/kosugi-maru.min.css \
-	resource/fonts/montserrat/montserrat.css \
-	resource/fonts/montserrat/montserrat.min.css \
 	resource/images/japanese-flag.min.svg \
 	resource/js/blog-feed.js \
 	resource/js/blog-feed.min.js \

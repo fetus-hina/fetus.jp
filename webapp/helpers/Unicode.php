@@ -12,6 +12,8 @@ use yii\helpers\ArrayHelper;
 
 final class Unicode
 {
+    public const CODEPOINT_R18 = 0x1F51E;
+
     public const SKINTONE_LIGHT = 0x1F3FB;
     public const SKINTONE_MEDIUM_LIGHT = 0x1F3FC;
     public const SKINTONE_MEDIUM = 0x1F3FD;

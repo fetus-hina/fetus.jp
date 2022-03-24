@@ -58,7 +58,11 @@ $this->registerCss(
           'li',
           Html::tag(
             'button',
-            Html::encode($info['name']),
+            Html::tag(
+                'span',
+                Html::encode($info['name']),
+                ['class' => 'd-inline-block smoothing'],
+            ),
             [
               'class' => array_filter([
                 'nav-link',

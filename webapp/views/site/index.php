@@ -18,16 +18,16 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'fetus.jpは相沢
 ?>
 <div class="container">
   <h1 id="logo" class="lh-1 mb-2">fetus.jp</h1>
-  <p>このサイトに特に内容はありません。</p>
+  <p class="smoothing">このサイトに特に内容はありません。</p>
   <div class="row">
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h2>
         <?= Icon::webService() ?> Services
       </h2>
-      <p>
+      <p class="smoothing">
         作ったウェブサービス
       </p>
-      <p>
+      <p class="smoothing">
         <?= Html::a(
           Html::encode('Services') . ' ' . Icon::next(),
           ['service/index'],
@@ -38,10 +38,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'fetus.jpは相沢
 
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h2><?= Icon::aboutMe() ?> About</h2>
-      <p>
+      <p class="smoothing">
         自己紹介的なもの、スキル一覧、PGPキー
       </p>
-      <p>
+      <p class="smoothing">
         <?= Html::a(
           Html::encode('About me') . ' ' . Icon::next(),
           ['about/index'],
@@ -55,6 +55,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'fetus.jpは相沢
   <h2>
     <?= Icon::wordpress() ?> <a href="https://blog.fetus.jp/">Blog</a>
   </h2>
-  <div id="blog">
+  <div id="blog" class="smoothing">
   </div>
 </div>
