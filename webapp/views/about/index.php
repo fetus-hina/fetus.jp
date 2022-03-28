@@ -6,6 +6,7 @@ use app\assets\AppAsset;
 use app\helpers\Html;
 use app\helpers\Icon;
 use app\helpers\Unicode;
+use app\widgets\HamCallsigns;
 use app\widgets\JapaneseFlag;
 use app\widgets\Twemoji;
 use yii\web\View;
@@ -123,10 +124,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::radio() ?> Amateur Radio
       </h3>
-      <p class="smoothing">
-        JP3CKI (GL:PM74, JCC#2517)<br>
-        JN4QYA (GL:PM64, JCC#350105)
-      </p>
+      <?= HamCallsigns::widget() . "\n" ?>
     </div>
   </div>
 
