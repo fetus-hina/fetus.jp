@@ -117,9 +117,6 @@ final class HamCallsigns extends Widget
                 self::monospace(Html::encode($callsign)),
                 $this->renderStationHeadlineData($data),
             ]),
-            [
-                'class' => 'smoothing',
-            ],
         );
     }
 
@@ -194,7 +191,6 @@ final class HamCallsigns extends Widget
                                 [
                                     'class' => [
                                         'd-inline-block',
-                                        'smoothing',
                                     ],
                                 ],
                             ),

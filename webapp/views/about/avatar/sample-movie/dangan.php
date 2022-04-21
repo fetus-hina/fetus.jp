@@ -13,7 +13,7 @@ use yii\web\View;
 ?>
 <div class="mb-0-last">
   <?= Youtube::widget(['video' => 'cBk4K2bLx_o']) . "\n" ?>
-  <p class="text-muted smoothing"><?= implode(' ', [
+  <p class="text-muted"><?= implode(' ', [
     Html::aR18(
       Html::encode('DAN! GAN! パーティ!!'),
       'http://com3d2.jp/gp02/#update03',

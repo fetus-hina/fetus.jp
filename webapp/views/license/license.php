@@ -53,7 +53,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => '利用してい�
       $breakable(Html::encode($item->name)),
       '#' . $id($item->name),
     ),
-    ['class' => 'smoothing'],
   ),
   $depends
 )) ?></ul>

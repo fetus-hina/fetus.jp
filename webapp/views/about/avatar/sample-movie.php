@@ -61,7 +61,7 @@ $this->registerCss(
             Html::tag(
                 'span',
                 Html::encode($info['name']),
-                ['class' => 'd-inline-block smoothing'],
+                ['class' => 'd-inline-block'],
             ),
             [
               'class' => array_filter([

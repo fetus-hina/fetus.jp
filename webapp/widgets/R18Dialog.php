@@ -108,9 +108,6 @@ final class R18Dialog extends Widget
                     Html::encode('リンク先はアダルトコンテンツを含むページです。'),
                     Html::encode('本当に移動しますか？'),
                 ]),
-                [
-                    'class' => 'smoothing',
-                ],
             ),
             Html::tag(
                 'p',
@@ -122,7 +119,6 @@ final class R18Dialog extends Widget
                 [
                     'class' => [
                         'mb-0',
-                        'smoothing',
                     ],
                 ],
             ),
@@ -154,7 +150,6 @@ final class R18Dialog extends Widget
                     [
                         'class' => [
                             'd-inline-block',
-                            'smoothing',
                         ],
                     ],
                 ),
@@ -179,7 +174,6 @@ final class R18Dialog extends Widget
                     [
                         'class' => [
                             'd-inline-block',
-                            'smoothing',
                         ],
                     ],
                 ),

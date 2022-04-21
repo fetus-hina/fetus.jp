@@ -24,7 +24,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
 
 ?>
 <div class="container">
-  <p class="smoothing">
+  <p>
     <?= Html::a(
       Icon::previous() . ' ' . Html::encode('Home'),
       ['site/index'],
@@ -38,11 +38,11 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::user() ?> Handle
       </h3>
-      <p class="smoothing">
+      <p>
         相沢 陽菜（あいざわ・ひな）<br>
         AIZAWA Hina
       </p>
-      <p class="smoothing">
+      <p>
         <?= Icon::avatar() . "\n" ?>
         <?= Html::a(
           Html::encode('アバターについて'),
@@ -54,7 +54,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::house() ?> Address
       </h3>
-      <p class="smoothing">
+      <p>
         <?= vsprintf('%s %s', [
           JapaneseFlag::widget(),
           Html::a('大阪府寝屋川市', 'https://ja.wikipedia.org/wiki/%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82'),
@@ -71,7 +71,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::envelope() ?> Email
       </h3>
-      <p class="smoothing">
+      <p>
         <span class="font-monospace">&lt;hina@fetus.jp&gt;</span><br>
         You can use encrypted email with <?= Html::a('my PGP Key', ['about/pgp']) ?>.
       </p>
@@ -80,7 +80,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::like() ?> SNS
       </h3>
-      <p class="smoothing"><?= implode(Html::tag('br'), [
+      <p><?= implode(Html::tag('br'), [
         Icon::twitter() . ' ' . Html::a(
           Html::encode('@fetus_hina'),
           vsprintf('https://twitter.com/intent/user?%s', [
@@ -105,7 +105,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::key() ?> Public Keys
       </h3>
-      <p class="smoothing">
+      <p>
         <?= Html::a(
           Html::encode('PGP Keys'),
           ['about/pgp']
@@ -116,7 +116,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::language() ?> Language
       </h3>
-      <p class="smoothing">
+      <p>
         日本語 / Japanese
       </p>
     </div>
@@ -134,7 +134,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::programming() ?> Programming
       </h3>
-      <ul class="inline-list smoothing">
+      <ul class="inline-list">
         <li>PHP</li>
         <li>JavaScript (EcmaScript)</li>
         <li>C</li>
@@ -147,7 +147,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::markup() ?> Markup
       </h3>
-      <ul class="inline-list smoothing mb-0">
+      <ul class="inline-list mb-0">
         <li>HTML</li>
         <li>
           CSS
@@ -183,7 +183,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
                   'Ubuntu',
                 ]
               )),
-              ['class' => 'inline-list smoothing']
+              ['class' => 'inline-list']
             ),
           ]) . "\n" ?>
         </li>
@@ -193,7 +193,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::middleware() ?> Middlewares
       </h3>
-      <ul class="inline-list smoothing"><?= implode('', array_map(
+      <ul class="inline-list"><?= implode('', array_map(
         fn($t) => Html::tag('li', Html::encode($t)),
         [
           'Apache',
@@ -213,7 +213,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <h3>
         <?= Icon::license() ?> National Licenses
       </h3>
-      <ul class="inline-list smoothing"><?= implode('', array_map(
+      <ul class="inline-list"><?= implode('', array_map(
         fn($t) => Html::tag('li', Html::encode($t)),
         [
           '第二種電気工事士',

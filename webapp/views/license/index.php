@@ -22,8 +22,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'このサイト�
 </p>
 <h2>Open Source Licenses</h2>
 <ul>
-  <li class="smoothing"><?= Html::a(Html::encode('Composer packages'), ['license/composer']) ?></li>
-  <li class="smoothing"><?= Html::a(Html::encode('NPM packages'), ['license/npm']) ?></li>
+  <li><?= Html::a(Html::encode('Composer packages'), ['license/composer']) ?></li>
+  <li><?= Html::a(Html::encode('NPM packages'), ['license/npm']) ?></li>
 </ul>
 
 <hr>

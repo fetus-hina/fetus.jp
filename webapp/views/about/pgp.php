@@ -29,12 +29,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜へ�
 
   <h2><?= Icon::key() ?> PGP Keys</h2>
   <ul>
-    <li class="smoothing">
+    <li>
       <a href="#key">
         通常利用する鍵（メールの送信・Commit の署名など）
       </a>
     </li>
-    <li class="smoothing">
+    <li>
       <a href="#package">
         パッケージの署名に利用する鍵
       </a>
