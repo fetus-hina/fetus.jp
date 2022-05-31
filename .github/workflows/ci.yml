@@ -13,11 +13,14 @@ jobs:
             experimental: false
           -
             php: '8.1'
+            experimental: false
+          -
+            php: '8.2'
             experimental: true
     runs-on: ubuntu-20.04
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         name: 'Set up PHP ${{ matrix.env.php }}'
         uses: shivammathur/setup-php@v2
@@ -38,7 +41,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         uses: actions/cache@v2
         with:
@@ -64,7 +67,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         uses: actions/cache@v2
         with:
@@ -83,7 +86,7 @@ jobs:
     needs: makeComposerCache
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         uses: actions/cache@v2
         with:
@@ -111,7 +114,7 @@ jobs:
     needs: makeNpmCache
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         uses: actions/cache@v2
         with:
@@ -130,7 +133,7 @@ jobs:
     needs: makeNpmCache
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         uses: actions/cache@v2
         with:
@@ -149,7 +152,7 @@ jobs:
     needs: makeComposerCache
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         name: 'Set up PHP 8.0'
         uses: shivammathur/setup-php@v2
@@ -179,7 +182,7 @@ jobs:
     needs: makeNpmCache
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         uses: actions/cache@v2
         with:
@@ -202,6 +205,9 @@ jobs:
             experimental: false
           -
             php: '8.1'
+            experimental: false
+          -
+            php: '8.2'
             experimental: true
     runs-on: ubuntu-20.04
     needs:
@@ -210,7 +216,7 @@ jobs:
     continue-on-error: '${{ matrix.env.experimental }}'
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         uses: actions/cache@v2
         with:
