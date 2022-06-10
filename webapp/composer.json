@@ -25,6 +25,7 @@
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
         "dominikb/composer-license-checker": "^2.2.0",
         "phpcompatibility/php-compatibility": "^9.3.5",
+        "phpstan/phpdoc-parser": "~1.5.1",
         "phpstan/phpstan": "*",
         "proget-hq/phpstan-yii2": "*",
         "sirbrillig/phpcs-variable-analysis": "^2.11.2",
