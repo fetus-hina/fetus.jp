@@ -69,9 +69,6 @@
     },
     "extra": {
         "patches": {
-            "slevomat/coding-standard": {
-                "phpstan/phpdoc-parser ^1.6 support": "data/patches/composer/slevomat/coding-standard/issue-1379.patch"
-            }
         }
     }
 }
