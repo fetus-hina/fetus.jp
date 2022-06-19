@@ -29,7 +29,7 @@
         "phpstan/phpstan": "*",
         "proget-hq/phpstan-yii2": "*",
         "sirbrillig/phpcs-variable-analysis": "^2.11.2",
-        "slevomat/coding-standard": "^7.0",
+        "slevomat/coding-standard": "*",
         "squizlabs/php_codesniffer": "*",
         "symfony/browser-kit": "*",
         "yiisoft/yii2-debug": "*",
