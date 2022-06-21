@@ -44,7 +44,7 @@ RgbAsset::register($this);
     </tr>
     <tr>
       <th>赤面設定</th>
-      <td>デフォルト (RGB <span class="rgb">#955c5c</span>)</td>
+      <td>デフォルト (RGB <span class="font-monospace rgb">#955c5c</span>)</td>
     </tr>
     <tr>
       <th>顔のサイズ（横）</th>
@@ -211,27 +211,27 @@ RgbAsset::register($this);
     </tr>
     <tr>
       <th>色 - 光彩色</th>
-      <td>RGB <span class="rgb">#eadc00</span></td>
+      <td>RGB <span class="font-monospace rgb">#eadc00</span></td>
     </tr>
     <tr>
       <th>色 - 1影色</th>
-      <td>RGB <span class="rgb">#ffa23f</span></td>
+      <td>RGB <span class="font-monospace rgb">#ffa23f</span></td>
     </tr>
     <tr>
       <th>色 - 2影色</th>
-      <td>RGB <span class="rgb">#000000</span></td>
+      <td>RGB <span class="font-monospace rgb">#000000</span></td>
     </tr>
     <tr>
       <th>色 - 瞳孔色</th>
-      <td>RGB <span class="rgb">#000000</span></td>
+      <td>RGB <span class="font-monospace rgb">#000000</span></td>
     </tr>
     <tr>
       <th>色 - ハイライト1色</th>
-      <td>RGB <span class="rgb">#ffd197</span></td>
+      <td>RGB <span class="font-monospace rgb">#ffd197</span></td>
     </tr>
     <tr>
       <th>色 - ハイライト2色</th>
-      <td>RGB <span class="rgb">#cf8010</span></td>
+      <td>RGB <span class="font-monospace rgb">#cf8010</span></td>
     </tr>
     <tr>
       <th>色 - 色の強さ</th>
@@ -444,7 +444,7 @@ RgbAsset::register($this);
     </tr>
     <tr>
       <th>色</th>
-      <td>RGB <span class="rgb">#48311f</span></td>
+      <td>RGB <span class="font-monospace rgb">#48311f</span></td>
     </tr>
     <tr>
       <th rowspan="2">後髪</th>
