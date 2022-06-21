@@ -25,7 +25,7 @@ final class JapaneseFlag extends Widget
     {
         parent::init();
 
-        if (!array_key_exists('alt', $this->options)) {
+        if (!\array_key_exists('alt', $this->options)) {
             $this->options['alt'] = Unicode::countryFlag('jp');
         }
     }
@@ -33,8 +33,8 @@ final class JapaneseFlag extends Widget
     public function run(): string
     {
         return Html::img(
-            vsprintf('data:image/svg+xml;base64,%s', [
-                base64_encode($this->getSvg()),
+            \vsprintf('data:image/svg+xml;base64,%s', [
+                \base64_encode($this->getSvg()),
             ]),
             $this->options,
         );
@@ -43,8 +43,8 @@ final class JapaneseFlag extends Widget
     private function getSvg(): string
     {
         $path = (string)Yii::getAlias('@app/resource/images/japanese-flag.min.svg');
-        if (file_exists($path)) {
-            if ($svg = @file_get_contents($path)) {
+        if (\file_exists($path)) {
+            if ($svg = @\file_get_contents($path)) {
                 return $svg;
             }
         }

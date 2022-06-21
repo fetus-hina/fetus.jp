@@ -32,7 +32,7 @@ trait LicenseExtractTrait
     public function actionCleanExtracted(): int
     {
         $baseDir = (string)Yii::getAlias('@app/data/licenses/composer');
-        if (file_exists($baseDir)) {
+        if (\file_exists($baseDir)) {
             FileHelper::removeDirectory($baseDir);
         }
 
@@ -41,15 +41,15 @@ trait LicenseExtractTrait
 
     private function getPackages(): array
     {
-        $cmdline = vsprintf('/usr/bin/env %s --no-interaction --no-plugins license --format=%s', [
-            escapeshellarg((string)Yii::getAlias('@app/composer.phar')),
-            escapeshellarg('json'),
+        $cmdline = \vsprintf('/usr/bin/env %s --no-interaction --no-plugins license --format=%s', [
+            \escapeshellarg((string)Yii::getAlias('@app/composer.phar')),
+            \escapeshellarg('json'),
         ]);
         $value = ArrayHelper::getValue(
             $this->shouldBeArray(Json::decode((string)$this->execCommand($cmdline))),
             'dependencies'
         );
-        return is_array($value)
+        return \is_array($value)
             ? $value
             : throw new Exception();
     }
@@ -58,7 +58,7 @@ trait LicenseExtractTrait
     {
         foreach ($packages as $name => $info) {
             $this->extractPackage(
-                isset($info['version']) && trim((string)$info['version']) !== ''
+                isset($info['version']) && \trim((string)$info['version']) !== ''
                     ? "{$name}@{$info['version']}"
                     : $name,
                 Yii::getAlias('@app/vendor') . '/' . $name
@@ -68,28 +68,28 @@ trait LicenseExtractTrait
 
     private function extractPackage(string $packageName, string $baseDir): bool
     {
-        if (!file_exists($baseDir)) {
-            fwrite(STDERR, "license/extract: Directory does not exists: $packageName\n");
+        if (!\file_exists($baseDir)) {
+            \fwrite(STDERR, "license/extract: Directory does not exists: $packageName\n");
             return false;
         }
 
         if (!$path = $this->findLicense($packageName, $baseDir)) {
-            fwrite(STDERR, "license/extract: license file does not exists: $baseDir\n");
+            \fwrite(STDERR, "license/extract: license file does not exists: $baseDir\n");
             return false;
         }
 
-        $distPath = implode('/', [
+        $distPath = \implode('/', [
             Yii::getAlias('@app/data/licenses/composer'),
             $this->sanitize($packageName) . '-LICENSE.txt',
         ]);
-        if (!FileHelper::createDirectory(dirname($distPath))) {
-            fwrite(
+        if (!FileHelper::createDirectory(\dirname($distPath))) {
+            \fwrite(
                 STDERR,
-                'license/extract: could not create directory: ' . dirname($distPath) . "\n"
+                'license/extract: could not create directory: ' . \dirname($distPath) . "\n"
             );
             return false;
         }
-        copy($path, $distPath);
+        \copy($path, $distPath);
         return true;
     }
 
@@ -112,10 +112,10 @@ trait LicenseExtractTrait
 
             $path = $entry->getPathname();
             $basename = $entry->getBasename();
-            $filename = pathinfo($basename, PATHINFO_FILENAME);
+            $filename = \pathinfo($basename, PATHINFO_FILENAME);
 
             foreach ($precedence as $i => $regexp) {
-                if (preg_match($regexp, $filename)) {
+                if (\preg_match($regexp, $filename)) {
                     $files[] = (object)[
                         'precedence' => $i,
                         'basename' => $basename,
@@ -126,19 +126,19 @@ trait LicenseExtractTrait
         }
 
         if (!$files) {
-            fwrite(STDERR, "license/extract: no license file detected on {$name}\n");
+            \fwrite(STDERR, "license/extract: no license file detected on {$name}\n");
             return null;
         }
 
-        usort($files, function (stdClass $a, stdClass $b): int {
+        \usort($files, function (stdClass $a, stdClass $b): int {
             return $a->precedence <=> $b->precedence
-                ?: strnatcasecmp($a->basename, $b->basename)
-                ?: strcasecmp($a->basename, $b->basename)
-                ?: strcmp($a->basename, $b->basename);
+                ?: \strnatcasecmp($a->basename, $b->basename)
+                ?: \strcasecmp($a->basename, $b->basename)
+                ?: \strcmp($a->basename, $b->basename);
         });
 
         while ($files) {
-            $info = array_shift($files);
+            $info = \array_shift($files);
             if ($this->hasLicense($info->path)) {
                 return $info->path;
             }
@@ -148,25 +148,25 @@ trait LicenseExtractTrait
 
     private function hasLicense(string $path): bool
     {
-        $text = (string)file_get_contents($path, false);
-        return (bool)preg_match('/license|copyright/i', $text);
+        $text = (string)\file_get_contents($path, false);
+        return (bool)\preg_match('/license|copyright/i', $text);
     }
 
     private function sanitize(string $packageName): string
     {
-        $packageName = (string)preg_replace(
+        $packageName = (string)\preg_replace(
             '/[^!#$%()+,.\/-9@-Z_a-z]+/',
             '-',
             $packageName
         );
-        $packageName = str_replace('/../', '/', $packageName);
-        $packageName = str_replace('/./', '/', $packageName);
+        $packageName = \str_replace('/../', '/', $packageName);
+        $packageName = \str_replace('/./', '/', $packageName);
         return $packageName;
     }
 
     private function shouldBeArray(mixed $value): array
     {
-        return is_array($value)
+        return \is_array($value)
             ? $value
             : throw new TypeError();
     }

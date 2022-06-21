@@ -25,20 +25,20 @@ final class Unicode
     /** @param int|int[] $codepoint */
     public static function fromCodepoint($codepoint, ?string $charset = null): string
     {
-        if (is_int($codepoint)) {
+        if (\is_int($codepoint)) {
             if ($codepoint < 0 || $codepoint > 0x10FFFF) {
-                throw new RangeException(sprintf('Out of range: 0 <= %x <= 10FFFF', $codepoint));
+                throw new RangeException(\sprintf('Out of range: 0 <= %x <= 10FFFF', $codepoint));
             }
 
-            if (($c = mb_chr($codepoint, $charset ?? Yii::$app->charset)) === false) {
+            if (($c = \mb_chr($codepoint, $charset ?? Yii::$app->charset)) === false) {
                 throw new InvalidArgumentException('Unsupported charset for the character');
             }
 
             return $c;
         }
 
-        if (is_array($codepoint) && ArrayHelper::isIndexed($codepoint, true)) {
-            return implode('', array_map(
+        if (\is_array($codepoint) && ArrayHelper::isIndexed($codepoint, true)) {
+            return \implode('', \array_map(
                 fn (int $c): string => self::fromCodepoint($c, $charset),
                 $codepoint,
             ));
@@ -49,14 +49,14 @@ final class Unicode
 
     public static function countryFlag(string $cc): string
     {
-        $cc = strtoupper(trim($cc));
-        if (!preg_match('/^[A-Z]{2}$/', $cc)) {
+        $cc = \strtoupper(\trim($cc));
+        if (!\preg_match('/^[A-Z]{2}$/', $cc)) {
             throw new InvalidArgumentException();
         }
 
         return self::fromCodepoint([
-            self::REGIONAL_INDICATOR_BASE + ord(substr($cc, 0, 1)) - ord('A'),
-            self::REGIONAL_INDICATOR_BASE + ord(substr($cc, 1, 1)) - ord('A'),
+            self::REGIONAL_INDICATOR_BASE + \ord(\substr($cc, 0, 1)) - \ord('A'),
+            self::REGIONAL_INDICATOR_BASE + \ord(\substr($cc, 1, 1)) - \ord('A'),
         ]);
     }
 }

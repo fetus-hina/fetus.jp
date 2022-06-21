@@ -29,7 +29,7 @@ final class R18Dialog extends Widget
                 'div',
                 Html::tag(
                     'div',
-                    implode('', [
+                    \implode('', [
                         $this->renderHeader(),
                         $this->renderBody(),
                         $this->renderFooter(),
@@ -63,10 +63,10 @@ final class R18Dialog extends Widget
     {
         return Html::tag(
             'div',
-            implode('', [
+            \implode('', [
                 Html::tag(
                     'h5',
-                    implode(' ', [
+                    \implode(' ', [
                         Icon::r18(),
                         Html::encode('確認'),
                     ]),
@@ -101,17 +101,17 @@ final class R18Dialog extends Widget
 
     private function renderBodyContent(): string
     {
-        return implode('', [
+        return \implode('', [
             Html::tag(
                 'p',
-                implode('<br>', [
+                \implode('<br>', [
                     Html::encode('リンク先はアダルトコンテンツを含むページです。'),
                     Html::encode('本当に移動しますか？'),
                 ]),
             ),
             Html::tag(
                 'p',
-                implode(' ', [
+                \implode(' ', [
                     Html::encode('リンク先:'),
                     Html::tag('span', Icon::secure(), ['id' => 'r18-dialog-link-secure']),
                     Html::tag('span', 'example.com', ['id' => 'r18-dialog-link-origin']),
@@ -129,7 +129,7 @@ final class R18Dialog extends Widget
     {
         return Html::tag(
             'div',
-            implode('', [
+            \implode('', [
                 $this->renderCancelButton(),
                 $this->renderOkButton(),
             ]),
@@ -142,7 +142,7 @@ final class R18Dialog extends Widget
     private function renderCancelButton(): string
     {
         return Html::button(
-            vsprintf('%s %s', [
+            \vsprintf('%s %s', [
                 Icon::dismiss(),
                 Html::tag(
                     'span',
@@ -166,7 +166,7 @@ final class R18Dialog extends Widget
     private function renderOkButton(): string
     {
         return Html::button(
-            vsprintf('%s %s', [
+            \vsprintf('%s %s', [
                 Icon::ok(),
                 Html::tag(
                     'span',

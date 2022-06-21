@@ -31,8 +31,8 @@ final class Twemoji extends Widget
         if (($view = $this->view) instanceof View) {
             TwemojiAsset::register($view);
 
-            $view->registerJs(vsprintf('$(%s).twemoji();', [
-                Json::encode(sprintf('#%s', $id)),
+            $view->registerJs(\vsprintf('$(%s).twemoji();', [
+                Json::encode(\sprintf('#%s', $id)),
             ]));
         }
 

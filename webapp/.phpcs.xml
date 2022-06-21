@@ -7,7 +7,7 @@
   <arg value="p" />
   <arg value="s" />
 
-  <runtime-set name="testVersion" value="8.0" />
+  <runtime-set name="testVersion" value="8.0-8.1" />
 
   <rule ref="PSR12" />
 
@@ -46,6 +46,7 @@
   <rule ref="SlevomatCodingStandard.Functions.ArrowFunctionDeclaration" />
   <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure" />
   <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse" />
+  <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions" />
   <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine" />
   <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration" />
   <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile" />

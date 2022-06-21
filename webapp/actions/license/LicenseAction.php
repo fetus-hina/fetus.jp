@@ -32,16 +32,16 @@ class LicenseAction extends Action
     private function loadDepends(): array
     {
         $ret = $this->loadFiles($this->directory);
-        usort(
+        \usort(
             $ret,
             function (stdClass $a, stdClass $b): int {
-                $aName = trim(preg_replace('/[^0-9A-Za-z]+/', ' ', $a->name));
-                $aName2 = ltrim($aName, '@');
-                $bName = trim(preg_replace('/[^0-9A-Za-z]+/', ' ', $b->name));
-                $bName2 = ltrim($bName, '@');
-                return strnatcasecmp($aName2, $bName2)
-                    ?: strnatcasecmp($aName, $bName)
-                    ?: strcmp($aName, $bName);
+                $aName = \trim(\preg_replace('/[^0-9A-Za-z]+/', ' ', $a->name));
+                $aName2 = \ltrim($aName, '@');
+                $bName = \trim(\preg_replace('/[^0-9A-Za-z]+/', ' ', $b->name));
+                $bName2 = \ltrim($bName, '@');
+                return \strnatcasecmp($aName2, $bName2)
+                    ?: \strnatcasecmp($aName, $bName)
+                    ?: \strcmp($aName, $bName);
             }
         );
         return $ret;
@@ -61,22 +61,22 @@ class LicenseAction extends Action
             }
 
             $pathname = $entry->getPathname();
-            if (substr($pathname, 0, strlen($basedir)) !== $basedir) {
+            if (\substr($pathname, 0, \strlen($basedir)) !== $basedir) {
                 continue;
             }
 
-            if (substr($pathname, -12) !== '-LICENSE.txt') {
+            if (\substr($pathname, -12) !== '-LICENSE.txt') {
                 continue;
             }
 
-            $basename = substr($pathname, strlen($basedir));
+            $basename = \substr($pathname, \strlen($basedir));
             $html = $this->loadPlain(
                 $entry->getPathname(),
-                fn ($t) => (bool)preg_match('/copyright|licen[cs]e/i', $t),
+                fn ($t) => (bool)\preg_match('/copyright|licen[cs]e/i', $t),
             );
             if ($html) {
                 $ret[] = (object)[
-                    'name' => ltrim(substr($basename, 0, strlen($basename) - 12), '/'),
+                    'name' => \ltrim(\substr($basename, 0, \strlen($basename) - 12), '/'),
                     'html' => $html,
                 ];
             }
@@ -95,12 +95,12 @@ class LicenseAction extends Action
 
     private function loadFile(string $path, ?callable $checker): ?string
     {
-        $text = file_get_contents($path, false);
-        if (!is_string($text)) {
+        $text = \file_get_contents($path, false);
+        if (!\is_string($text)) {
             return null;
         }
 
-        if ($checker && !call_user_func($checker, $text)) {
+        if ($checker && !\call_user_func($checker, $text)) {
             return null;
         }
 

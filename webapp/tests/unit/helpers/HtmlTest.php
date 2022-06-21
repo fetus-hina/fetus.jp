@@ -73,7 +73,7 @@ EOF;
 
         $xpath = new DOMXPath($doc);
         $list = $xpath->query('//body');
-        if (count($list) > 0) {
+        if (\count($list) > 0) {
             return $list->item(0)->firstChild;
         }
         throw new Exception('Could not find body element');

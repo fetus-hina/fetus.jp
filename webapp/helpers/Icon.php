@@ -220,7 +220,7 @@ final class Icon
 
     private static function renderBootstrapIcon(mixed $class): string
     {
-        if (!is_string($class)) {
+        if (!\is_string($class)) {
             throw new TypeError();
         }
 
@@ -231,7 +231,7 @@ final class Icon
 
     private static function renderTwemoji(mixed $emojiText): string
     {
-        if (!is_string($emojiText)) {
+        if (!\is_string($emojiText)) {
             throw new TypeError();
         }
 
