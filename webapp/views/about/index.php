@@ -211,7 +211,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h3>
-        <?= Icon::license() ?> National Licenses
+        <?= Icon::license() ?> National Certification
       </h3>
       <ul class="inline-list"><?= implode('', array_map(
         fn($t) => Html::tag('li', Html::encode($t)),
@@ -219,6 +219,17 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
           '第二種電気工事士',
           '届出電気通信事業者',
           '第4級アマチュア無線技士',
+        ]
+      )) ?></ul>
+    </div>
+    <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
+      <h3>
+        <?= Icon::license() ?> Private Certification
+      </h3>
+      <ul class="inline-list"><?= implode('', array_map(
+        fn($t) => Html::tag('li', Html::encode($t)),
+        [
+          '家電製品エンジニア（生活家電）',
         ]
       )) ?></ul>
     </div>
