@@ -216,6 +216,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
       <ul class="inline-list"><?= implode('', array_map(
         fn($t) => Html::tag('li', Html::encode($t)),
         [
+          '中型自動車免許(8t, AT)',
           '第二種電気工事士',
           '届出電気通信事業者',
           '第4級アマチュア無線技士',
