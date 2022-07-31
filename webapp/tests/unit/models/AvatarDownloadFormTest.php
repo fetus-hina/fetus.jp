@@ -30,12 +30,7 @@ final class AvatarDownloadFormTest extends Unit
     }
 
     /**
-     * @testWith    ["cm3d2", true]
-     *              ["com3d2", true]
-     *              ["com3d25", true]
-     *              ["cres", false]
-     *              ["cm3d", false]
-     *              ["../avatar/com3d2", false]
+     * @dataProvider categoriesDataProvider
      */
     public function testCategories(string $category, bool $beSuccess): void
     {
@@ -58,12 +53,24 @@ final class AvatarDownloadFormTest extends Unit
     }
 
     /**
-     * @testWith    ["hoge", true]
-     *              ["hoge.txt", true]
-     *              ["../hoge.txt", false]
-     *              ["/hoge.txt", false]
-     *              ["hoge<", false]
-     *              ["hoge>", false]
+     * @return array{string, bool}[]
+     */
+    public function categoriesDataProvider(): array
+    {
+        // 0: string, カテゴリ名
+        // 1: bool, 成功すべきか
+        return [
+            ['cm3d2', true],
+            ['com3d2', true],
+            ['com3d25', true],
+            ['cres', false],
+            ['cm3d', false],
+            ['../avatar/com3d2', false],
+        ];
+    }
+
+    /**
+     * @dataProvider filesProvider
      */
     public function testFiles(string $fileName, bool $beSuccess): void
     {
@@ -85,6 +92,23 @@ final class AvatarDownloadFormTest extends Unit
         }
 
         unset($oldEnv);
+    }
+
+    /**
+     * @return array{string, bool}
+     */
+    public function filesProvider(): array
+    {
+        // 0: ファイル名
+        // 1: 成功すべきか
+        return [
+            ['hoge', true],
+            ['hoge.txt', true],
+            ['../hoge.txt', false],
+            ['/hoge.txt', false],
+            ['hoge<', false],
+            ['hoge>', false],
+        ];
     }
 
     /**
@@ -149,6 +173,9 @@ final class AvatarDownloadFormTest extends Unit
         $this->assertEquals($sha256sum, \hash('sha256', $content));
     }
 
+    /**
+     * @return array{string, string, string}[]
+     */
     public function getPresets(): array
     {
         return [

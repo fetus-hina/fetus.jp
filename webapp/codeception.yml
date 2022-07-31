@@ -13,7 +13,7 @@ coverage:
 paths:
   data: tests/_data
   helpers: tests/_support
-  log: tests/_output
+  output: tests/_output
   tests: tests
 
 settings:

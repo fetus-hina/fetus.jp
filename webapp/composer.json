@@ -15,10 +15,10 @@
     },
     "require-dev": {
         "ext-posix": "*",
-        "codeception/codeception": "^4.1",
+        "codeception/codeception": "^5.0",
         "codeception/module-asserts": "*",
         "codeception/module-filesystem": "*",
-        "codeception/module-phpbrowser": "^1.0",
+        "codeception/module-phpbrowser": "*",
         "codeception/module-rest": "*",
         "codeception/module-yii2": "*",
         "codeception/specify": "*",
