@@ -68,11 +68,11 @@ final class HamCallsigns extends Widget
             'formats' => [
                 [
                     'f' => 145,
-                    'p' => 10,
+                    'p' => 20,
                 ],
                 [
                     'f' => 430,
-                    'p' => 10,
+                    'p' => 20,
                 ],
             ],
         ],
