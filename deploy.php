@@ -30,34 +30,8 @@ add('writable_dirs', [
 ]);
 set('writable_mode', 'chmod');
 set('writable_chmod_recursive', false);
-set('softwarecollections', []);
-
-set('bin/php', function () {
-    if ($scl = get('softwarecollections')) {
-        return vsprintf('scl enable %s -- php', [
-            implode(' ', array_map(
-                'escapeshellarg',
-                $scl
-            )),
-        ]);
-    }
-
-    return locateBinaryPath('php');
-});
-
-set('bin/npm', function () {
-    if ($scl = get('softwarecollections')) {
-        return vsprintf('scl enable %s -- npm', [
-            implode(' ', array_map(
-                'escapeshellarg',
-                $scl
-            )),
-        ]);
-    }
-
-    return locateBinaryPath('npm');
-});
-
+set('bin/make', 'make');
+set('bin/npm', 'npm');
 set('bin/composer', fn (): string => sprintf('%s/webapp/composer.phar', get('release_path')));
 
 // ayanami2
@@ -65,7 +39,9 @@ host('2401:2500:102:1206:133:242:147:83')
     ->user('fetusjp')
     ->stage('production')
     ->roles('app')
-    ->set('deploy_path', '~/app');
+    ->set('deploy_path', '~/app')
+    ->set('bin/php', '/usr/bin/env scl enable php81 -- php')
+    ->set('bin/make', '/usr/bin/env scl enable php81 -- make');
 
 task('deploy', [
     'deploy:info',
@@ -100,15 +76,15 @@ task('deploy:production', function () {
 
 task('deploy:vendors', function () {
     within('{{release_path}}/webapp', function () {
-        run('make composer.phar');
-        run('{{bin/composer}} {{composer_options}}');
+        run('{{bin/make}} composer.phar');
+        run('{{bin/php}} {{bin/composer}} {{composer_options}}');
         run('{{bin/npm}} clean-install');
     });
 });
 
 task('deploy:vendors_production', function () {
     within('{{release_path}}/webapp', function () {
-        run('{{bin/composer}} --no-dev {{composer_options}}');
+        run('{{bin/php}} {{bin/composer}} --no-dev {{composer_options}}');
         run('{{bin/npm}} prune --production');
     });
 });
@@ -121,16 +97,7 @@ task('deploy:run_migrations', function () {
 
 task('deploy:build', function () {
     within('{{release_path}}/webapp', function () {
-        if ($scl = get('softwarecollections')) {
-            run(vsprintf('scl enable %s -- make', [
-                implode(' ', array_map(
-                    'escapeshellarg',
-                    $scl
-                )),
-            ]));
-        } else {
-            run('make');
-        }
+        run('{{bin/make}}');
     });
 });
 
