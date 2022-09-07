@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "@fetus-hina/fetus.css": "github:fetus-hina/fetus.css#semver:^5.2.0",
-    "bootstrap": "^5.2.0",
+    "bootstrap": "^5.2.1",
     "inputmask": "^5.0.7",
     "jquery": "^3.6.1",
     "punycode": "^2.1.1",
