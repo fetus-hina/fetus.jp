@@ -119,12 +119,7 @@ test: test-unit test-web
 
 .PHONY: test-unit
 test-unit: vendor
-	/usr/bin/env XDEBUG_MODE=coverage \
-		./vendor/bin/codecept run unit \
-			--coverage \
-			--coverage-html=./web/coverage/ \
-			--coverage-text=./runtime/coverage/coverage.txt \
-			--coverage-xml=./runtime/coverage/coverage.xml
+	./vendor/bin/codecept run unit
 
 .PHONY: test-web
 test-web: vendor

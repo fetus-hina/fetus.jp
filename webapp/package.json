@@ -10,29 +10,29 @@
   "license": "MIT",
   "dependencies": {
     "@fetus-hina/fetus.css": "github:fetus-hina/fetus.css#semver:^5.2.3",
-    "bootstrap": "^5.2.2",
+    "bootstrap": "^5.2.3",
     "inputmask": "^5.0.7",
     "jquery": "^3.6.1",
     "punycode": "^2.1.1",
     "twemoji": "^14.0.2",
-    "yii2-pjax": "^2.0.7"
+    "yii2-pjax": "^2.0.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
-    "@babel/core": "^7.19.6",
-    "@babel/preset-env": "^7.19.4",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
     "license-checker-rseidelsohn": "^3.1.0",
-    "postcss": "^8.4.18",
+    "postcss": "^8.4.19",
     "postcss-cli": "^10.0.0",
-    "sass": "^1.55.0",
+    "sass": "^1.56.1",
     "semistandard": "^16.0.1",
-    "stylelint": "^14.14.0",
+    "stylelint": "^14.15.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "svgo": "^2.8.0",
-    "terser": "^5.15.1",
-    "updates": "^13.1.13"
+    "terser": "^5.16.0",
+    "updates": "^13.2.2"
   },
   "engines": {
     "node": ">= 16"
