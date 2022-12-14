@@ -32,7 +32,7 @@
     "stylelint-config-sass-guidelines": "^9.0.1",
     "svgo": "^2.8.0",
     "terser": "^5.16.1",
-    "updates": "^13.2.3"
+    "updates": "^13.2.4"
   },
   "engines": {
     "node": ">= 16"
