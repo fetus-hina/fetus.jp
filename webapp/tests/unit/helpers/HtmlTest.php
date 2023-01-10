@@ -12,6 +12,8 @@ use Exception;
 use UnitTester;
 use app\helpers\Html;
 
+use function count;
+
 final class HtmlTest extends Unit
 {
     protected UnitTester $tester;
@@ -73,7 +75,7 @@ EOF;
 
         $xpath = new DOMXPath($doc);
         $list = $xpath->query('//body');
-        if (\count($list) > 0) {
+        if (count($list) > 0) {
             return $list->item(0)->firstChild;
         }
         throw new Exception('Could not find body element');

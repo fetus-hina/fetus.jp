@@ -10,6 +10,15 @@ use Yii;
 use app\models\AvatarDownloadForm;
 use yii\web\Response;
 
+use function fclose;
+use function fseek;
+use function hash;
+use function is_array;
+use function sprintf;
+use function stream_get_contents;
+
+use const SEEK_SET;
+
 final class AvatarDownloadFormTest extends Unit
 {
     protected UnitTester $tester;
@@ -154,23 +163,23 @@ final class AvatarDownloadFormTest extends Unit
         $headers = $resp->headers;
         $this->assertEquals('application/octet-stream', $headers->get('Content-Type'));
         $this->assertEquals(
-            \sprintf('attachment; filename="%s"', $fileName),
+            sprintf('attachment; filename="%s"', $fileName),
             $headers->get('Content-Disposition')
         );
         $this->assertGreaterThan(1024, $headers->get('Content-Length'));
 
-        if (\is_array($resp->stream)) {
+        if (is_array($resp->stream)) {
             [$handle] = $resp->stream;
-            \fseek($handle, 0, SEEK_SET);
-            $content = \stream_get_contents($handle);
-            \fclose($handle);
+            fseek($handle, 0, SEEK_SET);
+            $content = stream_get_contents($handle);
+            fclose($handle);
             $resp->stream = null;
         } else {
-            $content = \stream_get_contents($resp->stream);
-            \fclose($resp->stream);
+            $content = stream_get_contents($resp->stream);
+            fclose($resp->stream);
             $resp->stream = null;
         }
-        $this->assertEquals($sha256sum, \hash('sha256', $content));
+        $this->assertEquals($sha256sum, hash('sha256', $content));
     }
 
     /**

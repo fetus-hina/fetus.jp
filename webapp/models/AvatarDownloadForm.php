@@ -9,6 +9,11 @@ use yii\base\Model;
 use yii\validators\InlineValidator;
 use yii\web\Response;
 
+use function file_exists;
+use function filesize;
+use function is_readable;
+use function str_contains;
+
 final class AvatarDownloadForm extends Model
 {
     public ?string $category = null;
@@ -60,10 +65,10 @@ final class AvatarDownloadForm extends Model
 
         $path = $this->getRealPath();
         if (
-            !\file_exists($path) ||
-            !\is_readable($path) ||
-            \filesize($path) < 1 ||
-            \str_contains($path, '/.')
+            !file_exists($path) ||
+            !is_readable($path) ||
+            filesize($path) < 1 ||
+            str_contains($path, '/.')
         ) {
             $this->addError($attribute, 'file does not exist');
             return;

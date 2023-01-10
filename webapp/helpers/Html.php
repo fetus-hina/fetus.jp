@@ -10,6 +10,10 @@ use yii\helpers\Json;
 use yii\helpers\Url;
 use yii\web\View;
 
+use function is_string;
+use function sprintf;
+use function vsprintf;
+
 class Html extends \yii\bootstrap5\Html
 {
     private const CLASS_R18_LINK = 'r18-link';
@@ -21,7 +25,7 @@ class Html extends \yii\bootstrap5\Html
             $options['href'] = Url::to($url);
         }
 
-        if (isset($options['href']) && \is_string($options['href'])) {
+        if (isset($options['href']) && is_string($options['href'])) {
             if (!Url::isRelative($options['href'])) {
                 if (!($options['rel'] ?? null)) {
                     $options['rel'] = 'noopener noreferrer';
@@ -46,8 +50,8 @@ class Html extends \yii\bootstrap5\Html
         if (($v = Yii::$app->view) instanceof View) {
             R18DialogAsset::register($v);
             $v->registerJs(
-                \vsprintf('$(%s).r18dialog();', [
-                    Json::encode(\sprintf('.%s', self::CLASS_R18_LINK)),
+                vsprintf('$(%s).r18dialog();', [
+                    Json::encode(sprintf('.%s', self::CLASS_R18_LINK)),
                 ]),
                 View::POS_READY,
                 __METHOD__, // scriptlet-id

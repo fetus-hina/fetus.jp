@@ -11,6 +11,16 @@ use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\i18n\Formatter;
 
+use function array_keys;
+use function array_map;
+use function array_values;
+use function assert;
+use function implode;
+use function is_array;
+use function is_string;
+use function trim;
+use function vsprintf;
+
 final class PresetDownloadButton extends Widget
 {
     public const BUTTON_ICON_DEFAULT = 'DEFAULT';
@@ -71,7 +81,7 @@ final class PresetDownloadButton extends Widget
         }
 
         $tag = ArrayHelper::remove($options, 'tag', 'div');
-        if (!\is_string($tag) || \trim($tag) === '') {
+        if (!is_string($tag) || trim($tag) === '') {
             $tag = 'div';
         }
 
@@ -87,7 +97,7 @@ final class PresetDownloadButton extends Widget
     private function renderBtnMain(): string
     {
         return Html::a(
-            \trim(\implode(' ', [
+            trim(implode(' ', [
                 $this->renderButtonIcon(),
                 $this->renderButtonFace(),
             ])),
@@ -100,7 +110,7 @@ final class PresetDownloadButton extends Widget
     {
         return Html::tag(
             'div',
-            \implode('', [
+            implode('', [
                 $this->renderBtnMain(),
                 $this->renderDropDownMain(),
             ]),
@@ -118,7 +128,7 @@ final class PresetDownloadButton extends Widget
 
     private function renderButtonFace(): string
     {
-        \assert($this->formatter !== null);
+        assert($this->formatter !== null);
         return $this->formatter->format($this->buttonFace, $this->buttonFormat);
     }
 
@@ -126,7 +136,7 @@ final class PresetDownloadButton extends Widget
     {
         return Html::tag(
             'div',
-            \implode('', [
+            implode('', [
                 $this->renderDropDownParent(),
                 $this->renderDropDownChildren(),
             ]),
@@ -150,8 +160,8 @@ final class PresetDownloadButton extends Widget
                 'aria' => [
                     'expanded' => 'false',
                 ],
-                'class' => \implode(' ', [
-                    \is_array($btnClass) ? \implode(' ', $btnClass) : (string)$btnClass,
+                'class' => implode(' ', [
+                    is_array($btnClass) ? implode(' ', $btnClass) : (string)$btnClass,
                     'dropdown-toggle',
                 ]),
                 'data' => [
@@ -165,14 +175,14 @@ final class PresetDownloadButton extends Widget
 
     private function renderDropDownChildren(): string
     {
-        \assert($this->formatter !== null);
+        assert($this->formatter !== null);
         return Html::tag(
             'ul',
-            \implode('', \array_map(
+            implode('', array_map(
                 fn ($text, $url) => Html::tag(
                     'li',
                     Html::a(
-                        \trim(\implode(' ', [
+                        trim(implode(' ', [
                             $this->renderButtonIcon(),
                             $this->formatter->asText($text),
                         ])),
@@ -181,8 +191,8 @@ final class PresetDownloadButton extends Widget
                     ),
                     ['class' => 'dropdown-item']
                 ),
-                \array_keys($this->dropDownItems),
-                \array_values($this->dropDownItems),
+                array_keys($this->dropDownItems),
+                array_values($this->dropDownItems),
             )),
             [
                 'aria' => [
@@ -199,7 +209,7 @@ final class PresetDownloadButton extends Widget
 
     private function getDropDownId(): string
     {
-        return \vsprintf('%s-dropdown', [
+        return vsprintf('%s-dropdown', [
             $this->getId(),
         ]);
     }

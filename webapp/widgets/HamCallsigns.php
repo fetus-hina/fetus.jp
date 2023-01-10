@@ -10,6 +10,16 @@ use yii\bootstrap5\BootstrapPluginAsset;
 use yii\helpers\Json;
 use yii\web\JqueryAsset;
 
+use function array_keys;
+use function array_map;
+use function array_values;
+use function hash;
+use function implode;
+use function is_int;
+use function sprintf;
+use function strtolower;
+use function vsprintf;
+
 /**
  * @phpstan-type LicensedFormat array{f: float|int, p: positive-int}
  * @phpstan-type License array{gl: non-empty-string, jcc: non-empty-string, formats: LicensedFormat[]}
@@ -82,11 +92,17 @@ final class HamCallsigns extends Widget
     {
         return Html::tag(
             'ul',
-            \implode('', \array_map(
-                fn (string $callsign, array $data): string => Html::tag('li', $this->renderStation($callsign, $data)),
-                \array_keys($this->data),
-                \array_values($this->data),
-            )),
+            implode(
+                '',
+                array_map(
+                    fn (string $callsign, array $data): string => Html::tag(
+                        'li',
+                        $this->renderStation($callsign, $data),
+                    ),
+                    array_keys($this->data),
+                    array_values($this->data),
+                ),
+            ),
             [
                 'class' => 'list-unstyled',
             ],
@@ -99,7 +115,7 @@ final class HamCallsigns extends Widget
      */
     private function renderStation(string $callsign, array $data): string
     {
-        return \implode('', [
+        return implode('', [
             $this->renderStationHeadline($callsign, $data),
             $this->renderStationLicenses($callsign, $data['formats']),
         ]);
@@ -113,7 +129,7 @@ final class HamCallsigns extends Widget
     {
         return Html::tag(
             'div',
-            \vsprintf('%s (%s)', [
+            vsprintf('%s (%s)', [
                 self::monospace(Html::encode($callsign)),
                 $this->renderStationHeadlineData($data),
             ]),
@@ -125,7 +141,7 @@ final class HamCallsigns extends Widget
      */
     private function renderStationHeadlineData(array $data): string
     {
-        return \implode(', ', [
+        return implode(', ', [
             $this->renderGridLocator($data['gl']),
             $this->renderJcc($data['jcc']),
         ]);
@@ -133,7 +149,7 @@ final class HamCallsigns extends Widget
 
     private function renderGridLocator(string $gl): string
     {
-        return \vsprintf('%s: %s', [
+        return vsprintf('%s: %s', [
             $this->abbr(Html::encode('GL'), 'Grid Locator (QTH Locator)'),
             self::monospace(Html::encode($gl)),
         ]);
@@ -141,7 +157,7 @@ final class HamCallsigns extends Widget
 
     private function renderJcc(string $jcc): string
     {
-        return \vsprintf('JCC# %s', [
+        return vsprintf('JCC# %s', [
             self::monospace(Html::encode($jcc)),
         ]);
     }
@@ -151,11 +167,11 @@ final class HamCallsigns extends Widget
      */
     private function renderStationLicenses(string $callsign, array $data): string
     {
-        $id = 'license-' . \strtolower($callsign);
+        $id = 'license-' . strtolower($callsign);
 
         return Html::tag(
             'div',
-            \implode('', [
+            implode('', [
                 Html::button(
                     '',
                     [
@@ -177,17 +193,17 @@ final class HamCallsigns extends Widget
                 ),
                 Html::tag(
                     'ul',
-                    \implode('', \array_map(
+                    implode('', array_map(
                         fn (array $data): string => Html::tag(
                             'li',
                             Html::tag(
                                 'span',
-                                Html::encode(\vsprintf('%s MHz: %d W', [
-                                    \is_int($data['f'])
-                                        ? (string)$data['f']
-                                        : \sprintf('%.1f', $data['f']),
-                                    $data['p'],
-                                ])),
+                                Html::encode(
+                                    vsprintf('%s MHz: %d W', [
+                                        is_int($data['f']) ? (string)$data['f'] : sprintf('%.1f', $data['f']),
+                                        $data['p'],
+                                    ])
+                                ),
                                 [
                                     'class' => [
                                         'd-inline-block',
@@ -247,7 +263,7 @@ final class HamCallsigns extends Widget
         BootstrapPluginAsset::register($this->view);
 
         $abbrClass = self::abbrClassname();
-        $this->view->registerJs(\vsprintf('$(%s).each(function(){new bootstrap.Tooltip(this)});', [
+        $this->view->registerJs(vsprintf('$(%s).each(function(){new bootstrap.Tooltip(this)});', [
             Json::encode('.' . $abbrClass),
         ]));
 
@@ -266,9 +282,9 @@ final class HamCallsigns extends Widget
 
     private static function abbrClassname(): string
     {
-        return \vsprintf('%s-%s', [
+        return vsprintf('%s-%s', [
             self::$autoIdPrefix,
-            \hash('crc32b', __METHOD__),
+            hash('crc32b', __METHOD__),
         ]);
     }
 }

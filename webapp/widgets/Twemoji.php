@@ -12,6 +12,9 @@ use yii\bootstrap5\Html;
 use yii\helpers\Json;
 use yii\web\View;
 
+use function sprintf;
+use function vsprintf;
+
 final class Twemoji extends Widget
 {
     public string|array $format = 'text';
@@ -31,8 +34,8 @@ final class Twemoji extends Widget
         if (($view = $this->view) instanceof View) {
             TwemojiAsset::register($view);
 
-            $view->registerJs(\vsprintf('$(%s).twemoji();', [
-                Json::encode(\sprintf('#%s', $id)),
+            $view->registerJs(vsprintf('$(%s).twemoji();', [
+                Json::encode(sprintf('#%s', $id)),
             ]));
         }
 

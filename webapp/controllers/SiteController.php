@@ -10,6 +10,9 @@ use yii\web\Controller;
 use yii\web\ErrorAction;
 use yii\web\Response;
 
+use function function_exists;
+use function opcache_reset;
+
 class SiteController extends Controller
 {
     /**
@@ -59,8 +62,8 @@ class SiteController extends Controller
         $r->format = Response::FORMAT_RAW;
         $r->headers->set('Content-Type', 'text/plain; charset=UTF-8');
 
-        if (\function_exists('opcache_reset')) {
-            \opcache_reset();
+        if (function_exists('opcache_reset')) {
+            opcache_reset();
             return 'ok';
         }
 

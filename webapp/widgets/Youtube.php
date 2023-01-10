@@ -8,6 +8,12 @@ use app\helpers\Html;
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
 
+use function implode;
+use function is_string;
+use function preg_match;
+use function rawurlencode;
+use function vsprintf;
+
 final class Youtube extends Widget
 {
     public ?string $video = null;
@@ -16,8 +22,8 @@ final class Youtube extends Widget
     {
         $video = $this->video;
         if (
-            !\is_string($video) ||
-            !\preg_match('/^[a-zA-Z0-9_-]{11}$/', $video)
+            !is_string($video) ||
+            !preg_match('/^[a-zA-Z0-9_-]{11}$/', $video)
         ) {
             throw new InvalidConfigException();
         }
@@ -40,7 +46,7 @@ final class Youtube extends Widget
     private function renderIframe(string $video): string
     {
         return Html::tag('iframe', '', [
-            'allow' => \implode('; ', [
+            'allow' => implode('; ', [
                 'accelerometer',
                 'autoplay',
                 'clipboard-write',
@@ -51,8 +57,8 @@ final class Youtube extends Widget
             'allowfullscreen' => null,
             'frameborder' => '0',
             'title' => 'YouTube video player',
-            'src' => \vsprintf('https://www.youtube-nocookie.com/embed/%s', [
-                \rawurlencode($video),
+            'src' => vsprintf('https://www.youtube-nocookie.com/embed/%s', [
+                rawurlencode($video),
             ]),
         ]);
     }
