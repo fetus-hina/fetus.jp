@@ -694,21 +694,21 @@
         },
         {
             "name": "codeception/codeception",
-            "version": "5.0.8",
+            "version": "5.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "dd6e795f20fca72e4b9ad16527f49943f474d323"
+                "reference": "671c99535a206a2ebfcdc741b52a1deb700d5ce5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/dd6e795f20fca72e4b9ad16527f49943f474d323",
-                "reference": "dd6e795f20fca72e4b9ad16527f49943f474d323",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/671c99535a206a2ebfcdc741b52a1deb700d5ce5",
+                "reference": "671c99535a206a2ebfcdc741b52a1deb700d5ce5",
                 "shasum": ""
             },
             "require": {
                 "behat/gherkin": "^4.6.2",
-                "codeception/lib-asserts": "2.0.*@dev",
+                "codeception/lib-asserts": "^2.0",
                 "codeception/stub": "^4.1",
                 "ext-curl": "*",
                 "ext-json": "*",
@@ -798,7 +798,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Codeception/Codeception/issues",
-                "source": "https://github.com/Codeception/Codeception/tree/5.0.8"
+                "source": "https://github.com/Codeception/Codeception/tree/5.0.9"
             },
             "funding": [
                 {
@@ -806,20 +806,20 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-02-03T21:54:18+00:00"
+            "time": "2023-02-11T14:10:41+00:00"
         },
         {
             "name": "codeception/lib-asserts",
-            "version": "2.0.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/lib-asserts.git",
-                "reference": "78c55044611437988b54e1daecf13f247a742bf8"
+                "reference": "b8c7dff552249e560879c682ba44a4b963af91bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/lib-asserts/zipball/78c55044611437988b54e1daecf13f247a742bf8",
-                "reference": "78c55044611437988b54e1daecf13f247a742bf8",
+                "url": "https://api.github.com/repos/Codeception/lib-asserts/zipball/b8c7dff552249e560879c682ba44a4b963af91bc",
+                "reference": "b8c7dff552249e560879c682ba44a4b963af91bc",
                 "shasum": ""
             },
             "require": {
@@ -858,9 +858,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Codeception/lib-asserts/issues",
-                "source": "https://github.com/Codeception/lib-asserts/tree/2.0.1"
+                "source": "https://github.com/Codeception/lib-asserts/tree/2.1.0"
             },
-            "time": "2022-09-27T06:17:39+00:00"
+            "time": "2023-02-10T18:36:23+00:00"
         },
         {
             "name": "codeception/lib-innerbrowser",
@@ -1260,27 +1260,27 @@
         },
         {
             "name": "codeception/module-yii2",
-            "version": "1.1.7",
+            "version": "1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/module-yii2.git",
-                "reference": "338ab4dfa04b3f7312856915f2daebad73985911"
+                "reference": "75f2fdf7f1912c1b95885d56a5098ed10f586411"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/module-yii2/zipball/338ab4dfa04b3f7312856915f2daebad73985911",
-                "reference": "338ab4dfa04b3f7312856915f2daebad73985911",
+                "url": "https://api.github.com/repos/Codeception/module-yii2/zipball/75f2fdf7f1912c1b95885d56a5098ed10f586411",
+                "reference": "75f2fdf7f1912c1b95885d56a5098ed10f586411",
                 "shasum": ""
             },
             "require": {
-                "codeception/codeception": "^5.0.0-RC6",
-                "codeception/lib-innerbrowser": "^3.0",
+                "codeception/codeception": "^5.0.8",
+                "codeception/lib-innerbrowser": "^3.0 | ^4.0",
                 "php": "^8.0"
             },
             "require-dev": {
                 "codeception/module-asserts": "^3.0",
                 "codeception/module-filesystem": "^3.0",
-                "codeception/verify": "^2.2",
+                "codeception/verify": "^3.0",
                 "codemix/yii2-localeurls": "^1.7",
                 "yiisoft/yii2": "dev-master",
                 "yiisoft/yii2-app-advanced": "dev-master"
@@ -1307,16 +1307,16 @@
                 }
             ],
             "description": "Codeception module for Yii2 framework",
-            "homepage": "http://codeception.com/",
+            "homepage": "https://codeception.com/",
             "keywords": [
                 "codeception",
                 "yii2"
             ],
             "support": {
                 "issues": "https://github.com/Codeception/module-yii2/issues",
-                "source": "https://github.com/Codeception/module-yii2/tree/1.1.7"
+                "source": "https://github.com/Codeception/module-yii2/tree/1.1.8"
             },
-            "time": "2022-07-15T18:09:58+00:00"
+            "time": "2023-02-10T18:47:53+00:00"
         },
         {
             "name": "codeception/specify",
@@ -1605,16 +1605,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.5.2",
+            "version": "2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "c76c013c555160410af47c03a0e173518e3f5796"
+                "reference": "6b67eeea4d72051c369ccdbfb2423a56e2ab51a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/c76c013c555160410af47c03a0e173518e3f5796",
-                "reference": "c76c013c555160410af47c03a0e173518e3f5796",
+                "url": "https://api.github.com/repos/composer/composer/zipball/6b67eeea4d72051c369ccdbfb2423a56e2ab51a9",
+                "reference": "6b67eeea4d72051c369ccdbfb2423a56e2ab51a9",
                 "shasum": ""
             },
             "require": {
@@ -1698,7 +1698,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.5.2"
+                "source": "https://github.com/composer/composer/tree/2.5.4"
             },
             "funding": [
                 {
@@ -1714,7 +1714,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-04T13:33:22+00:00"
+            "time": "2023-02-15T12:10:06+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -3137,16 +3137,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.9.17",
+            "version": "1.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "204e459e7822f2c586463029f5ecec31bb45a1f2"
+                "reference": "a2ffec7db373d8da4973d1d62add872db5cd22dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/204e459e7822f2c586463029f5ecec31bb45a1f2",
-                "reference": "204e459e7822f2c586463029f5ecec31bb45a1f2",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/a2ffec7db373d8da4973d1d62add872db5cd22dd",
+                "reference": "a2ffec7db373d8da4973d1d62add872db5cd22dd",
                 "shasum": ""
             },
             "require": {
@@ -3176,7 +3176,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.9.17"
+                "source": "https://github.com/phpstan/phpstan/tree/1.10.2"
             },
             "funding": [
                 {
@@ -3192,7 +3192,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-08T12:25:00+00:00"
+            "time": "2023-02-23T14:36:46+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -5537,16 +5537,16 @@
         },
         {
             "name": "softcreatr/jsonpath",
-            "version": "0.8.1",
+            "version": "0.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SoftCreatR/JSONPath.git",
-                "reference": "2de6614d7a9aa5e1f988c5dbc0744fa602847180"
+                "reference": "3a6108aa78e4944ea7d8dd846f9ae75a080b007b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/2de6614d7a9aa5e1f988c5dbc0744fa602847180",
-                "reference": "2de6614d7a9aa5e1f988c5dbc0744fa602847180",
+                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/3a6108aa78e4944ea7d8dd846f9ae75a080b007b",
+                "reference": "3a6108aa78e4944ea7d8dd846f9ae75a080b007b",
                 "shasum": ""
             },
             "require": {
@@ -5557,9 +5557,8 @@
                 "flow/jsonpath": "*"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.5",
-                "roave/security-advisories": "dev-latest",
-                "squizlabs/php_codesniffer": "^3.7"
+                "phpunit/phpunit": "^9.6",
+                "roave/security-advisories": "dev-latest"
             },
             "type": "library",
             "autoload": {
@@ -5602,20 +5601,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-09-27T09:53:33+00:00"
+            "time": "2023-02-12T18:53:17+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.7.1",
+            "version": "3.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "1359e176e9307e906dc3d890bcc9603ff6d90619"
+                "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1359e176e9307e906dc3d890bcc9603ff6d90619",
-                "reference": "1359e176e9307e906dc3d890bcc9603ff6d90619",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ed8e00df0a83aa96acf703f8c2979ff33341f879",
+                "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879",
                 "shasum": ""
             },
             "require": {
@@ -5651,14 +5650,15 @@
             "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
             "keywords": [
                 "phpcs",
-                "standards"
+                "standards",
+                "static analysis"
             ],
             "support": {
                 "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
-            "time": "2022-06-18T07:21:10+00:00"
+            "time": "2023-02-22T23:07:41+00:00"
         },
         {
             "name": "symfony/browser-kit",
