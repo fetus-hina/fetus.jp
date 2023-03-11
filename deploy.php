@@ -34,14 +34,12 @@ set('bin/make', 'make');
 set('bin/npm', 'npm');
 set('bin/composer', fn (): string => sprintf('%s/webapp/composer.phar', get('release_path')));
 
-// ayanami2
-host('2401:2500:102:1206:133:242:147:83')
+// ayanami3
+host('2403:3a00:202:1127:49:212:205:127')
     ->user('fetusjp')
     ->stage('production')
     ->roles('app')
-    ->set('deploy_path', '~/app')
-    ->set('bin/php', '/usr/bin/env scl enable php81 -- php')
-    ->set('bin/make', '/usr/bin/env scl enable php81 -- make');
+    ->set('deploy_path', '~/app');
 
 task('deploy', [
     'deploy:info',
