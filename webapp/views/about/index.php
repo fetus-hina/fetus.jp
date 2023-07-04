@@ -95,6 +95,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
           Html::encode('@fetus_hina@don.fetus.jp'),
           'https://don.fetus.jp/@fetus_hina'
         ),
+        Html::encode('Bluesky') . ' ' . Html::a(
+          Html::encode('fetus.jp'),
+          'https://bsky.app/profile/fetus.jp',
+        ),
         Icon::wordpress() . ' ' . Html::a(
           Html::encode('Blog'),
           'https://blog.fetus.jp/'
