@@ -43,7 +43,8 @@
       "jquery": true
     },
     "globals": [
-      "bootstrap"
+      "bootstrap",
+      "jQuery"
     ]
   }
 }

@@ -41,7 +41,10 @@
         return true;
       }
 
-      if (this instanceof HTMLAnchorElement) {
+      if (
+        typeof window.HTMLAnchorElement !== 'undefined' &&
+        this instanceof window.HTMLAnchorElement
+      ) {
         if (this.protocol === 'https:') {
           $secureIcon.show();
         } else {

@@ -8,8 +8,8 @@
   const windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes';
   const width = 550;
   const height = 420;
-  const winHeight = screen.height;
-  const winWidth = screen.width;
+  const winHeight = window.screen.height;
+  const winWidth = window.screen.width;
 
   function handleIntent (e) {
     e = e || window.event;
