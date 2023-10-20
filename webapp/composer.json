@@ -15,7 +15,7 @@
     },
     "require-dev": {
         "ext-posix": "*",
-        "codeception/codeception": "^5.0",
+        "codeception/codeception": "^5.0.12",
         "codeception/module-asserts": "*",
         "codeception/module-filesystem": "*",
         "codeception/module-phpbrowser": "*",
