@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e3022d4908732b015c85291c317664f",
+    "content-hash": "4182e546e50ce2998c7a59b8d8a450b5",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -311,16 +311,16 @@
         },
         {
             "name": "twbs/bootstrap-icons",
-            "version": "v1.10.5",
+            "version": "v1.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/icons.git",
-                "reference": "648aa8238437d9da9227f6273cc163ec5841382d"
+                "reference": "8d7bc695fb407627378cb184976b348e6a128d59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/icons/zipball/648aa8238437d9da9227f6273cc163ec5841382d",
-                "reference": "648aa8238437d9da9227f6273cc163ec5841382d",
+                "url": "https://api.github.com/repos/twbs/icons/zipball/8d7bc695fb407627378cb184976b348e6a128d59",
+                "reference": "8d7bc695fb407627378cb184976b348e6a128d59",
                 "shasum": ""
             },
             "type": "library",
@@ -344,9 +344,9 @@
             ],
             "support": {
                 "issues": "https://github.com/twbs/icons/issues",
-                "source": "https://github.com/twbs/icons/tree/v1.10.5"
+                "source": "https://github.com/twbs/icons/tree/v1.11.1"
             },
-            "time": "2023-04-26T19:56:04+00:00"
+            "time": "2023-09-17T14:09:28+00:00"
         },
         {
             "name": "yiisoft/yii2",
