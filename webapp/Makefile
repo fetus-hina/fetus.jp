@@ -1,6 +1,8 @@
 RESOURCES := \
 	resource/css/blog-feed.css \
 	resource/css/blog-feed.min.css \
+	resource/css/sample-video.css \
+	resource/css/sample-video.min.css \
 	resource/css/site.css \
 	resource/css/site.min.css \
 	resource/css/twemoji.css \

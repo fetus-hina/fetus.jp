@@ -2,15 +2,16 @@
 
 declare(strict_types=1);
 
-use ScssPhp\ScssPhp\Compiler as ScssCompiler;
-use yii\bootstrap5\BootstrapPluginAsset;
+use app\assets\SampleVideoAsset;
 use app\helpers\Html;
+use yii\bootstrap5\BootstrapPluginAsset;
 use yii\web\View;
 
 /**
  * @var View $this
  */
 
+SampleVideoAsset::register($this);
 BootstrapPluginAsset::register($this);
 
 $defaultTab = 'sample-exercise';
@@ -24,28 +25,6 @@ $data = [
     'content' => $this->render('//about/avatar/sample-movie/dangan'),
   ],
 ];
-
-$this->registerCss(
-  (new ScssCompiler())
-    ->compileString('
-      #sample {
-        .tab-content {
-          border: 1px solid #c8beba;
-          border-top: 0;
-          border-radius: 0 0 0.25rem 0.25rem;
-        }
-
-        .video-container {
-          max-width: 853px;
-
-          iframe {
-            border-radius: 0.25rem;
-          }
-        }
-      }
-    ')
-    ->getCss()
-);
 
 ?>
 <div id="sample">

@@ -1,0 +1,15 @@
+#sample {
+  .tab-content {
+    border: 1px solid #c8beba;
+    border-radius: 0 0 0.25rem 0.25rem;
+    border-top: 0;
+  }
+
+  .video-container {
+    max-width: 853px;
+
+    iframe {
+      border-radius: 0.25rem;
+    }
+  }
+}
