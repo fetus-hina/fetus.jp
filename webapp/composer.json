@@ -28,7 +28,7 @@
         "phpcompatibility/php-compatibility": "^9.3.5",
         "phpstan/phpstan": "*",
         "proget-hq/phpstan-yii2": "*",
-        "sirbrillig/phpcs-variable-analysis": "^2.11.2",
+        "sirbrillig/phpcs-variable-analysis": "^2.11.17",
         "slevomat/coding-standard": "*",
         "squizlabs/php_codesniffer": "*",
         "symfony/browser-kit": "*",
