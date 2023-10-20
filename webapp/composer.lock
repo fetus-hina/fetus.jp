@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0d051492bf17aa94015a132d6a143cb",
+    "content-hash": "1f11ae2aae69bc5af520958f744d9283",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -2233,16 +2233,16 @@
         },
         {
             "name": "dominikb/composer-license-checker",
-            "version": "2.4.1",
+            "version": "2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dominikb/composer-license-checker.git",
-                "reference": "2cb79f0b2ec7cf65ada14a9e713a922cf87c9e7a"
+                "reference": "4fc65304aca94a454f0beba0b1d0f25055bc17c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dominikb/composer-license-checker/zipball/2cb79f0b2ec7cf65ada14a9e713a922cf87c9e7a",
-                "reference": "2cb79f0b2ec7cf65ada14a9e713a922cf87c9e7a",
+                "url": "https://api.github.com/repos/dominikb/composer-license-checker/zipball/4fc65304aca94a454f0beba0b1d0f25055bc17c2",
+                "reference": "4fc65304aca94a454f0beba0b1d0f25055bc17c2",
                 "shasum": ""
             },
             "require": {
@@ -2290,9 +2290,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dominikb/composer-license-checker/issues",
-                "source": "https://github.com/dominikb/composer-license-checker/tree/2.4.1"
+                "source": "https://github.com/dominikb/composer-license-checker/tree/2.4.2"
             },
-            "time": "2023-05-19T17:47:49+00:00"
+            "time": "2023-08-13T13:42:17+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
