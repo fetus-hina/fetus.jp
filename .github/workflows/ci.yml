@@ -38,7 +38,7 @@ jobs:
         run: |
           find . \( -type d \( -name '.git' -or -name 'vendor' -or -name 'node_modules' -or -name 'runtime' \) -prune \) -or \( -type f -name '*.php' -print \) \
             | sort \
-            | xargs -n 1 php -l
+            | xargs ${{ matrix.env.php >= 8.3 && ' ' || '-n 1'}} php -l
   makeComposerCache:
     name: 'Make composer cache'
     runs-on: ubuntu-22.04
