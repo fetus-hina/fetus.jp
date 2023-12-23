@@ -24,7 +24,7 @@
     "autoprefixer": "^10.4.16",
     "cssnano": "^6.0.2",
     "license-checker-rseidelsohn": "^3.3.0",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.32",
     "postcss-cli": "^10.1.0",
     "sass": "^1.69.5",
     "semistandard": "^17.0.0",
