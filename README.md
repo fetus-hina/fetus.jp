@@ -6,13 +6,13 @@ https://fetus.jp/
 Requirements
 ------------
 
-- PHP ≧ 8.1
+- PHP ≧ 8.2
 
 
 License
 -------
 
-Copyright (C) 2017-2023 AIZAWA Hina (hina@fetus.jp)
+Copyright (C) 2017-2024 AIZAWA Hina (hina@fetus.jp)
 
 [MIT License](./LICENSE)
 
