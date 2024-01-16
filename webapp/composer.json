@@ -15,7 +15,7 @@
         "ext-pdo": "*",
         "ext-pdo_pgsql": "*",
         "cweagans/composer-patches": "^1.7.3",
-        "twbs/bootstrap-icons": "^1.11.2",
+        "twbs/bootstrap-icons": "^1.11.3",
         "yiisoft/yii2": "~2.0.49.2",
         "yiisoft/yii2-bootstrap5": "~2.0.4"
     },
