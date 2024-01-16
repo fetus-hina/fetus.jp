@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9deba515376505c202072a065190d2b0",
+    "content-hash": "c0ed91c2b5ff4610a8076d0a2e77b9b4",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -2104,20 +2104,21 @@
         },
         {
             "name": "dominikb/composer-license-checker",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dominikb/composer-license-checker.git",
-                "reference": "02bb3c4942ff38ad213d2f85263aa195798721a4"
+                "reference": "d09ea1b9454dab011131546270fd5dc65f4eead3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dominikb/composer-license-checker/zipball/02bb3c4942ff38ad213d2f85263aa195798721a4",
-                "reference": "02bb3c4942ff38ad213d2f85263aa195798721a4",
+                "url": "https://api.github.com/repos/dominikb/composer-license-checker/zipball/d09ea1b9454dab011131546270fd5dc65f4eead3",
+                "reference": "d09ea1b9454dab011131546270fd5dc65f4eead3",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": "^1.10.27|~2.2.22|^2.6.4",
+                "ext-json": "*",
                 "guzzlehttp/guzzle": "^6.3|^7.2",
                 "php": "^7.3|^8.0",
                 "psr/simple-cache": "^1.0|^2.0|^3.0",
@@ -2161,9 +2162,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dominikb/composer-license-checker/issues",
-                "source": "https://github.com/dominikb/composer-license-checker/tree/2.5.0"
+                "source": "https://github.com/dominikb/composer-license-checker/tree/2.5.1"
             },
-            "time": "2023-11-16T12:35:51+00:00"
+            "time": "2024-01-05T15:16:49+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
