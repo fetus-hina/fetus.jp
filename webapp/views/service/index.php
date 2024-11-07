@@ -30,7 +30,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
   </p>
 
   <h3>
-    Splatoon/Splatoon 2 関連サービス
+    Splatoon シリーズ関連サービス
   </h3>
   <p>
     ※個人的に作成したもので、任天堂株式会社とは一切関係ありません。
@@ -41,7 +41,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
         stat.ink
       </h4>
       <p>
-        ソフトウェア「IkaLog」「イカレコ」「SquidTracks」「splatnet2statink」などと連携して、Splatoon
+        ソフトウェア「IkaLog」「イカレコ」「SquidTracks」「splatnet2statink」「s3s」などと連携して、Splatoon
         の個人成績を記録・集計するウェブサイトです。
       </p>
       <p>
@@ -114,32 +114,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
         <?= Html::a(
           Icon::github() . ' ' . Html::encode('ソース') . ' ' . Icon::next(),
           'https://github.com/fetus-hina/ipv4.fetus.jp/',
-          ['class' => 'btn btn-outline-primary']
-        ) . "\n" ?>
-      </p>
-    </div>
-
-    <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
-      <h4>
-        Wandbox for PHP/Hack
-      </h4>
-      <p>
-        めるぽん氏、kikairoya氏が開発するオンラインコンパイラ「<a href="https://wandbox.org/">Wandbox</a>」のPHP特化版を運用しています。
-        また、ただ利用して運用するだけではなく、本家のWandboxの開発にも関わっています。
-      </p>
-      <p>
-        ソースコードはPHP特化版で変更した箇所も含めて、本家Wandbox同様にBoost Software Licenseで公開しています。
-        また、サービスを運用するための補助ツールもGitHub上にMIT License等で公開しています。
-      </p>
-      <p>
-        <?= Html::a(
-          Html::encode('Wandbox for PHP/Hack') . ' ' . Icon::next(),
-          'https://wandbox.fetus.jp/',
-          ['class' => 'btn btn-outline-primary']
-        ) . "\n" ?>
-        <?= Html::a(
-          Icon::github() . ' ' . Html::encode('ソース') . ' ' . Icon::next(),
-          'https://github.com/fetus-hina/wandbox/tree/for-php',
           ['class' => 'btn btn-outline-primary']
         ) . "\n" ?>
       </p>
@@ -250,6 +224,31 @@ $this->registerMetaTag(['name' => 'description', 'content' => '相沢陽菜の�
           ) . "\n" ?>
         </div>
       </div>
+    </div>
+    <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
+      <h4>
+        Wandbox for PHP/Hack
+      </h4>
+      <p>
+        めるぽん氏、kikairoya氏が開発するオンラインコンパイラ「<a href="https://wandbox.org/">Wandbox</a>」のPHP特化版を運用しています。
+        また、ただ利用して運用するだけではなく、本家のWandboxの開発にも関わっています。
+      </p>
+      <p>
+        ソースコードはPHP特化版で変更した箇所も含めて、本家Wandbox同様にBoost Software Licenseで公開しています。
+        また、サービスを運用するための補助ツールもGitHub上にMIT License等で公開しています。
+      </p>
+      <p>
+        <?= Html::a(
+          Html::encode('Wandbox for PHP/Hack') . ' ' . Icon::next(),
+          'https://wandbox.fetus.jp/',
+          ['class' => 'btn btn-outline-primary']
+        ) . "\n" ?>
+        <?= Html::a(
+          Icon::github() . ' ' . Html::encode('ソース') . ' ' . Icon::next(),
+          'https://github.com/fetus-hina/wandbox/tree/for-php',
+          ['class' => 'btn btn-outline-primary']
+        ) . "\n" ?>
+      </p>
     </div>
     <?= Html::beginTag('div', ['class' => $divClass]) . "\n" ?>
       <h4>
