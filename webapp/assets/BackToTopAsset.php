@@ -10,7 +10,7 @@ use yii\web\AssetBundle;
 
 final class BackToTopAsset extends AssetBundle
 {
-    public $sourcePath = '@npm/@fetus-hina/fetus.css/dist';
+    public $sourcePath = '@npm/@jp3cki/fetus.css/dist';
     public $js = [
         'fetus-css.min.js',
     ];

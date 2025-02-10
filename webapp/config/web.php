@@ -59,7 +59,7 @@ $config = [
         'assetManager' => [
             'bundles' => [
                 BootstrapAsset::class => [
-                    'sourcePath' => '@npm/@fetus-hina/fetus.css/dist',
+                    'sourcePath' => '@npm/@jp3cki/fetus.css/dist',
                     'css' => [
                         'bootstrap-lineseedjp.min.css',
                     ],

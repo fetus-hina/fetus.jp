@@ -86,10 +86,10 @@ web/favicon.ico: web/images/favicon.ico
 	ln -fs images/favicon.ico $@
 
 web/images/favicon.%: node_modules
-	cp node_modules/@fetus-hina/fetus.css/dist/favicon/$(notdir $@) $@
+	cp node_modules/@jp3cki/fetus.css/dist/favicon/$(notdir $@) $@
 
 web/images/apple-touch-icon-%.png: node_modules
-	cp node_modules/@fetus-hina/fetus.css/dist/favicon/$(notdir $@) $@
+	cp node_modules/@jp3cki/fetus.css/dist/favicon/$(notdir $@) $@
 
 .browserslistrc:
 	curl -fsSL -o $@ 'https://raw.githubusercontent.com/twbs/bootstrap/main/.browserslistrc'
