@@ -12,7 +12,7 @@ Requirements
 License
 -------
 
-Copyright (C) 2017-2024 AIZAWA Hina (hina@fetus.jp)
+Copyright (C) 2017-2025 AIZAWA Hina (hina@fetus.jp)
 
 [MIT License](./LICENSE)
 

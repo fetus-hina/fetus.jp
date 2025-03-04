@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) 2015-2024 AIZAWA Hina
+ * @copyright Copyright (C) 2015-2025 AIZAWA Hina
  * @author AIZAWA Hina <hina@fetus.jp>
  */
 
