@@ -70,7 +70,7 @@ trait LicenseExtractTrait
         ]);
         $value = ArrayHelper::getValue(
             $this->shouldBeArray(Json::decode((string)$this->execCommand($cmdline))),
-            'dependencies'
+            'dependencies',
         );
         return is_array($value)
             ? $value
@@ -84,7 +84,7 @@ trait LicenseExtractTrait
                 isset($info['version']) && trim((string)$info['version']) !== ''
                     ? "{$name}@{$info['version']}"
                     : $name,
-                Yii::getAlias('@app/vendor') . '/' . $name
+                Yii::getAlias('@app/vendor') . '/' . $name,
             );
         }
     }
@@ -108,7 +108,7 @@ trait LicenseExtractTrait
         if (!FileHelper::createDirectory(dirname($distPath))) {
             fwrite(
                 STDERR,
-                'license/extract: could not create directory: ' . dirname($distPath) . "\n"
+                'license/extract: could not create directory: ' . dirname($distPath) . "\n",
             );
             return false;
         }
@@ -153,12 +153,10 @@ trait LicenseExtractTrait
             return null;
         }
 
-        usort($files, function (stdClass $a, stdClass $b): int {
-            return $a->precedence <=> $b->precedence
+        usort($files, fn (stdClass $a, stdClass $b): int => $a->precedence <=> $b->precedence
                 ?: strnatcasecmp($a->basename, $b->basename)
                 ?: strcasecmp($a->basename, $b->basename)
-                ?: strcmp($a->basename, $b->basename);
-        });
+                ?: strcmp($a->basename, $b->basename));
 
         while ($files) {
             $info = array_shift($files);
@@ -180,7 +178,7 @@ trait LicenseExtractTrait
         $packageName = (string)preg_replace(
             '/[^!#$%()+,.\/-9@-Z_a-z]+/',
             '-',
-            $packageName
+            $packageName,
         );
         $packageName = str_replace('/../', '/', $packageName);
         $packageName = str_replace('/./', '/', $packageName);

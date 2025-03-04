@@ -35,7 +35,7 @@ final class Unicode
     private const REGIONAL_INDICATOR_BASE = 0x1F1E6;
 
     /** @param int|int[] $codepoint */
-    public static function fromCodepoint($codepoint, ?string $charset = null): string
+    public static function fromCodepoint(int|array $codepoint, ?string $charset = null): string
     {
         if (is_int($codepoint)) {
             if ($codepoint < 0 || $codepoint > 0x10FFFF) {

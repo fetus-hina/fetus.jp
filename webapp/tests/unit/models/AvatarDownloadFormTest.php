@@ -142,7 +142,7 @@ final class AvatarDownloadFormTest extends Unit
         ]);
 
         $this->assertFalse($model->download(
-            Yii::createObject(Response::class)
+            Yii::createObject(Response::class),
         ));
     }
 
@@ -164,7 +164,7 @@ final class AvatarDownloadFormTest extends Unit
         $this->assertEquals('application/octet-stream', $headers->get('Content-Type'));
         $this->assertEquals(
             sprintf('attachment; filename="%s"', $fileName),
-            $headers->get('Content-Disposition')
+            $headers->get('Content-Disposition'),
         );
         $this->assertGreaterThan(1024, $headers->get('Content-Length'));
 

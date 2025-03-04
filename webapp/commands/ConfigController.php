@@ -37,7 +37,7 @@ final class ConfigController extends Controller
                     Yii::$app->security->generateRandomString($length),
                 ]),
                 '})();',
-            ]) . "\n"
+            ]) . "\n",
         );
 
         return is_int($status) && $status > 0

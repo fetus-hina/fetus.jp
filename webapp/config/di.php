@@ -19,19 +19,19 @@ Yii::$container->set(AssetManager::class, [
                     'sha256',
                     is_string($deployId) ? $deployId : '',
                     Yii::getVersion(),
-                    false
+                    false,
                 ),
                 0,
-                16
+                16,
             ),
             substr(
                 hash(
                     'sha256',
                     $path . '|' . filemtime($path),
-                    false
+                    false,
                 ),
                 0,
-                16
+                16,
             ),
         ]);
     },

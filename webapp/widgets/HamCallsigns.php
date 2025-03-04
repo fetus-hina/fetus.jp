@@ -202,7 +202,7 @@ final class HamCallsigns extends Widget
                                     vsprintf('%s MHz: %d W', [
                                         is_int($data['f']) ? (string)$data['f'] : sprintf('%.1f', $data['f']),
                                         $data['p'],
-                                    ])
+                                    ]),
                                 ),
                                 [
                                     'class' => [
@@ -250,7 +250,7 @@ final class HamCallsigns extends Widget
             $html,
             [
                 'class' => 'font-monospace',
-            ]
+            ],
         );
     }
 
@@ -276,7 +276,7 @@ final class HamCallsigns extends Widget
                     $abbrClass,
                     'text-decoration-none',
                 ],
-            ]
+            ],
         );
     }
 

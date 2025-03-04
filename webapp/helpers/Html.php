@@ -41,11 +41,10 @@ class Html extends \yii\bootstrap5\Html
     }
 
     /**
-     * @param string $text
      * @param string|array|null $url,
      * @param array<string, mixed> $options
      */
-    public static function aR18($text, $url = null, $options = []): string
+    public static function aR18(string $text, string|array|null $url = null, array $options = []): string
     {
         if (($v = Yii::$app->view) instanceof View) {
             R18DialogAsset::register($v);

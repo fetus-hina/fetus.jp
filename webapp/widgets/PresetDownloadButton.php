@@ -117,7 +117,7 @@ final class PresetDownloadButton extends Widget
             [
                 'class' => 'btn-group',
                 'role' => 'group',
-            ]
+            ],
         );
     }
 
@@ -143,14 +143,14 @@ final class PresetDownloadButton extends Widget
             [
                 'class' => 'btn-group',
                 'role' => 'group',
-            ]
+            ],
         );
     }
 
     private function renderDropDownParent(): string
     {
         /**
-         * @var string[]|string
+         * @var string|string[] $btnClass
          */
         $btnClass = ArrayHelper::getValue($this->buttonOptions, 'class', '');
 
@@ -169,7 +169,7 @@ final class PresetDownloadButton extends Widget
                 ],
                 'id' => $this->getDropDownId(),
                 'type' => 'button',
-            ]
+            ],
         );
     }
 
@@ -189,7 +189,7 @@ final class PresetDownloadButton extends Widget
                         $url,
                         $this->dropDownItemOptions,
                     ),
-                    ['class' => 'dropdown-item']
+                    ['class' => 'dropdown-item'],
                 ),
                 array_keys($this->dropDownItems),
                 array_values($this->dropDownItems),
@@ -203,7 +203,7 @@ final class PresetDownloadButton extends Widget
                     'dropdown-menu',
                     'shadow',
                 ],
-            ]
+            ],
         );
     }
 

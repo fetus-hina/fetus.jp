@@ -55,7 +55,7 @@ class LicenseAction extends Action
                 return strnatcasecmp($aName2, $bName2)
                     ?: strnatcasecmp($aName, $bName)
                     ?: strcmp($aName, $bName);
-            }
+            },
         );
         return $ret;
     }
@@ -64,9 +64,11 @@ class LicenseAction extends Action
     {
         $basedir = (string)Yii::getAlias($directory);
         $ret = [];
-        /** @var iterable<FilesystemIterator> */
+        /**
+         * @var iterable<FilesystemIterator> $it
+         */
         $it = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($basedir)
+            new RecursiveDirectoryIterator($basedir),
         );
         foreach ($it as $entry) {
             if (!$entry->isFile()) {

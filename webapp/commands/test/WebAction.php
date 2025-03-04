@@ -134,10 +134,10 @@ final class WebAction extends Action
             array_filter(
                 array_map(
                     fn ($v) => is_numeric($v) ? (int)$v : null,
-                    $lines
+                    $lines,
                 ),
                 fn ($v) => is_int($v) && $v > 0,
-            )
+            ),
         );
     }
 }
