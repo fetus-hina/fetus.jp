@@ -5,7 +5,7 @@
     "type": "project",
     "homepage": "https://fetus.jp/",
     "require": {
-        "php": ">= 8.2",
+        "php": ">= 8.4",
         "php-64bit": "*",
         "php-ipv6": "*",
         "ext-ctype": "*",
@@ -32,7 +32,6 @@
         "dominikb/composer-license-checker": "^2.7.0",
         "ergebnis/composer-normalize": "^2.45",
         "jp3cki/coding-standard": "^1.0.2",
-        "phpcompatibility/php-compatibility": "^9.3.5",
         "phpstan/phpstan": "^1.12.19",
         "proget-hq/phpstan-yii2": "~0.8.0",
         "sirbrillig/phpcs-variable-analysis": "^2.11.22",
@@ -67,7 +66,7 @@
             "yiisoft/yii2-composer": true
         },
         "platform": {
-            "php": "8.2.25"
+            "php": "8.4.4"
         },
         "process-timeout": 1800,
         "sort-packages": true

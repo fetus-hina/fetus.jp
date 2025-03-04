@@ -7,8 +7,6 @@
   <arg value="p" />
   <arg value="s" />
 
-  <runtime-set name="testVersion" value="8.2-8.4" />
-
   <rule ref="PSR12" />
 
   <rule ref="Generic.Arrays.ArrayIndent" />
