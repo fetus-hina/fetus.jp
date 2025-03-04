@@ -17,10 +17,10 @@ jobs:
           -
             php: '8.4'
             experimental: true
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@latest
       -
         name: 'Set up PHP ${{ matrix.env.php }}'
         uses: shivammathur/setup-php@v2
@@ -38,12 +38,12 @@ jobs:
             | xargs ${{ matrix.env.php >= 8.3 && ' ' || '-n 1'}} php -l
   makeComposerCache:
     name: 'Make composer cache'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@latest
       -
-        uses: actions/cache@v2
+        uses: actions/cache@latest
         with:
           path: |
             ~/.cache/composer/files
@@ -64,12 +64,12 @@ jobs:
           ./composer.phar install --prefer-dist
   makeNpmCache:
     name: 'Make NPM cache'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@latest
       -
-        uses: actions/cache@v2
+        uses: actions/cache@latest
         with:
           path: |
             webapp/node_modules
@@ -82,13 +82,13 @@ jobs:
         working-directory: webapp
   phpStyleCheck:
     name: 'PHP Coding Style'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: makeComposerCache
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@latest
       -
-        uses: actions/cache@v2
+        uses: actions/cache@latest
         with:
           path: |
             ~/.cache/composer/files
@@ -110,13 +110,13 @@ jobs:
         continue-on-error: true
   jsStyleCheck:
     name: 'JavaScript Coding Style'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: makeNpmCache
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@latest
       -
-        uses: actions/cache@v2
+        uses: actions/cache@latest
         with:
           path: |
             webapp/node_modules
@@ -129,13 +129,13 @@ jobs:
         working-directory: webapp
   cssStyleCheck:
     name: 'CSS Coding Style'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: makeNpmCache
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@latest
       -
-        uses: actions/cache@v2
+        uses: actions/cache@latest
         with:
           path: |
             webapp/node_modules
@@ -148,18 +148,18 @@ jobs:
         working-directory: webapp
   composerLicenseCheck:
     name: 'Check license of composer packages'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: makeComposerCache
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@latest
       -
         name: 'Set up PHP 8.2'
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
       -
-        uses: actions/cache@v2
+        uses: actions/cache@latest
         with:
           path: |
             ~/.cache/composer/files
@@ -178,13 +178,13 @@ jobs:
             -a NYSL-0.9982
   npmLicenseCheck:
     name: 'Check license of npm packages'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: makeNpmCache
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@latest
       -
-        uses: actions/cache@v2
+        uses: actions/cache@latest
         with:
           path: |
             webapp/node_modules
@@ -209,23 +209,23 @@ jobs:
           -
             php: '8.4'
             experimental: true
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs:
       - makeComposerCache
       - makeNpmCache
     continue-on-error: '${{ matrix.env.experimental }}'
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@latest
       -
-        uses: actions/cache@v2
+        uses: actions/cache@latest
         with:
           path: |
             ~/.cache/composer/files
             webapp/vendor
           key: '${{ runner.os }}-composer-${{ hashFiles(''webapp/composer.lock'') }}'
       -
-        uses: actions/cache@v2
+        uses: actions/cache@latest
         with:
           path: |
             webapp/node_modules
