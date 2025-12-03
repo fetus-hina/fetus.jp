@@ -9,7 +9,7 @@ use app\models\AvatarDownloadForm;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
-class AboutController extends Controller
+final class AboutController extends Controller
 {
     public function actionIndex(): string
     {
@@ -29,6 +29,7 @@ class AboutController extends Controller
     public function actionDownloadAvatarPreset(): void
     {
         $form = Yii::createObject(AvatarDownloadForm::class);
+        // @phpstan-ignore-next-line
         $form->attributes = (array)Yii::$app->request->get();
         if (!$form->download(Yii::$app->response)) {
             throw new NotFoundHttpException(Yii::t('yii', 'Page not found.'));

@@ -6,6 +6,7 @@ namespace app\commands\test;
 
 use Yii;
 use yii\base\Action;
+use yii\console\Controller;
 
 use function array_filter;
 use function array_map;
@@ -28,6 +29,9 @@ use function vsprintf;
 
 use const STDERR;
 
+/**
+ * @extends Action<Controller>
+ */
 final class WebAction extends Action
 {
     private const SIGTERM = 15;

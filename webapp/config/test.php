@@ -7,6 +7,7 @@ use yii\helpers\ArrayHelper;
 return (function (): array {
     $config = require __DIR__ . '/web.php';
     $config['id'] .= '-tests';
+    // @phpstan-ignore-next-line
     $config['components'] = ArrayHelper::merge($config['components'], [
         'db' => require __DIR__ . '/test_db.php',
         'mailer' => [

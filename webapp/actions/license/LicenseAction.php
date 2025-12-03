@@ -11,6 +11,7 @@ use Yii;
 use app\helpers\Html;
 use stdClass;
 use yii\base\Action;
+use yii\web\Controller;
 
 use function call_user_func;
 use function file_get_contents;
@@ -25,7 +26,10 @@ use function substr;
 use function trim;
 use function usort;
 
-class LicenseAction extends Action
+/**
+ * @extends Action<Controller>
+ */
+final class LicenseAction extends Action
 {
     public string $view = '//license/license';
     public string $title = 'Licenses';
