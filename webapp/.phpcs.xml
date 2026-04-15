@@ -20,6 +20,7 @@
   <exclude-pattern>./migrations/*</exclude-pattern>
   <exclude-pattern>./node_modules/*</exclude-pattern>
   <exclude-pattern>./runtime/*</exclude-pattern>
+  <exclude-pattern>./tests/_support/*</exclude-pattern>
   <exclude-pattern>./vendor/*</exclude-pattern>
   <exclude-pattern>./views/*</exclude-pattern>
 </ruleset>
