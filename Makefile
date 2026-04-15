@@ -5,7 +5,7 @@ all: $(SUBDIRS) bin/dep
 
 .PHONY: clean
 clean: $(SUBDIRS)
-	rm -rf bin/dep
+	rm -rf bin/dep deployer/vendor
 
 .PHONY: resources
 resources: $(SUBDIRS)
@@ -14,6 +14,9 @@ resources: $(SUBDIRS)
 $(SUBDIRS):
 	make -C $@ $(MAKECMDGOALS)
 
-bin/dep:
-	curl -fsSL -o $@ 'https://github.com/deployphp/deployer/releases/download/v7.5.12/deployer.phar'
-	chmod +x $@
+bin/dep: deployer/vendor
+	ln -sf ../deployer/vendor/bin/dep $@
+
+deployer/vendor: deployer/composer.lock deployer/composer.json
+	cd deployer && composer install --prefer-dist --no-interaction
+	@touch $@
