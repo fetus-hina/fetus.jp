@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Deployer;
 
-require('recipe/yii2-app-basic.php');
+require 'recipe/common.php';
 
 set('application', 'fetusjp');
 set('repository', 'git@github.com:fetus-hina/fetus.jp.git');
@@ -29,7 +29,7 @@ add('writable_dirs', [
     'webapp/web/assets',
 ]);
 set('writable_mode', 'chmod');
-set('writable_chmod_recursive', false);
+set('writable_recursive', false);
 set('github_keys', [
     // see https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints
     'github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl',
@@ -40,14 +40,14 @@ set('bin/composer', fn (): string => sprintf('%s/webapp/composer.phar', get('rel
 
 // ayanami3
 host('2403:3a00:202:1127:49:212:205:127')
-    ->user('fetusjp')
-    ->stage('production')
-    ->roles('app')
+    ->setRemoteUser('fetusjp')
+    ->set('labels', ['stage' => 'production'])
+    ->set('roles', ['app'])
     ->set('deploy_path', '~/app');
 
 task('deploy', [
     'deploy:info',
-    'deploy:prepare',
+    'deploy:setup',
     'deploy:ssh_config',
     'deploy:git_config',
     'deploy:lock',
@@ -64,7 +64,7 @@ task('deploy', [
     'deploy:clear_opcache',
     'deploy:clear_proxy',
     'deploy:unlock',
-    'cleanup',
+    'deploy:cleanup',
 ])->desc('Deploy the project');
 
 task('deploy:ssh_config', [

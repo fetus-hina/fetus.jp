@@ -12,4 +12,4 @@ git tag -m $VERSION_TAG $VERSION_TAG || /bin/true
 git push origin master $VERSION_TAG
 
 make bin/dep
-bin/dep deploy production --tag="$VERSION_TAG"
+bin/dep deploy stage=production --tag="$VERSION_TAG"
