@@ -1,7 +1,10 @@
 name: CI
 'on':
-  - pull_request
-  - push
+  pull_request: null
+  push:
+    branches:
+      - '**'
+  workflow_call: null
 jobs:
   phpSyntaxCheck:
     name: 'PHP Syntax Check (PHP ${{ matrix.env.php }})'

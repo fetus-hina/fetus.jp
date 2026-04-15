@@ -1,0 +1,56 @@
+name: CD
+'on':
+  push:
+    tags:
+      - 'v*'
+jobs:
+  ci:
+    name: 'Run CI'
+    uses: ./.github/workflows/ci.yml
+  deploy:
+    name: 'Deploy to production'
+    runs-on: ubuntu-24.04
+    needs:
+      - ci
+    steps:
+      -
+        uses: actions/checkout@v6
+      -
+        name: 'Set up PHP 8.4'
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          tools: composer
+      -
+        uses: actions/cache@v5
+        with:
+          path: |
+            ~/.cache/composer/files
+            deployer/vendor
+          key: '${{ runner.os }}-deployer-${{ hashFiles(''deployer/composer.lock'') }}'
+          restore-keys: |
+            ${{ runner.os }}-deployer-
+      -
+        name: 'Install Deployer'
+        working-directory: deployer
+        run: |
+          composer install --prefer-dist --no-interaction --no-dev
+      -
+        name: 'Configure SSH'
+        env:
+          DEPLOY_SSH_PRIVATE_KEY: '${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}'
+          DEPLOY_SSH_KNOWN_HOSTS: '${{ secrets.DEPLOY_SSH_KNOWN_HOSTS }}'
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          umask 077
+          printf '%s\n' "$DEPLOY_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$DEPLOY_SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+      -
+        name: 'Run deploy'
+        run: |
+          deployer/vendor/bin/dep deploy stage=production \
+            --tag="${{ github.ref_name }}" \
+            --no-interaction
