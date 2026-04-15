@@ -15,26 +15,26 @@
         "ext-pdo_pgsql": "*",
         "cweagans/composer-patches": "^1.7.3",
         "twbs/bootstrap-icons": "^1.13.1",
-        "yiisoft/yii2": "^2.0.53",
-        "yiisoft/yii2-bootstrap5": "^2.0.50"
+        "yiisoft/yii2": "^2.0.54",
+        "yiisoft/yii2-bootstrap5": "^2.0.51"
     },
     "require-dev": {
         "ext-posix": "*",
-        "codeception/codeception": "^5.3.2",
+        "codeception/codeception": "^5.3.5",
         "codeception/module-asserts": ">=3.2.1",
-        "codeception/module-filesystem": ">=3.0.1",
-        "codeception/module-phpbrowser": ">=3.0.2",
-        "codeception/module-rest": ">=3.4.1",
-        "codeception/module-yii2": ">=2.0.4",
+        "codeception/module-filesystem": ">=3.0.2",
+        "codeception/module-phpbrowser": ">=4",
+        "codeception/module-rest": ">=3.4.3",
+        "codeception/module-yii2": ">=2.0.5",
         "codeception/specify": ">=2",
-        "codeception/verify": ">=3.3",
+        "codeception/verify": ">=3.4",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.2",
-        "dominikb/composer-license-checker": "^2.7.0",
-        "ergebnis/composer-normalize": "^2.48.2",
-        "jp3cki/coding-standard": "^1.0.3",
-        "phpstan/phpstan": "^1.12.32",
+        "dominikb/composer-license-checker": "^3.0.0",
+        "ergebnis/composer-normalize": "^2.51.0",
+        "jp3cki/coding-standard": "^2.0.0",
+        "phpstan/phpstan": "^1.12.33",
         "proget-hq/phpstan-yii2": "~0.8.0",
-        "symfony/browser-kit": ">=6.4.28",
+        "symfony/browser-kit": ">=6.4.32",
         "yiisoft/yii2-debug": "^2.1.27",
         "yiisoft/yii2-gii": "^2.2.7"
     },
@@ -53,7 +53,10 @@
         "symfony/polyfill-mbstring": "*",
         "symfony/polyfill-php73": "*",
         "symfony/polyfill-php80": "*",
-        "symfony/polyfill-php81": "*"
+        "symfony/polyfill-php81": "*",
+        "symfony/polyfill-php82": "*",
+        "symfony/polyfill-php83": "*",
+        "symfony/polyfill-php84": "*"
     },
     "minimum-stability": "stable",
     "config": {
@@ -64,7 +67,7 @@
             "yiisoft/yii2-composer": true
         },
         "platform": {
-            "php": "8.4.4"
+            "php": "8.4.20"
         },
         "process-timeout": 1800,
         "sort-packages": true
