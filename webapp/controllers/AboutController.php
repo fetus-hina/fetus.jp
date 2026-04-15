@@ -6,9 +6,13 @@ namespace app\controllers;
 
 use Yii;
 use app\models\AvatarDownloadForm;
+use yii\web\Application;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
+/**
+ * @extends Controller<Application>
+ */
 final class AboutController extends Controller
 {
     public function actionIndex(): string

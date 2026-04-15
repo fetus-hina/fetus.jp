@@ -6,6 +6,7 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
+use yii\web\Application;
 use yii\web\Controller;
 use yii\web\ErrorAction;
 use yii\web\Response;
@@ -13,6 +14,9 @@ use yii\web\Response;
 use function function_exists;
 use function opcache_reset;
 
+/**
+ * @extends Controller<Application>
+ */
 class SiteController extends Controller
 {
     /**

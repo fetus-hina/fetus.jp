@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace app\commands;
 
 use Yii;
+use yii\console\Application;
 use yii\console\Controller;
 use yii\console\ExitCode;
 
@@ -14,6 +15,9 @@ use function implode;
 use function is_int;
 use function vsprintf;
 
+/**
+ * @extends Controller<Application>
+ */
 final class ConfigController extends Controller
 {
     public function actionGenerateDeployId(): int

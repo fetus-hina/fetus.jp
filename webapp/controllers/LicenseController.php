@@ -5,8 +5,12 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use app\actions\license\LicenseAction;
+use yii\web\Application;
 use yii\web\Controller;
 
+/**
+ * @extends Controller<Application>
+ */
 class LicenseController extends Controller
 {
     public function actions()
