@@ -16,7 +16,8 @@
         "cweagans/composer-patches": "^1.7.3",
         "twbs/bootstrap-icons": "^1.13.1",
         "yiisoft/yii2": "^2.0.54",
-        "yiisoft/yii2-bootstrap5": "^2.0.51"
+        "yiisoft/yii2-bootstrap5": "^2.0.51",
+        "yiisoft/yii2-httpclient": "^2.0.16"
     },
     "require-dev": {
         "ext-posix": "*",
