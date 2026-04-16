@@ -39,7 +39,7 @@ set('bin/npm', 'npm');
 set('bin/composer', fn (): string => sprintf('%s/webapp/composer.phar', get('release_path')));
 
 // ayanami3
-host('2403:3a00:202:1127:49:212:205:127')
+host('deploy-target')
     ->setRemoteUser('fetusjp')
     ->set('labels', ['stage' => 'production'])
     ->set('roles', ['app'])

@@ -36,11 +36,13 @@ jobs:
         run: |
           composer install --prefer-dist --no-interaction --no-dev
       -
-        name: 'Configure SSH'
+        name: 'Configure deploy target'
         env:
           DEPLOY_SSH_PRIVATE_KEY: '${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}'
           DEPLOY_SSH_KNOWN_HOSTS: '${{ secrets.DEPLOY_SSH_KNOWN_HOSTS }}'
+          DEPLOY_TARGET_IP: '${{ secrets.DEPLOY_TARGET_IP }}'
         run: |
+          printf '%s deploy-target\n' "$DEPLOY_TARGET_IP" | sudo tee -a /etc/hosts
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
           umask 077
