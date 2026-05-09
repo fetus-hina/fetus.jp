@@ -8,6 +8,7 @@ use InvalidArgumentException;
 use RangeException;
 use TypeError;
 use Yii;
+use yii\base\Application;
 use yii\helpers\ArrayHelper;
 
 use function array_map;
@@ -42,7 +43,8 @@ final class Unicode
                 throw new RangeException(sprintf('Out of range: 0 <= %x <= 10FFFF', $codepoint));
             }
 
-            if (($c = mb_chr($codepoint, $charset ?? Yii::$app->charset)) === false) {
+            $charset ??= TypeHelper::instanceOf(Yii::$app, Application::class)->charset;
+            if (($c = mb_chr($codepoint, $charset)) === false) {
                 throw new InvalidArgumentException('Unsupported charset for the character');
             }
 

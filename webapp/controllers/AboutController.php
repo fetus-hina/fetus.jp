@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use Yii;
+use app\helpers\TypeHelper;
 use app\models\AvatarDownloadForm;
 use yii\web\Application;
 use yii\web\Controller;
@@ -35,7 +36,8 @@ final class AboutController extends Controller
         $form = Yii::createObject(AvatarDownloadForm::class);
         // @phpstan-ignore-next-line
         $form->attributes = (array)Yii::$app->request->get();
-        if (!$form->download(Yii::$app->response)) {
+        $app = TypeHelper::instanceOf(Yii::$app, Application::class);
+        if (!$form->download($app->response)) {
             throw new NotFoundHttpException(Yii::t('yii', 'Page not found.'));
         }
     }

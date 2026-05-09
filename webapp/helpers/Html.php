@@ -6,6 +6,7 @@ namespace app\helpers;
 
 use Yii;
 use app\assets\R18DialogAsset;
+use yii\base\Application;
 use yii\helpers\Json;
 use yii\helpers\Url;
 use yii\web\View;
@@ -46,7 +47,8 @@ class Html extends \yii\bootstrap5\Html
      */
     public static function aR18(string $text, string|array|null $url = null, array $options = []): string
     {
-        if (($v = Yii::$app->view) instanceof View) {
+        $app = TypeHelper::instanceOf(Yii::$app, Application::class);
+        if (($v = $app->view) instanceof View) {
             R18DialogAsset::register($v);
             $v->registerJs(
                 vsprintf('$(%s).r18dialog();', [

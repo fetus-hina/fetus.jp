@@ -6,7 +6,9 @@ namespace app\widgets;
 
 use Yii;
 use app\assets\TwemojiAsset;
+use app\helpers\TypeHelper;
 use app\helpers\Unicode;
+use yii\base\Application;
 use yii\base\Widget;
 use yii\bootstrap5\Html;
 use yii\helpers\Json;
@@ -41,7 +43,9 @@ final class Twemoji extends Widget
 
         return Html::tag(
             'span',
-            Yii::$app->formatter->format($this->text, $this->format),
+            TypeHelper::instanceOf(Yii::$app, Application::class)
+                ->formatter
+                ->format($this->text, $this->format),
             ['id' => $id],
         );
     }

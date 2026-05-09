@@ -6,7 +6,9 @@ use app\assets\AppAsset;
 use app\assets\BackToTopAsset;
 use app\helpers\Html;
 use app\helpers\Icon;
+use app\helpers\TypeHelper;
 use app\widgets\R18Dialog;
+use yii\base\Application;
 use yii\web\View;
 
 /**
@@ -19,6 +21,8 @@ BackToTopAsset::register($this);
 
 $faviconSizes = [57, 60, 72, 76, 114, 120, 144, 152, 180];
 sort($faviconSizes, SORT_NUMERIC);
+
+$app = TypeHelper::instanceOf(Yii::$app, Application::class);
 
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width,initial-scale=1']);
@@ -42,11 +46,11 @@ foreach ($faviconSizes as $faviconSize) {
 <!DOCTYPE html>
 <?= Html::beginTag('html', [
   'class' => 'h-100',
-  'lang' => Yii::$app->language,
+  'lang' => $app->language,
 ]) . "\n" ?>
   <head>
-    <?= Html::tag('meta', '', ['charset' => Yii::$app->charset]) . "\n" ?>
-    <title><?= Html::encode($this->title ?: Yii::$app->name) ?></title>
+    <?= Html::tag('meta', '', ['charset' => $app->charset]) . "\n" ?>
+    <title><?= Html::encode($this->title ?: $app->name) ?></title>
     <?= $this->head() . "\n" ?>
   </head>
   <body class="h-100 back-to-top-auto">

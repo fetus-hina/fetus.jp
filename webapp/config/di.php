@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use app\helpers\TypeHelper;
+use yii\base\Application;
 use yii\helpers\ArrayHelper;
 use yii\web\AssetManager;
 
@@ -11,7 +13,8 @@ Yii::$container->set(AssetManager::class, [
             ? dirname($path)
             : $path;
 
-        $deployId = ArrayHelper::getValue((array)Yii::$app->params, 'deployId', '');
+        $app = TypeHelper::instanceOf(Yii::$app, Application::class);
+        $deployId = ArrayHelper::getValue($app->params, 'deployId', '');
 
         return vsprintf('%s/%s', [
             substr(

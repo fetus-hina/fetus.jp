@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace app\controllers;
 
 use Yii;
+use app\helpers\TypeHelper;
 use yii\filters\AccessControl;
 use yii\web\Application;
 use yii\web\Controller;
@@ -62,7 +63,7 @@ class SiteController extends Controller
 
     public function actionClearOpcache(): string
     {
-        $r = Yii::$app->response;
+        $r = TypeHelper::instanceOf(Yii::$app, Application::class)->response;
         $r->format = Response::FORMAT_RAW;
         $r->headers->set('Content-Type', 'text/plain; charset=UTF-8');
 

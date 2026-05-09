@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace app\commands;
 
 use Yii;
+use app\helpers\TypeHelper;
 use yii\console\Application;
 use yii\console\Controller;
 use yii\console\ExitCode;
@@ -38,7 +39,9 @@ final class ConfigController extends Controller
                 '',
                 'return (function (): string {',
                 vsprintf("    return '%s';", [
-                    Yii::$app->security->generateRandomString($length),
+                    TypeHelper::instanceOf(Yii::$app, Application::class)
+                        ->security
+                        ->generateRandomString($length),
                 ]),
                 '})();',
             ]) . "\n",

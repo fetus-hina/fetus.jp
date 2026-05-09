@@ -7,6 +7,8 @@ namespace app\widgets;
 use Yii;
 use app\helpers\Html;
 use app\helpers\Icon;
+use app\helpers\TypeHelper;
+use yii\base\Application;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\i18n\Formatter;
@@ -62,7 +64,7 @@ final class PresetDownloadButton extends Widget
         parent::init();
 
         if (!$this->formatter) {
-            $this->formatter = Yii::$app->formatter;
+            $this->formatter = TypeHelper::instanceOf(Yii::$app, Application::class)->formatter;
         }
 
         if ($this->buttonIcon === self::BUTTON_ICON_DEFAULT) {
