@@ -5,6 +5,8 @@ name: CI
     branches:
       - '**'
   workflow_call: null
+env:
+  NODE_VERSION: '24'
 jobs:
   phpSyntaxCheck:
     name: 'PHP Syntax Check (PHP ${{ matrix.env.php }})'
@@ -72,6 +74,10 @@ jobs:
       -
         uses: actions/checkout@v6
       -
+        uses: actions/setup-node@v4
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
+      -
         uses: actions/cache@v5
         with:
           path: |
@@ -119,6 +125,10 @@ jobs:
       -
         uses: actions/checkout@v6
       -
+        uses: actions/setup-node@v4
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
+      -
         uses: actions/cache@v5
         with:
           path: |
@@ -142,6 +152,10 @@ jobs:
     steps:
       -
         uses: actions/checkout@v6
+      -
+        uses: actions/setup-node@v4
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
       -
         uses: actions/cache@v5
         with:
@@ -192,6 +206,10 @@ jobs:
       -
         uses: actions/checkout@v6
       -
+        uses: actions/setup-node@v4
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
+      -
         uses: actions/cache@v5
         with:
           path: |
@@ -225,6 +243,10 @@ jobs:
     steps:
       -
         uses: actions/checkout@v6
+      -
+        uses: actions/setup-node@v4
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
       -
         uses: actions/cache@v5
         with:
