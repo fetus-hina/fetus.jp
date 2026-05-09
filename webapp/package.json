@@ -9,7 +9,7 @@
   "author": "AIZAWA Hina",
   "license": "MIT",
   "dependencies": {
-    "@jp3cki/fetus.css": "^5.3.9",
+    "@jp3cki/fetus.css": "^5.3.10",
     "bootstrap": "^5.3.8",
     "inputmask": "^5.0.9",
     "jquery": "^3.7.1",
@@ -20,19 +20,19 @@
   "devDependencies": {
     "@babel/cli": "^7.28.6",
     "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.2",
+    "@babel/preset-env": "^7.29.5",
     "autoprefixer": "^10.5.0",
-    "cssnano": "^7.1.5",
+    "cssnano": "^7.1.9",
     "license-checker-rseidelsohn": "^4.4.2",
-    "postcss": "^8.5.10",
+    "postcss": "^8.5.14",
     "postcss-cli": "^11.0.1",
     "sass": "^1.99.0",
     "semistandard": "^17.0.0",
-    "stylelint": "^17.8.0",
+    "stylelint": "^17.11.0",
     "stylelint-config-sass-guidelines": "^13.0.0",
     "svgo": "^4.0.1",
-    "terser": "^5.46.1",
-    "updates": "^17.15.4"
+    "terser": "^5.47.1",
+    "updates": "^17.16.9"
   },
   "engines": {
     "node": ">= 20"
