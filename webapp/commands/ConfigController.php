@@ -37,13 +37,11 @@ final class ConfigController extends Controller
                 '',
                 'declare(strict_types=1);',
                 '',
-                'return (function (): string {',
-                vsprintf("    return '%s';", [
+                vsprintf("return '%s';", [
                     TypeHelper::instanceOf(Yii::$app, Application::class)
                         ->security
                         ->generateRandomString($length),
                 ]),
-                '})();',
             ]) . "\n",
         );
 
