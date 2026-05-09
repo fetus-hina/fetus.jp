@@ -1,3 +1,13 @@
+JS_TS_SOURCES := \
+	resource/js/blog-feed.ts \
+	resource/js/r18-dialog.ts \
+	resource/js/rgb.ts \
+	resource/js/twemoji.ts \
+	resource/js/twitter-web-intents.ts
+
+JS_OUTPUTS := $(JS_TS_SOURCES:.ts=.js)
+JS_MIN_OUTPUTS := $(JS_TS_SOURCES:.ts=.min.js)
+
 RESOURCES := \
 	resource/css/blog-feed.css \
 	resource/css/blog-feed.min.css \
@@ -8,16 +18,8 @@ RESOURCES := \
 	resource/css/twemoji.css \
 	resource/css/twemoji.min.css \
 	resource/images/japanese-flag.min.svg \
-	resource/js/blog-feed.js \
-	resource/js/blog-feed.min.js \
-	resource/js/r18-dialog.js \
-	resource/js/r18-dialog.min.js \
-	resource/js/rgb.js \
-	resource/js/rgb.min.js \
-	resource/js/twemoji.js \
-	resource/js/twemoji.min.js \
-	resource/js/twitter-web-intents.js \
-	resource/js/twitter-web-intents.min.js \
+	$(JS_OUTPUTS) \
+	$(JS_MIN_OUTPUTS) \
 	web/favicon.ico \
 	web/images/apple-touch-icon-114.png \
 	web/images/apple-touch-icon-120.png \
@@ -35,7 +37,7 @@ all: .browserslistrc config/cookie-secret.php vendor node_modules resources
 
 .PHONY: clean
 clean:
-	rm -rf $(RESOURCES) config/deploy-id.php web/assets/*
+	rm -rf $(RESOURCES) resource/js/.tsc.stamp config/deploy-id.php web/assets/*
 
 .PHONY: resources
 resources: $(RESOURCES)
@@ -70,8 +72,13 @@ node_modules: package-lock.json
 %.min.js: %.js node_modules
 	npx terser -m -c -f ascii_only=true -o $@ $<
 
-%.js: %.es node_modules .browserslistrc
-	npx babel $< > $@
+# Compile all TS sources at once via tsc (no per-file invocation).
+# A stamp file lets each .js target depend on a single tsc run.
+$(JS_OUTPUTS): resource/js/.tsc.stamp
+
+resource/js/.tsc.stamp: $(JS_TS_SOURCES) tsconfig.json $(wildcard types/*.d.ts) node_modules
+	npx tsc
+	@touch $@
 
 %.min.css: %.css node_modules
 	npx postcss $< --no-map --use cssnano > $@
@@ -109,8 +116,15 @@ check-style-phpstan: vendor
 	./vendor/bin/phpstan analyze --memory-limit=1G
 
 .PHONY: check-style-js
-check-style-js: node_modules
-	npx semistandard 'resource/**/*.es'
+check-style-js: check-style-tsc check-style-eslint
+
+.PHONY: check-style-tsc
+check-style-tsc: node_modules tsconfig.json
+	npx tsc --noEmit
+
+.PHONY: check-style-eslint
+check-style-eslint: node_modules eslint.config.js
+	npx eslint 'resource/**/*.ts'
 
 .PHONY: check-style-css
 check-style-css: node_modules

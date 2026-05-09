@@ -1,4 +1,4 @@
-jQuery($ => {
+jQuery(($: JQueryStatic): void => {
   const $container = $('#blog');
 
   $container
@@ -9,10 +9,10 @@ jQuery($ => {
 
   $.get('https://blog.fetus.jp/feed')
     .then(
-      document => {
-        const $document = $(document);
+      (document: Document | XMLDocument | string): void => {
+        const $document = $(document as unknown as Document);
         const $ul = $('<ul id="blog-entries">');
-        $('channel item', $document).each((i, item) => {
+        $('channel item', $document).each((_i: number, item: Element): void => {
           const $item = $(item);
           const at = new Date($('pubDate', $item).text()).toLocaleDateString();
           $ul.append(
@@ -28,7 +28,7 @@ jQuery($ => {
         });
         $container.empty().append($ul);
       },
-      () => {
+      (): void => {
         $container
           .empty()
           .append(

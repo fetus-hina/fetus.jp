@@ -1,6 +1,6 @@
-jQuery($ => {
+jQuery(($: JQueryStatic): void => {
   const $tags = $('.rgb');
-  $tags.each(function () {
+  $tags.each(function (this: HTMLElement): void {
     const $this = $(this);
     const match = $this.text().match(/#[0-9a-fA-F]{6}\b/);
     if (match) {
@@ -12,7 +12,7 @@ jQuery($ => {
               'border-1',
               'border-dark',
               'd-inline-block',
-              'mx-1'
+              'mx-1',
             ].join(' ')
           )
           .attr('aria-hidden', 'true')
@@ -20,7 +20,7 @@ jQuery($ => {
             backgroundColor: match[0],
             borderStyle: 'solid',
             height: '1em',
-            width: '1.618em'
+            width: '1.618em',
           })
       );
     }

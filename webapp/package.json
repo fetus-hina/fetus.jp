@@ -18,33 +18,23 @@
     "yii2-pjax": "^2.0.8"
   },
   "devDependencies": {
-    "@babel/cli": "^7.28.6",
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.5",
+    "@types/jquery": "^4.0.0",
     "autoprefixer": "^10.5.0",
     "cssnano": "^7.1.9",
+    "eslint": "^9.39.4",
     "license-checker-rseidelsohn": "^4.4.2",
+    "neostandard": "^0.13.0",
     "postcss": "^8.5.14",
     "postcss-cli": "^11.0.1",
     "sass": "^1.99.0",
-    "semistandard": "^17.0.0",
     "stylelint": "^17.11.0",
     "stylelint-config-sass-guidelines": "^13.0.0",
     "svgo": "^4.0.1",
     "terser": "^5.47.1",
+    "typescript": "^6.0.3",
     "updates": "^17.16.9"
   },
   "engines": {
     "node": ">= 20"
-  },
-  "semistandard": {
-    "envs": {
-      "browser": true,
-      "jquery": true
-    },
-    "globals": [
-      "bootstrap",
-      "jQuery"
-    ]
   }
 }
