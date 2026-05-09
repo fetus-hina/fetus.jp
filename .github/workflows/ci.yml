@@ -16,6 +16,9 @@ jobs:
             experimental: false
           -
             php: '8.5'
+            experimental: false
+          -
+            php: '8.6'
             experimental: true
     runs-on: ubuntu-24.04
     steps:
@@ -210,6 +213,9 @@ jobs:
             experimental: false
           -
             php: '8.5'
+            experimental: false
+          -
+            php: '8.6'
             experimental: true
     runs-on: ubuntu-24.04
     needs:
