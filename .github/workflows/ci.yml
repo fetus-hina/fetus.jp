@@ -123,9 +123,14 @@ jobs:
             ~/.npm
           key: 'npm-${{ hashFiles(''webapp/package-lock.json'') }}'
       -
-        name: 'Run semistandard'
+        name: 'Run tsc'
         run: |
-          npx semistandard 'resource/**/*.es'
+          npx tsc --noEmit
+        working-directory: webapp
+      -
+        name: 'Run ESLint (neostandard)'
+        run: |
+          npx eslint 'resource/**/*.ts'
         working-directory: webapp
   cssStyleCheck:
     name: 'CSS Coding Style'
