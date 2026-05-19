@@ -20,21 +20,21 @@
   "devDependencies": {
     "@types/jquery": "^4.0.0",
     "autoprefixer": "^10.5.0",
-    "cssnano": "^7.1.9",
+    "cssnano": "^8.0.1",
     "eslint": "^9.39.4",
     "license-checker-rseidelsohn": "^4.4.2",
     "neostandard": "^0.13.0",
-    "postcss": "^8.5.14",
+    "postcss": "^8.5.15",
     "postcss-cli": "^11.0.1",
     "sass": "^1.99.0",
-    "stylelint": "^17.11.0",
+    "stylelint": "^17.11.1",
     "stylelint-config-sass-guidelines": "^13.0.0",
     "svgo": "^4.0.1",
     "terser": "^5.47.1",
     "typescript": "^6.0.3",
-    "updates": "^17.16.9"
+    "updates": "^17.16.13"
   },
   "engines": {
-    "node": ">= 20"
+    "node": ">= 24"
   }
 }
