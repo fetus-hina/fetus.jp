@@ -4,7 +4,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "deployer/deployer": "^7.5.12"
+        "deployer/deployer": "^8.0.5"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.52"
