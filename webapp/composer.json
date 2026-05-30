@@ -15,9 +15,9 @@
         "ext-pdo_pgsql": "*",
         "cweagans/composer-patches": "^1.7.3",
         "twbs/bootstrap-icons": "^1.13.1",
-        "yiisoft/yii2": "^2.0.54",
+        "yiisoft/yii2": "^2.0.55",
         "yiisoft/yii2-bootstrap5": "^2.0.51",
-        "yiisoft/yii2-httpclient": "^2.0.16"
+        "yiisoft/yii2-httpclient": "^2.0.17"
     },
     "require-dev": {
         "ext-posix": "*",
@@ -29,14 +29,14 @@
         "codeception/module-yii2": ">=2.0.5",
         "codeception/specify": ">=2",
         "codeception/verify": ">=3.4",
-        "dealerdirect/phpcodesniffer-composer-installer": "^1.2",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.2.1",
         "dominikb/composer-license-checker": "^3.0.0",
-        "ergebnis/composer-normalize": "^2.51.0",
+        "ergebnis/composer-normalize": "^2.52.0",
         "jp3cki/coding-standard": "^2.0.0",
         "phpstan/phpstan": "^1.12.33",
         "proget-hq/phpstan-yii2": "~0.8.0",
         "symfony/browser-kit": ">=6.4.32",
-        "yiisoft/yii2-debug": "^2.1.27",
+        "yiisoft/yii2-debug": "^2.1.28",
         "yiisoft/yii2-gii": "^2.2.7"
     },
     "replace": {
