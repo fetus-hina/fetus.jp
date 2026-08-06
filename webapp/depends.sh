@@ -6,3 +6,4 @@ npm install
 
 make composer.phar
 ./composer.phar update -W
+./composer.phar bump
