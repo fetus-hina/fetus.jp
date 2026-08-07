@@ -9,7 +9,7 @@
   "author": "AIZAWA Hina",
   "license": "MIT",
   "dependencies": {
-    "@jp3cki/fetus.css": "^5.3.11",
+    "@jp3cki/fetus.css": "^5.3.12",
     "bootstrap": "^5.3.8",
     "inputmask": "^5.0.10",
     "jquery": "^3.7.1",
