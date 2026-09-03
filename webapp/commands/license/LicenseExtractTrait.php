@@ -27,6 +27,7 @@ use function file_get_contents;
 use function fwrite;
 use function implode;
 use function is_array;
+use function is_string;
 use function pathinfo;
 use function preg_match;
 use function preg_replace;
@@ -79,10 +80,14 @@ trait LicenseExtractTrait
 
     private function extractPackages(array $packages): void
     {
-        foreach ($packages as $name => $info) {
+        foreach ($packages as $key => $info) {
+            $name = (string)$key;
+            $version = is_array($info) && is_string($info['version'] ?? null)
+                ? trim($info['version'])
+                : '';
             $this->extractPackage(
-                isset($info['version']) && trim((string)$info['version']) !== ''
-                    ? "{$name}@{$info['version']}"
+                $version !== ''
+                    ? "{$name}@{$version}"
                     : $name,
                 Yii::getAlias('@app/vendor') . '/' . $name,
             );

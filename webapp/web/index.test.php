@@ -27,4 +27,9 @@ defined('YII_ENV') || define('YII_ENV', 'test');
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 
-(new Application(require __DIR__ . '/../config/test.php'))->run();
+$config = require __DIR__ . '/../config/test.php';
+if (!is_array($config)) {
+    throw new TypeError('config/test.php must return an array');
+}
+
+(new Application($config))->run();

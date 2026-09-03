@@ -11,12 +11,10 @@ use yii\console\Controller;
 use function array_filter;
 use function array_map;
 use function array_values;
-use function assert;
 use function escapeshellarg;
 use function exec;
 use function fclose;
 use function fwrite;
-use function is_array;
 use function is_int;
 use function is_numeric;
 use function passthru;
@@ -36,6 +34,7 @@ final class WebAction extends Action
 {
     private const SIGTERM = 15;
 
+    /** @var array{handle: resource, pid: int, pipes: array<int, resource>}|null */
     private ?array $serverProcess = null;
 
     public function __destruct()
@@ -95,20 +94,19 @@ final class WebAction extends Action
             return;
         }
 
-        fwrite(STDERR, "\nStopping test server (pid={$this->serverProcess['pid']})\n\n");
-        @fclose($this->serverProcess['pipes'][0]);
-        @fclose($this->serverProcess['pipes'][1]);
+        $process = $this->serverProcess;
+        $this->serverProcess = null;
 
-        if ($this->serverProcess['pid']) {
-            $this->killDescendants((int)$this->serverProcess['pid'], static::SIGTERM);
+        fwrite(STDERR, "\nStopping test server (pid={$process['pid']})\n\n");
+        @fclose($process['pipes'][0]);
+        @fclose($process['pipes'][1]);
+
+        if ($process['pid']) {
+            $this->killDescendants($process['pid'], static::SIGTERM);
         }
 
-        assert(is_array($this->serverProcess));
-
-        proc_terminate($this->serverProcess['handle'], static::SIGTERM);
-        proc_close($this->serverProcess['handle']);
-
-        $this->serverProcess = null;
+        proc_terminate($process['handle'], static::SIGTERM);
+        proc_close($process['handle']);
     }
 
     private function killDescendants(int $parentPID, int $signal): void

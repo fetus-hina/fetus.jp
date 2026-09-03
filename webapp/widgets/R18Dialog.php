@@ -8,7 +8,6 @@ use app\helpers\Html;
 use app\helpers\Icon;
 use yii\base\Widget;
 use yii\bootstrap5\BootstrapAsset;
-use yii\web\View;
 
 use function implode;
 use function vsprintf;
@@ -17,9 +16,7 @@ final class R18Dialog extends Widget
 {
     public function run(): string
     {
-        if (($v = $this->view) instanceof View) {
-            BootstrapAsset::register($v);
-        }
+        BootstrapAsset::register($this->view);
 
         return $this->renderDialog();
     }

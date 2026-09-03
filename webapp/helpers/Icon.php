@@ -11,7 +11,6 @@ use app\assets\BootstrapIconsAsset;
 use app\widgets\Twemoji;
 use yii\base\Application;
 use yii\web\AssetBundle;
-use yii\web\View;
 
 use function is_string;
 
@@ -201,9 +200,6 @@ final class Icon
     private static function registerAsset(string $source): ?AssetBundle
     {
         $view = TypeHelper::instanceOf(Yii::$app, Application::class)->view;
-        if (!$view instanceof View) {
-            throw new LogicException();
-        }
 
         return match ($source) {
             IconSource::BOOTSTRAP_ICONS => BootstrapIconsAsset::register($view),

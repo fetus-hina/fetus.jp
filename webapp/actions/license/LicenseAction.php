@@ -9,7 +9,6 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Yii;
 use app\helpers\Html;
-use stdClass;
 use yii\base\Action;
 use yii\web\Controller;
 
@@ -46,15 +45,18 @@ final class LicenseAction extends Action
         ]);
     }
 
+    /**
+     * @return list<LicenseEntry>
+     */
     private function loadDepends(): array
     {
         $ret = $this->loadFiles($this->directory);
         usort(
             $ret,
-            function (stdClass $a, stdClass $b): int {
-                $aName = trim(preg_replace('/[^0-9A-Za-z]+/', ' ', $a->name));
+            function (LicenseEntry $a, LicenseEntry $b): int {
+                $aName = trim((string)preg_replace('/[^0-9A-Za-z]+/', ' ', $a->name));
                 $aName2 = ltrim($aName, '@');
-                $bName = trim(preg_replace('/[^0-9A-Za-z]+/', ' ', $b->name));
+                $bName = trim((string)preg_replace('/[^0-9A-Za-z]+/', ' ', $b->name));
                 $bName2 = ltrim($bName, '@');
                 return strnatcasecmp($aName2, $bName2)
                     ?: strnatcasecmp($aName, $bName)
@@ -64,6 +66,9 @@ final class LicenseAction extends Action
         return $ret;
     }
 
+    /**
+     * @return list<LicenseEntry>
+     */
     private function loadFiles(string $directory): array
     {
         $basedir = (string)Yii::getAlias($directory);
@@ -91,19 +96,22 @@ final class LicenseAction extends Action
             $basename = substr($pathname, strlen($basedir));
             $html = $this->loadPlain(
                 $entry->getPathname(),
-                fn ($t) => (bool)preg_match('/copyright|licen[cs]e/i', $t),
+                fn (string $t): bool => (bool)preg_match('/copyright|licen[cs]e/i', $t),
             );
-            if ($html) {
-                $ret[] = (object)[
-                    'name' => ltrim(substr($basename, 0, strlen($basename) - 12), '/'),
-                    'html' => $html,
-                ];
+            if ($html !== null) {
+                $ret[] = new LicenseEntry(
+                    ltrim(substr($basename, 0, strlen($basename) - 12), '/'),
+                    $html,
+                );
             }
         }
 
         return $ret;
     }
 
+    /**
+     * @param (callable(string): bool)|null $checker
+     */
     private function loadPlain(string $path, ?callable $checker = null): ?string
     {
         $text = $this->loadFile($path, $checker);
@@ -112,6 +120,9 @@ final class LicenseAction extends Action
             : null;
     }
 
+    /**
+     * @param (callable(string): bool)|null $checker
+     */
     private function loadFile(string $path, ?callable $checker): ?string
     {
         $text = file_get_contents($path, false);

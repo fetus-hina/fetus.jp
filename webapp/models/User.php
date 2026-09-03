@@ -33,6 +33,9 @@ final class User extends BaseObject implements IdentityInterface
         return $this->authKey;
     }
 
+    /**
+     * @return string
+     */
     public function getId()
     {
         return (string)$this->id;

@@ -2,27 +2,28 @@
 
 declare(strict_types=1);
 
+use app\actions\license\LicenseEntry;
 use app\helpers\Icon;
 use app\helpers\Html;
 use yii\web\View;
 
 /**
  * @var string $title
- * @var stdClass[] $depends
+ * @var LicenseEntry[] $depends
  * @var View $this
  */
 
-$id = fn ($name) => vsprintf('pkg-%s-%s', [
-  trim(preg_replace('/[^0-9a-zA-Z]+/', '_', $name), '_'),
+$id = fn (string $name): string => vsprintf('pkg-%s-%s', [
+  trim((string)preg_replace('/[^0-9a-zA-Z]+/', '_', $name), '_'),
   hash('crc32b', $name),
 ]);
 
 // Zero Width Space
-$wbr = mb_chr(0x200b, 'UTF-8');
+$wbr = (string)mb_chr(0x200b, 'UTF-8');
 
-$breakable = fn ($text) => preg_replace_callback(
+$breakable = fn (string $text): string => (string)preg_replace_callback(
   '/[@\/]/',
-  fn($match) => match($match[0]) {
+  fn(array $match): string => match($match[0]) {
     '@' => "{$wbr}{$match[0]}",
     '/' => "{$match[0]}{$wbr}",
     default => "{$wbr}{$match[0]}{$wbr}",
@@ -47,7 +48,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => '利用してい�
 </p>
 <h2><?= Html::encode($title) ?></h2>
 <ul><?= implode('', array_map(
-  fn($item) => Html::tag(
+  fn(LicenseEntry $item): string => Html::tag(
     'li',
     Html::a(
       $breakable(Html::encode($item->name)),

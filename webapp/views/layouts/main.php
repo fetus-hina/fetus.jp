@@ -51,7 +51,7 @@ foreach ($faviconSizes as $faviconSize) {
   <head>
     <?= Html::tag('meta', '', ['charset' => $app->charset]) . "\n" ?>
     <title><?= Html::encode($this->title ?: $app->name) ?></title>
-    <?= $this->head() . "\n" ?>
+    <?php $this->head(); echo "\n" ?>
   </head>
   <body class="h-100 back-to-top-auto">
     <?php $this->beginBody(); echo "\n" ?>

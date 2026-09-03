@@ -6,12 +6,33 @@ use yii\helpers\ArrayHelper;
 
 return (function (): array {
     $config = require __DIR__ . '/web.php';
-    $config['id'] .= '-tests';
-    $config['components'] = ArrayHelper::merge($config['components'], [
+    if (!is_array($config)) {
+        throw new TypeError('config/web.php must return an array');
+    }
+
+    $id = $config['id'] ?? null;
+    $components = $config['components'] ?? [];
+    $bootstrap = $config['bootstrap'] ?? [];
+    $modules = $config['modules'] ?? [];
+    if (
+        !is_string($id) ||
+        !is_array($components) ||
+        !is_array($bootstrap) ||
+        !is_array($modules)
+    ) {
+        throw new TypeError('config/web.php returned an unexpected structure');
+    }
+
+    foreach (['debug', 'gii'] as $module) {
+        ArrayHelper::removeValue($bootstrap, $module);
+        unset($modules[$module]);
+    }
+
+    $config['id'] = $id . '-tests';
+    $config['bootstrap'] = $bootstrap;
+    $config['modules'] = $modules;
+    $config['components'] = ArrayHelper::merge($components, [
         'db' => require __DIR__ . '/test_db.php',
-        'mailer' => [
-            'useFileTransport' => true,
-        ],
         'assetManager' => [
             'basePath' => __DIR__ . '/../web/assets',
         ],
@@ -24,11 +45,6 @@ return (function (): array {
             'enableCsrfValidation' => false,
         ],
     ]);
-
-    foreach (['debug', 'gii'] as $module) {
-        ArrayHelper::removeValue($config['bootstrap'], $module);
-        unset($config['modules'][$module]);
-    }
 
     return $config;
 })();

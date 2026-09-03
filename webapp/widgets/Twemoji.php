@@ -12,7 +12,6 @@ use yii\base\Application;
 use yii\base\Widget;
 use yii\bootstrap5\Html;
 use yii\helpers\Json;
-use yii\web\View;
 
 use function sprintf;
 use function vsprintf;
@@ -33,13 +32,12 @@ final class Twemoji extends Widget
     {
         $id = $this->id;
 
-        if (($view = $this->view) instanceof View) {
-            TwemojiAsset::register($view);
+        $view = $this->view;
+        TwemojiAsset::register($view);
 
-            $view->registerJs(vsprintf('$(%s).twemoji();', [
-                Json::encode(sprintf('#%s', $id)),
-            ]));
-        }
+        $view->registerJs(vsprintf('$(%s).twemoji();', [
+            Json::encode(sprintf('#%s', $id)),
+        ]));
 
         return Html::tag(
             'span',

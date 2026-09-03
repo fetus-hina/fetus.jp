@@ -13,7 +13,6 @@ use yii\helpers\ArrayHelper;
 
 use function array_map;
 use function implode;
-use function is_array;
 use function is_int;
 use function mb_chr;
 use function ord;
@@ -51,7 +50,7 @@ final class Unicode
             return $c;
         }
 
-        if (is_array($codepoint) && ArrayHelper::isIndexed($codepoint, true)) {
+        if (ArrayHelper::isIndexed($codepoint, true)) {
             return implode('', array_map(
                 fn (int $c): string => self::fromCodepoint($c, $charset),
                 $codepoint,

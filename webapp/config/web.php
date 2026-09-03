@@ -76,6 +76,7 @@ $config = [
             ],
         ],
     ],
+    'modules' => [],
     'params' => $params,
 ];
 

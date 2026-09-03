@@ -20,8 +20,18 @@ require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 require __DIR__ . '/../config/di.php';
 
 $config = require __DIR__ . '/../config/web.php';
+if (!is_array($config)) {
+    throw new TypeError('config/web.php must return an array');
+}
+
 if (defined('YII_ENV') && YII_ENV === 'test') {
-    $config['components']['db'] = require __DIR__ . '/../config/test_db.php';
+    $components = $config['components'] ?? [];
+    if (!is_array($components)) {
+        throw new TypeError('config/web.php must return an array of components');
+    }
+
+    $components['db'] = require __DIR__ . '/../config/test_db.php';
+    $config['components'] = $components;
 }
 
 (new Application($config))->run();

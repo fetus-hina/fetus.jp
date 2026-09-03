@@ -48,16 +48,15 @@ class Html extends \yii\bootstrap5\Html
     public static function aR18(string $text, string|array|null $url = null, array $options = []): string
     {
         $app = TypeHelper::instanceOf(Yii::$app, Application::class);
-        if (($v = $app->view) instanceof View) {
-            R18DialogAsset::register($v);
-            $v->registerJs(
-                vsprintf('$(%s).r18dialog();', [
-                    Json::encode(sprintf('.%s', self::CLASS_R18_LINK)),
-                ]),
-                View::POS_READY,
-                __METHOD__, // scriptlet-id
-            );
-        }
+        $v = $app->view;
+        R18DialogAsset::register($v);
+        $v->registerJs(
+            vsprintf('$(%s).r18dialog();', [
+                Json::encode(sprintf('.%s', self::CLASS_R18_LINK)),
+            ]),
+            View::POS_READY,
+            __METHOD__, // scriptlet-id
+        );
 
         self::addCssClass($options, self::CLASS_R18_LINK);
 
