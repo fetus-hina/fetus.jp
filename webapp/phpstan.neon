@@ -12,7 +12,7 @@ parameters:
 
   excludePaths:
     - data
-    - node_modules
+    - node_modules (?)
     - runtime
     - tests
     - vendor
