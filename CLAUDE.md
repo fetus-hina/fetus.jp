@@ -31,7 +31,7 @@ fetus.jp は Yii 2 basic application template をベースにした個人サイ�
 - `./vendor/bin/codecept run unit` — unit テストのみ。単一ケースを指定するときはクラス／メソッドを付ける（例：`unit ExampleTest:testFoo`）。
 - `./yii <route>` — Yii のコンソールエントリポイント（例：`./yii license/extract`、`./yii config/generate-deploy-id`）。`config/console.php` を使い、`yii` と同じ階層に `.production` マーカーファイルが存在しない限り dev モードで起動する。
 
-PHPStan は Yii2 設定として `config/test.php` を使い（`phpstan.neon` を参照）、`runtime/phpstan` に書き込み権限が必要。`level: max` に設定されているが、CI 上では `continue-on-error` 扱い。
+PHPStan は Yii2 設定として `config/test.php` を使い（`phpstan.neon` を参照）、`runtime/phpstan` に書き込み権限が必要。`level: max`（PHPStan 2 では実質 level 10 で、implicit mixed に対する操作も報告される）に設定されており、CI でも失敗すればジョブが落ちる。
 
 ## 全体アーキテクチャ
 
