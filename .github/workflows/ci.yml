@@ -103,6 +103,7 @@ jobs:
             ~/.cache/composer/files
             webapp/vendor
           key: '${{ runner.os }}-composer-${{ hashFiles(''webapp/composer.lock'') }}'
+          fail-on-cache-miss: true
       -
         name: 'Set up PHP 8.4'
         uses: shivammathur/setup-php@v2
@@ -134,6 +135,7 @@ jobs:
             webapp/node_modules
             ~/.npm
           key: 'npm-${{ hashFiles(''webapp/package-lock.json'') }}'
+          fail-on-cache-miss: true
       -
         name: 'Run tsc'
         run: |
@@ -162,6 +164,7 @@ jobs:
             webapp/node_modules
             ~/.npm
           key: 'npm-${{ hashFiles(''webapp/package-lock.json'') }}'
+          fail-on-cache-miss: true
       -
         name: 'Run stylelint'
         run: |
@@ -186,6 +189,7 @@ jobs:
             ~/.cache/composer/files
             webapp/vendor
           key: '${{ runner.os }}-composer-${{ hashFiles(''webapp/composer.lock'') }}'
+          fail-on-cache-miss: true
       -
         name: 'Run license checker'
         working-directory: webapp
@@ -215,6 +219,7 @@ jobs:
             webapp/node_modules
             ~/.npm
           key: 'npm-${{ hashFiles(''webapp/package-lock.json'') }}'
+          fail-on-cache-miss: true
       -
         name: 'Run license checker'
         working-directory: webapp
@@ -253,6 +258,7 @@ jobs:
             ~/.cache/composer/files
             webapp/vendor
           key: '${{ runner.os }}-composer-${{ hashFiles(''webapp/composer.lock'') }}'
+          fail-on-cache-miss: true
       -
         uses: actions/cache/restore@v6
         with:
@@ -260,6 +266,7 @@ jobs:
             webapp/node_modules
             ~/.npm
           key: 'npm-${{ hashFiles(''webapp/package-lock.json'') }}'
+          fail-on-cache-miss: true
       -
         name: 'Set up PHP ${{ matrix.env.php }}'
         uses: shivammathur/setup-php@v2
