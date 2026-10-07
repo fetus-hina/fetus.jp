@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace tests\models;
 
+use Codeception\Attribute\DataProvider;
 use Codeception\Test\Unit;
 use UnitTester;
 use Yii;
@@ -38,9 +39,7 @@ final class AvatarDownloadFormTest extends Unit
         unset($oldEnv);
     }
 
-    /**
-     * @dataProvider categoriesDataProvider
-     */
+    #[DataProvider('categoriesDataProvider')]
     public function testCategories(string $category, bool $beSuccess): void
     {
         $oldEnv = $this->tester->english();
@@ -64,7 +63,7 @@ final class AvatarDownloadFormTest extends Unit
     /**
      * @return array{string, bool}[]
      */
-    public function categoriesDataProvider(): array
+    public static function categoriesDataProvider(): array
     {
         // 0: string, カテゴリ名
         // 1: bool, 成功すべきか
@@ -78,9 +77,7 @@ final class AvatarDownloadFormTest extends Unit
         ];
     }
 
-    /**
-     * @dataProvider filesProvider
-     */
+    #[DataProvider('filesProvider')]
     public function testFiles(string $fileName, bool $beSuccess): void
     {
         $oldEnv = $this->tester->english();
@@ -104,9 +101,9 @@ final class AvatarDownloadFormTest extends Unit
     }
 
     /**
-     * @return array{string, bool}
+     * @return array{string, bool}[]
      */
-    public function filesProvider(): array
+    public static function filesProvider(): array
     {
         // 0: ファイル名
         // 1: 成功すべきか
@@ -120,9 +117,7 @@ final class AvatarDownloadFormTest extends Unit
         ];
     }
 
-    /**
-     * @dataProvider getPresets
-     */
+    #[DataProvider('getPresets')]
     public function testFileExists(string $category, string $fileName): void
     {
         $model = Yii::createObject([
@@ -146,9 +141,7 @@ final class AvatarDownloadFormTest extends Unit
         ));
     }
 
-    /**
-     * @dataProvider getPresets
-     */
+    #[DataProvider('getPresets')]
     public function testDownload(string $category, string $fileName, string $sha256sum): void
     {
         $model = Yii::createObject([
@@ -185,7 +178,7 @@ final class AvatarDownloadFormTest extends Unit
     /**
      * @return array{string, string, string}[]
      */
-    public function getPresets(): array
+    public static function getPresets(): array
     {
         return [
             ['cm3d2', 'pre_hina_cm3d2.preset', '562b88af3c34c922a7e2fb8eeb686434644434f6d7ef53a1d3f2f698505811c6'],
