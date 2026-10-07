@@ -23,10 +23,10 @@ fetus.jp は Yii 2 basic application template をベースにした個人サイ�
 
 `webapp/` で実行する：
 
-- `make` — フルビルド。composer/npm の依存解決、cookie secret と deploy id の生成、SCSS→CSS、Babel ES→JS、CSS/JS のミニファイ、SVG 最適化、favicon のコピーまで行う。
+- `make` — フルビルド。composer/npm の依存解決、cookie secret と deploy id の生成、SCSS→CSS、TypeScript→JS（tsc）、CSS/JS のミニファイ、SVG 最適化、favicon のコピーまで行う。
 - `make clean` — 生成済みリソースと `web/assets/*` を削除。
-- `make check-style` — すべての linter（PHPCS、PHPStan、semistandard、stylelint）を実行。
-  - 個別に動かすなら `make check-style-phpcs` / `make check-style-phpstan` / `make check-style-js` / `make check-style-css`。
+- `make check-style` — すべての linter（PHPCS、PHPStan、`tsc --noEmit`、ESLint、stylelint）を実行。
+  - 個別に動かすなら `make check-style-phpcs` / `make check-style-phpstan` / `make check-style-js`（`check-style-tsc` + `check-style-eslint`）/ `make check-style-css`。
 - `make test` — `test-unit`（Codeception unit スイート）と `test-web`（`tests/bin/yii test/web` で走る functional スイート）を実行。
 - `./vendor/bin/codecept run unit` — unit テストのみ。単一ケースを指定するときはクラス／メソッドを付ける（例：`unit ExampleTest:testFoo`）。
 - `./yii <route>` — Yii のコンソールエントリポイント（例：`./yii license/extract`、`./yii config/generate-deploy-id`）。`config/console.php` を使い、`yii` と同じ階層に `.production` マーカーファイルが存在しない限り dev モードで起動する。
@@ -41,14 +41,14 @@ PHPStan は Yii2 設定として `config/test.php` を使い（`phpstan.neon` �
 - **Web ルーティング**（`config/web.php`）: pretty URL 有効、`showScriptName=false`。キャッチオールルール `<_c:[a-z0-9-]+> => /<_c>/index` により、`/about` のようなパスはそのまま `AboutController::actionIndex()` にマッピングされる。`BootstrapAsset` / `BootstrapPluginAsset` のバンドルは Yii 標準の代わりに `@npm/@jp3cki/fetus.css` と `@npm/bootstrap` から読み込むよう上書きされている。
 - **コントローラ**（`controllers/`）はジェネリクス付きで型付けされている：`class FooController extends Controller<Application>`。新しいコントローラを追加するときもこのパターンを維持すること。コミット `fd190c2` で導入された慣習で、PHPStan を max レベルで通すために必要。
 - **コンソールコマンド**は `commands/` に置く（`ConfigController`、`LicenseController`、`TestController` など）。`license/` はサブディレクトリ構成で独自のアクションを持ち、`composer post-install-cmd` / `post-update-cmd` からサードパーティライセンスファイルの抽出と同梱のために呼ばれる。
-- **フロントエンドアセットのフロー**: `resource/css/*.scss` → `.css` → `.min.css`（sass + postcss/autoprefixer + cssnano）、`resource/js/*.es` → `.js` → `.min.js`（Babel + terser）。`make` のターゲットがファイル単位で定義されているため、ソースファイルと生成物の両方がコミットされている。新しいアセットを追加する際は `webapp/Makefile` 内の `RESOURCES` リストが正であり、ここにソースを追記する必要がある。
-- **アセットバンドル**（`assets/`）が生成ファイルを Yii の asset manager に接続する。`.babelrc`、`.browserslistrc`、`.stylelintrc`、`.svgo.config.js` がツールチェインの設定。`.browserslistrc` はビルド時に upstream の Bootstrap から取得する。
+- **フロントエンドアセットのフロー**: `resource/css/*.scss` → `.css` → `.min.css`（sass + postcss/autoprefixer + cssnano）、`resource/js/*.ts` → `.js` → `.min.js`（tsc + terser。tsc は全 `.ts` を 1 回でまとめてコンパイルする）。生成物（`resource/**/*.css`、`resource/**/*.js`、`resource/images/*.min.svg` など）は `.gitignore` 対象でコミットされず、ソースのみをコミットする。本番でもデプロイ時の `make` で生成される。新しいアセットを追加する際は `webapp/Makefile` が正であり、TS は `JS_TS_SOURCES` にソースを、CSS などは `RESOURCES` に生成物（`.css` と `.min.css` など）を追記する必要がある。
+- **アセットバンドル**（`assets/`）が生成ファイルを Yii の asset manager に接続する。`tsconfig.json`、`eslint.config.js`、`.browserslistrc`、`.stylelintrc`、`.svgo.config.js` がツールチェインの設定。`.browserslistrc` はビルド時に upstream の Bootstrap から取得する。
 - **ヘルパーとウィジェット**: `helpers/` にプロジェクト全体で使うユーティリティ（`Html`、`Icon`、`IconSource`、`Unicode`）、`widgets/` に再利用可能な Yii ウィジェット（`JapaneseFlag`、`Twemoji`、`Youtube`、`R18Dialog` など）。
 
 ## コーディングスタイル
 
 - PHP: `.phpcs.xml` による JP3CKI coding standard（Slevomat ベースだが、パラメータ／プロパティ／戻り値の型ヒント sniff とスーパーグローバル禁止は無効化）。すべての PHP ファイルで `declare(strict_types=1);` を使う。
-- JS（`resource/**/*.es`）: `semistandard`。env は `browser` + `jquery`、グローバルは `bootstrap` と `jQuery`（`package.json` で設定）。
+- TS（`resource/**/*.ts`）: `eslint.config.js` で `neostandard`（`semi: true`、`ts: true`、globals は `browser` + `jquery`）を使い、型検査は `tsconfig.json`（strict）で `tsc --noEmit`。グローバル変数の型定義は `types/globals.d.ts`。
 - CSS/SCSS: `stylelint-config-sass-guidelines` を使った `stylelint` を `resource/**/*.scss` に対して実行。
 
 ## デプロイ
