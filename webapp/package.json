@@ -20,7 +20,7 @@
   "devDependencies": {
     "@types/jquery": "^3.5.34",
     "autoprefixer": "^10.6.1",
-    "cssnano": "^8.0.10",
+    "cssnano": "^9.3.2",
     "eslint": "^9.39.5",
     "license-checker-rseidelsohn": "^5.0.1",
     "neostandard": "^0.13.0",
