@@ -19,20 +19,20 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.34",
-    "autoprefixer": "^10.5.4",
+    "autoprefixer": "^10.6.1",
     "cssnano": "^8.0.10",
     "eslint": "^9.39.5",
     "license-checker-rseidelsohn": "^5.0.1",
     "neostandard": "^0.13.0",
-    "postcss": "^8.5.27",
+    "postcss": "^8.5.29",
     "postcss-cli": "^11.0.1",
-    "sass": "^1.103.1",
-    "stylelint": "^17.14.1",
+    "sass": "^1.105.1",
+    "stylelint": "^17.16.0",
     "stylelint-config-sass-guidelines": "^13.0.0",
     "svgo": "^4.1.0",
     "terser": "^5.51.2",
     "typescript": "^6.0.3",
-    "updates": "^18.0.8"
+    "updates": "^18.1.1"
   },
   "engines": {
     "node": ">= 24"
